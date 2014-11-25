@@ -1,0 +1,829 @@
+[ 2014-11-13T11:25:23+08:00 ] 180.175.186.24 /Admin.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+NOTIC: [8] Undefined index: 089203d4f2bc8c9669a06003ed5694b9 /home/www/hh85/daiyun/Source/Extend/Library/ORG/Util/RBAC.class.php 第 176 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /home/www/hh85/daiyun/Source/Extend/Library/ORG/Util/RBAC.class.php 第 180 行.
+NOTIC: [8] Undefined index: uid /home/www/hh85/daiyun/admin/Lib/Action/CommonAction.class.php 第 13 行.
+
+[ 2014-11-13T11:25:23+08:00 ] 180.175.186.24 /Admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013847s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013910s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001237s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001294s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001227s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005196s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001487s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001546s ]
+
+[ 2014-11-13T11:25:23+08:00 ] 180.175.186.24 /Admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+
+[ 2014-11-13T11:25:49+08:00 ] 180.175.186.24 /Admin.php?m=Public&a=checkLogin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009436s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009499s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000314s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000336s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000263s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000383s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001442s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000533s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000582s ]
+
+[ 2014-11-13T11:25:52+08:00 ] 180.175.186.24 /Admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006522s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000338s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000344s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000269s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001496s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000522s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000573s ]
+
+[ 2014-11-13T11:25:52+08:00 ] 180.175.186.24 /Admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+
+[ 2014-11-13T11:26:06+08:00 ] 180.175.186.24 /Admin.php?m=Public&a=checkLogin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `hh85_admin` [ RunTime:0.027345s ]
+SQL: SELECT * FROM `hh85_admin` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.001065s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /home/www/hh85/daiyun/admin/Lib/Action/PublicAction.class.php 第 37 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005874s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000322s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000357s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000240s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001464s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000516s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2014-11-13T11:26:08+08:00 ] 180.175.186.24 /Admin.php?m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.044272s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044376s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000324s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000351s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000244s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001456s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000690s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000772s ]
+
+[ 2014-11-13T11:26:08+08:00 ] 180.175.186.24 /Admin.php?m=Index&a=top
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021824s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021899s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000354s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000337s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000263s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000383s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001492s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000680s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2014-11-13T11:26:08+08:00 ] 180.175.186.24 /Admin.php?m=Index&a=main
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+NOTIC: [8] Undefined variable: quanxian /home/www/hh85/daiyun/admin/Lib/Action/IndexAction.class.php 第 41 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021002s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000337s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000341s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000422s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001720s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000512s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2014-11-13T11:26:08+08:00 ] 180.175.186.24 /Admin.php?m=Index&a=menu
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+NOTIC: [8] Constant THEME_NAME already defined /home/www/hh85/daiyun/Source/Lib/Core/View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined /home/www/hh85/daiyun/Source/Lib/Core/View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined /home/www/hh85/daiyun/Source/Lib/Core/View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018364s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018447s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000360s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000342s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000242s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001554s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000506s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2014-11-13T11:26:14+08:00 ] 180.175.186.24 /Admin.php?m=Index&a=menu_article
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020893s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021012s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000537s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000344s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000295s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001738s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000547s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2014-11-13T11:26:20+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.026980s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.019456s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028623s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028698s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000359s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000351s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000258s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001522s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000526s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2014-11-13T11:26:24+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=edit&id=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000587s ]
+SQL: SELECT * FROM `hh85_msg_cate` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000194s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: list /home/www/hh85/daiyun/admin/Runtime/Cache/818564edfabe45cfad99e5ad0497b150.php 第 80 行.
+NOTIC: [8] Undefined index: tixing /home/www/hh85/daiyun/admin/Runtime/Cache/818564edfabe45cfad99e5ad0497b150.php 第 93 行.
+NOTIC: [8] Undefined index: content /home/www/hh85/daiyun/admin/Runtime/Cache/818564edfabe45cfad99e5ad0497b150.php 第 102 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027236s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000350s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000347s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001506s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2014-11-13T11:26:33+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000560s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000155s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008582s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008655s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000372s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000331s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000254s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001509s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000567s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2014-11-13T11:26:38+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000842s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000301s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021917s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022004s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000457s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000375s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000423s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001672s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000575s ]
+
+[ 2014-11-13T11:26:43+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000600s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000154s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008642s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000376s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000357s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000242s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001548s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000514s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000564s ]
+
+[ 2014-11-13T11:26:45+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000834s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000308s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011097s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000478s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000358s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000264s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000422s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001707s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000528s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2014-11-13T11:26:51+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=edit&id=16
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000756s ]
+SQL: SELECT * FROM `hh85_msg` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000385s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000149s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014138s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014233s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000364s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000336s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001533s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000523s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2014-11-13T11:27:04+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000548s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000152s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009205s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000391s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000363s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000242s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001593s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000516s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2014-11-13T11:27:05+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=add
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000599s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000153s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009444s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000412s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000354s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000256s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001612s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000514s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2014-11-13T11:27:07+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000770s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000300s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010717s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000417s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000346s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000240s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001570s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000567s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000635s ]
+
+[ 2014-11-13T11:27:08+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=edit&id=19
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000747s ]
+SQL: SELECT * FROM `hh85_msg` WHERE ( id=19 ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000493s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000135s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009177s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000353s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000324s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000237s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000388s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001461s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000500s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000552s ]
+
+[ 2014-11-13T11:27:11+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000582s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000165s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008630s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000388s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000345s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000255s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001556s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000516s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2014-11-13T11:27:12+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000765s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000297s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011927s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012021s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000560s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000376s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000256s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001761s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000615s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2014-11-13T11:27:18+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=edit&id=14
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000814s ]
+SQL: SELECT * FROM `hh85_msg` WHERE ( id=14 ) LIMIT 1   [ RunTime:0.000228s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000389s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000141s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010142s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000374s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000370s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000252s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001557s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000515s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2014-11-13T11:27:20+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000754s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000143s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000314s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010659s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010720s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000410s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000335s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000265s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000409s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001567s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000523s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2014-11-13T11:27:24+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=edit&id=2
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000756s ]
+SQL: SELECT * FROM `hh85_msg` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000399s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000138s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009204s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000368s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000330s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000259s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001503s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000517s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2014-11-13T11:27:26+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000773s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000296s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011377s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000428s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000374s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001616s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000516s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000579s ]
+
+[ 2014-11-13T11:28:54+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000778s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000292s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010614s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000411s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000353s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001594s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000569s ]
+
+[ 2014-11-13T11:28:57+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `hh85_msg` [ RunTime:0.000758s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_msg` LIMIT 1   [ RunTime:0.000134s ]
+SQL: SELECT * FROM `hh85_msg` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000313s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010730s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010793s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000407s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000351s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001553s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000488s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000564s ]
+
+[ 2014-11-13T11:28:58+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=add
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000560s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000169s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007486s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007554s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000361s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000337s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000243s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000388s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001495s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000530s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2014-11-13T11:29:02+08:00 ] 180.175.186.24 /Admin.php?m=MsgCate&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000577s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000153s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+NOTIC: [8] Undefined index: level /home/www/hh85/daiyun/admin/Runtime/Cache/974995274876d32fbbcf610a23f60ac5.php 第 277 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008694s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008754s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000374s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000351s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000243s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001526s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000507s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2014-11-13T11:29:04+08:00 ] 180.175.186.24 /Admin.php?m=Msg&a=add
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `hh85_msg_cate` [ RunTime:0.000603s ]
+SQL: SELECT * FROM `hh85_msg_cate`  [ RunTime:0.000157s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007557s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007632s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000363s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000339s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000250s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001514s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000534s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2014-11-13T11:29:14+08:00 ] 180.175.186.24 /Admin.php?m=User&a=add
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 41 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 47 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 51 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 56 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 60 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 64 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 68 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 72 行.
+NOTIC: [8] Undefined variable: li /home/www/hh85/daiyun/admin/Runtime/Cache/5bfefd15268d18244dfb087a531f6a80.php 第 77 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007840s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007897s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000351s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000329s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000402s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001489s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000517s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2014-11-13T11:29:20+08:00 ] 180.175.186.24 /Admin.php?m=User&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000886s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_user` LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT * FROM `hh85_user` ORDER BY uid DESC LIMIT 0,20   [ RunTime:0.000277s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+NOTIC: [8] Undefined index: nickname /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 255 行.
+NOTIC: [8] Undefined index: creat_time /home/www/hh85/daiyun/admin/Runtime/Cache/db47b7ae6f1c73035eb3910c38bf8969.php 第 257 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.025055s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025124s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000407s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000350s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000259s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001731s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000919s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001074s ]
+
+[ 2014-11-13T11:29:26+08:00 ] 180.175.186.24 /Admin.php?m=House&a=add
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.037028s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037150s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000594s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000533s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000350s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002129s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000727s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2014-11-13T11:29:28+08:00 ] 180.175.186.24 /Admin.php?m=House&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `hh85_house` [ RunTime:0.000802s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_house` LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT * FROM `hh85_house` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000213s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 273 行.
+NOTIC: [8] Undefined index: status /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 275 行.
+NOTIC: [8] Undefined index: username /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 273 行.
+NOTIC: [8] Undefined index: status /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 275 行.
+NOTIC: [8] Undefined index: username /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 273 行.
+NOTIC: [8] Undefined index: status /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 275 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011300s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000574s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000379s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000276s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001859s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000604s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2014-11-13T11:29:29+08:00 ] 180.175.186.24 /Admin.php?m=House&a=edit&id=2
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `hh85_house` [ RunTime:0.000822s ]
+SQL: SELECT * FROM `hh85_house` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000301s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018575s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018660s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000382s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000361s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000255s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001591s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2014-11-13T11:32:36+08:00 ] 180.175.186.24 /Admin.php?m=House&a=add
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007748s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000419s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000366s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000312s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000423s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001738s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000573s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000627s ]
+
+[ 2014-11-13T11:32:39+08:00 ] 180.175.186.24 /Admin.php?m=House&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `hh85_house` [ RunTime:0.000828s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_house` LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT * FROM `hh85_house` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000211s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 273 行.
+NOTIC: [8] Undefined index: status /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 275 行.
+NOTIC: [8] Undefined index: username /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 273 行.
+NOTIC: [8] Undefined index: status /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 275 行.
+NOTIC: [8] Undefined index: username /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 273 行.
+NOTIC: [8] Undefined index: status /home/www/hh85/daiyun/admin/Runtime/Cache/094258d3429f42fe8f938a7bf270f0b6.php 第 275 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009550s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000371s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000329s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000239s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000409s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001544s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000507s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000557s ]
+
+[ 2014-11-13T11:32:50+08:00 ] 180.175.186.24 /Admin.php?m=House&a=edit&id=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `hh85_house` [ RunTime:0.000751s ]
+SQL: SELECT * FROM `hh85_house` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000228s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008112s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008177s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000378s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000340s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000236s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000379s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001505s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000553s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000605s ]
+

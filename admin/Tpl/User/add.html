@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>编辑</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+<script language="javascript">
+
+
+function callSubMethod(){
+  var str=window.showModalDialog("{:U('Upload/index')}","","dialogWidth=400px;dialogHeight=200px;toolbar=no;scroll=yes;");
+  document.getElementById('avatar').value=str;
+
+}
+
+
+
+</script>
+
+
+</head>
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif' >
+
+<!--  快速转换位置按钮  -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+<tr>
+ <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td align="center">添加信息</td>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+  
+<!--  内容列表   -->
+<form name="form2" onSubmit="return CheckForm();" action="" method="post" >
+  <table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
+  <tr>
+    <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;用户名：</td>
+    <td bgcolor="#FFFFFF"><input name="username" type="text" id="name" style="height:22px; width:200px;" value="{$li['username']}"></td>
+    </tr>
+
+
+  <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;真名：</td>
+    <td bgcolor="#FFFFFF"><input name="name" type="text" id="name" style="height:22px; width:100px;" value="{$li['name']}"></td>
+  </tr>
+   <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;头像：</td>
+    <td bgcolor="#FFFFFF"> <input name="avatar" type="text" id="avatar" style="height:22px; width:200px;" value="{$li['avatar']}">
+   <input  type="button"  value="上传图片" onClick="callSubMethod();" /></td>
+  </tr> 
+  <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;省份：</td>
+    <td bgcolor="#FFFFFF"><input name="sheng" type="text" id="sheng" style="height:22px; width:100px;" value="{$li['sheng']}"></td>
+  </tr>
+  <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;城市：</td>
+    <td bgcolor="#FFFFFF"><input name="shi" type="text" id="shi" style="height:22px; width:100px;" value="{$li['shi']}"></td>
+  </tr>
+  <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;手机号：</td>
+    <td bgcolor="#FFFFFF"><input name="phone" type="text" id="phone" style="height:22px; width:200px;" value="{$li['photo']}"></td>
+  </tr>
+  <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;城市：</td>
+    <td bgcolor="#FFFFFF"><input name="shi" type="text" id="shi" style="height:22px; width:100px;" value="{$li['shi']}"></td>
+  </tr>
+  <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;孕期：</td>
+    <td bgcolor="#FFFFFF"><input name="yunqi" type="text" id="yunqi" style="height:22px; width:100px;" value="{$li['yunqi']}"></td>
+  </tr>
+  
+   <tr>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;个性签名：</td>
+    <td bgcolor="#FFFFFF"><textarea name="remark" id="remark" style="height:100px; width:200px;">{$li['remark']}</textarea></td>
+  </tr> 
+  <tr>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF"><input type="submit" name="submit" value="修改" id="submit"></td>
+  </tr>
+</table>
+</form>
+
+
+
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+  <tr bgcolor='#EEF4EA'>
+    <td background='skin/images/wbg.gif' align='center'>&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+[ 2014-09-17T14:15:44+08:00 ] 113.214.202.70 /admin.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+NOTIC: [8] Undefined index: 089203d4f2bc8c9669a06003ed5694b9 /home/www/hh85/kehui/Source/Extend/Library/ORG/Util/RBAC.class.php 第 176 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST /home/www/hh85/kehui/Source/Extend/Library/ORG/Util/RBAC.class.php 第 180 行.
+NOTIC: [8] Undefined index: uid /home/www/hh85/kehui/admin/Lib/Action/CommonAction.class.php 第 13 行.
+
+[ 2014-09-17T14:15:49+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007584s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000362s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000352s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000274s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001572s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000537s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2014-09-17T14:15:49+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+
+[ 2014-09-17T14:15:51+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006265s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006329s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000361s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000354s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000264s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001516s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000611s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2014-09-17T14:15:51+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+
+[ 2014-09-17T14:15:53+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008553s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000420s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000424s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000291s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001749s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000527s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000578s ]
+
+[ 2014-09-17T14:15:53+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+
+[ 2014-09-17T14:15:53+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006593s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006691s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000400s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000359s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000295s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000412s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001625s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000549s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000604s ]
+
+[ 2014-09-17T14:15:53+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+
+[ 2014-09-17T14:15:53+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006419s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006479s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000397s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000347s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000262s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000421s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001581s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000545s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2014-09-17T14:15:53+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+
+[ 2014-09-17T14:36:12+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006143s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006203s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000446s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000339s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001607s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000504s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2014-09-17T14:36:12+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+
+[ 2014-09-17T14:54:03+08:00 ] 113.214.202.70 /admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006261s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006329s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000359s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000351s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000514s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001634s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000542s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000592s ]
+
+[ 2014-09-17T14:54:03+08:00 ] 113.214.202.70 /admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+
+[ 2014-09-17T14:54:09+08:00 ] 113.214.202.70 /admin.php?m=Public&a=checkLogin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `hh85_admin` [ RunTime:0.019777s ]
+SQL: SELECT * FROM `hh85_admin` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.039018s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /home/www/hh85/kehui/admin/Lib/Action/PublicAction.class.php 第 37 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007428s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007513s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000347s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000357s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000317s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001576s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000564s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2014-09-17T14:54:10+08:00 ] 113.214.202.70 /admin.php?m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015842s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015925s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000371s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000358s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000270s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001568s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000546s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2014-09-17T14:54:10+08:00 ] 113.214.202.70 /admin.php?m=Index&a=top
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031903s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031974s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000383s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000384s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000268s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001590s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000576s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000626s ]
+
+[ 2014-09-17T14:54:11+08:00 ] 113.214.202.70 /admin.php?m=Index&a=menu
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+NOTIC: [8] Constant THEME_NAME already defined /home/www/hh85/kehui/Source/Lib/Core/View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined /home/www/hh85/kehui/Source/Lib/Core/View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined /home/www/hh85/kehui/Source/Lib/Core/View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008075s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008138s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000348s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000352s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000279s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001537s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000524s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000575s ]
+
+[ 2014-09-17T14:54:11+08:00 ] 113.214.202.70 /admin.php?m=Index&a=main
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+NOTIC: [8] Undefined variable: quanxian /home/www/hh85/kehui/admin/Lib/Action/IndexAction.class.php 第 41 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007417s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000354s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000349s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000268s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001527s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000565s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2014-09-17T14:54:12+08:00 ] 113.214.202.70 /admin.php?m=Index&a=menu_article
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009096s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000389s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000355s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000264s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000436s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001591s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000540s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2014-09-17T14:54:13+08:00 ] 113.214.202.70 /admin.php?m=Info&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `hh85_info` [ RunTime:0.000461s ]
+ERR: 1146:Table 'kehui.hh85_info' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `hh85_info`
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_info` LIMIT 1   [ RunTime:0.000105s ]
+ERR: 1146:Table 'kehui.hh85_info' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `hh85_info` LIMIT 1  
+SQL: SELECT * FROM `hh85_info` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000104s ]
+ERR: 1146:Table 'kehui.hh85_info' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `hh85_info` ORDER BY createtime DESC LIMIT 0,20  
+NOTIC: [2] Invalid argument supplied for foreach() /home/www/hh85/kehui/admin/Lib/Action/InfoAction.class.php 第 17 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010705s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010785s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000392s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000359s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001603s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000522s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2014-09-17T14:54:16+08:00 ] 113.214.202.70 /admin.php?m=Menu&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `hh85_menu` [ RunTime:0.000470s ]
+ERR: 1146:Table 'kehui.hh85_menu' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `hh85_menu`
+SQL: SELECT * FROM `hh85_menu`  [ RunTime:0.000095s ]
+ERR: 1146:Table 'kehui.hh85_menu' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `hh85_menu` 
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008680s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000347s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000356s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000298s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001551s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000547s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2014-09-17T14:54:16+08:00 ] 113.214.202.70 /admin.php?m=Company&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `hh85_company` [ RunTime:0.031764s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_company` LIMIT 1   [ RunTime:0.000172s ]
+SQL: SELECT * FROM `hh85_company` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000173s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010413s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010500s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000367s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000352s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000258s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000401s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001523s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000518s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2014-09-17T15:00:38+08:00 ] 113.214.202.70 /admin.php?m=Index&a=menu
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+NOTIC: [8] Constant THEME_NAME already defined /home/www/hh85/kehui/Source/Lib/Core/View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined /home/www/hh85/kehui/Source/Lib/Core/View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined /home/www/hh85/kehui/Source/Lib/Core/View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006463s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000345s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000362s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000274s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001520s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000624s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2014-09-17T15:00:39+08:00 ] 113.214.202.70 /admin.php?m=Config&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM `hh85_webconfig` [ RunTime:0.000481s ]
+ERR: 1146:Table 'kehui.hh85_webconfig' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `hh85_webconfig`
+SQL: SELECT * FROM `hh85_webconfig` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000109s ]
+ERR: 1146:Table 'kehui.hh85_webconfig' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `hh85_webconfig` WHERE ( id=1 ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008298s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008372s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000359s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000394s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000256s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001567s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000538s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000590s ]
+
+[ 2014-09-17T15:01:10+08:00 ] 113.214.202.70 /admin.php?m=Config&a=update
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /home/www/hh85/kehui/admin/Lib/Action/ConfigAction.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `hh85_webconfig` [ RunTime:0.000459s ]
+ERR: 1146:Table 'kehui.hh85_webconfig' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `hh85_webconfig`
+SQL: UPDATE `hh85_webconfig` SET `site_name`='科慧电脑',`site_url`='',`address`='',`site_mail`='',`guhua`='',`chuanzhen`='',`mobile`='',`lianxiren`='',`site_tj`='',`jianjie`='',`Submit`='确认',`createtime`=1410937270 WHERE ( id=1 ) [ RunTime:0.000130s ]
+ERR: 1146:Table 'kehui.hh85_webconfig' doesn't exist
+ [ SQL语句 ] : UPDATE `hh85_webconfig` SET `site_name`='科慧电脑',`site_url`='',`address`='',`site_mail`='',`guhua`='',`chuanzhen`='',`mobile`='',`lianxiren`='',`site_tj`='',`jianjie`='',`Submit`='确认',`createtime`=1410937270 WHERE ( id=1 )
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006054s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006137s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000333s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000343s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000270s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000414s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001530s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000557s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000608s ]
+

@@ -1,0 +1,338 @@
+﻿<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>网站评论管理</title>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+
+<script language="javascript">
+
+function viewArc(aid){
+
+	if(aid==0) aid = getOneItem();
+
+	window.open("archives.asp?aid="+aid+"&action=viewArchives");
+
+}
+
+function editArc(aid){
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=editArchives";
+
+}
+
+function updateArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=makeArchives&qstr="+qstr+"";
+
+}
+
+function checkArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=checkArchives&qstr="+qstr+"";
+
+}
+
+function moveArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=moveArchives&qstr="+qstr+"";
+
+}
+
+function adArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=commendArchives&qstr="+qstr+"";
+
+}
+
+function delArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
+
+}
+
+
+
+//获得选中文件的文件名
+
+function getCheckboxItem()
+
+{
+
+	var allSel="";
+
+	if(document.form2.id.value) return document.form2.id.value;
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(document.form2.id[i].checked)
+
+		{
+
+			if(allSel=="")
+
+				allSel=document.form2.id[i].value;
+
+			else
+
+				allSel=allSel+","+document.form2.id[i].value;
+
+		}
+
+	}
+
+	return allSel;
+
+}
+
+
+
+//获得选中其中一个的id
+
+function getOneItem()
+
+{
+
+	var allSel="";
+
+	if(document.form2.id.value) return document.form2.id.value;
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(document.form2.id[i].checked)
+
+		{
+
+				allSel = document.form2.id[i].value;
+
+				break;
+
+		}
+
+	}
+
+	return allSel;
+
+}
+
+function selAll()
+
+{
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(!document.form2.id[i].checked)
+
+		{
+
+			document.form2.id[i].checked=true;
+
+		}
+
+	}
+
+}
+
+function noSelAll()
+
+{
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(document.form2.id[i].checked)
+
+		{
+
+			document.form2.id[i].checked=false;
+
+		}
+
+	}
+
+}
+
+</script>
+
+</head>
+
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+
+
+<!--  快速转换位置按钮  -->
+
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+
+<tr>
+
+ <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+  <td align="center">
+
+    <strong>评论内容管理    </strong></td>
+
+ </tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+  
+
+<!--  内容列表   -->
+
+<form name="form2">
+
+
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+
+<tr bgcolor="#E7E7E7">
+
+	<td height="24" colspan="19" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;评论列表&nbsp;</td>
+
+</tr>
+
+<tr align="center" bgcolor="#FAFAF1" height="22">
+
+	<td width="6%" height="28">ID</td>
+
+	<td width="4%">选择</td>
+
+	<td width="28%" align="left">标题名</td>
+
+	<td width="20%" bgcolor="#FAFAF1">所属店铺</td>
+     <td width="20%" bgcolor="#FAFAF1">评论人</td>
+	<td width="8%" align="center">状态</td>
+	<td width="8%" align="center">评价</td>
+
+
+        <td>操作</td>
+
+</tr>
+
+<volist name="list" id="vo">
+
+<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
+
+	<td>{$vo['id']}</td>
+
+	<td><input name="id" type="checkbox" id="id" value="{$vo['id']}" class="np"></td>
+
+	<td align="left">&nbsp;<a href="__URL__/edit/id/{$vo['id']}"><u style="text-decoration:none;">
+
+	{$vo['content']|substr=0,30}</u></a></td>
+
+
+
+	<td align="left">{$vo['company_title']}</td>
+    <td width="20%" bgcolor="#FAFAF1">
+     {$vo['username']}
+    </td>
+
+	<td align="center"><in name="vo.status" value="1">启用<else/>禁用</in></td>
+	<td width="8%" align="center">
+       <switch name="vo.evaluate">
+    <case value="1">好评</case>
+    <case value="0">中评</case>
+    <default />差评
+</switch>
+    </td>
+	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑</a> | <eq name="vo['status']" value="1">已审核<else/><a href="{:U('shenhe',array('id'=>$vo['id']))}">未审核</a></eq>
+
+ |</td>
+
+</tr></volist>
+
+
+
+
+
+<tr bgcolor="#FAFAF1">
+
+<td height="28" colspan="19">
+
+	&nbsp;
+
+	<a href="javascript:selAll()" class="coolbg">全选</a>
+
+	<a href="javascript:noSelAll()" class="coolbg">取消</a>
+
+	<a href="javascript:delArc(0)" class="coolbg">&nbsp;删除&nbsp;</a></td>
+
+</tr>
+
+
+
+<tr align="right" bgcolor="#EEF4EA">
+
+	<td height="36" colspan="19" align="center"><!--翻页代码 --></td>
+
+</tr>
+
+</table>
+
+
+
+</form>
+
+
+
+
+
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+
+  <tr bgcolor='#EEF4EA'>
+
+    <td background='skin/images/wbg.gif' align='center'>&nbsp;</td>
+
+  </tr>
+
+</table>
+
+
+
+</body>
+
+</html>

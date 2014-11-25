@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>文件上传</title>
+
+<script language="javascript" type="text/javascript"> 
+
+function subMethod(){
+
+
+
+
+
+  window.returnValue =document.getElementById('tishi').innerHTML ;//通过window的这个对象将值返回，也可以返回一个值
+
+
+
+  top.close();//关闭子窗口函数
+
+
+
+}  
+
+
+
+function notice(s) 
+
+        {
+
+		    //通知用户文件上传成功 
+
+        
+
+	            document.getElementById('tishi').innerHTML=s;
+
+        } 
+
+</script> 
+
+</head>
+
+
+
+<body><form target="fileUp" method="POST" action="{:U('upload')}" enctype="multipart/form-data"> 
+
+选择上传的文件:<input type="file" name="upfile" /> 
+
+<input type="submit" value="上传" /> 
+
+  <input type="button" value="确认"  onclick="subMethod();"/>
+
+
+
+</form> 
+
+  <div id="tishi">  </div>
+
+<iframe width="0px" height="0px" name="fileUp"></iframe> 
+
+</body>
+
+</html>
+

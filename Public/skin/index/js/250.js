@@ -1,0 +1,2 @@
+document.writeln("<script type=\"text/javascript\"> /*主题广告250*250，创建于2010-5-31*/ var cpro_id = \'u35305\';</script>");
+document.writeln("<script type=\"text/javascript\" src=\"http://cpro.baidu.com/cpro/ui/c.js\"></script>");

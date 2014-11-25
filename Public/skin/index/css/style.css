@@ -1,0 +1,10 @@
+
+* {margin:0px; padding:0px; list-style: none;}
+#box {width:400px; height:200px; background:#fff;  position: relative; overflow: hidden;z-index:5000;}
+#list {position:absolute; left:0; top:0;}
+#list li {width:400px; height:200px; cursor: pointer;}
+#num {position: absolute; right:10px; bottom:10px;}
+#num li {width:16px; height:16px; float:left; margin-right:2px; color:#fff; cursor: pointer; font-size: 12px; font-family:'Arial'; line-height:16px; text-align: center; border:1px solid #fff;}
+.active {background:#ff6600;}
+
+#foot_bm a,p,p a{font-size:12px;color:#666;}

@@ -1,0 +1,284 @@
+[ 2014-06-23T11:14:03+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+NOTIC: [8] Undefined index: 089203d4f2bc8c9669a06003ed5694b9 H:\www\zhainali.com\Source\Extend\Library\ORG\Util\RBAC.class.php 第 176 行.
+NOTIC: [8] Undefined index: _ACCESS_LIST H:\www\zhainali.com\Source\Extend\Library\ORG\Util\RBAC.class.php 第 180 行.
+NOTIC: [8] Undefined index: uid H:\www\zhainali.com\admin\Lib\Action\CommonAction.class.php 第 13 行.
+
+[ 2014-06-23T11:14:03+08:00 ] 127.0.0.1 /Admin.php?m=Public&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021552s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021654s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000528s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000512s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000394s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002241s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000995s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001115s ]
+
+[ 2014-06-23T11:14:03+08:00 ] 127.0.0.1 /Admin.php?m=Public&a=verify
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001927s ]
+
+[ 2014-06-23T11:14:11+08:00 ] 127.0.0.1 /Admin.php?m=Public&a=checkLogin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `hh85_admin` [ RunTime:0.003188s ]
+SQL: SELECT * FROM `hh85_admin` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.017944s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027844s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000596s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000575s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000447s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000615s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002463s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000691s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2014-06-23T11:14:17+08:00 ] 127.0.0.1 /Admin.php?m=Public&a=checkLogin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `hh85_admin` [ RunTime:0.003164s ]
+SQL: SELECT * FROM `hh85_admin` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000240s ]
+NOTIC: [2048] mktime() [<a href='function.mktime'>function.mktime</a>]: You should be using the time() function instead H:\www\zhainali.com\admin\Lib\Action\PublicAction.class.php 第 37 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008031s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008130s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000487s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000499s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000381s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002139s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000683s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2014-06-23T11:14:18+08:00 ] 127.0.0.1 /Admin.php?m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.039287s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039577s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000728s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000813s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000584s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000867s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003333s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000891s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001023s ]
+
+[ 2014-06-23T11:14:18+08:00 ] 127.0.0.1 /Admin.php?m=Index&a=main
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004644s ]
+NOTIC: [8] Undefined variable: quanxian H:\www\zhainali.com\admin\Lib\Action\IndexAction.class.php 第 41 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013150s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013482s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001599s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001899s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001170s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001901s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007759s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.003601s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003815s ]
+
+[ 2014-06-23T11:14:18+08:00 ] 127.0.0.1 /Admin.php?m=Index&a=menu
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+NOTIC: [8] Constant THEME_NAME already defined H:\www\zhainali.com\Source\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined H:\www\zhainali.com\Source\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined H:\www\zhainali.com\Source\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014926s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000950s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000712s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000541s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000800s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003306s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000929s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001045s ]
+
+[ 2014-06-23T11:14:18+08:00 ] 127.0.0.1 /Admin.php?m=Index&a=top
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.015038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015343s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.037535s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037692s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000527s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000494s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000384s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000535s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002152s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000563s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2014-06-23T11:14:20+08:00 ] 127.0.0.1 /Admin.php?m=Index&a=menu_article
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017211s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017312s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000527s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000515s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000401s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002218s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000660s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000737s ]
+
+[ 2014-06-23T11:14:21+08:00 ] 127.0.0.1 /Admin.php?m=Comment&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `hh85_comment` [ RunTime:0.003831s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_comment` LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT * FROM `hh85_comment` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.012522s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.003292s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `hh85_company` [ RunTime:0.003417s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000278s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000194s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000161s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000155s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000157s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000156s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000150s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT `title` FROM `hh85_company` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000143s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.038076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038184s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000548s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000500s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000389s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002205s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000627s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000697s ]
+
+[ 2014-06-23T11:14:27+08:00 ] 127.0.0.1 /Admin.php?m=Company&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `hh85_company` [ RunTime:0.002871s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_company` LIMIT 1   [ RunTime:0.000172s ]
+SQL: SELECT * FROM `hh85_company` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000269s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: status H:\www\zhainali.com\admin\Runtime\Cache\ce6cb68b3efd615f33536ac1c9ea3abb.php 第 275 行.
+NOTIC: [8] Undefined index: status H:\www\zhainali.com\admin\Runtime\Cache\ce6cb68b3efd615f33536ac1c9ea3abb.php 第 275 行.
+NOTIC: [8] Undefined index: status H:\www\zhainali.com\admin\Runtime\Cache\ce6cb68b3efd615f33536ac1c9ea3abb.php 第 275 行.
+NOTIC: [8] Undefined index: status H:\www\zhainali.com\admin\Runtime\Cache\ce6cb68b3efd615f33536ac1c9ea3abb.php 第 275 行.
+NOTIC: [8] Undefined index: status H:\www\zhainali.com\admin\Runtime\Cache\ce6cb68b3efd615f33536ac1c9ea3abb.php 第 275 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031467s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000522s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000477s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000398s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002151s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000850s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000941s ]
+
+[ 2014-06-23T11:14:28+08:00 ] 127.0.0.1 /Admin.php?m=Info&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `hh85_info` [ RunTime:0.003081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_info` LIMIT 1   [ RunTime:0.000161s ]
+SQL: SELECT * FROM `hh85_info` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.003127s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=5 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000175s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000163s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012337s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000979s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000460s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000334s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002608s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000654s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2014-06-23T11:14:31+08:00 ] 127.0.0.1 /Admin.php?m=Info&a=shenhe&id=4
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `hh85_info` [ RunTime:0.003545s ]
+SQL: UPDATE `hh85_info` SET `status`=1 WHERE ( id=4 ) [ RunTime:0.000441s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007332s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000530s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000542s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000433s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000679s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002461s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001069s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001174s ]
+
+[ 2014-06-23T11:14:32+08:00 ] 127.0.0.1 /Admin.php?m=Info&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `hh85_info` [ RunTime:0.003369s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hh85_info` LIMIT 1   [ RunTime:0.000160s ]
+SQL: SELECT * FROM `hh85_info` ORDER BY createtime DESC LIMIT 0,20   [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.003142s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=5 ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000150s ]
+SQL: SELECT `username` FROM `hh85_user` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000147s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015961s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001072s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001316s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000668s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000882s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004253s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000695s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000765s ]
+

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0px;
+	background-color: #8FBC8F;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+
+#mainbox{ width:990px; margin:0 auto; margin-top:10px;}
+.mainleft{ width:675px; float:left;}
+.nav{ width:650px; margin:0 auto; height:28px; line-height:28px;}
+h2{ text-align:center;}
+.info{ width:650px; border-bottom:1px dashed #CCCCCC; border-top:1px dashed #CCCCCC;  margin:0 auto; text-align:center; font-size:12px; }
+
+.jieshao{ width:650px;margin:0 auto; }
+.Related{ width:650px;margin:0 auto;}
+.title{ border-bottom:2px solid #669933; width:650px; height:28px; line-height:28px; float:left;}
+.content{ width:650px; float:left;}
+.content a{ width:49%; float:left; height:28px; line-height:28px; color:#333333; font-size:14px;}
+.mainright{ width:300px; float:left; margin-left:10px;}
+.t1{ background-image:url(../images/t1.gif); height:32px; line-height:32px;}
+.t1 strong{ color:#FFFFFF; margin-left:30px;}
+.c1{ width:100%; float:left; font-size:14px; line-height:25px;}
+.c1 a{ color:#333333;}

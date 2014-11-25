@@ -1,0 +1,327 @@
+﻿<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>帖子管理</title>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+
+<script language="javascript">
+
+function viewArc(aid){
+
+	if(aid==0) aid = getOneItem();
+
+	window.open("archives.asp?aid="+aid+"&action=viewArchives");
+
+}
+
+function editArc(aid){
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=editArchives";
+
+}
+
+function updateArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=makeArchives&qstr="+qstr+"";
+
+}
+
+function checkArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=checkArchives&qstr="+qstr+"";
+
+}
+
+function moveArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=moveArchives&qstr="+qstr+"";
+
+}
+
+function adArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="archives.asp?aid="+aid+"&action=commendArchives&qstr="+qstr+"";
+
+}
+
+function delArc(aid){
+
+	var qstr=getCheckboxItem();
+
+	if(aid==0) aid = getOneItem();
+
+	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
+
+}
+
+
+
+//获得选中文件的文件名
+
+function getCheckboxItem()
+
+{
+
+	var allSel="";
+
+	if(document.form2.id.value) return document.form2.id.value;
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(document.form2.id[i].checked)
+
+		{
+
+			if(allSel=="")
+
+				allSel=document.form2.id[i].value;
+
+			else
+
+				allSel=allSel+","+document.form2.id[i].value;
+
+		}
+
+	}
+
+	return allSel;
+
+}
+
+
+
+//获得选中其中一个的id
+
+function getOneItem()
+
+{
+
+	var allSel="";
+
+	if(document.form2.id.value) return document.form2.id.value;
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(document.form2.id[i].checked)
+
+		{
+
+				allSel = document.form2.id[i].value;
+
+				break;
+
+		}
+
+	}
+
+	return allSel;
+
+}
+
+function selAll()
+
+{
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(!document.form2.id[i].checked)
+
+		{
+
+			document.form2.id[i].checked=true;
+
+		}
+
+	}
+
+}
+
+function noSelAll()
+
+{
+
+	for(i=0;i<document.form2.id.length;i++)
+
+	{
+
+		if(document.form2.id[i].checked)
+
+		{
+
+			document.form2.id[i].checked=false;
+
+		}
+
+	}
+
+}
+
+</script>
+
+</head>
+
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+
+
+<!--  快速转换位置按钮  -->
+
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+
+<tr>
+
+ <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+  <td align="center">帖子管理</td>
+
+ </tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+  
+
+<!--  内容列表   -->
+
+<form name="form2">
+
+
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+
+<tr bgcolor="#E7E7E7">
+
+	<td height="24" colspan="10" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;文档列表&nbsp;</td>
+
+</tr>
+
+<tr align="center" bgcolor="#FAFAF1" height="22">
+
+
+
+	<td width="9%">选择</td>
+
+	<td width="34%">内容标题</td>
+
+	<td width="18%">录入时间</td>
+
+
+
+
+
+	<td width="13%">发布人</td>
+
+		<td width="11%">状态</td>
+
+	<td width="15%">操作</td>
+
+</tr>
+
+<foreach name="list" item="vo">
+
+<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
+
+	
+
+	<td><input name="id" type="checkbox" id="id"  value="{$vo['id']}" class="np"></td>
+
+	<td align="left"><a href='{:U('edit',array('id'=>$vo['id']))}'><u>{$vo.title}</u></a></td>
+
+	<td>{$vo.createtime|date="Y-m-d",###}</td>
+
+
+
+
+
+
+
+	<td>admin</td>
+
+	<td><eq name="vo.status" value="0"><a href="{:U('shenhe',array('id'=>$vo['id']))}"><span style="color:#FF0000;">审核中</span></a>
+
+	  <else/>已通过</eq>
+
+</td>
+
+	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑 </a> | <a href="{:U('del',array('id'=>$vo['id']))}">删除</a></td>
+
+</tr></foreach>
+
+
+
+
+
+<tr bgcolor="#FAFAF1">
+
+<td height="28" colspan="10">
+
+	&nbsp;
+
+	<a href="javascript:selAll()" class="coolbg">全选</a>
+
+	<a href="javascript:noSelAll()" class="coolbg">取消</a>
+
+	<a href="javascript:delArc(0)" class="coolbg">&nbsp;删除&nbsp;</a>
+
+</td>
+
+</tr>
+
+
+
+<tr align="right" bgcolor="#EEF4EA">
+
+	<td height="36" colspan="10" align="center"><!--翻页代码 -->{$page}</td>
+
+</tr>
+
+</table>
+
+
+
+</form>
+
+
+
+
+
+</body>
+
+</html>

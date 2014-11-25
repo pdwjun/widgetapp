@@ -1,0 +1,161 @@
+﻿<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>网站参数配置</title>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+
+
+</head>
+
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+
+
+<!--  快速转换位置按钮  -->
+
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+
+<tr>
+
+ <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+  <td align="center">
+
+    <strong>网站参数管理    </strong></td>
+
+ </tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+  
+
+<!--  内容列表   -->
+
+<form name="form2" action="{:U('update')}" method="post">
+
+  <table width="98%" border="0" align="center" bgcolor="#CBD8AC">
+
+    <tr>
+
+      <td width="150" height="28" bgcolor="#FFFFFF">&nbsp;网站名:</td>
+
+      <td bgcolor="#FFFFFF"><input name="site_name" type="text" id="site_name"  style="height:22px; width:200px;" value="{$c['site_name']}"></td>
+
+    </tr>
+
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;网站地址:</td>
+
+      <td bgcolor="#FFFFFF"><input name="site_url" type="text" id="site_url"  style="height:22px; width:400px;" value="{$c['site_url']}"></td>
+
+    </tr>
+        <tr>
+
+      <td width="150" height="28" bgcolor="#FFFFFF">&nbsp;公司地址:</td>
+
+      <td bgcolor="#FFFFFF"><input name="address" type="text" id="address"  style="height:22px; width:400px;" value="{$c['address']}"></td>
+
+    </tr>
+
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;电子邮箱:</td>
+
+      <td bgcolor="#FFFFFF"><input name="site_mail" type="text" id="site_mail"  style="height:22px; width:200px;" value="{$c['site_mail']}"></td>
+
+    </tr>
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;固定电话：</td>
+
+      <td bgcolor="#FFFFFF"><label>
+        <input name="guhua" type="text" id="guhua"  style="height:22px; width:200px;" value="{$c['guhua']}">
+      </label></td>
+
+    </tr>
+	
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;传真：</td>
+
+      <td bgcolor="#FFFFFF"><input name="chuanzhen" type="text" id="chuanzhen"  style="height:22px; width:200px;" value="{$c['chuanzhen']}"></td>
+
+    </tr>
+	    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;手机：</td>
+
+      <td bgcolor="#FFFFFF"><input name="mobile" type="text" id="mobile"  style="height:22px; width:200px;" value="{$c['mobile']}"></td>
+
+    </tr>
+	
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;联系人：</td>
+
+      <td bgcolor="#FFFFFF"><input name="lianxiren" type="text" id="lianxiren"  style="height:22px; width:200px;" value="{$c['lianxiren']}"></td>
+
+    </tr>
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;网站统计代码:</td>
+
+      <td bgcolor="#FFFFFF"><textarea name="site_tj" id="site_tj" style="height:100px; width:400px;">{$c['site_tj']}</textarea></td>
+
+    </tr>
+
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;企业简介:</td>
+
+      <td bgcolor="#FFFFFF"><textarea name="jianjie" id="jianjie" style="height:100px; width:400px;">{$c['jianjie']}</textarea></td>
+
+    </tr>
+    <tr>
+
+      <td height="28" bgcolor="#FFFFFF">&nbsp;</td>
+
+      <td bgcolor="#FFFFFF"><input type="submit" name="Submit" value="确认"></td>
+
+    </tr>
+
+
+
+  </table>
+
+</form>
+
+
+
+
+
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+
+  <tr bgcolor='#EEF4EA'>
+
+    <td background='skin/images/wbg.gif' align='center'>&nbsp;</td>
+
+  </tr>
+
+</table>
+
+
+
+</body>
+
+</html>

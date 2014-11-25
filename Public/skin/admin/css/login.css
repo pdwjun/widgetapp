@@ -1,0 +1,16 @@
+body,form{margin:0px;padding:0px;}
+div{font-family:Verdana,"";font-size:12px;color:#fff;}
+ul,li{padding:0px;margin:0px;list-style:none; }
+li{height:30px;margin-top:5px;}
+.b_w{width:388px;margin:auto;margin-top:180px;}
+.left{float:left;}
+.right{float:right;}
+.l_t{background:url(../images/l_t.gif);line-height:32px;padding:1px 8px;height:32px;overflow:hidden;}
+.l_title{font-size:14px;font-weight:bold;text-indent:12px;}
+.l_bg{background:url(../images/l_bg.gif);line-height:30px;height:178px;overflow:hidden;}
+.l_user{margin:25px 10px 0 210px;}
+.l_user li{padding:0px!important;padding:4px;}
+.l_f{margin-top:1px;}
+.l_input{border:1px solid #6FAF01;background:#fff;height:16px;}
+.l_bnt{background:url(../images/login_bg.gif);width:53px;height:23px;line-height:23px;border:0px;color:#fff;font-size:12px;padding-bottom:3px;}
+.img{  padding-top:5px; margin-bottom:0px;}

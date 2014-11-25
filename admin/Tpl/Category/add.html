@@ -1,0 +1,142 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>添加分类</title>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+
+	<link rel="stylesheet" href="__ROOT__/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="__ROOT__/kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__ROOT__/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="__ROOT__/kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__ROOT__/kindeditor/plugins/code/prettify.js"></script>
+	<script>
+		KindEditor.ready(function(K) {
+               K.create('textarea[name="content"]', {
+					allowFileManager : true
+
+				});
+	
+	
+		});
+	</script>
+
+</head>
+
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+
+
+<!--  快速转换位置按钮  -->
+
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+
+<tr>
+
+ <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+  <td align="center"><strong>添加孕期内容</strong></td>
+
+ </tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+  
+
+<!--  内容列表   -->
+
+<form name="form2" action="" method="post">
+
+  <table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
+
+  <tr>
+
+    <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;标题：</td>
+
+    <td bgcolor="#FFFFFF"><input name="name" type="text" id="name" style="height:22px; width:200px;"></td>
+
+  </tr>
+
+	  <tr>
+
+    <td height="28" bgcolor="#FFFFFF">&nbsp;所属分类：</td>
+
+    <td bgcolor="#FFFFFF"> 
+    <select name="cid" id="cid">
+       <option value="0">根目录</option>
+       <volist name="list" id="v">
+           <option value="{$v['id']}">{$v['name']}</option>
+       </volist>
+    </select>   </td>
+
+  </tr>
+
+ 
+
+  <tr>
+
+    <td height="28" bgcolor="#FFFFFF">提醒时间：</td>
+
+    <td bgcolor="#FFFFFF"><input name="tixing" type="text" id="tixing"  style="height:22px; width:100px;">
+      （孕期天数） 例:40天</td>
+
+    </tr>
+
+  <tr>
+
+    <td height="28" bgcolor="#FFFFFF">&nbsp;内容介绍：</td>
+
+    <td bgcolor="#FFFFFF"><textarea name="content" id="content" style="width:100%;height:400px;visibility:hidden;"></textarea></td>
+
+  </tr>
+
+
+
+
+
+  <tr>
+
+    <td height="25" bgcolor="#FFFFFF">&nbsp;</td>
+
+    <td bgcolor="#FFFFFF"><input type="submit" name="submit" value="提交"></td>
+
+  </tr>
+
+
+
+</table>
+
+</form>
+
+
+
+
+
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+
+  <tr bgcolor='#EEF4EA'>
+
+    <td background='skin/images/wbg.gif' align='center'>&nbsp;</td>
+
+  </tr>
+
+</table>
+
+
+
+</body>
+
+</html>

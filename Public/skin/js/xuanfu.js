@@ -1,0 +1,2 @@
+document.writeln("<script type=\"text\/javascript\"> \/*120*270，创建于2010-8-5*\/ var cpro_id = \'u137808\';<\/script>");
+document.writeln("<script type=\"text\/javascript\" src=\"http:\/\/cpro.baidu.com\/cpro\/ui\/f.js\"><\/script>")

@@ -1,0 +1,147 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>分类管理</title>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+
+
+
+</head>
+
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+
+
+<!--  快速转换位置按钮  -->
+
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+
+<tr>
+
+ <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+  <td align="center">
+
+    <strong>频道管理    </strong></td>
+
+ </tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+<!--  内容列表   -->
+
+<form name="form2">
+
+
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+
+<tr bgcolor="#E7E7E7">
+
+	<td height="24" colspan="7" background="__PUBLIC__/skin/images/tbg.gif">频道列表&nbsp;</td>
+
+</tr>
+
+<tr align="center" bgcolor="#FAFAF1" height="22">
+
+	<td width="6%" height="28">ID</td>
+
+	<td width="4%">选择</td>
+
+	<td width="28%" align="left">频道名</td>
+
+
+
+
+
+        <td>操作</td>
+
+
+
+</tr>
+
+<volist name="list" id="vo">
+
+<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
+
+	<td>{$vo['id']}</td>
+
+	<td><input name="id" type="checkbox" id="id" value="101" class="np"></td>
+
+	<td align="left">&nbsp;<a href='__URL__/edit/id/{$vo.id}'  "><u style="text-decoration:none;">
+
+	{$vo['name']}</u></a></td>
+
+
+
+
+
+	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑</a> | <a href="{:U('del',array('id'=>$vo['id']))}">删除</a></td>
+
+	
+
+
+
+</tr></volist>
+
+
+
+
+
+<tr bgcolor="#FAFAF1">
+
+<td height="28" colspan="7" bgcolor="#FAFAF1">
+
+	&nbsp;
+
+	<a href="javascript:selAll()" class="coolbg">全选</a>
+
+	<a href="javascript:noSelAll()" class="coolbg">取消</a>
+
+	<a href="javascript:updateArc(0)" class="coolbg" style="display:none;" >&nbsp;更新&nbsp;</a>
+
+	<a href="javascript:checkArc(0)" class="coolbg" style="display:none;">&nbsp;审核&nbsp;</a>
+
+	<a href="javascript:adArc(0)" class="coolbg" style="display:none;">&nbsp;推荐&nbsp;</a>
+
+	<a href="javascript:moveArc(0)" class="coolbg" style="display:none;">&nbsp;移动&nbsp;</a>
+
+	<a href="javascript:delArc(0)" class="coolbg" style="display:none;">&nbsp;删除&nbsp;</a></td>
+
+</tr>
+
+
+
+<tr align="right" bgcolor="#EEF4EA">
+
+	<td height="36" colspan="7" align="center"><!--翻页代码 --></td>
+
+</tr>
+
+</table>
+
+
+
+</form>
+
+
+
+
+
+</body>
+
+</html>

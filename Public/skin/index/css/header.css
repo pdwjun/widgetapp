@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+#TopMenu{ width:990px; height:28px; background-image:url(../images/tools.gif); line-height:28px; float:left; }
+.Top_left{ width:40%; float:left; text-align:left; height:28px; line-height:28px; font-size:12px;}
+.Top_right{ width:60%; float:left; text-align:right; height:28px; line-height:28px; font-size:12px;}
+#Header{ width:990px; margin: 0 auto; background-color:#FFFFFF; height:80px;}
+.logo{ width:200px; float:left; height:80px; }
+.banner{ width:790px; float:left; height:80px;}
+#Menu{ width:990px; background-image:url(../images/nNavBg.gif); height:43px; margin:0 auto; margin-top:10px;overflow:hidden;}
+#Menu ul{ list-style:none; }
+#Menu ul li{ float:left; width:105px; height:43px;}
+#Menu ul li a{ display:block; float:left; width:100px; height:43px; margin-left:10px; line-height:43px; text-align:center; font-size:16px; color:#FFFFFF;}
+#Menu ul li a:hover{ background-image:url(../images/nav.png); background-repeat:no-repeat; background-position:0 10px; color:#000000; }
+#Menu ul li a.cur{ background-image:url(../images/nav.png); background-repeat:no-repeat; background-position:0 10px; color:#000000; }
