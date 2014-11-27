@@ -48,7 +48,7 @@ header('Access-Control-Allow-Origin: *');
              $authinfo = RBAC::authenticate($map, 'User');
              if(false === $authinfo){
 
-                 $this->error("用户账户不存在");
+                 echo 0;
 
              }else{
                  if($authinfo['password']==I('password',0,'md5')){
@@ -64,7 +64,8 @@ header('Access-Control-Allow-Origin: *');
 
                      RBAC::saveAccessList();
                      //var_dump($_SESSION); exit();
-                     echo 1;
+                     $arr = array('data'=>array('status'=>1,'uid'=>$authinfo['uid'],'yunqi'=>$authinfo['yunqi'],'yuchan'=>$authinfo['yuchan']));
+                     echo json_encode($arr);
 
                  }else{
                      echo 0;
@@ -88,6 +89,23 @@ header('Access-Control-Allow-Origin: *');
       */
      public function reg(){
          if(I('username',0)&&I('password')&&I('yunqi')){
+            //生成认证条件
+             $data=array();
+             $data['username']=I('username');
+             $data['password']=md5(I('password'));
+             $data['yunqi']=I('yunqi');
+
+             $data['status']= 1 ;
+
+             if(!D('User')->create($data)){
+                 echo 0;
+                 //echo D('User')->getError();
+             }else{
+                 $uid = M('User')->add($data);
+
+                 $arr = array('data'=>array('status'=>1,'uid'=>$uid,'yunqi'=>$data['yunqi']));
+                 echo json_encode($arr);
+             }
 
 
 
