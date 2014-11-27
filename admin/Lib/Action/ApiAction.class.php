@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+
  class ApiAction extends CommonAction{
      /*
       *  1  3:              save_comment&id="+id+"&content="+content+"&photo="+photo+"&uid="+uid;
@@ -34,7 +36,7 @@
 	 }
 	 
 	 public function login(){
-         if(I('username',0)&&I('password')){
+  if(I('username',0)&&I('password')){
 
              //生成认证条件
              $map=array();

@@ -1,0 +1,430 @@
+[ 2014-11-27T10:15:40+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admi
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000836s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000328s ]
+
+[ 2014-11-27T10:15:41+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001436s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000764s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000304s ]
+
+[ 2014-11-27T10:15:42+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000797s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000292s ]
+
+[ 2014-11-27T10:15:48+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001366s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000825s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000308s ]
+
+[ 2014-11-27T10:15:53+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_date
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001414s ]
+ERR: 非法操作:get_date
+
+[ 2014-11-27T10:16:03+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000781s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000301s ]
+
+[ 2014-11-27T10:17:28+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001676s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000800s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000301s ]
+
+[ 2014-11-27T10:18:06+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001377s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000799s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000310s ]
+
+[ 2014-11-27T10:18:07+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000760s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000293s ]
+
+[ 2014-11-27T10:18:08+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000889s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000294s ]
+
+[ 2014-11-27T10:18:09+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001319s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000896s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000411s ]
+
+[ 2014-11-27T10:18:10+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001369s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000868s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000290s ]
+
+[ 2014-11-27T10:18:10+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001352s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000818s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000315s ]
+
+[ 2014-11-27T10:18:10+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001386s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000808s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000292s ]
+
+[ 2014-11-27T10:18:10+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001572s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000770s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000293s ]
+
+[ 2014-11-27T10:18:10+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001384s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000763s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000286s ]
+
+[ 2014-11-27T10:18:11+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001510s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000797s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000296s ]
+
+[ 2014-11-27T10:18:22+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=dGVzdA%3D%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002366s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000776s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'dGVzdA==' ) LIMIT 1   [ RunTime:0.000293s ]
+
+[ 2014-11-27T10:18:23+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=dGVzdA%3D%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001463s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000775s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'dGVzdA==' ) LIMIT 1   [ RunTime:0.000295s ]
+
+[ 2014-11-27T10:20:45+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=dGVzdA%3D%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000788s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'dGVzdA==' ) LIMIT 1   [ RunTime:0.000288s ]
+
+[ 2014-11-27T10:20:52+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001369s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000865s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000429s ]
+
+[ 2014-11-27T10:21:10+08:00 ] 203.156.231.130 /index.php?m=Api&a=login&username=admin&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000790s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000296s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /alidata/www/meibao/admin/Lib/Action/ApiAction.class.php 第 55 行.
+
+[ 2014-11-27T10:21:19+08:00 ] 203.156.231.130 /index.php?m=Api&a=login&username=admin&password=admin1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001375s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000774s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000308s ]
+
+[ 2014-11-27T10:21:20+08:00 ] 203.156.231.130 /index.php?m=Api&a=login&username=admin&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000765s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000443s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /alidata/www/meibao/admin/Lib/Action/ApiAction.class.php 第 55 行.
+
+[ 2014-11-27T10:28:32+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001419s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000798s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000294s ]
+
+[ 2014-11-27T10:51:01+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000761s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000301s ]
+
+[ 2014-11-27T10:53:28+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002309s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000803s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000292s ]
+
+[ 2014-11-27T10:53:29+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000752s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000576s ]
+
+[ 2014-11-27T10:53:30+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000749s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000292s ]
+
+[ 2014-11-27T10:53:30+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001437s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000826s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000309s ]
+
+[ 2014-11-27T10:53:30+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000757s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000297s ]
+
+[ 2014-11-27T11:17:08+08:00 ] 202.120.209.13 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001544s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000828s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000293s ]
+
+[ 2014-11-27T11:17:53+08:00 ] 202.120.209.13 /index.php?m=Api&a=login&username=YWRtaW4%3D&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001505s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000757s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'YWRtaW4=' ) LIMIT 1   [ RunTime:0.000289s ]
+
+[ 2014-11-27T11:18:07+08:00 ] 202.120.209.13 /index.php?m=Api&a=login&username=admin&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001600s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000786s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000298s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /alidata/www/meibao/admin/Lib/Action/ApiAction.class.php 第 54 行.
+
+[ 2014-11-27T11:18:08+08:00 ] 202.120.209.13 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001520s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:18:08+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001468s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:18:08+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001897s ]
+ERR: 非法操作:get_msg_number
+
+[ 2014-11-27T11:18:50+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_trip&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001589s ]
+ERR: 非法操作:get_trip
+
+[ 2014-11-27T11:18:53+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_trip&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001945s ]
+ERR: 非法操作:get_trip
+
+[ 2014-11-27T11:19:00+08:00 ] 202.120.209.13 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:19:00+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.005006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005552s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:19:00+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001369s ]
+ERR: 非法操作:get_msg_number
+
+[ 2014-11-27T11:19:20+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001392s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:19:20+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.005076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005558s ]
+ERR: 非法操作:get_msg_number
+
+[ 2014-11-27T11:19:20+08:00 ] 202.120.209.13 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001412s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:20:25+08:00 ] 202.120.209.13 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005428s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:20:25+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005383s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:20:25+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001376s ]
+ERR: 非法操作:get_msg_number
+
+[ 2014-11-27T11:20:33+08:00 ] 202.120.209.13 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005404s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:20:33+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:20:33+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001391s ]
+ERR: 非法操作:get_msg_number
+
+[ 2014-11-27T11:20:35+08:00 ] 202.120.209.13 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001441s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:40:26+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=admin&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000762s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000299s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /alidata/www/meibao/admin/Lib/Action/ApiAction.class.php 第 55 行.
+
+[ 2014-11-27T11:40:27+08:00 ] 202.66.158.229 /index.php?m=Api&a=login&username=admin&password=admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+SQL: SHOW COLUMNS FROM `hh85_user` [ RunTime:0.000840s ]
+SQL: SELECT * FROM `hh85_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000296s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead /alidata/www/meibao/admin/Lib/Action/ApiAction.class.php 第 55 行.
+
+[ 2014-11-27T11:40:27+08:00 ] 202.66.158.229 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001398s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:40:27+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001458s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:40:28+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001394s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:40:28+08:00 ] 202.66.158.229 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001411s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:40:28+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001383s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:40:28+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001410s ]
+ERR: 非法操作:get_msg_number
+
+[ 2014-11-27T11:40:31+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_trip&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001385s ]
+ERR: 非法操作:get_trip
+
+[ 2014-11-27T11:40:32+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_date
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001657s ]
+ERR: 非法操作:get_date
+
+[ 2014-11-27T11:40:33+08:00 ] 202.66.158.229 /index.php?m=Api&a=getmsglist&page=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001399s ]
+ERR: 非法操作:getmsglist
+
+[ 2014-11-27T11:40:33+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_user_info&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001444s ]
+ERR: 非法操作:get_user_info
+
+[ 2014-11-27T11:40:33+08:00 ] 202.66.158.229 /index.php?m=Api&a=get_msg_number&uid=undefined
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002727s ]
+ERR: 非法操作:get_msg_number
+
