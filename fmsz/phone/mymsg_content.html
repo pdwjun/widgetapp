@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/project/ui-list.css">
+	<link rel="stylesheet" href="css/project/style.css">
+    <link rel="stylesheet" href="index_content/css/main.css">
+	<script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/zy_json.js"></script>
+	<script src="index_content/js/mymsg.js"></script>
+	<script src="js/scroll.js" ></script>
+</head>
+<body class="um-vp c-wh2" ontouchstart>
+	<div class="ub ub-ver  header">
+		   <div class="ub-f1 " style="height:200px; "></div>
+		  <div class="ub ub-f1 title uinn">
+		  	  <div class="ub-f1" id="username">用户名</div>
+			  <div   id="avatar"  ></div>
+		  </div>
+		  <div class="ub ub-f1 uinn menu">
+		  	 <div class="">隐藏回复 |</div>
+			 <div  onclick="openNewWin('mymsg','mymsg.html')">我的发帖 |</div>
+			  <div  onclick="openNewWin('publish','publish.html')">发布信息</div>
+		  </div>
+		
+	</div>
+
+	<div class="ub ub-ver" id="comment">
+
+	</div>
+</body>
+<script>
+	function userBack(data){
+	  $$("username").innerHTML =data.username;
+	// $$("avatar").style.backgroundImage=data.avatar;
+	$$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.avatar+');"></div>';
+
+}
+
+zy_init();
+window.uexOnload=function(type)
+{
+	if(!type){
+		//uexWindow.setBounce("1");
+		//uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+        //uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
+		setPageBounce(dorpDownUpdate,pullUpUpdate);
+
+	}
+	
+		  var uid = getLocVal('uid');
+				 if (uid) {
+				  getList(1,uid);
+				  getUserInfo(uid);
+				 }else{
+				 	openNewWin('login','login.html');
+				 }
+
+	
+}
+
+
+
+//下拉更新
+function dorpDownUpdate(){
+	
+	uexWindow.resetBounceView('0');
+}
+//上拉更新
+function pullUpUpdate(){
+	  uexWindow.toast(1,5,"正在加载...",0);
+	var page = getLocVal('page');
+	var uid =getLocVal('uid');
+	var newpage = parseInt(page) +parseInt(1);
+	getList(newpage,uid);
+	setLocVal('page',newpage);
+	uexWindow.resetBounceView('1');
+}
+
+
+function callback(data){
+
+	var tmpl = '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
+		    +'<li class="fullimg uh-app3 uw-app3 ub-img mar-ar1" style="background-image:url(${avator});"></li>'
+		    +'<li class="ub-f1 ub ub-ver">'
+			+'	<div class="ub uinn c-gra-comm "  onclick="showmsg(${id});"><div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url(${cover});"></div><div class="t-bla ulev-8 ub-f1 umar-t">${content}</div></div>'
+			+'	${cb:followReply}'
+		    +'</li>'
+		 +'</ul>'
+		
+
+   var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
+
+	var d = document.createElement('DIV');
+  	d.innerHTML=s;
+	$$('comment').appendChild(d);
+	$closeToast();
+}
+
+
+
+function tmpleCb(a, b){
+	
+	var str = '';
+    if(a.rs==1){
+	switch (b[1]) {
+	
+		case "followReply":
+		
+		var s="";
+
+		var arr1 = a['followReply'];
+		for(var i = 0; i < arr1[0]['photo'].length; i++){
+               s += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url('+ arr1[0]['photo'][i]+'); float:left"></div>';
+		   }
+		
+				str += '	<div class="ub uinn c-gra-comm uc-a1 umar-at1"><div class="fullimg  uh-app3 uw-app3  ub-img mar-ar1"  style="background-image:url('+arr1[0]['avatar']+');"></div>' +
+				'		<div class="uinn-comm ulev-4 ub-f1">' +
+				'			<div class="t-gra2-comm line-hei-com">' +
+				arr1[0].replyName +
+				'  回复  </div>' +
+				'			<div class="t-gra2-comm line-hei-com">' +
+				arr1[0].replyContent +
+				'           </div>'+
+				'           <div class="line-hei-com">'+s+'</div>' +
+				'</div>' +
+				'</div>'
+
+	}
+		
+	}	
+	return str;
+}
+
+
+function showmsg(id){
+	  setLocVal('id',id);
+	  openNewWin('msg','msg.html');
+	
+}
+</script>
+</html>

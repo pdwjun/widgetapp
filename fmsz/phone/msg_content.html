@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/project/ui-list.css">
+	<link rel="stylesheet" href="css/project/style.css">
+    <link rel="stylesheet" href="msg_content/css/main.css">
+	<script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/zy_json.js"></script>
+	<script src="msg_content/js/msg.js"></script>
+		<script src="js/scroll.js" ></script>
+</head>
+<body class="um-vp c-wh2" ontouchstart>
+
+	<div class=" ub ub-ver uinn ">
+		<div class="ub-f1 uinn" id="title">载入中...</div>
+		<div class="ub-f1 uinn" id="time">载入中...</div>
+		
+	</div>
+	<div class="ub uinn title">
+		<div class="ub-f1" id="username">载入中...</div>
+		<div class="zan" onclick="zan();">赞(<span id="zan"></span>) </div>
+		<div class="relay">回复(<span id="pl"></span>)</div>
+	</div>
+	<div class="ub uinn content" id="photolist">
+		<div class="uinn photo "></div>
+		
+	</div>
+	<div class="ub uinn" id="content"></div>
+	<div class="ub ub-ver" id="comment">
+	<!--	<ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra4 lis">
+		    <li class="uh-app3 uw-app3 uc-a-app2 ub-img mar-ar1" ></li>
+		    <li class="ub-f1 ub ub-ver">
+
+				<div class="ub c-gra-comm uc-a1 umar-at1">
+		            <div class="uh-app3 uw-app3 ub-img mar-ar1" style="background-image:url(${avator});"></div>
+					<div class="ub-f1 ub ub-ver">
+						 <div class="ub-f1 uinn">CCC 回复了</div>
+						 <div class="ub-f1">2332</div>
+						  <div class="ub-f1">324</div>
+					</div>
+				</div>
+		    </li>
+		</ul>
+		-->
+	</div>
+</body>
+<script>
+
+zy_init();
+window.uexOnload=function(type)
+{
+	if(!type){
+		uexWindow.setBounce("1");
+		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+        uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
+	}
+	var id = getLocVal('id');
+	 loads(id);
+	
+}
+
+	function callback(data){
+		$$("username").innerHTML=data.username;
+		$$("title").innerHTML =data.title;
+		$$("content").innerHTML =data.content;
+		$$("time").innerHTML =data.time;
+		$$("zan").innerHTML =data.zan;
+		$$("pl").innerHTML =data.pl;
+		var s="";
+			for(var i = 0; i < data.photo.length; i++){
+               s += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url('+data.photo[i]+'); float:left" onclick="showimg(\''+data.photo[i]+'\');"></div>';
+		   }
+		   $$("photolist").innerHTML =s;
+		
+			var tmpl = '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
+		    +'<li class=" uh-app3 uw-app3 uc-a-app2 ub-img mar-ar1"></li>'
+		    +'<li class="ub-f1 ub ub-ver">'
+            +'<div class="uinn ub c-gra-comm uc-a1 umar-at1">'
+			 +'  <div class="uh-app3 uw-app3 ub-img mar-ar1 fullimg" style="background-image:url(${avatar});"></div>'
+			 +'    <div class="ub-f1 ub ub-ver">'
+			 +'        <div class="ub-f1 uinn r-title">${username} 回复了</div>'
+			 +'          <div class="ub-f1 uinn r-content">${content}</div>'
+			 +'          <div class="ub-f1 uinn">${cb:photo}</div>'
+			 +'      </div>'
+			 +'  </div>'
+			+'</div>'
+		    +'</li>'
+		 +'</ul>'
+		
+	var s = zy_tmpl(tmpl, data.reply, zy_tmpl_count(data.reply), tmpleCb);
+	var d = document.createElement('DIV');
+  	d.innerHTML=s;
+	$$('comment').appendChild(d);
+	$closeToast();
+	}
+	
+	function tmpleCb(a, b){
+	var str = '';
+	
+	switch (b[1]) {
+		case "photo":
+			var arr1 = a['photo'];
+			if (arr1 == '') {
+			
+			}
+			else {
+				for (var i = 0; i < arr1.length; i++) {
+					str += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url(' + arr1[i] + '); float:left;" onclick="showimg(\''+arr1[i]+'\');"></div>';
+				}
+			}
+	}
+		
+
+	return str;	
+}
+
+
+function closeimg(){
+
+	 $$("showimg").style.display="none";
+}
+
+function zan(){
+	var id = getLocVal('id');
+	dozan(id);
+
+}
+</script>
+</html>

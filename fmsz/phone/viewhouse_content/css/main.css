@@ -1,0 +1,155 @@
+.uwh-set3{
+	width:5.25em;
+	height:5.25em;
+}
+.uwh-set4{
+	width:1.1875em;
+	height:1.1875em;
+}
+.uwh-set5{
+	width:1.35em;
+	height:1.35em;
+}
+.uc-a-set3 {
+	-webkit-border-radius: 5.25em;
+	border-radius: 5.25em;
+}
+.ub-a-set4{
+	-webkit-border-radius: 1.3125em;
+	border-radius: 1.3125em;
+}
+.uc-a-set4 {
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+.icon-set3{
+	background-image:url('myImg/icon-set3.png');
+}
+.uinn-a8{
+	padding:0.4em 0.7em 0.3em 0.7em;
+}
+.set-pos{
+	position:absolute;
+	bottom:1px;
+	right:0.25em;
+}
+.t-gra-set3{
+	color:#a1a1a1;
+}
+.uwh-pS1{
+	width:1.28em;
+	height:1.28em;
+}
+.setImg1{
+	background-image:url('myImg/set_img1.png');
+}
+.setImg2{
+	background-image:url('myImg/set_img2.png');
+}
+.setImg3{
+	background-image:url('myImg/set_img3.png');
+}
+.setImg4{
+	background-image:url('myImg/set_img4.png');
+}
+.setImg5{
+	background-image:url('myImg/set_img5.png');
+}
+.setImg6{
+	background-image:url('myImg/set_img6.png');
+}
+.setImg7{
+	background-image:url('myImg/set_img7.png');
+}
+.banner{
+	    width:100%;
+		height:8em;
+		 background-repeat:no-repeat;
+
+		 background-size:cover;
+
+}
+.rating{
+	 padding-right:1em;
+	 
+}
+.rat{ 
+  background-color:#2F479F;
+  border: solid 0.2em #fff; 
+  }
+  .rat div{
+  	  color:#fff;
+  }
+  .rat .rat-top{
+  	 font-size: 2em;
+margin-left: 0.3em;
+margin-right: 0.3em;
+margin-top: 0.5em;
+margin-bottom: 0;
+  }
+.rat .rat-bottom{
+	font-size: 0.6em;
+	
+}
+.title{
+	 background-color:#2F479F;
+	 border-bottom: solid 1px #fff;
+	 color:#fff;
+	 font-size:1.2em;
+}
+.photolist{
+
+	 background-color:#2F479F;
+	 height:3.2em;
+	
+}
+.photo{
+	  border:2px #fff solid;
+	  width:3em;
+	  height:3em;
+	  background-color:#fff;
+	  float:left;
+	  margin-right:0.2em;
+	  	   background-size: 3em 3em;
+}
+.comment-left{
+	   width:5em;
+}
+.comment-right{
+	  background-color:#efefef;
+}
+.pub{
+ 	 background-color:#2F479F;}
+.avatar{
+	   width:3em;
+	   height:3em;
+	   background-repeat:no-repeat;
+	   background-size: 3em 3em;
+	  
+}	 
+.comment-title{
+	 	 padding-left:0.21em;
+		 padding-bottom:0.5em;
+		 font-size:0.85em;
+		 color:#666;
+}
+.comment-content{
+	 	 padding:0.5em;
+		 font-size:0.85em;
+		 color:#666;
+		 line-height:0.5em;
+		 
+}
+.comment-photo{
+	 	 padding:0.21em;
+
+}
+.cphoto{
+	 width:3em;
+	 height:3em;
+	  background-repeat:no-repeat;
+	   background-size: 3em 3em;
+	   margin-right:0.2em;
+	   border:0.2em solid #fff;
+	   
+}

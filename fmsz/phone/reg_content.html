@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-input.css">
+	<link rel="stylesheet" href="css/project/style.css">
+    <link rel="stylesheet" href="reg_content/css/main.css">
+	<script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/base64.js"></script>
+	 <script src="js/zy_json.js"></script>
+	 <script src="reg_content/js/reg.js"></script>
+	 
+</head>
+<body class="um-vp c-wh2" ontouchstart>
+<div class="ub ub-ver uinn-a1">
+	<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">用户名</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="输入用户名" id="username" type="text" class="">
+            </div> 
+        </div>
+    </div>
+	<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">密码</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="请输入密码" id="password" type="password" class="">
+            </div> 
+        </div>
+    </div>
+	<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">确认密码</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="请重复输入密码" id="repass" type="password" class="">
+            </div> 
+        </div>
+    </div>
+	<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac ">
+        <div class="ulev-app1 umw4">孕期选择</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="请选择" id="yunqi" type="text" class="" style="display:inherit;"  onclick=" uexControl.openDatePicker('2014','10','10');">
+            </div> 
+        </div>
+    </div>
+	
+	<div class="ub ub-ver">
+		<div class="ub ub-pe uinn-a6 ulev-4">
+	
+		</div>
+        <div class="uinn-at1">
+			<div ontouchstart="zy_touch('btn-act')" onclick="reg()" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">注 册</div>
+        </div>
+    </div>
+</div>	
+</body>
+<script>
+zy_init();
+window.uexOnload=function(type)
+{
+	if(!type){
+		uexWindow.setBounce("1");
+		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+        uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
+	}
+		//日期选择
+	
+   uexControl.cbOpenDatePicker=function(opCode,dataType,data){
+                if(dataType==1){
+                    var obj = eval('('+data+')');
+                  $$("yunqi").value=obj.year+'-' +obj.month+'-'+obj.day;
+                  //  console.log('日期选择器返回的日期：'+obj.year+'年' +obj.month+'月'+obj.day+'日');
+                }
+            }
+}
+
+    function reg(){
+	uexWindow.toast(1,5,"正在加载...",0);
+    var b64 = new Base64();
+    //var username =encodeURIComponent(b64.encode($$("username").value));
+    var username =$$("username").value;
+	var password=$$("password").value;
+	var repass = $$("repass").value;
+	var yunqi=$$("yunqi").value;  
+		setLocVal('yuchan',yunqi);
+		if (username == "") {
+			$toast('账号不能为空', '2000');
+			return;
+		}
+		else 
+			if (password == "") {
+				$toast('密码不能为空', '2000');
+				return;
+			}
+			else if(password==repass) {
+				regdo(username, password, yunqi);
+			}else{
+				$toast('两次输入密码不同', '2000');
+			}
+	
+}
+function callback(data){
+	      if(data==0){
+		  	
+		  	$closeToast();
+			 $toast("注册失败",2000);
+		  }else{
+		  	$closeToast();
+
+			setLocVal('uid',data.uid);
+			setLocVal('yunqi',data.yunqi);
+			uexWindow.evaluateScript("index",'0', "openCon(4)");
+			uexWindow.open("index",0,"index.html",'1','','',4)
+		  }
+	    
+}
+
+</script>
+</html>

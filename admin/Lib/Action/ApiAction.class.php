@@ -34,9 +34,12 @@ header('Access-Control-Allow-Origin: *');
 	 	$this->display("Category:index");
 	 	
 	 }
-	 
+
+     /*
+      * 登陆
+      */
 	 public function login(){
-  if(I('username',0)&&I('password')){
+        if(I('username',0)&&I('password')){
 
              //生成认证条件
              $map=array();
@@ -73,6 +76,23 @@ header('Access-Control-Allow-Origin: *');
              echo "用户或则密码不能空";
          }
 	 }
+
+     /*
+      * 注册
+      * reg&username="+username+"&password="+password+"&yunqi="+yunqi;
+      * setLocVal('uid',data.uid);
+			setLocVal('yunqi',data.yunqi);
+			uexWindow.evaluateScript("index",'0', "openCon(4)");
+			uexWindow.open("index",0,"index.html",'1','','',4)
+
+      */
+     public function reg(){
+         if(I('username',0)&&I('password')&&I('yunqi')){
+
+
+
+         }
+     }
 	 
  }
 ?>
