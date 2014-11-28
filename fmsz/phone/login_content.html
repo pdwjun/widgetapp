@@ -85,8 +85,7 @@
 			setLocVal('yuchan',data.yuchan);
 			uexWindow.evaluateScript("index",'0', "openCon(4)");
 			uexWindow.open("index",0,"index.html",'1','','',4)
-		  
-			
+            $closeToast()
 		}
 	 
 }
@@ -107,7 +106,6 @@ function login(){
          var username=$$("username").value;
          var password=$$("password").value;
 	     logindo(username,password);
-        $closeToast()
         //uescript('login','closeLogin()');
 	}
 	

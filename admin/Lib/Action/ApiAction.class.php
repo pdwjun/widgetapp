@@ -64,7 +64,7 @@ header('Access-Control-Allow-Origin: *');
 
                      RBAC::saveAccessList();
                      //var_dump($_SESSION); exit();
-                     $arr = array('data'=>array('status'=>1,'uid'=>$authinfo['uid'],'yunqi'=>$authinfo['yunqi'],'yuchan'=>$authinfo['yuchan']));
+                     $arr = array('uid'=>$authinfo['uid'],'yunqi'=>$authinfo['yunqi'],'yuchan'=>$authinfo['yuchan']);
                      echo json_encode($arr);
 
                  }else{
@@ -103,7 +103,7 @@ header('Access-Control-Allow-Origin: *');
              }else{
                  $uid = M('User')->add($data);
 
-                 $arr = array('data'=>array('status'=>1,'uid'=>$uid,'yunqi'=>$data['yunqi']));
+                 $arr = array('uid'=>$uid,'yunqi'=>$data['yunqi']);
                  echo json_encode($arr);
              }
          }
