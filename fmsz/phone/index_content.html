@@ -20,9 +20,9 @@
 </head>
 <body class="um-vp c-wh2" ontouchstart>
 	<div class="ub ub-ver  header">
-		   <div class="ub-f1 " style="height:200px; "></div>
+		   <div class="ub-f1 quan_img" style="height:200px; "></div>
 		  <div class="ub ub-f1 title uinn">
-		  	  <div class="ub-f1" id="username">用户名</div>
+		  	  <div class="ub-f1" id="username"></div>
 			  <div   id="avatar"  ></div>
 		  </div>
 		  <div class="ub ub-f1 uinn menu">
@@ -40,11 +40,14 @@
 <script>
 	function userBack(data){
 	  $$("username").innerHTML =data.username;
+        alert(data);
 	// $$("avatar").style.backgroundImage=data.avatar;
-	$$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.avatar+');"></div>';
+	$$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.img+');"></div>';
 
 }
 
+//    var url =hostURL+"&a=get_user_info&uid=29";
+//    $.getJSON(url,userBack,'json',getJSONError,'GET','',true);
 zy_init();
 window.uexOnload=function(type)
 {

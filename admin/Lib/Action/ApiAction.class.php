@@ -106,10 +106,44 @@ header('Access-Control-Allow-Origin: *');
                  $arr = array('data'=>array('status'=>1,'uid'=>$uid,'yunqi'=>$data['yunqi']));
                  echo json_encode($arr);
              }
-
-
-
          }
+     }
+
+     /*
+      * get_user_info
+      *  8  13:              get_user_info&uid="+uid;
+      *
+      */
+     public function get_user_info($uid){
+//         $file = 'test.log';
+//         file_put_contents($file, $uid);
+         $user = M('User');
+         $data = $user->find($uid);
+         if($data){
+             echo json_encode($data);
+         }
+         else
+             echo 0;
+
+     }
+
+     /*
+      * getmsglist
+      *  4  3:              getmsglist&page="+page+"&uid="+uid;
+      *
+      */
+     public function getmsglist($page,$uid){
+
+     }
+
+
+     /*
+      * get_msg_number
+      *  8  13:              get_msg_number&uid="+uid;
+      *
+      */
+     public function get_msg_number($uid){
+
      }
 	 
  }
