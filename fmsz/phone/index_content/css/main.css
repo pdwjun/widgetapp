@@ -1,3 +1,6 @@
+body{
+font-family: 幼圆;
+}
 .uw-comm2{
 	width:0.625em;
 }
@@ -44,31 +47,65 @@
 
 .info{
 	 text-align:center;
-	 -webkit-border-radius:0.5em;
+	 -webkit-border-radius: 1em;
 	 background-color:#E7FADA;
 	 margin:0.5em;
 }
+.header{
+    height: 8em;
+}
+.titleinfo{
+    font-size: 3em;
+}
+.userimage{
+    width: 8em;
+}
+.quan_img{
+    background-size: cover;
+}
 .title{
-	background-color: #51D1EE;
-color: #fff;
-font-size: 0.85em;
+    color: #fff;
+    font-size: 0.85em;
+    margin-top: 6em;
+}
+.username{
+    right: 2em;
+    font-size: 0.8em;
 }
 .avatar{
 	position:absolute;
-	 -webkit-border-radius: 100%;
-border-radius: 100%;
- width:5em;
- height:5em;
- top:-2em;
- right:1em;
- background-color:#ccc;
- border:solid 4px #51D1EE;
- background-size: 5em 5em;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    width:7em;
+    height:7em;
+    top:-3em;
+    right:0em;
+    background-color:#ccc;
+    border:solid  8px #FFF;
+    background-size: cover;
 
 }
-
+.header_msg{
+    position: absolute;
+    right: 0;
+}
+.msg_type{
+    padding: 0.2em 1em;
+    font-size: 0.5em;
+    background-color: #FF4CA4;
+    margin: -1.6em -1em 0 2em;
+}
 .menu{ 
-  color:#51D1EE;
-  font-size:1em;
-  
-   }
+    color:#51D1EE;
+    font-size:0.8em;
+}
+.msg{
+    text-align:center;
+    -webkit-border-radius:1em;
+    font-size: 1em;
+    background-color: #ffffff;
+    color: #FF4CA4;
+    position: absolute;
+    right:-2em;
+    padding: 0.4em 1.5em;
+}

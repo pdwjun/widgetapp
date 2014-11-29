@@ -150,7 +150,21 @@ header('Access-Control-Allow-Origin: *');
       *  4  3:              getmsglist&page="+page+"&uid="+uid;
       *
       */
-     public function getmsglist($page,$uid){
+     public function getmsglist($page=1,$id=''){
+         //10条
+         import('ORG.Util.Page');
+         $return_number = 10;
+         $count=M('Msg')->count();// 查询总数据记录
+
+         $Page = new Page($count,$return_number);
+
+
+         $list = M('Msg')->order("createtime DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+         if($list){
+             echo json_encode($list);
+         }
+         else
+             echo 0;
 
      }
 

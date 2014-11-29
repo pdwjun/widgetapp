@@ -36,7 +36,6 @@
    	  	     $data = $_POST;
            $data['createtime']=mktime();
            $data['status']= 1 ;
-           $data['photo']=trim($_POST['photo'],'|');
    	  	    if(M($this->table_name)->add($data)){
    	  	    	$this->success("操作成功！",U('index'));
    	  	    }else{

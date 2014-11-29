@@ -23,32 +23,35 @@
 </head>
 <body class="um-vp c-wh2" ontouchstart>
 	<div class="ub ub-ver  header">
-		   <div class="ub-f1" id="banner" style="height:200px; "></div>
+		   <div class="ub-f1" id="banner" ></div>
+
 		  <div class="ub ub-f1 title uinn">
-		  	  <div class="ub-f1" id="username">&nbsp;</div>
-			  <div   id="avatar"  ></div>
+              <div class="userimage"  id="avatar"  ></div>
+		  	  <div class="ub header_msg" style="margin-top: -4em;" >
+                <div class="ub-f1 titleinfo" id="username">&nbsp;</div>
+              </div>
 		  </div>
-		  <div class="ub ub-f1 uinn menu">
-		  	 <div class="">隐藏回复 |</div>
-			 <div  onclick="openNewWin('mymsg','mymsg.html')">我的发帖 |</div>
-			  <div  onclick="openNewWin('publish','publish.html')">发布信息</div>
-		  </div>
+		  <!--<div class="ub ub-f1 uinn menu">-->
+		  	 <!--<div class="">隐藏回复 |</div>-->
+			 <!--<div  onclick="openNewWin('mymsg','mymsg.html')">我的发帖 |</div>-->
+			  <!--<div  onclick="openNewWin('publish','publish.html')">发布信息</div>-->
+		  <!--</div>-->
 		
 	</div>
-	<div class="uinn info" id="msg" onclick="openNewWin('mymsg','mymsg.html');"></div>
+    <div class="info msg"  id="msg" ><strong>距下次排孕日还有12天</strong></div>
 	<div class="ub ub-ver" id="comment">
 
 	</div>
 </body>
 <script>
     function userBack(data){
-        $$("username").innerHTML =data.username;
+        $$("username").innerHTML ='<div class="username" >'+data.username + '</div><div class="info msg_type" id="msg_type" >怀孕期</div>';
         // $$("avatar").style.backgroundImage=data.avatar;
         $$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.img+');"></div>';
     }
     function msg_cate_Back(data){
 //        $$("banner").backgroundImage = 'url('+data.img+')';
-        $$("banner").innerHTML = '<div class="avatar quan_img" style="background-image:url('+data.img+');"></div>';
+        $$("banner").innerHTML = '<div class="ub-f1 header quan_img" style="background-image:url('+data.img+');"></div>';
     }
 
 zy_init();
