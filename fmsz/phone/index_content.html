@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="css/project/ui-list.css">
 	<link rel="stylesheet" href="css/project/style.css">
     <link rel="stylesheet" href="index_content/css/main.css">
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/appcan.listview.js"></script>
 	<script src="js/zy_control.js"></script>
     <script src="js/zy_click.js"></script>
 	<script src="js/zy_tmpl.js"></script>
@@ -20,9 +23,9 @@
 </head>
 <body class="um-vp c-wh2" ontouchstart>
 	<div class="ub ub-ver  header">
-		   <div class="ub-f1 quan_img" style="height:200px; "></div>
+		   <div class="ub-f1" id="banner" style="height:200px; "></div>
 		  <div class="ub ub-f1 title uinn">
-		  	  <div class="ub-f1" id="username"></div>
+		  	  <div class="ub-f1" id="username">&nbsp;</div>
 			  <div   id="avatar"  ></div>
 		  </div>
 		  <div class="ub ub-f1 uinn menu">
@@ -38,25 +41,32 @@
 	</div>
 </body>
 <script>
-	function userBack(data){
-	  $$("username").innerHTML =data.username;
-	// $$("avatar").style.backgroundImage=data.avatar;
-	$$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.img+');"></div>';
+    function userBack(data){
+        $$("username").innerHTML =data.username;
+        // $$("avatar").style.backgroundImage=data.avatar;
+        $$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.img+');"></div>';
+    }
+    function msg_cate_Back(data){
+//        $$("banner").backgroundImage = 'url('+data.img+')';
+        $$("banner").innerHTML = '<div class="avatar quan_img" style="background-image:url('+data.img+');"></div>';
+    }
 
-}
-
-//    var url =hostURL+"&a=get_user_info&uid=29";
-//    $.getJSON(url,userBack,'json',getJSONError,'GET','',true);
 zy_init();
 window.uexOnload=function(type)
 {
+//    var url =hostURL+"&a=get_user_info&uid=29";
+//    $.getJSON(url,userBack,'json',getJSONError,'GET','',true);
+//    getLocVal('rid')
 	if(!type){
 		setPageBounce(dorpDownUpdate,pullUpUpdate);
            remind();
-	}    
-	 var uid =getLocVal('uid');
+	}
+    var uid =getLocVal('uid');
+    var rid =getLocVal('rid');
+    var rid =4;
 			     getList(1);
-				  getUserInfo(uid);
+    getUserInfo(uid);
+    getMsgCateInfo(rid);
 
 		//检查网络		 
 		uexDevice.getInfo(13);	

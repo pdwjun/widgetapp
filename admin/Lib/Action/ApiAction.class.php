@@ -9,19 +9,19 @@ header('Access-Control-Allow-Origin: *');
       *  4  3:              getmsglist&page="+page+"&uid="+uid;
       *  5  8:              get_user_info&uid="+uid;
       *  6  3:              getmsglist&page="+page;
-      *  7  8:              get_user_info&uid="+uid;
+      *  7  8:        00      get_user_info&uid="+uid;
       *  8  13:              get_msg_number&uid="+uid;
-      *  9  2:              login&username="+username+"&password="+password;
+      *  9  2:        00      login&username="+username+"&password="+password;
       * 10  3:              getmsg&id="+id;
       * 11  17:             a=zan&id="+id;
       * 12  2:              getCate";
       * 13  8:              savemsg&title="+title+"&content="+content+"&cid="+cid+"&photo="+photo+"&uid="+uid;
-      * 14  2:              reg&username="+username+"&password="+password+"&yunqi="+yunqi;
+      * 14  2:         00     reg&username="+username+"&password="+password+"&yunqi="+yunqi;
       * 15  7:              get_date";
-      * 16  2:              get_cate_info&rid="+rid;
+      * 16  2:          00    get_cate_info&rid="+rid;
       * 17  2:              get_trip&uid="+uid;
       * 18  2:              save&uid="+uid+"&name="+name+"&password="+password+"&avatar="+avatar+"&phone="+phone+"&sheng="+sheng+"&remark="+remark+"&shi="+shi+"&yunqi="+yunqi;
-      * 19  8:              get_user_info&uid="+uid;
+      * 19  8:         00     get_user_info&uid="+uid;
       * 20  19:             a=upavatar";
       * 22  3:              get_house_info&id="+houseid;
 	  * 23  27:              showtrip&id="+tid;
@@ -119,6 +119,24 @@ header('Access-Control-Allow-Origin: *');
 //         file_put_contents($file, $uid);
          $user = M('User');
          $data = $user->find($uid);
+         if($data){
+             echo json_encode($data);
+         }
+         else
+             echo 0;
+
+     }
+
+     /*
+      * get_cate_info
+      *  4  3:              get_cate_info&id="+id;
+      *
+	  $$("content").innerHTML =data.content;
+	  $$("title").innerHTML =data.name;
+      */
+     public function get_cate_info($rid){
+         $model = M('Msg_cate');
+         $data = $model->find($rid);
          if($data){
              echo json_encode($data);
          }

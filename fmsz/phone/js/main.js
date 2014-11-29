@@ -1,6 +1,6 @@
 var isPhone = (window.navigator.platform != "Win32");
 var isAndroid = (window.navigator.userAgent.indexOf('Android')>=0)?true : false;
-//var hostURL = "http://meibao.local/index.php?m=Api";
+// var hostURL = "http://meibao.local/index.php?m=Api";
 var hostURL = "http://test.pdwjun.com/index.php?m=Api";
 /**
  * @param String inWndName 新窗口名称
