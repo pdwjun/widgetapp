@@ -9,17 +9,13 @@
 	<link rel="stylesheet" href="css/project/ui-list.css">
 	<link rel="stylesheet" href="css/project/style.css">
     <link rel="stylesheet" href="index_content/css/main.css">
-    <script src="js/appcan.js"></script>
-    <script src="js/appcan.control.js"></script>
-    <script src="js/appcan.listview.js"></script>
 	<script src="js/zy_control.js"></script>
     <script src="js/zy_click.js"></script>
 	<script src="js/zy_tmpl.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/zy_json.js"></script>
 	<script src="index_content/js/quan.js"></script>
-	<script src="js/scroll.js" ></script>
-		<script src="js/db.js" ></script>
+    <script src="msg_content/js/msg.js"></script>
 </head>
 <body class="um-vp c-wh2" ontouchstart>
 	<div class="ub ub-ver  header">
@@ -39,7 +35,7 @@
 		
 	</div>
     <div class="info msg"  id="msg" ><strong>距下次排孕日还有12天</strong></div>
-	<div class="ub ub-ver" id="comment">
+	<div class="ub ub-ver content" id="comment">
 
 	</div>
 </body>
@@ -64,8 +60,8 @@ window.uexOnload=function(type)
 		setPageBounce(dorpDownUpdate,pullUpUpdate);
            remind();
 	}
-    var uid =getLocVal('uid');
-    var rid =getLocVal('rid');
+    var uid =getLocVal('uid');//用户ID
+    var rid =getLocVal('rid');//圈子ID
     var rid =4;
 			     getList(1);
     getUserInfo(uid);
@@ -98,34 +94,7 @@ function remind(){
 	       //	var yunqi = getLocVal('yunqi'); //时间戳
 			var yuchan = getLocVal('yuchan'); //预产期
               var huaiyun= cc(yuchan,280);  //怀孕日子
-			
-			 if(yuchan){
 
-				 var shijian = DateDiff(nowDate(),huaiyun); //当前孕期 现在的时间 - 怀孕的时间
-
-				 //查询数据库下一个提醒
-			    createDB();
-				      uexDataBaseMgr.selectSql(dbname,1,"SELECT * FROM category WHERE tixing>"+shijian+" AND status=0");
-					  	closeDB;
-					  uexDataBaseMgr.cbSelectSql =function(opId, dataType,data){
-					  	 var rs = eval('('+data+')');
-						 var t= rs[0]['tixing'];
-						 var name = rs[0]['name'];
-		                  var tixing =  jj(huaiyun,t);//提醒的日子
-					     var renwu =transdate(tixing);//吧提醒转为时间戳
-					   			
-							 //清空原来的提醒
-			                 uexLocalNotification.removeAll();
-				             //添加新的提醒
-			                 uexLocalNotification.add('alarm_1',renwu,1,name,'确定','','daily',1);
-							 $toast("新提成将在"+renwu+"秒后",1000);
-							 var d = new Date();
-                              d = d.getTime() + 20 * 1000;
-							 uexLocalNotification.add('alarm_2',d,1,'有事情要做','确定','','daily',1);
-					  }
-			
-
-			  }
 	
 }
 
@@ -147,13 +116,13 @@ function pullUpUpdate(){
 
 function callback(data){
 
-	var tmpl = '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
-		    +'<li class="fullimg uh-app3 uw-app3 ub-img mar-ar1" style="background-image:url(${avator});"></li>'
-		    +'<li class="ub-f1 ub ub-ver">'
-			+'	<div class="ub uinn c-gra-comm"  onclick="showmsg(${id})"><div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url(\'${cover}\')"></div><div class="t-bla ulev-8 ub-f1 umar-t">${content}</div></div>'
-		//	+'	${cb:followReply}'
-		    +'</li>'
-		 +'</ul>'
+	var tmpl = '<div class="msg_group" >' +
+            '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
+            +'<li><img class="msg_group_author" src="${img}" /><div class="author_name">${username}</div></li>'
+            +'<li ><strong class="msg_group_title" onclick="showmsg(${id})">${title}</strong></li>'
+		    +'<li class="msg_group_content"  onclick="showmsg(${id})">${content}</li>'
+            +'<li><div class="msg_group_content_image"><img src="${photo}" /></div></li>'
+		 +'</ul><div class="msg_group_reply"><img class="msg_like" onclick="zan(${id})" src="css/icons/icon-like.png" /><span id="zan_${id}" >${zan}</span><img onclick="showmsg(${id})" class="msg_message_number" src="css/icons/icon-message.png"  />${comment_count}</div></div>'
 		
 
    var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
@@ -164,6 +133,11 @@ function callback(data){
 	$closeToast();
 }
 
+function zan(mid){
+    var uid = getLocVal('uid');
+    dozan(uid,mid);
+
+}
 
 
 function tmpleCb(a, b){

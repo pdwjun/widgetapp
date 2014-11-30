@@ -1,5 +1,6 @@
 body{
-font-family: 幼圆;
+    font-family: 幼圆;
+    color: rgb(102, 102, 102);
 }
 .uw-comm2{
 	width:0.625em;
@@ -108,4 +109,47 @@ font-family: 幼圆;
     position: absolute;
     right:-2em;
     padding: 0.4em 1.5em;
+}
+.msg_group{
+    background-color: #ffffff;
+    -webkit-border-radius:0.3em;
+    margin: 10px 15px;
+    padding: 10px;
+}
+.content{
+    margin-top: 4em;
+}
+.msg_group_author{
+    height: 3em;
+    width: 3em;
+}
+.author_name{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1em;
+    color: rgb(102, 102, 102);
+    font-size: 1.3em;
+}
+.msg_group_title{
+    font-size: 1.3em;
+    color: rgb(31, 31, 31);
+}
+.msg_group ul li{
+    display: table-row-group;
+}
+.msg_group_content_image img{
+    width: 3em;
+    height: 3em;
+}
+.msg_message_number{
+}
+.msg_group_reply{
+    text-align: right;
+    font-family: Arial;
+    font-size: 0.8em;
+    padding: 0.5em;
+}
+.msg_group_reply img{
+    margin-left: 2em;
+    margin-right: 0.5em;
 }

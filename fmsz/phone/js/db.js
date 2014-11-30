@@ -23,7 +23,7 @@ function createDBCallBack(opid,type,data){
                                     break;
                                 case cInt:
                                 if(opid == 1 &&type == 2&&data == 0){
-                                  $toast("数据库打开成功！",1000);
+                                  //$toast("数据库打开成功！",1000);
                                 }else{
                                     $toast("数据库打开失败！",1000);
                                 }

@@ -146,9 +146,9 @@ header('Access-Control-Allow-Origin: *');
      }
 
      /*
+      * 分页输出帖子列表
       * getmsglist
       *  4  3:              getmsglist&page="+page+"&uid="+uid;
-      *
       */
      public function getmsglist($page=1,$id=''){
          //10条
@@ -157,9 +157,19 @@ header('Access-Control-Allow-Origin: *');
          $count=M('Msg')->count();// 查询总数据记录
 
          $Page = new Page($count,$return_number);
+        $user_tab = M('User')->getTableName();
+         $comment_tab = M('Comment')->getTableName();
+        $msg_tab = M('Msg')->getTableName();
+         //SELECT distinct hh85_msg.*,(select count(*) from hh85_comment where hh85_msg.id = hh85_comment.mid) as count FROM `hh85_msg` left join hh85_comment on  hh85_msg.id = hh85_comment.mid
+         $list = M('Msg')->Distinct(1)->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )->order("createtime DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+         foreach($list as $key => $item){
+             $arr = explode('|', $item['zan_uid']);
+             if($arr[0]!="")
+                $list[$key]['zan'] = count($arr);
+             else
+                 $list[$key]['zan'] = "0";
 
-
-         $list = M('Msg')->order("createtime DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+         }
          if($list){
              echo json_encode($list);
          }
@@ -168,6 +178,36 @@ header('Access-Control-Allow-Origin: *');
 
      }
 
+     /*
+      * zan 点赞
+      * msg表 zan_uid存储点赞的用户
+      * 11  17:             a=zan&uid="+uid+"&mid="+mid;
+      *
+	  $$("content").innerHTML =data.content;
+	  $$("title").innerHTML =data.name;
+      */
+     public function zan($uid,$mid){
+        $model = M('Msg');
+         $msg = $model->find($mid);
+         $arr = array();
+         $data['id'] = $mid;
+         if($msg){
+             $arr = explode('|',$msg['zan_uid']);
+             $data['zan_uid'] = $msg['zan_uid'];
+         }
+         if(!in_array($uid,$arr)){
+             if($arr[0]=="")
+                 $data['zan_uid'] = $uid;
+             else
+                 $data['zan_uid'] .= '|'.$uid;
+         }
+         if($model->save($data)){
+             echo $mid;
+         }
+         else
+             echo 0;
+
+     }
 
      /*
       * get_msg_number
