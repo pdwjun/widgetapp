@@ -3,7 +3,8 @@
 <head>
     <title></title>
     <meta charset="utf-8">
-    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">    <link rel="stylesheet" href="css/project/ui-btn-v3.css">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/project/ui-btn-v3.css">
     <link rel="stylesheet" href="css/project/ui-res-v3.css">
     <link rel="stylesheet" href="css/project/ui-input-v3.css">
     <link rel="stylesheet" href="css/project/ui-color-v3.css">
@@ -24,10 +25,9 @@
 <div class="ub ub-ver">
 
    <div class="ub ub-ver uinn-a1 ub-f1">
-       <div class="uba b-gra2 c-wh">
+       <div class="uba b-gra2 c-wh" style="-webkit-border-radius: 0.5em;">
            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s ulev-app1">标签选择：</li>
-			   <li class="tx-r ulev-app1 t-gra-FS1 ">
+			   <li class="tx-r ulev-app1 t-gra-FS1 right ">
                      <!--下拉列表开始-->
 <div class="ub t-bla uinn">
     <div class="ub-f1 ub uba c-wh b-gra  sel">
@@ -47,20 +47,19 @@
              
            </ul>
            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s ulev-app1">标题输入:</li>
-			   <li class="tx-r ulev-app1 t-gra-FS1 "><input placeholder="限15个字数内" id="title" type="text" class="uinn"></li>
-             
-           </ul>
-		   <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s ulev-app1">内容输入:</li>
-			   <li class="tx-r ulev-app1 t-gra-FS1 "><input placeholder="限500字数内" id="content" type="text" class="uinn"></li>
+			   <li class="tx-r ulev-app1 t-gra-FS1 right"><input placeholder="标题输入" id="title" type="text" class="uinn msg_title"></li>
 
            </ul>
 
+           <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
+
+               <li class="tx-r ulev-app1 t-gra-FS1 right">
+                <textarea  placeholder="请输入正文" id="content" type="text" class="uinn msg_content"></textarea>
+                   </li>
+           </ul>
 
        </div>
    </div>
-
 </div>
        <div class="ub ub-ver uinn-a1 ub-f1" >
 
@@ -96,15 +95,8 @@
 
 		
 	}
-	
-	function saveBack(data){
-		 if(data==0){
-		 	$toast("发布失败",1000);
-		 }else{
-		 	$toast("发布成功",1000);
-		 }
-	}
-	
+
+
 zy_init();
 window.uexOnload=function(type)
 {
@@ -122,7 +114,7 @@ window.uexOnload=function(type)
 	 uexImageBrowser.cbPick = function(opCode, dataType, data){
 	 	  upload(data);
 	 }	   
-  uexUploaderMgr.onStatus = function(opCode, fileSize, percent, serverPath, status){
+    uexUploaderMgr.onStatus = function(opCode, fileSize, percent, serverPath, status){
                     switch (status) {
                         case 0:
 						   $toast( "上传进度：" + percent + "%");
@@ -168,13 +160,31 @@ window.uexOnload=function(type)
     }
 }
 
+function test(data){
+
+    setLocVal('mid',data);
+    openNewWin('msg','msg.html');
+}
+function saveBack(data){
+    if(data==0){
+        $toast("发布失败",1000);
+    }else{
+        $toast("发布成功",1000);
+        window.setTimeout(test(data),3000);
+    }
+}
 
 function save(){
-	 var b64 = new Base64();
-	var cid= $$("cate").value;
-	var title=encodeURIComponent(b64.encode($$("title").value));
-	var content= encodeURIComponent(b64.encode($$("content").value));
-	var photo = encodeURIComponent(b64.encode($$("photo").value));
+//	 var b64 = new Base64();
+//	var cid= $$("cate").value;
+//	var title=encodeURIComponent(b64.encode($$("title").value));
+//	var content= encodeURIComponent(b64.encode($$("content").value));
+//	var photo = encodeURIComponent(b64.encode($$("photo").value));
+    var b64 = new Base64();
+    var cid= $$("cate").value;
+    var title=encodeURIComponent($$("title").value);
+    var content= encodeURIComponent($$("content").value);
+    var photo = encodeURIComponent($$("photo").value);
 	var uid = getLocVal('uid');
 	savedo(cid,title,content,photo,uid);
 	

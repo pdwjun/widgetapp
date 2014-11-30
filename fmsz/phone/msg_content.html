@@ -18,38 +18,20 @@
 		<script src="js/scroll.js" ></script>
 </head>
 <body class="um-vp c-wh2" ontouchstart>
-
-	<div class=" ub ub-ver uinn ">
-		<div class="ub-f1 uinn" id="title">载入中...</div>
-		<div class="ub-f1 uinn" id="time">载入中...</div>
-		
-	</div>
-	<div class="ub uinn title">
-		<div class="ub-f1" id="username">载入中...</div>
-		<div class="zan" onclick="zan();">赞(<span id="zan"></span>) </div>
-		<div class="relay">回复(<span id="pl"></span>)</div>
-	</div>
-	<div class="ub uinn content" id="photolist">
-		<div class="uinn photo "></div>
-		
-	</div>
-	<div class="ub uinn" id="content"></div>
+    <div class="msg_group">
+        <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra4 lis">
+            <li><img class="msg_group_author" src="/kindeditor/attached/image/20141130/s1_20141130125459_80662.jpg">
+                <div class="author_name" id="username">q</div></li><li><strong class="msg_group_title" id="title" ></strong></li>
+            <li class="msg_group_content" id="content" ></li>
+            <li><div class="msg_group_content_image"></div></li>
+        </ul>
+        <div class="msg_group_reply">
+            <img class="msg_like" onclick="zan(63)" src="css/icons/icon-like.png">
+            <span id="zan">0</span>
+            <img  class="msg_message_number" src="css/icons/icon-message.png">0
+        </div>
+    </div>
 	<div class="ub ub-ver" id="comment">
-	<!--	<ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra4 lis">
-		    <li class="uh-app3 uw-app3 uc-a-app2 ub-img mar-ar1" ></li>
-		    <li class="ub-f1 ub ub-ver">
-
-				<div class="ub c-gra-comm uc-a1 umar-at1">
-		            <div class="uh-app3 uw-app3 ub-img mar-ar1" style="background-image:url(${avator});"></div>
-					<div class="ub-f1 ub ub-ver">
-						 <div class="ub-f1 uinn">CCC 回复了</div>
-						 <div class="ub-f1">2332</div>
-						  <div class="ub-f1">324</div>
-					</div>
-				</div>
-		    </li>
-		</ul>
-		-->
 	</div>
 </body>
 <script>
@@ -71,9 +53,9 @@ window.uexOnload=function(type)
 		$$("username").innerHTML=data.username;
 		$$("title").innerHTML =data.title;
 		$$("content").innerHTML =data.content;
-		$$("time").innerHTML =data.time;
+//		$$("time").innerHTML =data.time;
 		$$("zan").innerHTML =data.zan;
-		$$("pl").innerHTML =data.pl;
+//		$$("pl").innerHTML =data.pl;
 		var s="";
 			for(var i = 0; i < data.photo.length; i++){
                s += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url('+data.photo[i]+'); float:left" onclick="showimg(\''+data.photo[i]+'\');"></div>';

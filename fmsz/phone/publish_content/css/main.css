@@ -86,5 +86,26 @@
 	 	 background-repeat:no-repeat;
            background-size:cover;
 		   float:left;
-	  
+}
+.left{
+    width: 20%;
+}
+.right{
+    text-align: right;
+    width: 95%;
+    border-color: rgb(203, 203, 203);
+}
+.msg_title{
+    width: 100%;
+    height: 35px;
+    font-size: 1em;
+    border: none;
+}
+.msg_content{
+    font-size: 0.7em;
+    width: 95%;
+    height: 300px;
+    margin: 0.5em;
+    border-color: rgb(203, 203, 203);
+
 }

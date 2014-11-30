@@ -210,6 +210,74 @@ header('Access-Control-Allow-Origin: *');
      }
 
      /*
+      * get_cate_info
+      *  4  3:              get_cate_info&id="+id;
+      *
+	  $$("content").innerHTML =data.content;
+	  $$("title").innerHTML =data.name;
+      */
+     public function getCate(){
+         $model = M('Msg_cate');
+         $data = $model->select();
+         if($data){
+             echo json_encode($data);
+         }
+         else
+             echo 0;
+
+     }
+
+     /*
+      * savemsg
+      * 13  8:              savemsg&title="+title+"&content="+content+"&cid="+cid+"&photo="+photo+"&uid="+uid;
+      *
+      */
+     public function savemsg(){
+         if(I('title',0)&&I('content')){
+             $data=array();
+             $data['title']=I('title');
+             $data['content']=I('content');
+             $data['cid']=I('cid');
+             $data['photo']=I('photo');
+             $data['uid']=I('uid');
+
+             $data['status']= 1 ;   //
+
+             $mid = M('Msg')->add($data);
+             echo $mid;
+
+         }
+
+     }
+
+     /*
+      * getmsg
+      * 10  3:              getmsg&id="+id;
+      *
+      */
+     public function getmsg(){
+         $model = M('Msg');
+         $model_tab = M('Msg')->getTableName();
+         $user_tab = M('User')->getTableName();
+         $list = $model->join('join '.$user_tab.' on '. $user_tab.'.uid=.'.$model_tab.'.uid ')->find(I('id'));
+         if($list){
+             foreach($list as $key => $item){
+                 $arr = explode('|', $item['zan_uid']);
+                 if($arr[0]!="")
+                     $list[$key]['zan'] = count($arr);
+                 else
+                     $list[$key]['zan'] = "0";
+
+             }
+             echo json_encode($list);
+         }
+         else
+             echo 0;
+
+     }
+
+
+     /*
       * get_msg_number
       *  8  13:              get_msg_number&uid="+uid;
       *
@@ -217,6 +285,17 @@ header('Access-Control-Allow-Origin: *');
      public function get_msg_number($uid){
 
      }
-	 
+
+     /*
+      * 返回 string 中有多少元素，多少个人赞
+      */
+     public function count_like($like_str){
+         $arr = explode('|', $like_str);
+         if($arr[0]=="")
+             return 0;
+         else
+             return count($arr);
+     }
+
  }
 ?>

@@ -13,6 +13,7 @@
 .c-wh
 {
 	background-color:#FFF;
+    border-color: rgb(203, 203, 203)
 }
 .c-wh2{
 	background-color:#f1f1f1;
@@ -148,4 +149,43 @@
 }
 .b-btn-pSC1{
 	background-image:url('images/returnBtn.png');
+}
+
+.msg_group_author{
+    height: 3em;
+    width: 3em;
+    -webkit-border-radius: 8px;
+}
+.author_name{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1em;
+    color: rgb(102, 102, 102);
+    font-size: 1.3em;
+}
+.msg_group_title{
+    font-size: 1.3em;
+    color: rgb(31, 31, 31);
+}
+.msg_group ul li{
+    display: table-row-group;
+}
+.msg_group_content_image img{
+    width: 3em;
+    height: 3em;
+}
+.msg_message_number{
+}
+.msg_group_reply{
+    text-align: right;
+    font-family: Arial;
+    font-size: 0.8em;
+    padding: 0.5em;
+}
+.msg_group_reply img{
+    margin-left: 2em;
+    margin-right: 0.5em;
+}
+.msg_group img{
+    -webkit-border-radius: 8px;
 }
