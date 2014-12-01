@@ -240,6 +240,7 @@ header('Access-Control-Allow-Origin: *');
              $data['cid']=I('cid');
              $data['photo']=I('photo');
              $data['uid']=I('uid');
+             $data['createtime']=time();
 
              $data['status']= 1 ;   //
 
@@ -261,14 +262,12 @@ header('Access-Control-Allow-Origin: *');
          $user_tab = M('User')->getTableName();
          $list = $model->join('join '.$user_tab.' on '. $user_tab.'.uid=.'.$model_tab.'.uid ')->find(I('id'));
          if($list){
-             foreach($list as $key => $item){
-                 $arr = explode('|', $item['zan_uid']);
-                 if($arr[0]!="")
-                     $list[$key]['zan'] = count($arr);
-                 else
-                     $list[$key]['zan'] = "0";
+             $arr = explode('|', $list['zan_uid']);
+             if($arr[0]!="")
+                 $list['zan'] = count($arr);
+             else
+                 $list['zan'] = "0";
 
-             }
              echo json_encode($list);
          }
          else
