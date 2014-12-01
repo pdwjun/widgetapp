@@ -160,8 +160,15 @@ header('Access-Control-Allow-Origin: *');
         $user_tab = M('User')->getTableName();
          $comment_tab = M('Comment')->getTableName();
         $msg_tab = M('Msg')->getTableName();
+         $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
          //SELECT distinct hh85_msg.*,(select count(*) from hh85_comment where hh85_msg.id = hh85_comment.mid) as count FROM `hh85_msg` left join hh85_comment on  hh85_msg.id = hh85_comment.mid
-         $list = M('Msg')->Distinct(1)->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )->order("createtime DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+         $list = M('Msg')->Distinct(1)
+             ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')
+             ->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )
+             ->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )
+             ->page($nowPage.','.$Page->listRows)
+             ->order("createtime DESC")
+             ->select();
          foreach($list as $key => $item){
              $arr = explode('|', $item['zan_uid']);
              if($arr[0]!="")
