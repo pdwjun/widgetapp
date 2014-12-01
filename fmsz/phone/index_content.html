@@ -35,7 +35,7 @@
 		  <!--</div>-->
 		
 	</div>
-    <div class="info msg"  id="msg" ><strong>距下次排孕日还有12天</strong></div>
+    <div class="info msg"  id="msg" onclick="" ><strong>距下次排孕日还有12天</strong></div>
 	<div class="ub ub-ver content" id="comment">
 
 	</div>
@@ -99,10 +99,17 @@ function remind(){
 	
 }
 
+    function refresh(){
+
+
+    }
 //下拉更新
 function dorpDownUpdate(){
-	
-	uexWindow.resetBounceView('0');
+
+    getList(1);
+    setLocVal('refresh', 1)
+    uexWindow.resetBounceView('0');
+
 }
 //上拉更新
 function pullUpUpdate(){
@@ -130,7 +137,11 @@ function callback(data){
 
 	var d = document.createElement('DIV');
   	d.innerHTML=s;
-	$$('comment').appendChild(d);
+    if(getLocVal('refresh')==1)
+        $$('comment').innerHTML = d.innerHTML;
+    else
+	    $$('comment').appendChild(d);
+    setLocVal('refresh', 0);
 	$closeToast();
 }
 

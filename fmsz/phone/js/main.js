@@ -1,7 +1,7 @@
 var isPhone = (window.navigator.platform != "Win32");
 var isAndroid = (window.navigator.userAgent.indexOf('Android')>=0)?true : false;
-var hostURL = "http://meibao.local/index.php?m=Api";
-// var hostURL = "http://test.pdwjun.com/index.php?m=Api";
+// var hostURL = "http://meibao.local/index.php?m=Api";
+var hostURL = "http://test.pdwjun.com/index.php?m=Api";
 /**
  * @param String inWndName 新窗口名称
  * @param String html		新窗口路径
@@ -264,7 +264,7 @@ function getJSONError(err){
 	 uexWindow.alert('提示','网络未连接','确定');
     }else if (err.message == 'json parse failed!') {
       //  alert('json解析失败');
-	  $toast('json解析失败',1000);
+      //$toast('json解析失败',1000);
     }else if (err.message == 'file does not exist!') {
 		$toast('文件不存在',1000);
     }else if (err.message == 'read file failed!') {
