@@ -28,11 +28,6 @@
                 <div class="ub-f1 titleinfo" id="username">&nbsp;</div>
               </div>
 		  </div>
-		  <!--<div class="ub ub-f1 uinn menu">-->
-		  	 <!--<div class="">隐藏回复 |</div>-->
-			 <!--<div  onclick="openNewWin('mymsg','mymsg.html')">我的发帖 |</div>-->
-			  <!--<div  onclick="openNewWin('publish','publish.html')">发布信息</div>-->
-		  <!--</div>-->
 		
 	</div>
     <div class="info msg"  id="msg" onclick="" ><strong>距下次排孕日还有12天</strong></div>
@@ -130,7 +125,8 @@ function callback(data){
             +'<li ><strong class="msg_group_title" onclick="showmsg(${id})">${title}</strong></li>'
 		    +'<li class="msg_group_content"  onclick="showmsg(${id})">${content}</li>'
             +'<li><div class="msg_group_content_image"><img src="${photo}" /></div></li>'
-		 +'</ul><div class="msg_group_reply"><img class="msg_like" onclick="zan(${id})" src="css/icons/icon-like.png" /><span id="zan_${id}" >${zan}</span><img onclick="showmsg(${id})" class="msg_message_number" src="css/icons/icon-message.png"  />${comment_count}</div></div>'
+		 +'</ul><div class="msg_group_reply"><img class="msg_like" onclick="zan(${id})" src="css/icons/icon-like.png" /><span id="zan_${id}" >${zan}</span>' +
+            '<img onclick="showmsg(${id})" class="msg_message_number" src="css/icons/icon-message.png"  />${comment_count}</div></div>'
 		
 
    var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);

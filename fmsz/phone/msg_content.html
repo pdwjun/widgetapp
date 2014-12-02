@@ -21,15 +21,13 @@
     <div class="msg_group">
         <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra4 lis">
             <li>
-                <div id="author_img"></div>
-                <div class="author_name" id="username"></div></li><li><strong class="msg_group_title" id="title" ></strong></li>
+                <div id="author"></div>
+            </li>
+            <li><strong class="msg_group_title" id="title" ></strong></li>
             <li class="msg_group_content" id="content" ></li>
             <li><div class="msg_group_content_image"></div></li>
         </ul>
-        <div class="msg_group_reply">
-            <img class="msg_like" onclick="zan(63)" src="css/icons/icon-like.png">
-            <span id="zan">0</span>
-            <img  class="msg_message_number" src="css/icons/icon-message.png">0
+        <div id="msg_group_reply" class="msg_group_reply">
         </div>
     </div>
 	<div class="ub ub-ver" id="comment">
@@ -51,42 +49,38 @@ window.uexOnload=function(type)
 }
 
 	function callback(data){
-        var img = '<img class="msg_group_author" src="'+ data.img+'">';
-		$$("author_img").innerHTML=img;
-        $$("username").innerHTML=data.username;
+        var author = '<img class="msg_group_author" src="'+ data.img+'"><div class="author_name" id="username">'+data.username+'</div>';
+		$$("author").innerHTML=author;
 		$$("title").innerHTML =data.title;
 		$$("content").innerHTML =data.content;
-//		$$("time").innerHTML =data.time;
-		$$("zan").innerHTML =data.zan;
+//		$$("time").innerHTML =data.time
 //		$$("pl").innerHTML =data.pl;
 		var s="";
 			for(var i = 0; i < data.photo.length; i++){
                s += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url('+data.photo[i]+'); float:left" onclick="showimg(\''+data.photo[i]+'\');"></div>';
 		   }
-		   $$("photolist").innerHTML =s;
-		
-			var tmpl = '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
-		    +'<li class=" uh-app3 uw-app3 uc-a-app2 ub-img mar-ar1"></li>'
-		    +'<li class="ub-f1 ub ub-ver">'
-            +'<div class="uinn ub c-gra-comm uc-a1 umar-at1">'
-             +'  <div class="uh-app3 uw-app3 ub-img mar-ar1 fullimg" style="background-image:url(${avatar});"></div>'
-             +'    <div class="ub-f1 ub ub-ver">'
-             +'        <div class="ub-f1 uinn r-title">${username} 回复了</div>'
-             +'          <div class="ub-f1 uinn r-content">${content}</div>'
-             +'          <div class="ub-f1 uinn">${cb:photo}</div>'
-             +'      </div>'
-             +'  </div>'
-			+'</div>'
-		    +'</li>'
-		 +'</ul>'
-		
-	var s = zy_tmpl(tmpl, data.reply, zy_tmpl_count(data.reply), tmpleCb);
-	var d = document.createElement('DIV');
-  	d.innerHTML=s;
-	$$('comment').appendChild(d);
+		   //$$("photolist").innerHTML =s;
+
+        var s = '<img class="msg_like" onclick="zan('+data.id+')" src="css/icons/icon-like.png">' +
+        '<span id="zan_'+data.id+'" >'+data.zan+'</span>' +
+        '<img  class="msg_message_number" src="css/icons/icon-message.png">'+data.comment_count;
+        $$('msg_group_reply').innerHTML = s;
 	$closeToast();
 	}
-	
+	function commentback(data){
+
+        var tmpl = '<div class="msg_group" >' +
+                '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
+                +'<li><img class="msg_group_author" src="${img}" /><div class="author_name">${username}</div></li>'
+                +'<li class="msg_group_content" >${content}</li></ul></div>'
+//                +'<li><div class="msg_group_content_image"><img src="${photo}" /></div></li>'
+
+
+        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
+        var d = document.createElement('DIV');
+        d.innerHTML=s;
+        $$('comment').appendChild(d);
+    }
 	function tmpleCb(a, b){
 	var str = '';
 	

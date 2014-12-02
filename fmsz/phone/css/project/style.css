@@ -1,5 +1,5 @@
 .ufm1{
-	font-family:Arial;
+	font-family:Arial ,幼圆;
 }
 .c-blu{
 	background-color:#ff8000;
@@ -151,6 +151,12 @@
 	background-image:url('images/returnBtn.png');
 }
 
+.msg_group{
+    background-color: #ffffff;
+    -webkit-border-radius:0.3em;
+    margin: 10px 15px;
+    padding: 10px;
+}
 .msg_group_author{
     height: 3em;
     width: 3em;
@@ -173,6 +179,9 @@
 .msg_group_content_image img{
     width: 3em;
     height: 3em;
+}
+.msg_group_content{
+    color: rgb(53, 53, 53);
 }
 .msg_message_number{
 }

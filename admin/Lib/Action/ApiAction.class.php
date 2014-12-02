@@ -265,9 +265,15 @@ header('Access-Control-Allow-Origin: *');
       */
      public function getmsg(){
          $model = M('Msg');
-         $model_tab = M('Msg')->getTableName();
          $user_tab = M('User')->getTableName();
-         $list = $model->join('join '.$user_tab.' on '. $user_tab.'.uid=.'.$model_tab.'.uid ')->find(I('id'));
+         $comment_tab = M('Comment')->getTableName();
+         $msg_tab = M('Msg')->getTableName();
+         $list = $model->Distinct(1)
+             ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')
+             ->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )
+             ->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )
+             ->where($msg_tab.'.id='.I('id'))
+             ->find();
          if($list){
              $arr = explode('|', $list['zan_uid']);
              if($arr[0]!="")
@@ -303,5 +309,17 @@ header('Access-Control-Allow-Origin: *');
              return count($arr);
      }
 
+     /*
+      * 返回 string 中有多少元素，多少个人赞
+      */
+     public function getcomment($mid){
+         $model = M('Comment');
+         $user_tab = M('User')->getTableName();
+         $list = $model->join($user_tab.' on '. $user_tab.'.uid = '. $model->getTableName().'.uid')->where('mid='.$mid)->select();
+         if(!empty($list))
+             echo json_encode($list);
+         else
+             echo 0;
+     }
  }
 ?>

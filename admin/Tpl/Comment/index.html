@@ -240,12 +240,12 @@ function noSelAll()
 
 	<td width="4%">选择</td>
 
-	<td width="28%" align="left">标题名</td>
+	<td width="30%" align="left">内容</td>
 
-	<td width="20%" bgcolor="#FAFAF1">所属店铺</td>
-     <td width="20%" bgcolor="#FAFAF1">评论人</td>
-	<td width="8%" align="center">状态</td>
-	<td width="8%" align="center">评价</td>
+	<td width="20%" bgcolor="#FAFAF1">所属帖子</td>
+     <td width="12%" bgcolor="#FAFAF1">圈子</td>
+    <td width="8%" align="center">用户</td>
+    <td width="8%" align="center">回复给</td>
 
 
         <td>操作</td>
@@ -260,25 +260,14 @@ function noSelAll()
 
 	<td><input name="id" type="checkbox" id="id" value="{$vo['id']}" class="np"></td>
 
-	<td align="left">&nbsp;<a href="__URL__/edit/id/{$vo['id']}"><u style="text-decoration:none;">
-
-	{$vo['content']|substr=0,30}</u></a></td>
+	<td align="left">&nbsp;	{$vo['content']|substr=0,70}</td>
 
 
 
-	<td align="left">{$vo['company_title']}</td>
-    <td width="20%" bgcolor="#FAFAF1">
-     {$vo['username']}
-    </td>
-
-	<td align="center"><in name="vo.status" value="1">启用<else/>禁用</in></td>
-	<td width="8%" align="center">
-       <switch name="vo.evaluate">
-    <case value="1">好评</case>
-    <case value="0">中评</case>
-    <default />差评
-</switch>
-    </td>
+    <td align="left">{$vo['mid']|getMsgTitle}</td>
+    <td align="left">{$vo['mid']|getMsgCate}</td>
+    <td align="left">{$vo['uid']|getUname}</td>
+    <td align="left">{$vo['touid']|getUname}</td>
 	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑</a> | <eq name="vo['status']" value="1">已审核<else/><a href="{:U('shenhe',array('id'=>$vo['id']))}">未审核</a></eq>
 
  |</td>

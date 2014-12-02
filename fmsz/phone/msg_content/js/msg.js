@@ -2,6 +2,8 @@ function loads(id){
 	
 	var url =hostURL+"&a=getmsg&id="+id;
 	  $.getJSON(url,callback,'json',getJSONError,'GET','');
+    url = hostURL+"&a=getcomment&mid="+id;
+    $.getJSON(url,commentback,'json',getJSONError,'GET','');
 }
 
 function zanback(data){

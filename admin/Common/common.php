@@ -209,11 +209,21 @@ function journal($name,$msg,$times){
 }
 
 function getUname($uid){
-	
-	$username = M('User')->where("uid=".$uid)->getField('username');
-	return $username;
-}
 
+    $username = M('User')->where("uid=".$uid)->getField('username');
+    return $username;
+}
+function getMsgTitle($id){
+
+    $field = M('Msg')->where("id=".$id)->getField('title');
+    return $field;
+}
+//根据mid得到圈子的名称
+function getMsgCate($id){
+    $field = M('Msg')->where("id=".$id)->getField('cid');
+    $field = M('Msg_cate')->where("id=".$field)->getField('name');
+    return $field;
+}
   function cutStr($str,$lend){
      $str = strip_tags($str);
 	if(mb_strlen($str,"utf-8")>$lend){

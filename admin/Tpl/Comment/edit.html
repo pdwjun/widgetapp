@@ -52,46 +52,46 @@
 
   <tr>
 
-    <td height="28" bgcolor="#FFFFFF">&nbsp;评论店铺ID：</td>
+    <td height="28" bgcolor="#FFFFFF">&nbsp;回复人：</td>
 
     <td bgcolor="#FFFFFF">
-      <input name="company_id" type="text" id="company_id" style="height:22px; width:200px;" value="{$li['company_id']}">
+      <label name="company_id" type="text" id="company_id" style="height:22px; width:200px;" >{$li['uid']|getUname}</label>
     </td>
 
   </tr>
 
     <tr>
 
-    <td height="25" bgcolor="#FFFFFF">&nbsp;评论人ID：</td>
+    <td height="25" bgcolor="#FFFFFF">&nbsp;被回复人：</td>
 
-    <td bgcolor="#FFFFFF"><input name="uid" type="text" id="uid" style="height:22px; width:200px;" value="{$li['uid']}"></td>
-
-  </tr>
-
-  <tr>
-
-    <td height="28" bgcolor="#FFFFFF">&nbsp;评论介绍：</td>
-
-    <td bgcolor="#FFFFFF"><textarea name="content" id="content" style="height:200px; width:400px;">{$li['content']}</textarea></td>
+    <td bgcolor="#FFFFFF"><label name="uid" type="text" id="uid" style="height:22px; width:200px;" >{$li['touid']|getUname}</label></td>
 
   </tr>
+      <tr>
+
+          <td height="28" bgcolor="#FFFFFF">&nbsp;所属圈子：</td>
+
+          <td bgcolor="#FFFFFF"><label name="content" style="height:200px; width:400px;">{$li['mid']|getMsgCate}</label></td>
+
+      </tr>
+
+      <tr>
+
+          <td height="28" bgcolor="#FFFFFF">&nbsp;回复贴子：</td>
+
+          <td bgcolor="#FFFFFF"><label name="content" style="height:200px; width:400px;">{$li['mid']|getMsgTitle}</label></td>
+
+      </tr>
+      <tr>
+
+          <td height="28" bgcolor="#FFFFFF">&nbsp;回复内容：</td>
+
+          <td bgcolor="#FFFFFF"><textarea name="content" id="content" style="height:200px; width:400px;">{$li['content']}</textarea></td>
+
+      </tr>
 
 
 
-  <tr>
-
-    <td height="25" bgcolor="#FFFFFF">&nbsp;评价：</td>
-
-    <td bgcolor="#FFFFFF">
-        <input name="evaluate" type="radio" value="1" checked >
-         好评
-        <input type="radio" name="evaluate" value="0" >
-        中评
-        <input type="radio" name="evaluate" value="-1">
-        差评
-      </td>
-
-  </tr>
 
   <tr>
 
