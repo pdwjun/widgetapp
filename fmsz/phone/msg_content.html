@@ -20,7 +20,8 @@
 <body class="um-vp c-wh2" ontouchstart>
     <div class="msg_group">
         <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra4 lis">
-            <li><img class="msg_group_author" src="/kindeditor/attached/image/20141130/s1_20141130125459_80662.jpg">
+            <li>
+                <div id="author_img"></div>
                 <div class="author_name" id="username"></div></li><li><strong class="msg_group_title" id="title" ></strong></li>
             <li class="msg_group_content" id="content" ></li>
             <li><div class="msg_group_content_image"></div></li>
@@ -50,7 +51,9 @@ window.uexOnload=function(type)
 }
 
 	function callback(data){
-		$$("username").innerHTML=data.username;
+        var img = '<img class="msg_group_author" src="'+ data.img+'">';
+		$$("author_img").innerHTML=img;
+        $$("username").innerHTML=data.username;
 		$$("title").innerHTML =data.title;
 		$$("content").innerHTML =data.content;
 //		$$("time").innerHTML =data.time;
@@ -66,13 +69,13 @@ window.uexOnload=function(type)
 		    +'<li class=" uh-app3 uw-app3 uc-a-app2 ub-img mar-ar1"></li>'
 		    +'<li class="ub-f1 ub ub-ver">'
             +'<div class="uinn ub c-gra-comm uc-a1 umar-at1">'
-			 +'  <div class="uh-app3 uw-app3 ub-img mar-ar1 fullimg" style="background-image:url(${avatar});"></div>'
-			 +'    <div class="ub-f1 ub ub-ver">'
-			 +'        <div class="ub-f1 uinn r-title">${username} 回复了</div>'
-			 +'          <div class="ub-f1 uinn r-content">${content}</div>'
-			 +'          <div class="ub-f1 uinn">${cb:photo}</div>'
-			 +'      </div>'
-			 +'  </div>'
+             +'  <div class="uh-app3 uw-app3 ub-img mar-ar1 fullimg" style="background-image:url(${avatar});"></div>'
+             +'    <div class="ub-f1 ub ub-ver">'
+             +'        <div class="ub-f1 uinn r-title">${username} 回复了</div>'
+             +'          <div class="ub-f1 uinn r-content">${content}</div>'
+             +'          <div class="ub-f1 uinn">${cb:photo}</div>'
+             +'      </div>'
+             +'  </div>'
 			+'</div>'
 		    +'</li>'
 		 +'</ul>'
