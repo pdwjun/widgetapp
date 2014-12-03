@@ -321,5 +321,22 @@ header('Access-Control-Allow-Origin: *');
          else
              echo 0;
      }
+
+     /*
+      * save_comment
+      * var url =hostURL+"&a=save_comment&id="+id+"&content="+content+"&photo="+photo+"&uid="+uid;
+      *
+      */
+     public function save_comment($uid,$mid,$cid,$content){
+         $model = M('Comment');
+         $_REQUEST['createtime'] = time();
+         if($uid==""||$content=""||$mid=="")
+             echo "false";
+         elseif($model->add($_REQUEST))
+            echo $cid;
+         else
+             echo "false";
+
+     }
  }
 ?>

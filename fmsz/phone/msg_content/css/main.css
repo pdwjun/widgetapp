@@ -90,3 +90,20 @@
 }
 
 
+.replied{
+    background-color: rgb(208, 208, 208);
+    padding: 0.3em;
+    margin: 0.3em;
+    -webkit-border-radius: 0.3em;
+}
+.clear{
+    clear: both;
+}
+.left{
+    display: inline-block;
+}
+.right{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}

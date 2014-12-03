@@ -10,11 +10,13 @@
 	<link rel="stylesheet" href="css/project/style.css">
     <link rel="stylesheet" href="msg_content/css/main.css">
 	<script src="js/zy_control.js"></script>
+    <script src="js/appcan.js"></script>
     <script src="js/zy_click.js"></script>
 	<script src="js/zy_tmpl.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/zy_json.js"></script>
-	<script src="msg_content/js/msg.js"></script>
+    <script src="msg_content/js/msg.js"></script>
+    <script src="comment_content/js/main.js"></script>
 		<script src="js/scroll.js" ></script>
 </head>
 <body class="um-vp c-wh2" ontouchstart>
@@ -63,23 +65,42 @@ window.uexOnload=function(type)
 
         var s = '<img class="msg_like" onclick="zan('+data.id+')" src="css/icons/icon-like.png">' +
         '<span id="zan_'+data.id+'" >'+data.zan+'</span>' +
-        '<img  class="msg_message_number" src="css/icons/icon-message.png">'+data.comment_count;
+        '<img  class="msg_message_number" onclick="addReply(0)"  src="css/icons/icon-message.png">'+data.comment_count+'<div id="comment_0" class="reply"></div>';
         $$('msg_group_reply').innerHTML = s;
 	$closeToast();
 	}
+
+    //加载回复列表
 	function commentback(data){
+        var floor =1;
+        var s='';
+        $$('comment').innerHTML = '';
+        if(data!="")
+            data.forEach(function(e){
+                var tmpl = '<div class="msg_group" >' +
+                        '<ul ontouchstart="zy_touch(\'btn-act\')" class="ub b-gra4 lis">'
+                        +'<li><img class="msg_group_author" src="'+ e.img+'" /><div class="author_name" id="name_'+ e.id +'">'+ e.username+'</div><div id="flo_'+ e.id +'" class="floor" >' ;
+                    if(floor==1)
+                        tmpl += '沙发';
+                    else if(floor==2)
+                        tmpl += '板凳';
+                    else
+                        tmpl += floor+'楼';
+                    tmpl +=  '</div></li><li class="msg_group_content" id="con_'+ e.id +'" >'+ e.content+'</li>';
 
-        var tmpl = '<div class="msg_group" >' +
-                '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
-                +'<li><img class="msg_group_author" src="${img}" /><div class="author_name">${username}</div></li>'
-                +'<li class="msg_group_content" >${content}</li></ul></div>'
-//                +'<li><div class="msg_group_content_image"><img src="${photo}" /></div></li>'
+                    if(e.cid!=0) {
+                        tmpl += '<li class="msg_group_content" ><div class="replied" ><div class="replied_title" >' +
+                        '<div class="left">' + $$('name_' + e.cid).innerHTML + '</div>' +
+                        '<div class="right">' + $$('flo_' + e.cid).innerHTML + '</div></div><div class="replied_content">' + $$('con_' + e.cid).innerHTML + '</div></div></li>'
+                    }
+                    tmpl +='</ul><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
+                    s = tmpl;
+                    floor += 1;
+                    var d = document.createElement('DIV');
+                    d.innerHTML=s;
+                    $$('comment').appendChild(d);
 
-
-        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
-        var d = document.createElement('DIV');
-        d.innerHTML=s;
-        $$('comment').appendChild(d);
+                })
     }
 	function tmpleCb(a, b){
 	var str = '';
@@ -100,7 +121,12 @@ window.uexOnload=function(type)
 
 	return str;	
 }
-
+function addReply(cid){
+    var tmpl = '';
+    if($$("comment_"+cid).innerHTML=="")
+        tmpl = '<textarea class="reply_con" name="content" id="content_'+cid+'"  ></textarea></ br><button class="reply_btn" onclick="reply('+cid+')" >发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;送</button>'
+    $$("comment_"+cid).innerHTML = tmpl;
+}
 
 function closeimg(){
 
@@ -112,5 +138,27 @@ function zan(mid){
 	dozan(uid,mid);
 
 }
+    function reply(cid){
+        var content = $$("content_"+cid).value;
+        if(appcan.trim(content)=="")
+        {
+            $toast('请输入内容',2000);
+            return true;
+        }
+        var uid = getLocVal('uid');
+        var mid = getLocVal('mid');
+        //$uid,$mid,$cid,$content
+        dopublish(uid,mid,cid,content);
+
+    }
+    function replyback(data){
+        if(data=="false"){
+            $toast('回复失败，此贴已删除',4000);
+        }else{
+            $$("comment_"+data).innerHTML="";
+            loads(getLocVal('mid'));
+            $toast('回复成功',4000);
+        }
+    }
 </script>
 </html>
