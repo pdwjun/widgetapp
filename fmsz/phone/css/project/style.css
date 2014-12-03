@@ -199,6 +199,9 @@
 .msg_group img{
     -webkit-border-radius: 8px;
 }
+.comment_group > div{
+    margin: 0.1em;
+}
 .floor{
     display: inline-block;
     vertical-align: top;

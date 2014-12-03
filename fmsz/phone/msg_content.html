@@ -32,7 +32,7 @@
         <div id="msg_group_reply" class="msg_group_reply">
         </div>
     </div>
-	<div class="ub ub-ver" id="comment">
+	<div class="ub ub-ver comment_group" id="comment">
 	</div>
 </body>
 <script>
@@ -47,7 +47,9 @@ window.uexOnload=function(type)
         uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
 	}
 	var mid = getLocVal('mid');
+    setLocVal('floor',1);
 	 loads(mid);
+    setLocVal('com_p',1);
 	
 }
 
@@ -73,9 +75,10 @@ window.uexOnload=function(type)
 
     //加载回复列表
 	function commentback(data){
-        var floor =1;
+        var floor = getLocVal('floor');
         var s='';
-        $$('comment').innerHTML = '';
+        if(getLocVal('more')==0)
+            $$('comment').innerHTML = '';
         if(data!="")
             data.forEach(function(e){
                 var tmpl = '<div class="msg_group" >'
@@ -95,12 +98,15 @@ window.uexOnload=function(type)
                     }
                     tmpl +='</div><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
                     s = tmpl;
-                    floor += 1;
+                    floor = parseInt(floor) +parseInt(1);;
                     var d = document.createElement('DIV');
                     d.innerHTML=s;
                     $$('comment').appendChild(d);
 
                 })
+        $closeToast();
+        setLocVal('more',0);
+        setLocVal('floor',floor);
     }
 	function tmpleCb(a, b){
 	var str = '';
@@ -163,7 +169,8 @@ function zan(mid){
 
 //下拉更新
 function dorpDownUpdate(){
-
+    setLocVal('floor',1);
+    setLocVal('com_p',1);
     var mid = getLocVal('mid');
     loads(mid);
     uexWindow.resetBounceView('0');
@@ -173,10 +180,12 @@ function dorpDownUpdate(){
 function pullUpUpdate(){
     uexWindow.toast(1,5,"正在加载...",0);
     var page = getLocVal('com_p');
+    setLocVal('more',1);
     var newpage = parseInt(page) +parseInt(1);
-    loadCom(page,getLocVal('mid'));
+    loadCom(newpage,getLocVal('mid'));
     setLocVal('com_p',newpage);
     uexWindow.resetBounceView('1');
 }
 </script>
+<button onclick="pullUpUpdate()" >ab</button>
 </html>

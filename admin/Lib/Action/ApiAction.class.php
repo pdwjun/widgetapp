@@ -315,7 +315,7 @@ header('Access-Control-Allow-Origin: *');
      public function getcomment($mid){
          $model = M('Comment');
          import('ORG.Util.Page');
-         $return_number = 3;
+         $return_number = 10;
          $count=$model->count();// 查询总数据记录
 
          $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
