@@ -42,6 +42,7 @@ window.uexOnload=function(type)
 {
 	if(!type){
 		uexWindow.setBounce("1");
+        setPageBounce(dorpDownUpdate,pullUpUpdate);
 		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
         uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
 	}
@@ -77,23 +78,22 @@ window.uexOnload=function(type)
         $$('comment').innerHTML = '';
         if(data!="")
             data.forEach(function(e){
-                var tmpl = '<div class="msg_group" >' +
-                        '<ul ontouchstart="zy_touch(\'btn-act\')" class="ub b-gra4 lis">'
-                        +'<li><img class="msg_group_author" src="'+ e.img+'" /><div class="author_name" id="name_'+ e.id +'">'+ e.username+'</div><div id="flo_'+ e.id +'" class="floor" >' ;
+                var tmpl = '<div class="msg_group" >'
+                        +'<div><img class="msg_group_author" src="'+ e.img+'" /><div class="author_name" id="name_'+ e.id +'">'+ e.username+'</div><div id="flo_'+ e.id +'" class="floor" >' ;
                     if(floor==1)
                         tmpl += '沙发';
                     else if(floor==2)
                         tmpl += '板凳';
                     else
                         tmpl += floor+'楼';
-                    tmpl +=  '</div></li><li class="msg_group_content" id="con_'+ e.id +'" >'+ e.content+'</li>';
+                    tmpl +=  '</div><div class="msg_group_content" id="con_'+ e.id +'" >'+ e.content+'</div>';
 
                     if(e.cid!=0) {
-                        tmpl += '<li class="msg_group_content" ><div class="replied" ><div class="replied_title" >' +
+                        tmpl += '<div class="msg_group_content" ><div class="replied" ><div class="replied_title" >' +
                         '<div class="left">' + $$('name_' + e.cid).innerHTML + '</div>' +
-                        '<div class="right">' + $$('flo_' + e.cid).innerHTML + '</div></div><div class="replied_content">' + $$('con_' + e.cid).innerHTML + '</div></div></li>'
+                        '<div class="right">' + $$('flo_' + e.cid).innerHTML + '</div></div><div class="replied_content">' + $$('con_' + e.cid).innerHTML + '</div></div></div>'
                     }
-                    tmpl +='</ul><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
+                    tmpl +='</div><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
                     s = tmpl;
                     floor += 1;
                     var d = document.createElement('DIV');
@@ -160,5 +160,23 @@ function zan(mid){
             $toast('回复成功',4000);
         }
     }
+
+//下拉更新
+function dorpDownUpdate(){
+
+    var mid = getLocVal('mid');
+    loads(mid);
+    uexWindow.resetBounceView('0');
+
+}
+//上拉加载更多
+function pullUpUpdate(){
+    uexWindow.toast(1,5,"正在加载...",0);
+    var page = getLocVal('com_p');
+    var newpage = parseInt(page) +parseInt(1);
+    loadCom(page,getLocVal('mid'));
+    setLocVal('com_p',newpage);
+    uexWindow.resetBounceView('1');
+}
 </script>
 </html>

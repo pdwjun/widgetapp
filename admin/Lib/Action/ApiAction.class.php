@@ -310,12 +310,20 @@ header('Access-Control-Allow-Origin: *');
      }
 
      /*
-      * 返回 string 中有多少元素，多少个人赞
+      * 返回 回复列表
       */
      public function getcomment($mid){
          $model = M('Comment');
+         import('ORG.Util.Page');
+         $return_number = 3;
+         $count=$model->count();// 查询总数据记录
+
+         $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
+         $Page = new Page($count,$return_number);
          $user_tab = M('User')->getTableName();
-         $list = $model->join($user_tab.' on '. $user_tab.'.uid = '. $model->getTableName().'.uid')->where('mid='.$mid)->select();
+         $list = $model->join($user_tab.' on '. $user_tab.'.uid = '. $model->getTableName().'.uid')
+             ->page($nowPage.','.$Page->listRows)
+             ->where('mid='.$mid)->select();
          if(!empty($list))
              echo json_encode($list);
          else
