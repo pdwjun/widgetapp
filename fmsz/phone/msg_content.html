@@ -92,12 +92,12 @@ window.uexOnload=function(type)
                         tmpl += '板凳';
                     else
                         tmpl += floor+'楼';
-                    tmpl +=  '</div><div class="msg_group_content" id="con_'+ e.id +'" >'+ e.content+'</div>';
+                    tmpl +=  '</div><span id="time_'+ e.id +'" class="reply_time floor">'+ repliedTime(e.createtime) +'</span><div class="msg_group_content" id="con_'+ e.id +'" >'+ e.content+'</div>';
 
                     if(e.cid!=0) {
                         tmpl += '<div class="msg_group_content" ><div class="replied" ><div class="replied_title" >' +
                         '<div class="left">' + $$('name_' + e.cid).innerHTML + '</div>' +
-                        '<div class="right">' + $$('flo_' + e.cid).innerHTML + '</div></div><div class="replied_content">' + $$('con_' + e.cid).innerHTML + '</div></div></div>'
+                        '<div class="right"><span class="reply_time" >'+ $$('time_'+ e.cid).innerHTML +'</span>&nbsp;&nbsp;' + $$('flo_' + e.cid).innerHTML + '</div></div><div class="replied_content">' + $$('con_' + e.cid).innerHTML + '</div></div></div>'
                     }
                     tmpl +='</div><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
                     s = tmpl;
@@ -164,6 +164,8 @@ function zan(mid){
         if(data=="false"){
             $toast('回复失败，此贴已删除',4000);
         }else{
+
+            setLocVal('floor',1);
             $$("comment_"+data).innerHTML="";
             loads(getLocVal('mid'));
             $toast('回复成功',4000);

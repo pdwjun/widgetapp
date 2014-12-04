@@ -210,6 +210,11 @@
     font-size: 0.8em;
     position: absolute;
     right: 1em;
+    text-align: right;
+}
+.reply_time{
+    font-size: 0.6em;
+    top: 1.5em;
 }
 .reply_con{
     width: 100%;
@@ -223,5 +228,4 @@
     font-width: bolder;
     font-family: 幼圆;
     font-size: 1em;
-
 }

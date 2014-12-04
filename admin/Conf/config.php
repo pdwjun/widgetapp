@@ -19,7 +19,7 @@ $thisconfig = array(
     'USER_AUTH_MODEL'=>'Admin',  //验证用户表模型 shop_user
  'AUTH_PWD_ENCODER'=>'md5',
     'USER_AUTH_GATEWAY'  =>  '/Admin.php?m=Public&a=login',//默认的认证网关
- 'NOT_AUTH_MODULE'  =>  'Public,Api',    //默认不需要认证的模块'A,B,C'
+ 'NOT_AUTH_MODULE'  =>  'Public,Api,Upload',    //默认不需要认证的模块'A,B,C'
  'REQUIRE_AUTH_MODULE' =>  '',     //默认需要认证的模块
  'NOT_AUTH_ACTION'  =>  'exits',    //默认不需要认证的动作
  'REQUIRE_AUTH_ACTION' =>  '',    //默认需要认证的动作
