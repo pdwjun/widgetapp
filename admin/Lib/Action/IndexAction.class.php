@@ -52,7 +52,10 @@
 	
 	}
 
- 
+    function test(){
+        $this->display();
+
+    }
  }
 
 ?>
