@@ -1,7 +1,7 @@
 var isPhone = (window.navigator.platform != "Win32");
 var isAndroid = (window.navigator.userAgent.indexOf('Android')>=0)?true : false;
-// var hostURL = "http://meibao.local/index.php?m=Api";
-var hostURL = "http://test.pdwjun.com/index.php?m=Api";
+var hostURL = "http://meibao.local/index.php?m=Api";
+// var hostURL = "http://test.pdwjun.com/index.php?m=Api";
 /**
  * @param String inWndName 新窗口名称
  * @param String html		新窗口路径
@@ -352,4 +352,44 @@ date.setSeconds(endTime.substring(17,19));
 return Date.parse(date);
 }
 
+function repliedTime(dateTimeStamp){
+    var minute = 1000 * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var halfamonth = day * 15;
+    var month = day * 30;
+    var year = month * 12;
+    var now = new Date().getTime();
+    var diffValue = now - dateTimeStamp;
+    if(diffValue < 0){
+        //若日期不符则弹出窗口告之
+        //alert("结束日期不能小于开始日期！");
+    }
+    var yearC =diffValue/year;
+    var monthC =diffValue/month;
+    var weekC =diffValue/(7*day);
+    var dayC =diffValue/day;
+    var hourC =diffValue/hour;
+    var minC =diffValue/minute;
+    if(yearC>=1){
+        result="发表于" + parseInt(yearC) + "年以前";
+    }
+    else if(monthC>=1){
+        result="发表于" + parseInt(monthC) + "月前";
+    }
+    else if(weekC>=1){
+        result="发表于" + parseInt(weekC) + "周前";
+    }
+    else if(dayC>=1){
+        result="发表于"+ parseInt(dayC) +"天前";
+    }
+    else if(hourC>=1){
+        result="发表于"+ parseInt(hourC) +"个小时前";
+    }
+    else if(minC>=1){
+        result="发表于"+ parseInt(minC) +"分钟前";
+    }else
+        result="刚刚发表";
+    return result;
 
+}

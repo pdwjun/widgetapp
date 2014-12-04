@@ -78,7 +78,10 @@ window.uexOnload=function(type)
         var floor = getLocVal('floor');
         var s='';
         if(getLocVal('more')==0)
+        {
             $$('comment').innerHTML = '';
+            floor = 1;
+        }
         if(data!="")
             data.forEach(function(e){
                 var tmpl = '<div class="msg_group" >'
