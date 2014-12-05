@@ -29,10 +29,10 @@ header('Access-Control-Allow-Origin: *');
       */
      private $table_name;
  	 public function index(){
-	 	 
+
 	 	$this->list = M($this->table_name)->select();
 	 	$this->display("Category:index");
-	 	
+
 	 }
 
      /*
@@ -344,6 +344,54 @@ header('Access-Control-Allow-Origin: *');
             echo $cid;
          else
              echo "false";
+
+     }
+     public function upload(){
+
+         $target_dir = "/data/photo/";
+         file_put_contents($_SERVER['DOCUMENT_ROOT'] . $target_dir.'log', print_r($_FILES, 1));
+         $ext = strtolower(substr(strrchr($_FILES["fileToUpload"]["name"],'.'),1));
+         $target_file = $target_dir .rand(0,10000).date('YmdHis').'.'.$ext;
+
+         $uploadOk = 1;
+         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+            // Check if image file is a actual image or fake image
+         if (isset($_POST["submit"])) {
+             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+             if ($check !== false) {
+//                 echo "File is an image - " . $check["mime"] . ".";
+//                 echo "0";
+             } else {
+//                 echo "File is not an image.";
+                 echo "0";
+                 return true;
+             }
+         }
+            // Check file size
+         if ($_FILES["fileToUpload"]["size"] > 10000000) {
+//             echo "Sorry, your file is too large.";
+             echo "0";
+         }
+            // Allow certain file formats
+         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+             && $imageFileType != "gif"
+         ) {
+//             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+             echo "0";
+         }
+            // Check if $uploadOk is set to 0 by an error
+         if ($uploadOk == 0) {
+//             echo "Sorry, your file was not uploaded.";
+             echo "0";
+            // if everything is ok, try to upload file
+         } else {
+             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $target_file)) {
+                 echo $target_file;
+             } else {
+                 echo "0";
+//                 echo "Sorry, there was an error uploading your file.";
+             }
+         }
 
      }
  }
