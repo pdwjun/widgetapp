@@ -39,7 +39,7 @@
     function userBack(data){
         $$("username").innerHTML ='<div class="username" >'+data.username + '</div><div class="info msg_type" id="msg_type" >怀孕期</div>';
         // $$("avatar").style.backgroundImage=data.avatar;
-        $$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+data.img+');"></div>';
+        $$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+hostWebURL+data.img+');"></div>';
     }
     function msg_cate_Back(data){
 //        $$("banner").backgroundImage = 'url('+data.img+')';
