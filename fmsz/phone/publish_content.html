@@ -129,15 +129,14 @@
                     $toast("上传成功", 2000);
                     var oImg = document.createElement('img');
 //                    oImg.setAttribute('src', serverPath);
-//                    oImg.setAttribute('src', 'http://meibao.local'+serverPath);
-                    oImg.setAttribute('src', 'http://test.pdwjun.com'+serverPath);
+                    oImg.setAttribute('src', hostWebURL+serverPath);
                     oImg.setAttribute('alt', 'na');
                     oImg.style.width = '3.75em';
                     oImg.style.margin = '0.5em';
                     oImg.style.height = '3.75em';
                     var uploaded = document.createElement('input');
                     uploaded.type = 'hidden';
-                    uploaded.name = 'name_'+file_c;
+                    uploaded.id = 'name_'+file_c;
                     uploaded.value = serverPath;
 
                     file_c += 1;
@@ -202,9 +201,11 @@
         var content = encodeURIComponent($$("content").value);
 //        var photo = encodeURIComponent($$("photo").value);
         var photo = '';
+
         for(i=0;i<file_c;i++)
-            photo = '|'+$$("name_"+i).val();
+            photo += '|'+$$("name_"+i).value;
         var uid = getLocVal('uid');
+//        alert(photo);
         savedo(cid, title, content, photo, uid);
 
     }

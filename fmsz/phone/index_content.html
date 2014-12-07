@@ -119,20 +119,27 @@ function pullUpUpdate(){
 
 function callback(data){
 
-	var tmpl = '<div class="msg_group" >' +
-            '<ul ontouchstart="zy_touch(\'btn-act\')" class="ubb ub b-gra4 lis">'
-            +'<li><img class="msg_group_author" src="${img}" /><div class="author_name">${username}</div></li>'
-            +'<li ><strong class="msg_group_title" onclick="showmsg(${id})">${title}</strong></li>'
-		    +'<li class="msg_group_content"  onclick="showmsg(${id})">${content}</li>'
-            +'<li><div class="msg_group_content_image"><img src="${photo}" /></div></li>'
-		 +'</ul><div class="msg_group_reply"><img class="msg_like" onclick="zan(${id})" src="css/icons/icon-like.png" /><span id="zan_${id}" >${zan}</span>' +
-            '<img onclick="showmsg(${id})" class="msg_message_number" src="css/icons/icon-message.png"  />${comment_count}</div></div>'
-		
+    var tmpl= '';
+    if(data!="")
+        data.forEach(function(e) {
+             tmpl += '<div class="msg_group" >' +
+                '<ul ontouchstart="zy_touch(\'btn-act\')" onclick="showmsg('+ e.id +')" class="ubb ub b-gra4 lis">'
+                + '<li><img class="msg_group_author" src="'+ e.img +'" /><div class="author_name">'+ e.username +'</div></li>'
+                + '<li ><strong class="msg_group_title">'+ e.title +'</strong></li>'
+                + '<li class="msg_group_content" >'+ e.content +'</li><li><div class="msg_group_content_image">';
+                var photoarr = e.photo.split('|');
+                photoarr.forEach(function(e){
+                    if(e!="")
+                        tmpl += '<img class="msg_group_content_photo" src="'+ hostWebURL+ e+ '">';
+                })
+                tmpl += '</div></li></ul><div class="msg_group_reply"><img class="msg_like" onclick="zan('+ e.id +')" src="css/icons/icon-like.png" /><span id="zan_'+ e.id +'" >'+ e.zan +'</span>' +
+                '<img onclick="showmsg('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  />'+ e.comment_count +'</div></div>'
 
-   var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
+
+        })
 
 	var d = document.createElement('DIV');
-  	d.innerHTML=s;
+  	d.innerHTML=tmpl;
     if(getLocVal('refresh')==1)
         $$('comment').innerHTML = d.innerHTML;
     else

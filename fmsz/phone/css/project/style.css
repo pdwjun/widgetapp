@@ -181,6 +181,9 @@
     width: 3em;
     height: 3em;
 }
+.msg_group_content_photo {
+    margin: 0.2em;
+}
 .msg_group_content{
     color: rgb(53, 53, 53);
 }

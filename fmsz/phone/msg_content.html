@@ -18,6 +18,8 @@
     <script src="msg_content/js/msg.js"></script>
     <script src="comment_content/js/main.js"></script>
 		<script src="js/scroll.js" ></script>
+    <script src="js/zy_slide.js" ></script>
+
 </head>
 <body class="um-vp c-wh2" ontouchstart>
     <div class="msg_group">
@@ -27,7 +29,7 @@
             </li>
             <li><strong class="msg_group_title" id="title" ></strong></li>
             <li class="msg_group_content" id="content" ></li>
-            <li><div class="msg_group_content_image"></div></li>
+            <li><div id="photolist" class="msg_group_content_image"></div></li>
         </ul>
         <div id="msg_group_reply" class="msg_group_reply">
         </div>
@@ -36,10 +38,62 @@
 	</div>
 </body>
 <script>
-
+//打开图片浏览器
+var file_c = 0;
+function openImageGallery(){
+    var array = new Array();
+    for (var i = 0; i < file_c; i++) {
+        array[i] = document.getElementById('imageUrl_' + i).src;
+    }
+    uexImageBrowser.open(array);
+}
+//有索引打开
+function openImageGalleryWithIndex(){
+    var array = new Array();
+    for (var i = 0; i < 22; i++) {
+        array[i] = document.getElementById('imageUrl_' + i).value;
+    }
+    uexImageBrowser.open(array, document.getElementById("saveImgSrc").value, 1);
+}
+//预览图片
+function previewTinyImage(){
+    var array = new Array();
+    array[0] = document.getElementById('picc').src;
+    alert(array[0]);
+    uexImageBrowser.open(array);
+}
+//保存图片
+function saveImg(){
+    uexImageBrowser.save("res://pano_l.jpg");//"wgt://data/down/1284565196.jpg");//此参数应该为wgt://（或wgts://,file://）路径下的图片文件，不支持网络
+}
+//清除图片缓存
+function cleanCache(){
+    alert("cleanCache");
+    uexImageBrowser.cleanCache();
+}
 zy_init();
 window.uexOnload=function(type)
 {
+    if(!type){
+//    $$("slider").slide=new zySlide("slider","H",function(){},false,function(e){});
+    }
+    //选择图片的回调函数
+    uexImageBrowser.cbPick = function(opCode, dataType, data){
+        document.getElementById('pickImage').innerHTML = data;
+        document.getElementById('picc').src = data;
+    }
+    uexImageBrowser.cbSave = function(opCode, dataType, data){
+        if (data == 0) {
+            alert("保存成功!");
+        }
+        else
+        if (data == 1) {
+            alert("保存失败!");
+        }
+    }
+    uexWidgetOne.onError = function(opCode, errorCode, errorDesc){
+        alert(errorCode + ":" + errorDesc);
+    }
 	if(!type){
 		uexWindow.setBounce("1");
         setPageBounce(dorpDownUpdate,pullUpUpdate);
@@ -60,13 +114,18 @@ window.uexOnload=function(type)
 		$$("content").innerHTML =data.content;
 //		$$("time").innerHTML =data.time
 //		$$("pl").innerHTML =data.pl;
-		var s="";
-			for(var i = 0; i < data.photo.length; i++){
-               s += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url('+data.photo[i]+'); float:left" onclick="showimg(\''+data.photo[i]+'\');"></div>';
-		   }
-		   //$$("photolist").innerHTML =s;
+        var photoarr = data.photo.split('|');
+        var s = "";
+        photoarr.forEach(function (e) {
+            if(e!="")
+            {
+                s += '<img onclick="openImageGallery()" id="imageUrl_'+file_c+'" class="msg_group_content_photo" src="'+hostWebURL+e+'" />'
+                file_c += 1;
+            }
+        })
+        $$("photolist").innerHTML =s;
 
-        var s = '<img class="msg_like" onclick="zan('+data.id+')" src="css/icons/icon-like.png">' +
+        s = '<img class="msg_like" onclick="zan('+data.id+')" src="css/icons/icon-like.png">' +
         '<span id="zan_'+data.id+'" >'+data.zan+'</span>' +
         '<img  class="msg_message_number" onclick="addReply(0)"  src="css/icons/icon-message.png">'+data.comment_count+'<div id="comment_0" class="reply"></div>';
         $$('msg_group_reply').innerHTML = s;
@@ -192,5 +251,5 @@ function pullUpUpdate(){
     uexWindow.resetBounceView('1');
 }
 </script>
-<button onclick="pullUpUpdate()" >ab</button>
+<!--<button onclick="pullUpUpdate()" >ab</button>-->
 </html>
