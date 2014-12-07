@@ -65,13 +65,10 @@
 </div>
 <div class="ub ub-ver uinn-a1 ub-f1">
 
-    <div class="ub uba b-gra2 c-wh uinn">
+    <div id="upphoto_p" class="ub uba b-gra2 c-wh uinn">
         <div id="uploadimage"></div>
         <!--按钮开始-->
-        <div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto1" onclick="upPhoto(1);"></div>
-        <div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto2" onclick="upPhoto(2);"></div>
-        <div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto3" onclick="upPhoto(3);"></div>
-        <div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto4" onclick="upPhoto(4);"></div>
+        <div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto" onclick="upPhoto();"></div>
         <!--按钮结束-->
         <div class="ub-f1" id="photolist">
 
@@ -130,23 +127,26 @@
                     $closeToast();
 
                     $toast("上传成功", 2000);
-//                    var oImg = document.createElement('img');
+                    var oImg = document.createElement('img');
+//                    oImg.setAttribute('src', serverPath);
 //                    oImg.setAttribute('src', 'http://meibao.local'+serverPath);
-//                    oImg.setAttribute('alt', 'na');
-//                    oImg.style.width = '3.75em';
-//                    oImg.style.margin = '0.5em';
-//                    oImg.style.height = '3.75em';
-//                    var uploaded = document.createElement('input');
-//                    uploaded.type = 'hidden';
-//                    uploaded.name = 'name_'+file_c;
-//
-//                    file_c += 1;
-//                    $$("uploadimage").appendChild(oImg);
-//                    $$("uploadimage").appendChild(uploaded);
-                        if(file_c!=0)
-                        $$("upphoto"+file_c).style.backgroundImage = 'url("'+ serverPath +'")';
-                        file_c = 0;
+                    oImg.setAttribute('src', 'http://test.pdwjun.com'+serverPath);
+                    oImg.setAttribute('alt', 'na');
+                    oImg.style.width = '3.75em';
+                    oImg.style.margin = '0.5em';
+                    oImg.style.height = '3.75em';
+                    var uploaded = document.createElement('input');
+                    uploaded.type = 'hidden';
+                    uploaded.name = 'name_'+file_c;
+                        upload.value = serverPath;
+
+                    file_c += 1;
+                    $$("uploadimage").appendChild(oImg);
+                    $$("uploadimage").appendChild(uploaded);
                     uexUploaderMgr.closeUploader(1);
+                        if(file_c >= 4)
+                    var todel = $$("upphoto");
+                    $$("upphoto_p").removeChild(todel)
 
                     break;
                 case 2:
@@ -205,8 +205,7 @@
         savedo(cid, title, content, photo, uid);
 
     }
-    function upPhoto($div) {
-        file_c = $div;
+    function upPhoto() {
         uexWindow.actionSheet("上传图片", "取消", ["手机拍照", "相册上传"]);
 
     }

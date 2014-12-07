@@ -245,7 +245,13 @@ header('Access-Control-Allow-Origin: *');
              $data['title']=I('title');
              $data['content']=I('content');
              $data['cid']=I('cid');
-             $data['photo']=I('photo');
+             for ($i = 0; $i < 4; $i++) {
+                 if($i==0){
+                     $data['photo'] = I('name_0');
+                 }else
+                     $data['photo'] .= '|'.I('name_'. $i);
+             }
+
              $data['uid']=I('uid');
              $data['createtime']=time();
 
