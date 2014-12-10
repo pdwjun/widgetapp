@@ -274,13 +274,14 @@ function noSelAll()
 
 	<td>admin</td>
 
-	<td><eq name="vo.status" value="0"><a href="{:U('shenhe',array('id'=>$vo['id']))}"><span style="color:#FF0000;">审核中</span></a>
+	<td>
+	<!--<eq name="vo.status" value="0"><a href="{:U('shenhe',array('id'=>$vo['id']))}"><span style="color:#FF0000;">审核中</span></a>-->
 
-	  <else/>已通过</eq>
+	  <!--<else/>已通过</eq>-->
 
 </td>
 
-	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑 </a> | <a href="{:U('del',array('id'=>$vo['id']))}">删除</a></td>
+	<td><a href="{:U('Comment/index',array('mid'=>$vo['id']))}">查看回复 </a> | <a href="{:U('edit',array('id'=>$vo['id']))}">编辑 </a> | <a href="{:U('del',array('id'=>$vo['id']))}">删除</a></td>
 
 </tr></foreach>
 
