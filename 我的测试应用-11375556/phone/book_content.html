@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/project/ui-list.css">
+    <link rel="stylesheet" href="css/project/style.css">
+    <link rel="stylesheet" href="user_content/css/main.css">
+    <script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/zy_json.js"></script>
+    <script src="user_content/js/user.js"></script>
+</head>
+<body class="um-vp c-gra1" ontouchstart>
+<div class="ub ub-ver">
+
+    <!--列表-->
+    <div class="" >
+        <div class="">我的预约</div>
+        <div class="">预约医生</div>
+        <div class="">预约医院</div>
+    </div>
+</div>
+</body>
+<script>
+
+    function logout(){
+        setLocVal('uid',"");
+        openNewWin('login','login.html');
+    }
+    function selectDate(){
+        var nian =$$("nian").value ;
+        var yue=$$("yue").value;
+        var ri =$$("ri").value;
+        uexControl.openDatePicker(nian,yue,ri);
+    }
+    function getUserHand(data){
+        $$("username").innerHTML = data.username;
+        $$("avatars").src=data.img;
+        $$("sheng").value = data.sheng;
+        $$("shi").value= data.shi;
+        $$("name").value= data.name;
+        $$("phone").value=data.phone;
+        $$("remark").value= data.remark;
+        $$("yunqi").value = data.yunqi;
+        var dArr = data.yunqi.split('-');
+        $$("nian").value=dArr[0];
+        $$("yue").value=dArr[1];
+        $$("ri").value= dArr[2];
+
+
+    }
+
+
+    zy_init();
+    window.uexOnload=function(type)
+    {
+
+        var plat = uexWidgetOne.getPlatform();
+        if(plat) {
+            uexWindow.onKeyPressed = function(keyCode) {
+                if (keyCode == 0) {
+
+                }
+                //要执行的代码
+            }
+
+            uexWindow.setReportKey(0,1);
+        }
+        if(!type){
+            uexWindow.setBounce("0");
+            uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+            uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
+        }
+        //日期选择
+
+        uexControl.cbOpenDatePicker=function(opCode,dataType,data){
+            if(dataType==1){
+                var obj = eval('('+data+')');
+                $$("yunqi").value=obj.year+'-' +obj.month+'-'+obj.day;
+                //  console.log('日期选择器返回的日期：'+obj.year+'年' +obj.month+'月'+obj.day+'日');
+            }
+        }
+        //打开摄像头
+        uexCamera.cbOpen = function(opId, dataType, data){
+            // $$("avatars").src=data;
+            upload(data);
+
+        }
+        uexUploaderMgr.cbCreateUploader = function(opCode, dataType, data){
+            if (data == 0) {
+                //  alert("创建成功");
+            }
+            else {
+                // alert("创建失败");
+            }
+        }
+        //上传的状态
+        uexUploaderMgr.onStatus = function(opCode, fileSize, percent, serverPath, status){
+            switch (status) {
+                case 0:
+                    $toast( "文件大小：" + fileSize + "字节<br>上传进度：" + percent + "%");
+
+                    break;
+                case 1:
+                    $closeToast();
+                    $$("avatars").src = serverPath;
+                    $toast("上传成功",2000);
+                    uexUploaderMgr.closeUploader(1);
+                    break;
+                case 2:
+                    $closeToast();
+                    $toast("上传失败",1000);
+                    uexUploaderMgr.closeUploader(1);
+                    break;
+            }
+        }
+
+        var avatar=$$('avatars').src; //头像
+
+        var uid  = getLocVal('uid');
+        if(uid){
+            getUserInfo(uid);
+
+        }else{
+            $toast("您还没有登陆",2000);
+            openNewWin('login','login.html');
+        }
+    }
+
+    function callback(data){
+        if(data==1){
+            $closeToast();
+            $toast("保存信息成功",2000);
+
+        }else{
+            $toast("保存信息失败",2000);
+        }
+    }
+    function save(){
+        var b64 = new Base64();
+        var avatar=$$('avatars').src; //头像
+
+        //var username =encodeURIComponent(b64.encode($$("username").value));
+        var password=$$("password").value;
+        var name =encodeURIComponent(b64.encode($$("name").value));//真实姓名
+        var phone = $$("phone").value; //手机号码
+        var sheng =encodeURIComponent(b64.encode($$("sheng").value)); //省
+        var shi= encodeURIComponent(b64.encode($$("shi").value));;	//市
+        var yunqi =$$("yunqi").value; //孕期
+        var remark = encodeURIComponent(b64.encode($$("remark").value));//个性签名
+        var uid = getLocVal('uid');
+        savedo(uid,password,avatar,name,phone,sheng,shi,yunqi,remark);
+    }
+
+</script>
+</html>

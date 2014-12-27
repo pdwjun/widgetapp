@@ -45,7 +45,7 @@ function openImageGallery(){
     for (var i = 0; i < file_c; i++) {
         array[i] = document.getElementById('imageUrl_' + i).src;
     }
-    uexImageBrowser.open(array);
+    uexImageBrowser.open(array,0,1);
 }
 //有索引打开
 function openImageGalleryWithIndex(){
@@ -120,6 +120,7 @@ window.uexOnload=function(type)
             if(e!="")
             {
                 s += '<img onclick="openImageGallery()" id="imageUrl_'+file_c+'" class="msg_group_content_photo" src="'+hostWebURL+e+'" />'
+                setLocVal(hostWebURL+e,hostWebURL+e);
                 file_c += 1;
             }
         })
@@ -160,7 +161,7 @@ window.uexOnload=function(type)
                     }
                     tmpl +='</div><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
                     s = tmpl;
-                    floor = parseInt(floor) +parseInt(1);;
+                    floor = parseInt(floor) +parseInt(1);
                     var d = document.createElement('DIV');
                     d.innerHTML=s;
                     $$('comment').appendChild(d);

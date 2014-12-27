@@ -1,7 +1,7 @@
 function getList(page){
 	     setLocVal('page',page);
 	     var url = hostURL+"&a=getmsglist&page="+page;
-	   	$.getJSON(url,callback,'json',getJSONError,'GET','');
+	   	$.getJSON(url,callback,'json',getJSONError,'GET','',true);
 }
 
 function getUserInfo(uid){
@@ -10,12 +10,12 @@ function getUserInfo(uid){
 }
 function getMsgCateInfo(rid){
     var url = hostURL+"&a=get_cate_info&rid="+rid;
-    $.getJSON(url,msg_cate_Back,'json',getJSONError,'GET','');
+    $.getJSON(url,msg_cate_Back,'json',getJSONError,'GET','',true);
 }
 
 function readInfo(uid){
 	  var url=hostURL+"&a=get_msg_number&uid="+uid;
-	  $.getJSON(url,readBack,'json',getJSONError,'GET','');
+	  $.getJSON(url,readBack,'json',getJSONError,'GET','',true);
 }
 
 function readBack(data){
