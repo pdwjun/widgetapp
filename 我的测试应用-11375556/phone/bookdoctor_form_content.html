@@ -13,76 +13,53 @@
     <link rel="stylesheet" href="css/ui-base.css">
     <link rel="stylesheet" href="css/project/ui-list.css">
     <link rel="stylesheet" href="css/project/style.css">
-    <link rel="stylesheet" href="publish_content/css/main.css">
+    <link rel="stylesheet" href="book/css/main.css">
     <script src="js/zy_control.js"></script>
     <script src="js/zy_click.js"></script>
     <script src="js/zy_tmpl.js"></script>
     <script src="js/base64.js"></script>
     <script src="js/main.js"></script>
     <script src="js/zy_json.js"></script>
-    <script src="publish_content/js/publish.js"></script>
+    <script src="book/js/main.js"></script>
 </head>
 <body class="um-vp c-gra1" ontouchstart>
 <div class="ub ub-ver">
-
-    <div class="ub ub-ver uinn-a1 ub-f1">
-        <div class="uba b-gra2 c-wh" style="-webkit-border-radius: 0.5em;">
-            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-                <li class="tx-r ulev-app1 t-gra-FS1 right ">
-                    <!--下拉列表开始-->
-                    <div class="ub t-bla uinn">
-                        <div class="ub-f1 ub uba c-wh b-gra  sel">
-                            <div class="ub-f1 ut-s uinn ulev-1 tx-l t-gra ulh-sel">选择标签</div>
-                            <div class="ubl b-gra c-06 umw2 ub ub-pc ub-ac">
-                                <div class="ub-img umw1 umh1 res3"></div>
-                            </div>
-                            <select name="cate" selectedindex="0" id="cate" onchange="zy_selectmenu(this.id)">
-
-                            </select>
-                        </div>
-                    </div>
-                    <!--下拉列表结束-->
-
-
-                </li>
-
-            </ul>
-            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-                <li class="tx-r ulev-app1 t-gra-FS1 right"><input placeholder="标题输入" id="title" type="text"
-                                                                  class="uinn msg_title"></li>
-
-            </ul>
-
-            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-
-                <li class="tx-r ulev-app1 t-gra-FS1 right">
-                    <textarea placeholder="请输入正文" id="content" type="text" class="uinn msg_content"></textarea>
-                </li>
-            </ul>
-
-        </div>
+    <div class="doctor-info" >
+        <!--医生介绍，description-->
     </div>
-</div>
-<div class="ub ub-ver uinn-a1 ub-f1">
+    <form>
+        <div class="form">
+            <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
+                <div class="uinn fa fa-search sc-text"><img src="css/project/images/email.png"/></div>
+                <input placeholder="邮箱" type="text" class="ub-f1" name="email">
+            </div>
+            <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
+                <div class="uinn fa fa-search sc-text"><img src="css/project/images/calculator.png"/></div>
+                <input placeholder="预产期" type="text" class="ub-f1" name="expection">
+            </div>
+            <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
+                <div class="uinn fa fa-search sc-text"><img src="css/project/images/time.png"/></div>
+                <input placeholder="赴美日期" type="text" name="flydate" class="ub-f1">
+            </div>
+            <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
+                <div class="uinn fa fa-search sc-text"><img src="css/project/images/phone.png"/></div>
+                <input placeholder="手机" type="text" name="phone" class="ub-f1">
+            </div>
+            <div class="ubaa-2">
+                <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa verify">
+                    <div class="uinn fa fa-search sc-text"><img src="css/project/images/verify.png"/></div>
+                    <input placeholder="验证码" type="text" name="verify" class="ub-f1 ">
+                </div>
+                <div class="ub ub-ac ub-pc umar-a uc-a1 send">发送</div>
 
-    <div id="upphoto_p" class="ub uba b-gra2 c-wh uinn">
-        <div id="uploadimage"></div>
-        <!--按钮开始-->
-        <div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto" onclick="upPhoto();"></div>
-        <!--按钮结束-->
-        <div class="ub-f1" id="photolist">
-
+            </div>
         </div>
-
-    </div>
-
+    </form>
 </div>
 
 
-<div class="ub ub-ac ub-pc umar-a c-btn uc-a1" ontouchstart="zy_touch('btn-act1')" onclick="save();">
-    <input type="hidden" id="photo" value="" name="photo">
-
-    <div class=" ub ub-ac ub-pc t-wh uinnh5">保存</div>
+<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="save();">
+    <div class=" ub ub-ac ub-pc t-wh uinnh5 ">立刻预约</div>
 </div>
 </body>
 <script>
@@ -129,22 +106,22 @@
                     $toast("上传成功", 2000);
                     var oImg = document.createElement('img');
 //                    oImg.setAttribute('src', serverPath);
-                    oImg.setAttribute('src', hostWebURL+serverPath);
+                    oImg.setAttribute('src', hostWebURL + serverPath);
                     oImg.setAttribute('alt', 'na');
                     oImg.style.width = '3.75em';
                     oImg.style.margin = '0.5em';
                     oImg.style.height = '3.75em';
                     var uploaded = document.createElement('input');
                     uploaded.type = 'hidden';
-                    uploaded.id = 'name_'+file_c;
+                    uploaded.id = 'name_' + file_c;
                     uploaded.value = serverPath;
 
                     file_c += 1;
                     $$("uploadimage").appendChild(oImg);
                     $$("uploadimage").appendChild(uploaded);
                     uexUploaderMgr.closeUploader(1);
-                        if(file_c >= 4)
-                    var todel = $$("upphoto");
+                    if (file_c >= 4)
+                        var todel = $$("upphoto");
                     $$("upphoto_p").removeChild(todel)
 
                     break;
@@ -202,8 +179,8 @@
 //        var photo = encodeURIComponent($$("photo").value);
         var photo = '';
 
-        for(i=0;i<file_c;i++)
-            photo += '|'+$$("name_"+i).value;
+        for (i = 0; i < file_c; i++)
+            photo += '|' + $$("name_" + i).value;
         var uid = getLocVal('uid');
 //        alert(photo);
         savedo(cid, title, content, photo, uid);
@@ -213,6 +190,7 @@
         uexWindow.actionSheet("上传图片", "取消", ["手机拍照", "相册上传"]);
 
     }
+
 
 </script>
 </html>

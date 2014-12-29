@@ -58,7 +58,7 @@ font-family: 幼圆;
     width: 30%;
 }
 .grade{
-    width: 20%;
+    width: 22%;
 }
 .list-group{
     display: -webkit-box;
@@ -89,4 +89,39 @@ font-family: 幼圆;
 }
 .book{
     background-color: #ff6600;
+}
+
+.uinnh5
+{
+    padding:0.8em 0.5em;
+    margin:0;
+}
+.item{
+    display: -webkit-box;
+}
+.sc-text > img{
+    height: 22px;
+}
+.ubaa {
+    border: 1px solid rgb(208, 208, 208);
+    -webkit-border-radius: 0.2em;
+    background-color: white;
+    margin: 0.8em;
+}
+.verify{
+    width: 70%;
+}
+.verify input{
+    display: inherit;
+}
+.ubaa-2{
+    display: flex;
+}
+.send{
+    color: #ffffff;
+    background-color: #00d049;
+    width: 30%
+}
+.umar-a{
+    margin: 0.8em;
 }
