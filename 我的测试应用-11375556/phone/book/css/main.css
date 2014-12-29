@@ -1,3 +1,6 @@
+body {
+font-family: 幼圆;
+}
 .t-btn {
     width: 25%;
     height: 3em;
@@ -25,13 +28,11 @@
     height: 2em;
     background-color: white;
 }
-.filter > div{
-    width: 24%;
-}
 .keyword{
     height: 35px;
     font-size: 1em;
     border: none;
+    width: 25%;
 }
 .keyword input{
     width:  80%;
@@ -43,8 +44,49 @@
     background-color: #ff6600;
     font-size: 1em;
     height: 2em;
+    width: 16%;
     line-height: 2em;
     color: white;
     text-align: center;
     -webkit-border-radius: 0.1em;
+}
+.list{
+    background-image:url('fold.png');
+    margin: auto 0.2em;
+}
+.city{
+    width: 30%;
+}
+.grade{
+    width: 20%;
+}
+.list-group{
+    display: -webkit-box;
+    background-color: white;
+}
+.list-info > div{
+    margin: 0.5em;
+}
+.list-image{
+    width: 3em;
+    height: 3em;
+}
+.list-name{
+    font-weight: 800;
+    margin: 0.1em;
+}
+.list-grade{
+    color: #999999;
+}
+.list-city{
+    color: #999999;
+}
+.list-more {
+    display: flex;
+}
+.list-more img{
+    width: 2em;
+}
+.book{
+    background-color: #ff6600;
 }
