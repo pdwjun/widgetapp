@@ -395,5 +395,36 @@ header('Access-Control-Allow-Origin: *');
          }
 
      }
+     public function getdoclist(){
+         $keyword = '';
+         if(isset($_REQUEST['keyword']))
+             $keyword = $_REQUEST['keyword'];
+
+         import('ORG.Util.Page');
+         $return_number = 10;
+         $where = '1=1';
+         $count=M('Doctor')->count();// 查询总数据记录
+         if($keyword!=''){
+//             $list = explode(' ', $keyword); //空格可查询多个关键字
+             $map['name'] = array('like', $keyword);
+             $map['describe'] = array('like', $keyword);
+             $map['hospital'] = array('like', $keyword);
+             $map['city'] = array('like', $keyword);
+
+         }
+
+         $Page = new Page($count,$return_number);
+         $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
+         //SELECT distinct hh85_msg.*,(select count(*) from hh85_comment where hh85_msg.id = hh85_comment.mid) as count FROM `hh85_msg` left join hh85_comment on  hh85_msg.id = hh85_comment.mid
+         $list = M('Doctor')
+             ->page($nowPage.','.$Page->listRows)
+//             ->order("createtime DESC")
+             ->select();
+         if($list){
+             echo json_encode($list);
+         }
+         else
+             echo 0;
+     }
  }
 ?>
