@@ -1,4 +1,4 @@
 function loads(uid){
-	var url = hostURL+"&a=get_trip&uid="+uid;
+	var url = hostURL+"&a=getdoclist";
    $.getJSON(url,callback,'json',getJSONError,'GET','');
 }

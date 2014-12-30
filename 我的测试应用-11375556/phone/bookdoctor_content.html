@@ -62,23 +62,61 @@
         筛选
     </div>
 </div>
-<div class="lists uinn2">
-    <div class="list-group uinn2" onclick="book(1)">
-        <div class="list-image"><img src=""/></div>
-        <div class="list-info">
-            <div class="list-name">沈仁贵</div>
-            <div class="list-grade">评分：*****</div>
-            <div class="list-city">城市：洛杉矶</div>
-        </div>
-        <!--<div class="list-more"><img src="book/css/arrow.png" /></div>-->
-    </div>
+<div class="lists" id="list">
 
 </div>
 </body>
 <script>
     zy_init();
     window.uexOnload = function (type) {
+        loads();
+    }
 
+    //下拉更新
+    function dorpDownUpdate(){
+
+        getList(1);
+        setLocVal('refresh', 1)
+        uexWindow.resetBounceView('0');
+
+    }
+    //上拉更新
+    function pullUpUpdate(){
+        uexWindow.toast(1,5,"正在加载...",0);
+        var page = getLocVal('page');
+        var newpage = parseInt(page) +parseInt(1);
+        getList(newpage);
+        setLocVal('page',newpage);
+        uexWindow.resetBounceView('1');
+    }
+    function callback(data){
+        var tmpl= '';
+        if(data!="")
+            data.forEach(function(e) {
+                tmpl += '<div class="list-group" onclick="book(1)">' +
+                '<div class="list-image"><img src="'+ e.pic +'"/></div>'
+                + '<div class="list-info">'
+                + '<div class="list-name">'+ e.name+'</div>'
+                + '<div class="list-hospital">'+ e.hospital+'</div>'
+                + '<div class="list-grade">评分：<span>';
+                while(e.grade>0)
+                {
+                    tmpl += '<img src="css/project/images/five-star.png"  />';
+                    e.grade --;
+                }
+                tmpl += '</span></div>'
+                + '<div class="list-city">城市：'+ e.city+'</div></div></div>';
+
+            })
+
+        var d = document.createElement('DIV');
+        d.innerHTML=tmpl;
+        if(getLocVal('refresh')==1)
+            $$('list').innerHTML = d.innerHTML;
+        else
+            $$('list').appendChild(d);
+        setLocVal('refresh', 0);
+        $closeToast();
     }
     function book(id){
             setLocVal('did',id);

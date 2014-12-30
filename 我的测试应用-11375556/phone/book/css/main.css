@@ -1,6 +1,9 @@
 body {
 font-family: 幼圆;
 }
+.form{
+    padding-top: 0.1em;
+}
 .t-btn {
     width: 25%;
     height: 3em;
@@ -54,6 +57,11 @@ font-family: 幼圆;
     background-image:url('fold.png');
     margin: auto 0.2em;
 }
+.lists{
+    padding:0.3em 0.5em;
+    margin:0;
+
+}
 .city{
     width: 30%;
 }
@@ -63,22 +71,37 @@ font-family: 幼圆;
 .list-group{
     display: -webkit-box;
     background-color: white;
+    margin: 0.5em 0em;
+    padding: 0.5em;
+    border-radius: 0.2em;
 }
-.list-info > div{
-    margin: 0.5em;
+.list-info div{
 }
 .list-image{
-    width: 3em;
-    height: 3em;
+    height: 6em;
+}
+.list-image img{
+    height: 6em;
+    width: 5em;
 }
 .list-name{
     font-weight: 800;
-    margin: 0.1em;
+    margin: 0.5em;
+    padding-top: 0.1em;
 }
 .list-grade{
     color: #999999;
+    margin: 0.2em 0.5em;
+}
+.list-grade span{
+    color: #ff6600;
 }
 .list-city{
+    color: #999999;
+    margin: 0.2em 0.5em;
+}
+.list-hospital{
+    margin: 0.2em 0.5em;
     color: #999999;
 }
 .list-more {
@@ -100,13 +123,16 @@ font-family: 幼圆;
     display: -webkit-box;
 }
 .sc-text > img{
-    height: 22px;
+    height: 0.9em;
 }
 .ubaa {
     border: 1px solid rgb(208, 208, 208);
     -webkit-border-radius: 0.2em;
     background-color: white;
     margin: 0.8em;
+}
+.ubaa input{
+    outline: none;
 }
 .verify{
     width: 70%;
