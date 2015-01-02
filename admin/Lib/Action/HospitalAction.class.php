@@ -1,9 +1,9 @@
 <?php
-class HouseAction extends CommonAction{
+class HospitalAction extends CommonAction{
 	 private  $table_name;
    	 function __construct(){
    	 	
-   	 	$this->table_name = "House";
+   	 	$this->table_name = "Hospital";
    	 	parent::__construct();
    	 }
 	

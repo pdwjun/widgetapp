@@ -263,9 +263,9 @@ function noSelAll()
 	<td>{$vo.createtime|date="Y-m-d",###}</td>
 
 
-	<td><eq name="vo.status" value="0"><span style="color:#FF0000;">禁用</span>
+	<td><eq name="vo.status" value="0"><a href="{:U('shenhe',array('id'=>$vo['id']))}"><span style="color:#FF0000;">审核中</span></a>
 
-	  <else/>正常</eq>
+	  <else/>已通过</eq>
 
 </td>
 
