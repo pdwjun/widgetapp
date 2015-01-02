@@ -2,19 +2,19 @@
 
 <head>
 
-<title>menu</title>
+    <title>menu</title>
 
-<link rel="stylesheet" href="__PUBLIC__/skin/admin/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/skin/admin/css/base.css" type="text/css"/>
 
-<link rel="stylesheet" href="__PUBLIC__/skin/admin/css/menu.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/skin/admin/css/menu.css" type="text/css"/>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<script language='javascript'>var curopenItem = '1';</script>
+    <script language='javascript'>var curopenItem = '1';</script>
 
-<script language="javascript" type="text/javascript" src="__PUBLIC__/skin/js/frame/menu.js"></script>
+    <script language="javascript" type="text/javascript" src="__PUBLIC__/skin/js/frame/menu.js"></script>
 
-<base target="main" />
+    <base target="main"/>
 
 </head>
 
@@ -22,214 +22,263 @@
 
 <table width='99%' height="100%" border='0' cellspacing='0' cellpadding='0'>
 
-  <tr>
+    <tr>
 
-    <td style='padding-left:3px;padding-top:8px' valign="top">
+        <td style='padding-left:3px;padding-top:8px' valign="top">
 
-	
 
-	
+            <!-- Item 1 Strat -->
 
-	<!-- Item 1 Strat -->
+            <dl class='bitem'>
 
-      <dl class='bitem'>
+                <dt onClick='showHide("items1_1")'><b>月子中心管理</b></dt>
 
-        <dt onClick='showHide("items1_1")'><b>月子中心管理</b></dt>
+                <dd style='display:block' class='sitem' id='items1_1'>
 
-        <dd style='display:block' class='sitem' id='items1_1'>
+                    <ul class='sitemu'>
 
-          <ul class='sitemu'>
+                        <li>
 
-            <li>
+                            <div class='items'>
 
-              <div class='items'>
+                                <div class='fllct'><a href="{:U('House/add')}" target='main'>添加信息</a></div>
 
-                <div class='fllct'><a href='{:U('House/add')}' target='main'>添加信息</a></div>
 
+                            </div>
 
+                        </li>
 
-              </div>
+                        <li>
 
-            </li>
+                            <div class='items'>
 
-               <li>
+                                <div class='fllct'><a href="{:U('House/index')}" target='main'>信息管理</a></div>
 
-              <div class='items'>
 
-                <div class='fllct'><a href='{:U('House/index')}' target='main'>信息管理</a></div>
+                            </div>
 
+                        </li>
 
 
-              </div>
+                    </ul>
 
-            </li>
+                </dd>
 
+            </dl>
 
+            <dl class='bitem'>
 
-          </ul>
+                <dt onClick='showHide("items1_1")'><b>医院管理</b></dt>
 
-        </dd>
+                <dd style='display:block' class='sitem'>
 
-      </dl>
+                    <ul class='sitemu'>
 
-      <!-- Item 1 End -->
+                        <li>
 
-	  
+                            <div class='items'>
 
-	  	<!-- Item 1 Strat -->
+                                <div class='fllct'><a href="{:U('Hospital/add')}" target='main'>添加医院</a></div>
 
-      <dl class='bitem'>
 
-        <dt onClick='showHide("items1_1")'><b>用户管理</b></dt>
+                            </div>
 
-        <dd style='display:block' class='sitem' id='items1_1'>
+                        </li>
 
-          <ul class='sitemu'>
-               <li>
+                        <li>
 
-              <div class='items'>
+                            <div class='items'>
 
-                <div class='fllct'><a href='{:U('User/add')}' target='main'>添加用户</a></div>
+                                <div class='fllct'><a href="{:U('Hospital/index')}" target='main'>医院管理</a></div>
 
 
+                            </div>
 
-              </div>
+                        </li>
 
-            </li>
-                           <li>
 
-              <div class='items'>
+                    </ul>
 
-                <div class='fllct'><a href='{:U('User/index')}' target='main'>用户列表</a></div>
+                </dd>
 
+            </dl>
+            <dl class='bitem'>
 
+                <dt onClick='showHide("items1_1")'><b>医生管理</b></dt>
 
-              </div>
+                <dd style='display:block' class='sitem'>
 
-            </li>
+                    <ul class='sitemu'>
 
+                        <li>
 
+                            <div class='items'>
 
-          </ul>
+                                <div class='fllct'><a href="{:U('Doctor/add')}" target='main'>添加医生</a></div>
 
-        </dd>
 
-      </dl>
+                            </div>
 
-      <!-- Item 1 End -->
+                        </li>
 
-	  	<!-- Item 1 Strat -->
+                        <li>
 
-      <dl class='bitem'>
+                            <div class='items'>
 
-        <dt onClick='showHide("items1_1")'><b>圈子管理</b></dt>
+                                <div class='fllct'><a href="{:U('Doctor/index')}" target='main'>医生管理</a></div>
 
-        <dd style='display:block' class='sitem' id='items1_1'>
 
-          <ul class='sitemu'>
-               <li>
+                            </div>
 
-              <div class='items'>
+                        </li>
 
-                <div class='fllct'><a href='{:U('Msg/add')}' target='main'>添加帖子</a></div>
 
+                    </ul>
 
+                </dd>
 
-              </div>
+            </dl>
 
-            </li>
-            
-                                       <li>
+            <dl class='bitem'>
 
-              <div class='items'>
+                <dt onClick='showHide("items1_1")'><b>用户管理</b></dt>
 
-                <div class='fllct'><a href='{:U('MsgCate/index')}' target='main'>分类管理</a></div>
+                <dd style='display:block' class='sitem' id='items1_2'>
 
+                    <ul class='sitemu'>
+                        <li>
 
+                            <div class='items'>
 
-              </div>
+                                <div class='fllct'><a href="{:U('User/add')}" target='main'>添加用户</a></div>
 
-            </li>
-                           <li>
 
-              <div class='items'>
+                            </div>
 
-                <div class='fllct'><a href='{:U('Msg/index')}' target='main'>帖子列表</a></div>
+                        </li>
+                        <li>
 
+                            <div class='items'>
 
+                                <div class='fllct'><a href="{:U('User/index')}" target='main'>用户列表</a></div>
 
-              </div>
 
-            </li>
-              <li>
+                            </div>
 
-                  <div class='items'>
+                        </li>
 
-                      <div class='fllct'><a href='{:U('Comment/index')}' target='main'>回复列表</a></div>
 
+                    </ul>
 
+                </dd>
 
-                  </div>
+            </dl>
 
-              </li>
+            <!-- Item 1 End -->
 
+            <!-- Item 1 Strat -->
 
+            <dl class='bitem'>
 
-          </ul>
+                <dt onClick='showHide("items1_1")'><b>圈子管理</b></dt>
 
-        </dd>
+                <dd style='display:block' class='sitem' id='items1_3'>
 
-      </dl>
+                    <ul class='sitemu'>
+                        <li>
 
-      <!-- Item 1 End -->
+                            <div class='items'>
 
-	  	<!-- Item 1 Strat -->
+                                <div class='fllct'><a href="{:U('Msg/add')}" target='main'>添加帖子</a></div>
 
-      <dl class='bitem'>
 
-        <dt onClick='showHide("items1_1")'><b>孕期管理</b></dt>
+                            </div>
 
-        <dd style='display:block' class='sitem' id='items1_1'>
+                        </li>
 
-          <ul class='sitemu'>
-               <li>
+                        <li>
 
-              <div class='items'>
+                            <div class='items'>
 
-                <div class='fllct'><a href='{:U('Category/add')}' target='main'>添加孕期</a></div>
+                                <div class='fllct'><a href="{:U('MsgCate/index')}" target='main'>分类管理</a></div>
 
 
+                            </div>
 
-              </div>
+                        </li>
+                        <li>
 
-            </li>
-                           <li>
+                            <div class='items'>
 
-              <div class='items'>
+                                <div class='fllct'><a href="{:U('Msg/index')}" target='main'>帖子列表</a></div>
 
-                <div class='fllct'><a href='{:U('Category/index')}' target='main'>孕期列表</a></div>
 
+                            </div>
 
+                        </li>
+                        <li>
 
-              </div>
+                            <div class='items'>
 
-            </li>
+                                <div class='fllct'><a href="{:U('Comment/index')}" target='main'>回复列表</a></div>
 
 
+                            </div>
 
-          </ul>
+                        </li>
 
-        </dd>
 
-      </dl>
+                    </ul>
 
-      <!-- Item 1 End -->
+                </dd>
 
+            </dl>
 
+            <!-- Item 1 End -->
 
-	  </td>
+            <!-- Item 1 Strat -->
 
-  </tr>
+            <dl class='bitem'>
+
+                <dt onClick='showHide("items1_1")'><b>孕期管理</b></dt>
+
+                <dd style='display:block' class='sitem' id='items1_4'>
+
+                    <ul class='sitemu'>
+                        <li>
+
+                            <div class='items'>
+
+                                <div class='fllct'><a href="{:U('Category/add')}" target='main'>添加孕期</a></div>
+
+
+                            </div>
+
+                        </li>
+                        <li>
+
+                            <div class='items'>
+
+                                <div class='fllct'><a href="{:U('Category/index')}" target='main'>孕期列表</a></div>
+
+
+                            </div>
+
+                        </li>
+
+
+                    </ul>
+
+                </dd>
+
+            </dl>
+
+            <!-- Item 1 End -->
+
+
+        </td>
+
+    </tr>
 
 </table>
 

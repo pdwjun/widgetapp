@@ -4,7 +4,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>信息管理</title>
+<title>医生管理</title>
 
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
 
@@ -71,7 +71,7 @@ function delArc(aid){
 	var qstr=getCheckboxItem();
 
 	if(aid==0) aid = getOneItem();
-	location="{:U('Hospital/del')}"+"&id="+aid+"&qstr="+qstr+"";
+	location="{:U('Doctor/del')}"+"&id="+aid+"&qstr="+qstr+"";
 
 //	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
 
@@ -205,7 +205,7 @@ function noSelAll()
 
   <tr>
 
-  <td align="center">信息管理</td>
+  <td align="center">医生管理</td>
 
  </tr>
 
@@ -229,7 +229,7 @@ function noSelAll()
 
 <tr bgcolor="#E7E7E7">
 
-	<td height="24" colspan="10" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;文档列表&nbsp;</td>
+	<td height="24" colspan="10" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;列表&nbsp;</td>
 
 </tr>
 
@@ -239,7 +239,8 @@ function noSelAll()
 
 	<td width="9%">选择</td>
 
-	<td width="34%">暖客栈</td>
+	<td width="24%">名字</td>
+	<td width="20%">医院</td>
 
 	<td width="18%">添加时间</td>
 
@@ -260,6 +261,7 @@ function noSelAll()
 
 	<td align="left"><a href="{:U('edit',array('id'=>$vo['id']))}"><u>{$vo.name}</u></a></td>
 
+	<td>{$vo.hospital}</td>
 	<td>{$vo.createtime|date="Y-m-d",###}</td>
 
 
