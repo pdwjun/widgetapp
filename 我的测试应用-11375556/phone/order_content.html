@@ -21,6 +21,7 @@
     <script src="js/main.js"></script>
     <script src="js/zy_json.js"></script>
     <script src="book/js/main.js"></script>
+    <script src="js/date.js" ></script>
 </head>
 <body class="um-vp c-gra1" ontouchstart>
 <div class="ub ub-ver">
@@ -28,6 +29,7 @@
         <!--医生介绍，content-->
     </div>
     <form>
+        <input type="hidden" name="did" id="did" />
         <div class="form">
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/name.png"/></div>
@@ -63,7 +65,7 @@
 
 
 <div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="book();">
-    <div class=" ub ub-ac ub-pc t-wh uinnh5 ">立刻预约</div>
+    <div class=" ub ub-ac ub-pc t-wh uinnh5 ">修改预约</div>
 </div>
 </body>
 <script>
@@ -71,7 +73,7 @@
     var file_c = 0;
     zy_init();
     window.uexOnload = function (type) {
-
+        orderDetail(getLocVal('oid'));
     }
     function opendate(id){
         uexControl.cbOpenDatePicker=function(opCode,dataType,data){
@@ -82,19 +84,26 @@
         };
 
     }
-    function goMyOrder(data) {
-
-        openNewWin('myorder', 'myorder.html');
+    function goMyOrder() {
+        document.location.href = 'myorder_content.html';
+//        openNewWin('myorder', 'myorder.html');
     }
     function saveBack(data) {
         if (data == 0) {
-            $toast("发布失败", 1000);
+            $toast("修改失败", 1000);
         } else {
-            $toast("发布成功", 1000);
-            window.setTimeout(goMyOrder(data), 3000);
+            $toast("修改成功", 1000);
+            window.setTimeout(goMyOrder(), 3000);
         }
     }
-
+    function callback(data){
+        $$('name').value = data.name;
+        $$('did').value = data.fid;
+        $$('email').value = data.email;
+        $$('phone').value = data.phone;
+        $$('expection').value = date('Y-m-d',data.expection);
+        $$('flydate').value = date('Y-m-d',data.flydate);
+    }
     function book() {
 //	 var b64 = new Base64();
 //	var cid= $$("cate").value;
@@ -105,12 +114,13 @@
         var phone = $$("phone").value;
         var expection = $$("expection").value;
         var flydate = $$("flydate").value;
-//        var title = encodeURIComponent($$("title").value);
+        var did = $$("did").value;
+        var name = encodeURIComponent($$("name").value);
 
-        var did = getLocVal('did');
         var uid = getLocVal('uid');
 //        alert(photo);
-        bookDoctor(uid,did, name,email, phone, expection, flydate);
+        id = getLocVal('oid');
+        bookDoctor(id,uid,did,name, email, phone, expection, flydate);
 
     }
     function expectionDate() {

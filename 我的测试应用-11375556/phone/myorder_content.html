@@ -63,7 +63,7 @@
         var tmpl= '';
         if(data!="")
             data.forEach(function(e) {
-                tmpl += '<a class="div-link" href="'+ e.id +'" ><div class="list-group" >'
+                tmpl += '<a class="div-link" onclick="test('+ e.id +')" ><div class="list-group" >'
                 + '<div class="list-info div-4 div-left">' + e.uid + ' ' + e.name + '</div>'
                 + '<div class="list-info div-4 gra4">预:' + date('Y-m-d',e.expection) + '</div>' +
                 '<div class="list-info div-2">';
@@ -92,6 +92,10 @@
             $$('list').appendChild(d);
         setLocVal('refresh', 0);
         $closeToast();
+    }
+    function test(id){
+        setLocVal('oid', id);
+        document.location.href = 'order_content.html';
     }
 
 </script>

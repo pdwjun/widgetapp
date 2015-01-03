@@ -451,6 +451,7 @@ header('Access-Control-Allow-Origin: *');
              $data['uid']=I('uid');
              $data['fid']=I('did');
              $data['phone']=I('phone');
+             $data['name']=I('name');
              $data['email']=I('email');
              $data['expection']=strtotime(I('expection'));
              $data['flydate'] = strtotime(I('flydate'));
@@ -458,8 +459,10 @@ header('Access-Control-Allow-Origin: *');
              $data['createtime']=time();
 
              $data['status']= 0 ;   //
-
-             $id = $model->add($data);
+             if(I('id')!='')
+                 $id = $model->where('id='. I('id'))->save($data);
+             else
+                 $id = $model->add($data);
              echo $id;
 
          }
@@ -472,6 +475,20 @@ header('Access-Control-Allow-Origin: *');
          $model = M('Order');
          $where['uid'] = I('uid');
          $list = $model->where($where)->select();
+
+         if($list){
+             echo json_encode($list);
+         }
+         else
+             echo 0;
+     }
+     /*
+      * 预约信息
+      */
+     public function orderDetail(){
+         $model = M('Order');
+         $where['id'] = I('id');
+         $list = $model->where($where)->find();
 
          if($list){
              echo json_encode($list);
