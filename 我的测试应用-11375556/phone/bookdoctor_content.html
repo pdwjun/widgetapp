@@ -28,21 +28,25 @@
 <body class="um-vp c-wh2" ontouchstart>
 <div class="uinn2 ub-pj ub filter">
     <div class="keyword">
-        <input type="text" name="key" placeholder="搜索"/>
+        <input type="text" name="key" id="key" placeholder="搜索"/>
     </div>
-    <div class="ub t-bla city">
-        <div class="ub-f1 ub uba c-wh b-gra  sel">
-            <div class="ub-f1 ut-s uinn ulev-1 tx-l t-gra ulh-sel">城市</div>
+    <div class="keyword city">
+        <input type="text" name="city" id="city" placeholder="城市"/>
+    </div>
+    <!--<div class="ub t-bla city">-->
+        <!--<div class="ub-f1 ub uba c-wh b-gra  sel">-->
+            <!--<input type="text" name="city" id="city" placeholder="城市"/>-->
+            <!--<div class="ub-f1 ut-s uinn ulev-1 tx-l t-gra ulh-sel">城市</div>-->
 
-            <div class="ub-img umw1 umh1 list"></div>
-            <select name="city" selectedindex="0" id="city" onchange="zy_selectmenu(this.id)">
-                <option value="0">城市</option>
-                <option value="1">南卡罗来纳州</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </div>
-    </div>
+            <!--<div class="ub-img umw1 umh1 list"></div>-->
+            <!--<select name="city" selectedindex="0" id="city" onchange="zy_selectmenu(this.id)">-->
+                <!--<option value="0">城市</option>-->
+                <!--<option value="1">南卡罗来纳州</option>-->
+                <!--<option value="2">2</option>-->
+                <!--<option value="3">3</option>-->
+            <!--</select>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="ub t-bla grade">
         <div class="ub-f1 ub uba c-wh b-gra  sel">
             <div class="ub-f1 ut-s uinn ulev-1 tx-l t-gra ulh-sel">评分</div>
@@ -58,7 +62,7 @@
             </select>
         </div>
     </div>
-    <div class="filter_btn">
+    <div class="filter_btn" onclick="search()">
         筛选
     </div>
 </div>
@@ -74,9 +78,8 @@
 
     //下拉更新
     function dorpDownUpdate(){
-
-        getList(1);
-        setLocVal('refresh', 1)
+        uexWindow.toast(1,5,"正在加载...",0);
+        search();
         uexWindow.resetBounceView('0');
 
     }
@@ -123,5 +126,18 @@
 //        openNewWin('doctor','doctor.html');
         openNewWin('bookdoctor_form','bookdoctor_form.html');
         }
+    function search(){
+        setLocVal('refresh', 1)
+        keyword = '0';
+        if($$('grade')!='')
+            keyword = $$('grade').value;
+        if($$('key').value!='')
+            keyword += ' '+$$('key').value;
+        if($$('city').value!='')
+            keyword += ' '+$$('city').value;
+
+        loads(keyword);
+
+    }
 </script>
 </html>

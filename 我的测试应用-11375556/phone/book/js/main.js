@@ -1,4 +1,4 @@
-function loads(uid){
-	var url = hostURL+"&a=getdoclist";
+function loads(keyword){
+	var url = hostURL+"&a=getdoclist&keyword=" + keyword;
    $.getJSON(url,callback,'json',getJSONError,'GET','');
 }

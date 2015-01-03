@@ -402,22 +402,36 @@ header('Access-Control-Allow-Origin: *');
 
          import('ORG.Util.Page');
          $return_number = 10;
-         $where = '1=1';
+         $where = array();
+         $may = array();
          $count=M('Doctor')->count();// 查询总数据记录
          if($keyword!=''){
-//             $list = explode(' ', $keyword); //空格可查询多个关键字
-             $map['name'] = array('like', $keyword);
-             $map['describe'] = array('like', $keyword);
-             $map['hospital'] = array('like', $keyword);
-             $map['city'] = array('like', $keyword);
+             $list = explode(' ', $keyword); //空格可查询多个关键字
+             foreach($list as $i => $item){
+                 if($i == 0)
+                     $where['grade'] = array('egt', $item);
+                 else
+                 {
+                     $item = '%'. $item.'%';
+                     $map['name'] = array('like', $item,'or');
+                     $map['content'] = array('like', $item,'or');
+                     $map['hospital'] = array('like', $item,'or');
+                     $map['city'] = array('like', $item,'or');
+                 }
+             }
 
          }
-
+         if(!empty($map))
+         {
+             $map['_logic'] = 'or';
+             $where['_complex'] = $map;
+         }
          $Page = new Page($count,$return_number);
          $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
          //SELECT distinct hh85_msg.*,(select count(*) from hh85_comment where hh85_msg.id = hh85_comment.mid) as count FROM `hh85_msg` left join hh85_comment on  hh85_msg.id = hh85_comment.mid
          $list = M('Doctor')
              ->page($nowPage.','.$Page->listRows)
+             ->where($where)
 //             ->order("createtime DESC")
              ->select();
          if($list){
