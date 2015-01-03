@@ -21,24 +21,13 @@
 
     <!--列表-->
     <div class='uinn2 c-gra ub-pj ub b-bla t-btn-group'>
-        <div class='t-btn umh5 umw3 t-btn-my' onclick="book(0)" >我的预约</div>
-        <div class='t-btn umh5 umw3 t-btn-doctor' onclick="book(1)">预约医生</div>
-        <div class='t-btn umh5 umw3 t-btn-hospital' onclick="book(2)">预约医院</div>
+        <a href="myorder_content.html" ><div class='t-btn umh5 umw3 t-btn-my' >我的预约</div></a>
+        <a href="bookdoctor_content.html" ><div class='t-btn umh5 umw3 t-btn-doctor' >预约医生</div></a>
+        <a href="myorder_content.html" ><div class='t-btn umh5 umw3 t-btn-hospital' >预约医院</div></a>
     </div>
 </div>
 </body>
 <script>
 
-    function book(a){
-
-//        setLocVal('mid',mid);
-//        openNewWin('msg','msg.html');
-        switch (a){
-            case 0: openNewWin('book','booklist.html');break;
-            case 1: openNewWin('book','bookdoctor.html');break;
-            case 2: openNewWin('book','bookhospital.html');break;
-        }
-
-    }
 </script>
 </html>

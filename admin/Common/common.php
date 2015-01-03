@@ -213,6 +213,11 @@ function getUname($uid){
     $username = M('User')->where("uid=".$uid)->getField('username');
     return $username;
 }
+function getDname($id){
+
+	$username = M('Doctor')->where("id=".$id)->getField('name');
+	return $username;
+}
 function getMsgTitle($id){
 
     $field = M('Msg')->where("id=".$id)->getField('title');

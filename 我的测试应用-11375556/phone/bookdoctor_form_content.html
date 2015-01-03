@@ -25,170 +25,98 @@
 <body class="um-vp c-gra1" ontouchstart>
 <div class="ub ub-ver">
     <div class="doctor-info" >
-        <!--医生介绍，description-->
+        <!--医生介绍，content-->
     </div>
     <form>
         <div class="form">
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/email.png"/></div>
-                <input placeholder="邮箱" type="text" class="ub-f1" name="email">
+                <input placeholder="邮箱" type="text" class="ub-f1" id="email" name="email">
             </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/calculator.png"/></div>
-                <input placeholder="预产期" type="text" class="ub-f1" name="expection">
+                <input placeholder="预产期" type="text" class="ub-f1" id="expection" name="expection" onclick="expectionDate()">
             </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/time.png"/></div>
-                <input placeholder="赴美日期" type="text" name="flydate" class="ub-f1">
+                <input placeholder="赴美日期" type="text" id="flydate" name="flydate" class="ub-f1" onclick="flyDate()">
             </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/phone.png"/></div>
-                <input placeholder="手机" type="text" name="phone" class="ub-f1">
+                <input placeholder="手机" type="number" id="phone" name="phone" class="ub-f1">
             </div>
-            <div class="ubaa-2">
-                <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa verify">
-                    <div class="uinn fa fa-search sc-text"><img src="css/project/images/verify.png"/></div>
-                    <input placeholder="验证码" type="text" name="verify" class="ub-f1 ">
-                </div>
-                <div class="ub ub-ac ub-pc umar-a uc-a1 send">发送</div>
+            <!--<div class="ubaa-2">-->
+                <!--<div class="sc-bg-active uinput ub ub-f1  bc-border ubaa verify">-->
+                    <!--<div class="uinn fa fa-search sc-text"><img src="css/project/images/verify.png"/></div>-->
+                    <!--<input placeholder="验证码" type="text" id="verify" name="verify" class="ub-f1 ">-->
+                <!--</div>-->
+                <!--<div class="ub ub-ac ub-pc umar-a uc-a1 send">发送</div>-->
 
-            </div>
+            <!--</div>-->
         </div>
     </form>
 </div>
 
 
-<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="save();">
+<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="book();">
     <div class=" ub ub-ac ub-pc t-wh uinnh5 ">立刻预约</div>
 </div>
 </body>
 <script>
-    // 点击按钮返回类型值
-    function onClickItem(dateType) {
-        /*dateType 数据类型是string，如效果图，拍照是0，从相册选择是1，依次叠加，如果是取消按钮, 返回-1*/
-        alert("itemIndex:" + dateType);
-    }
-    function callback(data) {
-        var tmpl = '<option value="${id}">${name}</option>'
-        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data));
-
-        $$("cate").innerHTML = s;
-
-
-    }
 
     var file_c = 0;
     zy_init();
     window.uexOnload = function (type) {
-        if (!type) {
-            uexWindow.setBounce("1");
-            uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
-            uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
-        }
-        //拍照回调
-        uexCamera.cbOpen = function (opCode, dataType, data) {
 
-            upload(data);
-        }
-        //相册回调
-        uexImageBrowser.cbPick = function (opCode, dataType, data) {
-            upload(data);
-        }
-        uexUploaderMgr.onStatus = function (opCode, fileSize, percent, serverPath, status) {
-            switch (status) {
-                case 0:
-                    $toast("上传进度：" + percent + "%");
-
-                    break;
-                case 1:
-                    $closeToast();
-
-                    $toast("上传成功", 2000);
-                    var oImg = document.createElement('img');
-//                    oImg.setAttribute('src', serverPath);
-                    oImg.setAttribute('src', hostWebURL + serverPath);
-                    oImg.setAttribute('alt', 'na');
-                    oImg.style.width = '3.75em';
-                    oImg.style.margin = '0.5em';
-                    oImg.style.height = '3.75em';
-                    var uploaded = document.createElement('input');
-                    uploaded.type = 'hidden';
-                    uploaded.id = 'name_' + file_c;
-                    uploaded.value = serverPath;
-
-                    file_c += 1;
-                    $$("uploadimage").appendChild(oImg);
-                    $$("uploadimage").appendChild(uploaded);
-                    uexUploaderMgr.closeUploader(1);
-                    if (file_c >= 4)
-                        var todel = $$("upphoto");
-                    $$("upphoto_p").removeChild(todel)
-
-                    break;
-                case 2:
-                    $closeToast();
-                    $toast("上传失败", 1000);
-                    uexUploaderMgr.closeUploader(1);
-                    break;
-            }
-        }
-
-        getCate();
-        uexWindow.cbActionSheet = function (opId, dataType, data) {
-            //console.log("选择的按钮在数组中的下标为："+data);
-            var i = parseInt(data);
-            switch (i) {
-                case  0:
-                    //拍照
-                    uexCamera.open();
-                    break;
-                case 1:
-                    //相册
-                    uexImageBrowser.pick();
-                    break;
-
-
-            }
-        }
     }
+    function opendate(id){
+        uexControl.cbOpenDatePicker=function(opCode,dataType,data){
+            if(dataType==1){
+                var obj = eval('('+data+')');
+                $$(id).value =obj.year+"-" +obj.month+"-"+obj.day;
+            }
+        };
 
-    function test(data) {
+    }
+    function goMyOrder(data) {
 
-        setLocVal('mid', data);
-        openNewWin('msg', 'msg.html');
+        openNewWin('myorder', 'myorder.html');
     }
     function saveBack(data) {
         if (data == 0) {
             $toast("发布失败", 1000);
         } else {
             $toast("发布成功", 1000);
-            window.setTimeout(test(data), 3000);
+            window.setTimeout(goMyOrder(data), 3000);
         }
     }
 
-    function save() {
+    function book() {
 //	 var b64 = new Base64();
 //	var cid= $$("cate").value;
 //	var title=encodeURIComponent(b64.encode($$("title").value));
 //	var content= encodeURIComponent(b64.encode($$("content").value));
 //	var photo = encodeURIComponent(b64.encode($$("photo").value));
-        var b64 = new Base64();
-        var cid = $$("cate").value;
-        var title = encodeURIComponent($$("title").value);
-        var content = encodeURIComponent($$("content").value);
-//        var photo = encodeURIComponent($$("photo").value);
-        var photo = '';
+        var email = $$("email").value;
+        var phone = $$("phone").value;
+        var expection = $$("expection").value;
+        var flydate = $$("flydate").value;
+//        var title = encodeURIComponent($$("title").value);
 
-        for (i = 0; i < file_c; i++)
-            photo += '|' + $$("name_" + i).value;
+        var did = getLocVal('did');
         var uid = getLocVal('uid');
 //        alert(photo);
-        savedo(cid, title, content, photo, uid);
+        bookDoctor(uid,did, email, phone, expection, flydate);
 
     }
-    function upPhoto() {
-        uexWindow.actionSheet("上传图片", "取消", ["手机拍照", "相册上传"]);
+    function expectionDate() {
+        opendate('expection');
+        uexControl.openDatePicker();
 
+    }
+    function flyDate(){
+        opendate('flydate');
+        uexControl.openDatePicker();
     }
 
 

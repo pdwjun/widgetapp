@@ -1,0 +1,155 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>添加文档</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+    <script src="__PUBLIC__/js/jquery.min.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/js/jquery.uploadify.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/uploadify.css">
+    <style>
+        .photo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+        .tip {
+            color: grey;
+        }
+    </style>
+    <script language="javascript">
+
+        function callcover() {
+            var str = window.showModalDialog("{:U('Upload/index')}", "", "dialogWidth=400px;dialogHeight=200px;toolbar=no;scroll=yes;");
+            document.getElementById('cover').value = str;
+
+        }
+
+        function callbg() {
+            var str = window.showModalDialog("{:U('Upload/index')}", "", "dialogWidth=400px;dialogHeight=200px;toolbar=no;scroll=yes;");
+            document.getElementById('bg').value = str;
+
+        }
+
+
+    </script>
+    <link rel="stylesheet" href="__ROOT__/kindeditor/themes/default/default.css"/>
+    <link rel="stylesheet" href="__ROOT__/kindeditor/plugins/code/prettify.css"/>
+    <script charset="utf-8" src="__ROOT__/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="__ROOT__/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="__ROOT__/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+        KindEditor.ready(function (K) {
+            K.create('textarea[name="content"]', {
+                allowFileManager: true
+
+            });
+
+            var editor = K.editor({
+                allowFileManager: true
+            });
+            K('#image').click(function () {
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        imageUrl: K('#img').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            K('#img').val(url);
+                            K("#img_view").attr("src", url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+</head>
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+<!--  快速转换位置按钮  -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+    <tr>
+        <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+            <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center">预约信息</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!--  内容列表   -->
+<form name="form2" action="{:U('edit',array('id'=>$li['id']))}" method="post">
+    <table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;用户ID：</td>
+            <td bgcolor="#FFFFFF"><label>{$li['uid']|getUname}</label></td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;姓名：</td>
+            <td bgcolor="#FFFFFF"><input name="name" type="text" id="name" style="height:22px; width:400px;"
+                                         value="{$li['name']}"></td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;邮箱：</td>
+            <td bgcolor="#FFFFFF"><input name="email" type="text" id="email" style="height:22px; width:400px;"
+                                         value="{$li['email']}"></td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;手机：</td>
+            <td bgcolor="#FFFFFF"><input name="phone" type="text" id="phone" style="height:22px; width:400px;"
+                                         value="{$li['phone']}"></td>
+        </tr>
+
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;医生：</td>
+            <td bgcolor="#FFFFFF">
+                <label >{$li['fid']|getDname}
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;预产期：</td>
+            <td bgcolor="#FFFFFF">
+                    <input name="expection" type="text" id="expection"
+                           value="{$li['expection']|date='Y-m-d',###}">
+                <label class="tip" >2015-01-01</label>
+            </td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;赴美日期：</td>
+            <td bgcolor="#FFFFFF">
+                    <input name="flydate" type="text" id="flydate"
+                           value="{$li['flydate']|date='Y-m-d',###}">
+                    <label class="tip" >2015-01-01</label>
+            </td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;状态：</td>
+            <td bgcolor="#FFFFFF">
+                <select name="status" id="status" >
+                    <option value="0" <eq name="li.status" value="0"> selected</eq> >待审核</option>
+                    <option value="1" <eq name="li.status" value="1"> selected</eq> >已审核</option>
+                    <option value="2" <eq name="li.status" value="2"> selected</eq> >失败</option>
+                    <option value="3" <eq name="li.status" value="3"> selected</eq> >取消</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td height="28" bgcolor="#FFFFFF">&nbsp;</td>
+            <td bgcolor="#FFFFFF"><input name="submit" type="submit" id="submit" value="更新"></td>
+        </tr>
+    </table>
+</form>
+
+
+<table width='98%' border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+    <tr bgcolor='#EEF4EA'>
+        <td background='skin/images/wbg.gif' align='center'><a href="javascript:history.go(-1)" class="coolbg">&nbsp;返回&nbsp;</a></td>
+    </tr>
+</table>
+
+</body>
+</html>

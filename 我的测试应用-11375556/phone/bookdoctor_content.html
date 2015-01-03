@@ -73,6 +73,9 @@
 <script>
     zy_init();
     window.uexOnload = function (type) {
+        if(!type){
+            setPageBounce(dorpDownUpdate,pullUpUpdate);
+        }
         loads();
     }
 
@@ -88,7 +91,16 @@
         uexWindow.toast(1,5,"正在加载...",0);
         var page = getLocVal('page');
         var newpage = parseInt(page) +parseInt(1);
-        getList(newpage);
+        keyword = '0';
+        if($$('grade')!='')
+            keyword = $$('grade').value;
+        if($$('key').value!='')
+            keyword += ' '+$$('key').value;
+        if($$('city').value!='')
+            keyword += ' '+$$('city').value;
+        if(!page)
+            page=1
+        loads(keyword,newpage);
         setLocVal('page',newpage);
         uexWindow.resetBounceView('1');
     }
@@ -96,7 +108,7 @@
         var tmpl= '';
         if(data!="")
             data.forEach(function(e) {
-                tmpl += '<div class="list-group" onclick="book(1)">' +
+                tmpl += '<div class="list-group" onclick="book('+e.id+')">' +
                 '<div class="list-image"><img src="'+ e.img +'"/></div>'
                 + '<div class="list-info">'
                 + '<div class="list-name">'+ e.name+'</div>'
@@ -111,11 +123,15 @@
                 + '<div class="list-city">城市：'+ e.city+'</div></div></div>';
 
             })
-
+        if(data==0)
+            tmpl = '<div class="empty" >没有要查询的内容</div>';
         var d = document.createElement('DIV');
         d.innerHTML=tmpl;
         if(getLocVal('refresh')==1)
+        {
+            setLocVal('page',1);
             $$('list').innerHTML = d.innerHTML;
+        }
         else
             $$('list').appendChild(d);
         setLocVal('refresh', 0);
@@ -135,7 +151,6 @@
             keyword += ' '+$$('key').value;
         if($$('city').value!='')
             keyword += ' '+$$('city').value;
-
         loads(keyword);
 
     }

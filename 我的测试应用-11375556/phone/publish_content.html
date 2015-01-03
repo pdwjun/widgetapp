@@ -175,7 +175,7 @@
         }
     }
 
-    function test(data) {
+    function goMsg(data) {
 
         setLocVal('mid', data);
         openNewWin('msg', 'msg.html');
@@ -185,7 +185,7 @@
             $toast("发布失败", 1000);
         } else {
             $toast("发布成功", 1000);
-            window.setTimeout(test(data), 3000);
+            window.setTimeout(goMsg(data), 3000);
         }
     }
 

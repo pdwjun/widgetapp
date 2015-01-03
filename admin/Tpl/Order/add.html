@@ -1,0 +1,132 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>添加信息</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+    <script src="__PUBLIC__/js/jquery.min.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/js/jquery.uploadify.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/uploadify.css">
+    <style>
+        .photo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+
+    </style>
+    <script language="javascript">
+
+        function callcover() {
+            var str = window.showModalDialog("{:U('Upload/index')}", "", "dialogWidth=400px;dialogHeight=200px;toolbar=no;scroll=yes;");
+            document.getElementById('cover').value = str;
+
+        }
+
+        function callbg() {
+            var str = window.showModalDialog("{:U('Upload/index')}", "", "dialogWidth=400px;dialogHeight=200px;toolbar=no;scroll=yes;");
+            document.getElementById('bg').value = str;
+
+        }
+
+
+    </script>
+    <link rel="stylesheet" href="__ROOT__/kindeditor/themes/default/default.css"/>
+    <link rel="stylesheet" href="__ROOT__/kindeditor/plugins/code/prettify.css"/>
+    <script charset="utf-8" src="__ROOT__/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="__ROOT__/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="__ROOT__/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+        KindEditor.ready(function (K) {
+            K.create('textarea[name="content"]', {
+                allowFileManager: true
+
+            });
+
+            var editor = K.editor({
+                allowFileManager: true
+            });
+            K('#image').click(function () {
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        imageUrl: K('#img').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            K('#img').val(url);
+                            K("#img_view").attr("src", url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+</head>
+<body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
+
+<!--  快速转换位置按钮  -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+    <tr>
+        <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+            <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center">添加医生</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!--  内容列表   -->
+<form name="form2" action="" method="post">
+    <table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;名字：</td>
+            <td bgcolor="#FFFFFF"><input name="name" type="text" id="name" style="height:22px; width:400px;"></td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;医生照片：</td>
+            <td bgcolor="#FFFFFF">
+                <img id="img_view" name="img_view" src=""/>
+
+                <p><input type="text" id="img" name="img" value=""/> <input type="button" id="image" value="选择图片"/>（本地上传）
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;</td>
+            <td bgcolor="#FFFFFF">
+                <div class="photo"></div>
+            </td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;医院：</td>
+            <td bgcolor="#FFFFFF">
+                <strong>
+                    <input name="hospital" type="text" placeholder="医院名称" id="hospital"  value="">
+                </strong>
+            </td>
+        </tr>
+        <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;评分：</td>
+            <td bgcolor="#FFFFFF">
+                <strong>
+                    <input name="grade" type="text" id="grade" style="height:22px; width:50px;" value="5">
+                </strong> 颗星&nbsp;&nbsp;(1、2、3、4、5)
+            </td>
+        </tr>
+        <tr>
+            <td height="28" bgcolor="#FFFFFF">&nbsp;医生介绍：</td>
+            <td bgcolor="#FFFFFF"><textarea name="content" id="content"
+                                            style="width:100%;height:400px;visibility:hidden;"></textarea></td>
+        </tr>
+        <tr>
+            <td height="28" bgcolor="#FFFFFF">&nbsp;</td>
+            <td bgcolor="#FFFFFF"><input name="submit" type="submit" id="submit" value="发布"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -18,6 +18,12 @@ font-family: 幼圆;
     border: none;
 
 }
+.t-btn-group div{
+    width: inherit;
+}
+.t-btn-group a{
+    text-decoration: none;
+}
 .t-btn-my{
     background-color: #00ae42;
 }
@@ -150,4 +156,18 @@ font-family: 幼圆;
 }
 .umar-a{
     margin: 0.8em;
+}
+
+.div-link{
+    text-decoration: none;
+    color: #333333;
+}
+.div-4{
+    width: 40%;
+}
+.div-2{
+    width: 20%;
+}
+.div-left{
+    margin-left: 1em;
 }

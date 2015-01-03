@@ -440,5 +440,44 @@ header('Access-Control-Allow-Origin: *');
          else
              echo 0;
      }
+
+     //uid,did, email, phone, expection, flydate
+     //预约
+     public function bookDoctor(){
+        $model = M("Order");
+
+         if(I('uid',0)&&I('did',0)){
+             $data=array();
+             $data['uid']=I('uid');
+             $data['fid']=I('did');
+             $data['phone']=I('phone');
+             $data['email']=I('email');
+             $data['expection']=strtotime(I('expection'));
+             $data['flydate'] = strtotime(I('flydate'));
+
+             $data['createtime']=time();
+
+             $data['status']= 0 ;   //
+
+             $id = $model->add($data);
+             echo $id;
+
+         }
+     }
+
+     /*
+      * 我的预约
+      */
+     public function myOrder(){
+         $model = M('Order');
+         $where['uid'] = I('uid');
+         $list = $model->where($where)->select();
+
+         if($list){
+             echo json_encode($list);
+         }
+         else
+             echo 0;
+     }
  }
 ?>

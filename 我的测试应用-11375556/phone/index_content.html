@@ -130,7 +130,8 @@ function callback(data){
                 var photoarr = e.photo.split('|');
                 photoarr.forEach(function(e){
                     if(e!="")
-                        tmpl += '<img class="msg_group_content_photo" src="'+ hostWebURL+ e+ '">';
+						tmpl += '<img class="msg_group_content_photo" src="'+ e+ '">';
+					//tmpl += '<img class="msg_group_content_photo" src="'+ hostWebURL+ e+ '">';
                 })
                 tmpl += '</div></li></ul><div class="msg_group_reply"><img class="msg_like" onclick="zan('+ e.id +')" src="css/icons/icon-like.png" /><span id="zan_'+ e.id +'" >'+ e.zan +'</span>' +
                 '<img onclick="showmsg('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  />'+ e.comment_count +'</div></div>'
