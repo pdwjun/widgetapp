@@ -108,7 +108,7 @@ window.uexOnload=function(type)
 }
 
 	function callback(data){
-        var author = '<img class="msg_group_author" src="'+ data.img+'"><div class="author_name" id="username">'+data.username+'</div>';
+        var author = '<img class="msg_group_author" src="'+ hostWebURL+  data.img+'"><div class="author_name" id="username">'+data.username+'</div>';
 		$$("author").innerHTML=author;
 		$$("title").innerHTML =data.title;
 		$$("content").innerHTML =data.content;
@@ -145,7 +145,7 @@ window.uexOnload=function(type)
         if(data!="")
             data.forEach(function(e){
                 var tmpl = '<div class="msg_group" >'
-                        +'<div><img class="msg_group_author" src="'+ e.img+'" /><div class="author_name" id="name_'+ e.id +'">'+ e.username+'</div><div id="flo_'+ e.id +'" class="floor" >' ;
+                        +'<div><img class="msg_group_author" src="' + hostWebURL+ e.img+'" /><div class="author_name" id="name_'+ e.id +'">'+ e.username+'</div><div id="flo_'+ e.id +'" class="floor" >' ;
                     if(floor==1)
                         tmpl += '沙发';
                     else if(floor==2)

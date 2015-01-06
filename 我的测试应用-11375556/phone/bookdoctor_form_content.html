@@ -84,13 +84,13 @@
     }
     function goMyOrder(data) {
 
-        openNewWin('myorder', 'myorder.html');
+        uexWindow.open("index",0,"myorder.html",'1','','',4)
     }
     function saveBack(data) {
         if (data == 0) {
-            $toast("发布失败", 1000);
+            $toast("预约失败", 1000);
         } else {
-            $toast("发布成功", 1000);
+            $toast("预约成功", 1000);
             window.setTimeout(goMyOrder(data), 3000);
         }
     }
@@ -102,6 +102,7 @@
 //	var content= encodeURIComponent(b64.encode($$("content").value));
 //	var photo = encodeURIComponent(b64.encode($$("photo").value));
         var email = $$("email").value;
+        var name = $$("name").value;
         var phone = $$("phone").value;
         var expection = $$("expection").value;
         var flydate = $$("flydate").value;
@@ -110,7 +111,8 @@
         var did = getLocVal('did');
         var uid = getLocVal('uid');
 //        alert(photo);
-        bookDoctor(uid,did, name,email, phone, expection, flydate);
+        var id = '';
+        bookDoctor(id,uid,did, name,email, phone, expection, flydate);
 
     }
     function expectionDate() {

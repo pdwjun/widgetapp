@@ -109,7 +109,7 @@
         if(data!="")
             data.forEach(function(e) {
                 tmpl += '<div class="list-group" onclick="book('+e.id+')">' +
-                '<div class="list-image"><img src="'+ e.img +'"/></div>'
+                '<div class="list-image"><img src="' + hostWebURL+ e.img +'"/></div>'
                 + '<div class="list-info">'
                 + '<div class="list-name">'+ e.name+'</div>'
                 + '<div class="list-hospital">'+ e.hospital+'</div>'
@@ -132,7 +132,7 @@
             setLocVal('page',1);
             $$('list').innerHTML = d.innerHTML;
         }
-        else
+        else if(data!=0)
             $$('list').appendChild(d);
         setLocVal('refresh', 0);
         $closeToast();

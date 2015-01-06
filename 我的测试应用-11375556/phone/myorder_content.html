@@ -35,38 +35,38 @@
     {
         if(!type)
             setPageBounce(dorpDownUpdate,pullUpUpdate);
+        uexWindow.toast(1,5,"正在加载...",0);
         myorder();
+        uexWindow.closeToast();
 
     }
 
     //下拉更新
     function dorpDownUpdate(){
-
-        getList(1);
-        setLocVal('refresh', 1)
+        uexWindow.toast(1,5,"正在加载...",0);
+        myorder();
+        uexWindow.closeToast();
         uexWindow.resetBounceView('0');
 
     }
     //上拉更新
     function pullUpUpdate(){
-        uexWindow.toast(1,5,"正在加载...",0);
-        var page = getLocVal('page');
-        var newpage = parseInt(page) +parseInt(1);
-        getList(newpage);
-        setLocVal('page',newpage);
         uexWindow.resetBounceView('1');
     }
-
 
     function callback(data){
 
         var tmpl= '';
         if(data!="")
             data.forEach(function(e) {
-                tmpl += '<a class="div-link" onclick="test('+ e.id +')" ><div class="list-group" >'
+                tmpl += ' <div class="list-group" onclick="test('+ e.id +')">'
                 + '<div class="list-info div-4 div-left">' + e.uid + ' ' + e.name + '</div>'
-                + '<div class="list-info div-4 gra4">预:' + date('Y-m-d',e.expection) + '</div>' +
-                '<div class="list-info div-2">';
+                + '<div class="list-info div-4 gra4">预:';
+                if(e.expection=='0')
+                    tmpl += ' 时间待定';
+                else
+                    tmpl += date('Y-m-d',e.expection);
+                tmpl += '</div><div class="list-info">';
                 if(e.status=='0')
                     tmpl += '<span class="status b-gra4">审核</span>' ;
                 if(e.status=='1')
@@ -75,7 +75,7 @@
                     tmpl += '<span class="status t-red1">失败</span>' ;
                 if(e.status=='3')
                     tmpl += '<span class="status t-red1">取消</span>';
-                tmpl += '</div></div></a>' ;
+                tmpl += '</div></div>' ;
 //                + '<div class="list-city">城市：'+ e.city+'</div></div></div>';
 
             })
@@ -89,13 +89,16 @@
 //            $$('list').innerHTML = d.innerHTML;
 //        }
 //        else
-            $$('list').appendChild(d);
+//            $$('list').appendChild(d);
+            $$('list').innerHTML = d.innerHTML;
         setLocVal('refresh', 0);
         $closeToast();
     }
     function test(id){
         setLocVal('oid', id);
-        document.location.href = 'order_content.html';
+
+        openNewWin('order','order.html');
+//        document.location.href = 'order_content.html';
     }
 
 </script>

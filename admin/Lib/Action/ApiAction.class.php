@@ -474,7 +474,7 @@ header('Access-Control-Allow-Origin: *');
      public function myOrder(){
          $model = M('Order');
          $where['uid'] = I('uid');
-         $list = $model->where($where)->select();
+         $list = $model->where($where)->order('createtime desc')->select();
 
          if($list){
              echo json_encode($list);

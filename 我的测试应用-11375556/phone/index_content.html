@@ -124,7 +124,7 @@ function callback(data){
         data.forEach(function(e) {
              tmpl += '<div class="msg_group" >' +
                 '<ul ontouchstart="zy_touch(\'btn-act\')" onclick="showmsg('+ e.id +')" class="ubb ub b-gra4 lis">'
-                + '<li><img class="msg_group_author" src="'+ e.img +'" /><div class="author_name">'+ e.username +'</div></li>'
+                + '<li><img class="msg_group_author" src="'+ hostWebURL+ e.img +'" /><div class="author_name">'+ e.username +'</div></li>'
                 + '<li ><strong class="msg_group_title">'+ e.title +'</strong></li>'
                 + '<li class="msg_group_content" >'+ e.content +'</li><li><div class="msg_group_content_image">';
                 var photoarr = e.photo.split('|');
