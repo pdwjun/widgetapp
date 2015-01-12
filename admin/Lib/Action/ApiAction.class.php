@@ -115,8 +115,6 @@ header('Access-Control-Allow-Origin: *');
       *
       */
      public function get_user_info($uid){
-//         $file = 'test.log';
-//         file_put_contents($file, $uid);
          $user = M('User');
          $data = $user->find($uid);
          if($data){
@@ -127,6 +125,20 @@ header('Access-Control-Allow-Origin: *');
 
      }
 
+     /*
+      * get_house_info
+      *
+      */
+     public function get_house_info($id){
+         $user = M('House');
+         $data = $user->find($id);
+         if($data){
+             echo json_encode($data);
+         }
+         else
+             echo 0;
+
+     }
      /*
       * get_cate_info
       *  4  3:              get_cate_info&id="+id;

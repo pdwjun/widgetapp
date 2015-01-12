@@ -86,7 +86,7 @@
 			keyword += ' '+$$('city').value;
 		if(!page)
 			page=1
-		loadhospital(keyword,newpage);
+		loadhouse(keyword,newpage);
 		setLocVal('page',newpage);
 		uexWindow.resetBounceView('1');
 	}
@@ -128,7 +128,7 @@
 	}
 	function book(id){
 		setLocVal('hid',id);
-		openNewWin('bookhouse_content','bookhouse_content.html');
+		openNewWin('content','housedetail.html');
 	}
 	function search(){
 		setLocVal('refresh', 1)
@@ -139,7 +139,7 @@
 			keyword += ' '+$$('key').value;
 		if($$('city').value!='')
 			keyword += ' '+$$('city').value;
-		loadhospital(keyword);
+		loadhouse(keyword);
 
 	}
 </script>
