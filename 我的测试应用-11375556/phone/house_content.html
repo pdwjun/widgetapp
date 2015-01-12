@@ -1,74 +1,146 @@
 <!DOCTYPE html>
 <html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
 <head>
-<title>
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="css/ui-base.css">
-<link rel="stylesheet" href="css/ui-box.css">
-<link rel="stylesheet" href="css/project/style.css">
-<link rel="stylesheet" href="house_content/css/main.css">
-<script src="js/zy_control.js"></script>
-<script src="js/zy_click.js"></script>
-<script src="js/zy_tmpl.js"></script>
-<script src="js/main.js"></script>
-<script src="js/zy_json.js"></script>
-<script src="house_content/js/main.js"></script>
-	<script src="js/scroll.js" ></script>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/project/ui-btn-v3.css">
+	<link rel="stylesheet" href="css/project/ui-res-v3.css">
+	<link rel="stylesheet" href="css/project/ui-input-v3.css">
+	<link rel="stylesheet" href="css/project/ui-color-v3.css">
+	<link rel="stylesheet" href="css/project/ui-list.css">
+	<link rel="stylesheet" href="css/project/style.css">
+	<link rel="stylesheet" href="book/css/main.css">
+	<script src="js/zy_control.js"></script>
+	<script src="js/appcan.js"></script>
+	<script src="js/zy_click.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/zy_json.js"></script>
+	<script src="js/scroll.js"></script>
+	<script src="js/zy_slide.js"></script>
+	<script src="book/js/main.js"></script>
+
 </head>
 <body class="um-vp c-wh2" ontouchstart>
-	<div id="houseList"></div>
-	
+<div class="uinn2 ub-pj ub filter">
+	<div class="keyword">
+		<input type="text" name="key" id="key" placeholder="搜索"/>
+	</div>
+	<div class="keyword city">
+		<input type="text" name="city" id="city" placeholder="城市"/>
+	</div>
+	<div class="ub t-bla grade">
+		<div class="ub-f1 ub uba c-wh b-gra  sel">
+			<div class="ub-f1 ut-s uinn ulev-1 tx-l t-gra ulh-sel">评分</div>
+			<div class="ub-img umw1 umh1 list"></div>
+
+			<select name="grade" selectedindex="0" id="grade" onchange="zy_selectmenu(this.id)">
+				<option value="0">星级</option>
+				<option value="1">1星</option>
+				<option value="2">2星</option>
+				<option value="3">3星</option>
+				<option value="4">4星</option>
+				<option value="5">5星</option>
+			</select>
+		</div>
+	</div>
+	<div class="filter_btn" onclick="search()">
+		筛选
+	</div>
+</div>
+<div class="lists" id="list">
+
+</div>
 </body>
 <script>
-zy_init();
-window.uexOnload=function(type){
-	if(!type){
-	setPageBounce(dorpDownUpdate,pullUpUpdate);
+	zy_init();
+	window.uexOnload = function (type) {
+		if(!type){
+			setPageBounce(dorpDownUpdate,pullUpUpdate);
+		}
+		loadhouse();
 	}
 
-	getHouseList(1);
-}
+	//下拉更新
+	function dorpDownUpdate(){
+		uexWindow.toast(1,5,"正在加载...",0);
+		search();
+		uexWindow.resetBounceView('0');
 
-//下拉更新
-function dorpDownUpdate(){
-	
-	uexWindow.resetBounceView('0');
-}
-//上拉更新
-function pullUpUpdate(){
+	}
+	//上拉更新
+	function pullUpUpdate(){
+		uexWindow.toast(1,5,"正在加载...",0);
+		var page = getLocVal('page');
+		var newpage = parseInt(page) +parseInt(1);
+		keyword = '0';
+		if($$('grade')!='')
+			keyword = $$('grade').value;
+		if($$('key').value!='')
+			keyword += ' '+$$('key').value;
+		if($$('city').value!='')
+			keyword += ' '+$$('city').value;
+		if(!page)
+			page=1
+		loadhospital(keyword,newpage);
+		setLocVal('page',newpage);
+		uexWindow.resetBounceView('1');
+	}
+	function callback(data){
+		var tmpl= '';
+		if(data!="")
+			data.forEach(function(e) {
+				if(e.img=='')
+					e.img = 'image/home.jpg';
+				else
+					e.img = hostWebURL + e.img;
+				tmpl += '<div class="list-group" onclick="book('+e.id+')">' +
+				'<div class="list-image"><img src="' + e.img +'"/></div>'
+				+ '<div class="list-info">'
+				+ '<div class="list-name">'+ e.name+'</div>'
+				+ '<div class="list-grade">评分：<span>';
+				while(e.grade>0)
+				{
+					tmpl += '<img src="css/project/images/five-star.png"  />';
+					e.grade --;
+				}
+				tmpl += '</span></div>'
+				+ '<div class="list-city">城市：'+ e.city+'</div></div></div>';
 
-	var page = getLocVal('page');
-	var newpage = parseInt(page) +parseInt(1);
-	getHouseList(newpage);
-	setLocVal('page',newpage);
-	uexWindow.resetBounceView('1');
-}
+			})
+		if(data==0)
+			tmpl = '<div class="empty" >没有要查询的内容</div>';
+		var d = document.createElement('DIV');
+		d.innerHTML=tmpl;
+		if(getLocVal('refresh')==1)
+		{
+			setLocVal('page',1);
+			$$('list').innerHTML = d.innerHTML;
+		}
+		else if(data!=0)
+			$$('list').appendChild(d);
+		setLocVal('refresh', 0);
+		$closeToast();
+	}
+	function book(id){
+		setLocVal('hid',id);
+		openNewWin('bookhouse_content','bookhouse_content.html');
+	}
+	function search(){
+		setLocVal('refresh', 1)
+		keyword = '0';
+		if($$('grade')!='')
+			keyword = $$('grade').value;
+		if($$('key').value!='')
+			keyword += ' '+$$('key').value;
+		if($$('city').value!='')
+			keyword += ' '+$$('city').value;
+		loadhospital(keyword);
 
-
-function callback(data){
-
-	var tmpl =	'<div class="ub ub-ac ubb b-gra uinn" onclick="viewhouse(${id});">'
-				+'	<div class="ub-img umwh1" style="background-image: url(${cover});"></div>'
-				+'	<div class="ub ub-f1 ub-ver umar-l">'
-				+'		<div class="">${title}</div>'
-				+'		<div class="t-gra ulev-1 umar-t">${content}</div>'
-				+'		<div class="t-gra ulev-1 umar-t">评论:${comment} 认证:${renzheng}  晒月子:${number} </div>'
-				+'	</div>'
-				+'<div class="uwh-set3 "><div class=" uwh-set3 uc-a-set3 c-my ub ub-ver rating"><div class=" tx-c rating-top">${rating}</div><div class="tx-c  rating-bottom">${xing}</div></div></div>'
-				+'</div>'
-	var s = zy_tmpl(tmpl, data, zy_tmpl_count(data));
-	var d = document.createElement('DIV');
-  	d.innerHTML=s;
-	$$('houseList').appendChild(d);
-	$closeToast();
-}
-
-function viewhouse(id){
-	   setLocVal('houseid',id);
-	  openNewWin('viewhouse','viewhouse.html');
-}
-
+	}
 </script>
 </html>

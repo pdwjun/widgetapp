@@ -85,7 +85,14 @@ class OrderAction extends CommonAction
                 $data['flydate'] = strtotime($_POST['flydate']);
 //	              	  	  $data['createtime']=mktime();
                 M($this->table_name)->where("id=" . $id)->save($data);
-                $this->success("更新成功！", U('index'));
+                if($_POST['type']==1)
+                    $param = array('type'=>'doctor');
+                if($_POST['type']==2)
+                    $param = array('type'=>'hospital');
+                if($_POST['type']==3)
+                    $param = array('type'=>'home');
+                $this->success("更新成功！", U('index',$param));
+
             } else {
 
                 $this->li = M($this->table_name)->where("id=" . $id)->find();

@@ -59,8 +59,14 @@
         var tmpl= '';
         if(data!="")
             data.forEach(function(e) {
+                if(e.type=='1')
+                    c = '医生';
+                if(e.type=='2')
+                    c = '医院';
+                if(e.type=='3')
+                    c = '客栈';
                 tmpl += ' <div class="list-group" onclick="test('+ e.id +')">'
-                + '<div class="list-info div-4 div-left">' + e.uid + ' ' + e.name + '</div>'
+                + '<div class="list-info div-4 div-left">' + c + ' ' + e.name + '</div>'
                 + '<div class="list-info div-4 gra4">预:';
                 if(e.expection=='0')
                     tmpl += ' 时间待定';
