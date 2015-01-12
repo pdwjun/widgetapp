@@ -4,7 +4,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>医院管理</title>
+<title>预约管理</title>
 
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
 
@@ -71,7 +71,7 @@ function delArc(aid){
 	var qstr=getCheckboxItem();
 
 	if(aid==0) aid = getOneItem();
-	location="{:U('Hospital/del')}"+"&id="+aid+"&qstr="+qstr+"";
+	location="{:U('Doctor/del')}"+"&id="+aid+"&qstr="+qstr+"";
 
 //	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
 
@@ -205,7 +205,7 @@ function noSelAll()
 
   <tr>
 
-  <td align="center">医院管理</td>
+  <td align="center">预约管理</td>
 
  </tr>
 
@@ -229,7 +229,7 @@ function noSelAll()
 
 <tr bgcolor="#E7E7E7">
 
-	<td height="24" colspan="10" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;医院列表&nbsp;</td>
+	<td height="24" colspan="10" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;列表&nbsp;</td>
 
 </tr>
 
@@ -238,13 +238,16 @@ function noSelAll()
 
 
 	<td width="9%">选择</td>
+	<td width="8%">用户ID</td>
+	<td width="8%">姓名</td>
+	<td width="15%">医生名字</td>
+	<td width="10%">预产期时间</td>
+	<td width="10%">赴美日期</td>
 
-	<td width="34%">医院名称</td>
-
-	<td width="18%">城市</td>
+	<td width="10%">添加时间</td>
 
 
-	<!--<td width="11%">状态</td>-->
+	<td width="11%">状态</td>
 
 	<td width="15%">操作</td>
 
@@ -258,19 +261,22 @@ function noSelAll()
 
 	<td><input name="id" type="checkbox" id="id"  value="{$vo['id']}" class="np"></td>
 
-	<td align="left"><a href="{:U('edit',array('id'=>$vo['id']))}"><u>{$vo.name}</u></a></td>
+	<td align="left"><a href="{:U('edit',array('id'=>$vo['id']))}"><u>{$vo.uid|getUname}</u></a></td>
 
-	<td>
-        {$vo.city}
-        <!--{$vo.createtime|date="Y-m-d",###}-->
-    </td>
+	<td><a href="{:U('edit',array('id'=>$vo['id']))}"><u>{$vo.name}</u></a></td>
+	<td>{$vo.fid|getDname}</td>
+	<td>{$vo.expection|date="Y-m-d",###}</td>
+	<td>{$vo.flydate|date="Y-m-d",###}</td>
+	<td>{$vo.createtime|date="Y-m-d",###}</td>
 
 
-	<!--<td><eq name="vo.status" value="0"><a href="{:U('shenhe',array('id'=>$vo['id']))}"><span style="color:#FF0000;">审核中</span></a>-->
+	<td><eq name="vo.status" value="0"><span style="color:#FF0000;">待审核</span></eq>
 
-	  <!--<else/>已通过</eq>-->
+		<eq name="vo.status" value="1">正常</eq>
+		<eq name="vo.status" value="2">失败</eq>
+		<eq name="vo.status" value="3">取消</eq>
 
-<!--</td>-->
+</td>
 
 	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑 </a> | <a href="{:U('del',array('id'=>$vo['id']))}">删除</a></td>
 

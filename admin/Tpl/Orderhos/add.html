@@ -71,7 +71,7 @@
         <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
             <table width="98%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td align="center">添加暖客栈</td>
+                    <td align="center">添加医生</td>
                 </tr>
             </table>
         </td>
@@ -82,11 +82,11 @@
 <form name="form2" action="" method="post">
     <table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
         <tr>
-            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;名称：</td>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;名字：</td>
             <td bgcolor="#FFFFFF"><input name="name" type="text" id="name" style="height:22px; width:400px;"></td>
         </tr>
         <tr>
-            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;封面图片：</td>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;医生照片：</td>
             <td bgcolor="#FFFFFF">
                 <img id="img_view" name="img_view" src=""/>
 
@@ -102,9 +102,11 @@
             </td>
         </tr>
         <tr>
-            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;城市：</td>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;医院：</td>
             <td bgcolor="#FFFFFF">
-                    <input name="city" type="text" id="city" style="height:22px; width:50px;">
+                <strong>
+                    <input name="hospital" type="text" placeholder="医院名称" id="hospital"  value="">
+                </strong>
             </td>
         </tr>
         <tr>
@@ -116,7 +118,7 @@
             </td>
         </tr>
         <tr>
-            <td height="28" bgcolor="#FFFFFF">&nbsp;介绍：</td>
+            <td height="28" bgcolor="#FFFFFF">&nbsp;医生介绍：</td>
             <td bgcolor="#FFFFFF"><textarea name="content" id="content"
                                             style="width:100%;height:400px;visibility:hidden;"></textarea></td>
         </tr>
@@ -128,24 +130,3 @@
 </form>
 </body>
 </html>
-
-<script type="text/javascript">
-
-    $(function () {
-        $('#file_upload').uploadify({
-            'formData': {
-                'timestamp': '',
-                'token': ''
-            },
-            'buttonText': '上传文件',
-            'swf': '__PUBLIC__/flash/uploadify.swf',
-            'uploader': '{:U("Upload/upfile")}',
-            'onUploadSuccess': function (file, data, response) {
-                if (response) {
-                    $(".photo").append("<img src='" + data + "' />");
-                    $("#photo").val($("#photo").val() + '|' + data);
-                }
-            }
-        });
-    });
-</script>

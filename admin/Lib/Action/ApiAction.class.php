@@ -441,32 +441,6 @@ header('Access-Control-Allow-Origin: *');
              echo 0;
      }
 
-     //uid,did, email, phone, expection, flydate
-     //预约
-     public function bookDoctor(){
-        $model = M("Order");
-
-         if(I('uid',0)&&I('did',0)){
-             $data=array();
-             $data['uid']=I('uid');
-             $data['fid']=I('did');
-             $data['phone']=I('phone');
-             $data['name']=I('name');
-             $data['email']=I('email');
-             $data['expection']=strtotime(I('expection'));
-             $data['flydate'] = strtotime(I('flydate'));
-
-             $data['createtime']=time();
-
-             $data['status']= 0 ;   //
-             if(I('id')!='')
-                 $id = $model->where('id='. I('id'))->save($data);
-             else
-                 $id = $model->add($data);
-             echo $id;
-
-         }
-     }
 
      /*
       * 我的预约
@@ -495,6 +469,78 @@ header('Access-Control-Allow-Origin: *');
          }
          else
              echo 0;
+     }
+
+     public function gethoslist(){
+         $keyword = '';
+         if(isset($_REQUEST['keyword']))
+             $keyword = $_REQUEST['keyword'];
+
+         import('ORG.Util.Page');
+         $return_number = 10;
+         $where = array();
+         $may = array();
+         $count=M('Hospital')->count();// 查询总数据记录
+         if($keyword!=''){
+             $list = explode(' ', $keyword); //空格可查询多个关键字
+             foreach($list as $i => $item){
+                 if($i == 0)
+                     $where['grade'] = array('egt', $item);
+                 else
+                 {
+                     $item = '%'. $item.'%';
+                     $map['name'] = array('like', $item,'or');
+                     $map['content'] = array('like', $item,'or');
+                     $map['city'] = array('like', $item,'or');
+                 }
+             }
+
+         }
+         if(!empty($map))
+         {
+             $map['_logic'] = 'or';
+             $where['_complex'] = $map;
+         }
+         $Page = new Page($count,$return_number);
+         $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
+         //SELECT distinct hh85_msg.*,(select count(*) from hh85_comment where hh85_msg.id = hh85_comment.mid) as count FROM `hh85_msg` left join hh85_comment on  hh85_msg.id = hh85_comment.mid
+         $list = M('Hospital')
+             ->page($nowPage.','.$Page->listRows)
+             ->where($where)
+//             ->order("createtime DESC")
+             ->select();
+         if($list){
+             echo json_encode($list);
+         }
+         else
+             echo 0;
+     }
+
+     //uid,did, email, phone, expection, flydate
+     //预约
+     public function bookHospital(){
+         $model = M("Orderhos");
+
+         if(I('uid',0)&&I('hid',0)){
+             $data=array();
+             $data['uid']=I('uid');
+             $data['fid']=I('hid');
+             $data['phone']=I('phone');
+             $data['name']=I('name');
+             $data['email']=I('email');
+             $data['expection']=strtotime(I('expection'));
+             $data['flydate'] = strtotime(I('flydate'));
+
+             $data['createtime']=time();
+
+             $data['status']= 0 ;   //
+             if(I('id')!='')
+                 $id = $model->where('id='. I('id'))->save($data);
+             else
+                 $id = $model->add($data);
+             echo $id;
+
+         }
      }
  }
 ?>

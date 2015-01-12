@@ -3,7 +3,8 @@
 <head>
     <title></title>
     <meta charset="utf-8">
-    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="css/ui-box.css">
     <link rel="stylesheet" href="css/ui-base.css">
     <link rel="stylesheet" href="css/project/style.css">
@@ -19,6 +20,7 @@
             <div class="t-btn-a1 ub-img uwh-tBtn"></div>
         </div>
         <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">预约医生</h1>
+
         <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch('btn-act')" onclick="">
         </div>
     </div>
@@ -32,13 +34,12 @@
 </body>
 <script>
     zy_init();
-    window.uexOnload = function(type){
+    window.uexOnload = function (type) {
         if (!type) {
             zy_con("content", "bookdoctor_content.html", 0, $$("header").offsetHeight);
         }
-        window.onorientationchange=window.onresize=function()
-        {
-            zy_resize("content",0,$$("header").offsetHeight);
+        window.onorientationchange = window.onresize = function () {
+            zy_resize("content", 0, $$("header").offsetHeight);
         }
     }
 </script>

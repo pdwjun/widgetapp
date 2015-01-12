@@ -97,11 +97,18 @@
         </tr>
 
         <tr>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;城市：</td>
+            <td bgcolor="#FFFFFF">
+                    <input name="city" type="text" id="city" style="height:22px; width:50px;"
+                           value="{$li['city']}">
+            </td>
+        </tr>
+        <tr>
             <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;评分：</td>
             <td bgcolor="#FFFFFF">
                 <strong>
-                    <input name="grade_house" type="text" id="grade_house" style="height:22px; width:50px;"
-                           value="{$li['grade_house']}">
+                    <input name="grade" type="text" id="grade" style="height:22px; width:50px;"
+                           value="{$li['grade']}">
                 </strong> 颗星&nbsp;&nbsp;(1、2、3、4、5)
             </td>
         </tr>
@@ -111,7 +118,7 @@
                                          <!--value="{$li['status']}"></td>-->
         <!--</tr>-->
         <tr>
-            <td height="28" bgcolor="#FFFFFF">&nbsp;暖客栈介绍：</td>
+            <td height="28" bgcolor="#FFFFFF">&nbsp;介绍：</td>
             <td bgcolor="#FFFFFF"><textarea name="content" id="content"
                                             style="width:100%;height:400px;visibility:hidden;">{$li['content']}</textarea>
             </td>
