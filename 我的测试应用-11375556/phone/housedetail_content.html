@@ -13,33 +13,18 @@
     <link rel="stylesheet" href="css/ui-base.css">
     <link rel="stylesheet" href="css/project/ui-list.css">
     <link rel="stylesheet" href="css/project/style.css">
-    <link rel="stylesheet" href="book/css/main.css">
+    <link rel="stylesheet" href="house_content/css/main.css">
     <script src="js/zy_control.js"></script>
     <script src="js/zy_click.js"></script>
     <script src="js/zy_tmpl.js"></script>
     <script src="js/base64.js"></script>
     <script src="js/main.js"></script>
     <script src="js/zy_json.js"></script>
-    <script src="book/js/main.js"></script>
+    <script src="house_content/js/main.js"></script>
 </head>
 <body class="um-vp c-gra1" ontouchstart>
-<div class="ub ub-ver">
-    <div class="doctor-info" >
-        <!--医生介绍，content-->
-    </div>
-    <form>
-        <div class="form">
+<div class="ub ub-ver" id="content">
 
-            <!--<div class="ubaa-2">-->
-                <!--<div class="sc-bg-active uinput ub ub-f1  bc-border ubaa verify">-->
-                    <!--<div class="uinn fa fa-search sc-text"><img src="css/project/images/verify.png"/></div>-->
-                    <!--<input placeholder="验证码" type="text" id="verify" name="verify" class="ub-f1 ">-->
-                <!--</div>-->
-                <!--<div class="ub ub-ac ub-pc umar-a uc-a1 send">发送</div>-->
-
-            <!--</div>-->
-        </div>
-    </form>
 </div>
 
 
@@ -52,8 +37,23 @@
     var file_c = 0;
     zy_init();
     window.uexOnload = function (type) {
-
+        houseinfo();
     }
+    function callback(e){
+        s = '<div class="ub-f1 header" style="background-image:url('+hostWebURL+e.img+');">'+ e.name +'</div>'
 
+            + '<div class="grade_group">评分：';
+        while(e.grade>0)
+        {
+            s += '<img src="css/project/images/five-star.png"  />';
+            e.grade --;
+        }
+        s += '</div><hr><div class="info">'+e.content+'</div>';
+        $$('content').innerHTML = s;
+        $closeToast();
+    }
+    function book(){
+        openNewWin('bookhouse_form','bookhouse_form.html');
+    }
 </script>
 </html>

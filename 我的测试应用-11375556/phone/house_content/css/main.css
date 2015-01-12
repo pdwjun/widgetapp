@@ -1,3 +1,6 @@
+body{
+	background-color: white;
+}
 .b-gra{
 	border-color:#d6d6d6;
 	background-color:#FAF6D9;
@@ -42,4 +45,26 @@
 .uc-a-set3 {
 	-webkit-border-radius: 5.25em;
 	border-radius: 5.25em;
+}
+
+.header{
+	background-size: cover;
+	height: 8em;
+	text-align: center;
+	font-weight: 800;
+	font-size: 1.1em;
+	padding: 1em;
+}
+
+.uinnh5
+{
+	padding:0.8em 0.5em;
+	margin:0;
+}
+.grade_group{
+	padding: 1em;
+	text-align: center;
+}
+.info{
+	padding: 1em;
 }

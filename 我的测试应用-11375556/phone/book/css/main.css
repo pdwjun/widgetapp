@@ -77,8 +77,8 @@ font-family: 幼圆;
 .list-group{
     display: -webkit-box;
     background-color: white;
-    margin: 0.5em 0em;
-    padding: 0.5em;
+    margin: 0.2em 0em;
+    padding: 0.8em 0.5em;
     border-radius: 0.2em;
 }
 .list-info div{
@@ -169,5 +169,4 @@ font-family: 幼圆;
     width: 20%;
 }
 .div-left{
-    margin-left: 1em;
 }

@@ -15,6 +15,7 @@ $thisconfig = array(
                'USER_AUTH_ON'=>true, //开启认证
                 'USER_AUTH_TYPE'=>1, //默认认证，使用SESSION标记
                 'USER_AUTH_KEY'=>'uid', //设置认证SESSION标记的名称
+    'WWW_URL'=>'test.pdwjun.com',   //此处需要修改为域名地址，否则暖客栈编辑的图片无法查看
  'ADMIN_AUTH_KEY'=>'administrator', //管理员用户标记
     'USER_AUTH_MODEL'=>'Admin',  //验证用户表模型 shop_user
  'AUTH_PWD_ENCODER'=>'md5',

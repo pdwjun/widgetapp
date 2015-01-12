@@ -32,6 +32,7 @@ class HouseAction extends CommonAction{
        function add(){
   	  	
    	  	if(isset($_POST['submit'])){
+			$_POST['content'] = str_replace('src="/kindeditor/attached','src="http://'.C('WWW_URL').'/kindeditor/attached',$_POST['content']);
    	  	     $data = $_POST;
            $data['createtime']=mktime();
            $data['status']= 1 ;
@@ -61,8 +62,9 @@ class HouseAction extends CommonAction{
 	              $id= htmlspecialchars($_GET['id']);
 	              if(is_numeric($id)){
 	              	  if(isset($_POST['submit'])){
-	              	  	  $data = $_POST;
 //	              	  	  $data['createtime']=mktime();
+						  $_POST['content'] = str_replace('src="/kindeditor/attached','src="http://'.C('WWW_URL').'/kindeditor/attached',$_POST['content']);
+						  $data = $_POST;
 	              	  	  M($this->table_name)->where("id=".$id)->save($data);
 	              	  	  $this->success("更新成功！",U('index'));
 	              	  }else{

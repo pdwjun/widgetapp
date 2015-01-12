@@ -6,5 +6,5 @@ function getHouseList(page){
 }
 function houseinfo(){
 	var url =hostURL+"&a=get_house_info&id="+getLocVal('hid');
-	$.getJSON(url,callback,'json',getJSONError,'GET','');
+	$.getJSON(url,callback,'json',getJSONError,'GET','',true);
 }
