@@ -518,13 +518,42 @@ header('Access-Control-Allow-Origin: *');
 
      //uid,did, email, phone, expection, flydate
      //预约
+     public function bookDoctor(){
+         $model = M("Order");
+
+         if(I('uid',0)&&I('did',0)){
+             $data=array();
+             $data['uid']=I('uid');
+             $data['fid']=I('did');
+             $data['type']=1; //1：医生，2：医院 3：客栈
+             $data['phone']=I('phone');
+             $data['name']=I('name');
+             $data['email']=I('email');
+             $data['expection']=strtotime(I('expection'));
+             $data['flydate'] = strtotime(I('flydate'));
+
+             $data['createtime']=time();
+
+             $data['status']= 0 ;   //
+             if(I('id')!='')
+                 $id = $model->where('id='. I('id'))->save($data);
+             else
+                 $id = $model->add($data);
+             echo $id;
+
+         }
+     }
+
+     //uid,did, email, phone, expection, flydate
+     //预约
      public function bookHospital(){
-         $model = M("Orderhos");
+         $model = M("Order");
 
          if(I('uid',0)&&I('hid',0)){
              $data=array();
              $data['uid']=I('uid');
              $data['fid']=I('hid');
+             $data['type']=2; //1：医生，2：医院 3：客栈
              $data['phone']=I('phone');
              $data['name']=I('name');
              $data['email']=I('email');

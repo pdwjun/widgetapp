@@ -30,7 +30,7 @@ function loadhospital(keyword,page){
     $.getJSON(url,callback,'json',getJSONError,'GET','', true);
 }
 function bookHospital(id,uid,hid,name, email, phone, expection, flydate){
-    var url = hostURL+"&a=bookHospital&id=" + id+"&uid="  + uid+"&did=" + hid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
+    var url = hostURL+"&a=bookHospital&id=" + id+"&uid="  + uid+"&hid=" + hid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
     $.getJSON(url,saveBack,'json',getJSONError,'GET','');
 
 }
