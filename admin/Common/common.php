@@ -218,6 +218,16 @@ function getDname($id){
 	$username = M('Doctor')->where("id=".$id)->getField('name');
 	return $username;
 }
+function getHname($id){
+
+	$username = M('Hospital')->where("id=".$id)->getField('name');
+	return $username;
+}
+function getRname($id){
+
+	$username = M('House')->where("id=".$id)->getField('name');
+	return $username;
+}
 function getMsgTitle($id){
 
     $field = M('Msg')->where("id=".$id)->getField('title');

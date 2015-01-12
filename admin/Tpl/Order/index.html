@@ -240,7 +240,7 @@ function noSelAll()
 	<td width="9%">选择</td>
 	<td width="8%">用户ID</td>
 	<td width="8%">姓名</td>
-	<td width="15%">医生名字</td>
+	<td width="15%">名称</td>
 	<td width="10%">预产期时间</td>
 	<td width="10%">赴美日期</td>
 
@@ -264,7 +264,11 @@ function noSelAll()
 	<td align="left"><a href="{:U('edit',array('id'=>$vo['id']))}"><u>{$vo.uid|getUname}</u></a></td>
 
 	<td><a href="{:U('edit',array('id'=>$vo['id']))}"><u>{$vo.name}</u></a></td>
-	<td>{$vo.fid|getDname}</td>
+	<td>
+		<eq name="vo.type" value="1">{$vo.fid|getDname}</eq>
+		<eq name="vo.type" value="2">{$vo.fid|getHname}</eq>
+		<eq name="vo.type" value="3">{$vo.fid|getRname}</eq>
+	</td>
 	<td>{$vo.expection|date="Y-m-d",###}</td>
 	<td>{$vo.flydate|date="Y-m-d",###}</td>
 	<td>{$vo.createtime|date="Y-m-d",###}</td>

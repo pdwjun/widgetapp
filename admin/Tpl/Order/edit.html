@@ -104,9 +104,12 @@
         </tr>
 
         <tr>
-            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;医生：</td>
+            <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;<eq name="li.type" value="1">医生：</eq><eq name="li.type" value="2">医院</eq><eq name="li.type" value="3">客栈名</eq></td>
             <td bgcolor="#FFFFFF">
-                <label >{$li['fid']|getDname}
+                <label >
+                    <eq name="li.type" value="1">{$li.fid|getDname}</eq>
+                    <eq name="li.type" value="2">{$li.fid|getHname}</eq>
+                    <eq name="li.type" value="3">{$li.fid|getRname}</eq>
                 </label>
             </td>
         </tr>

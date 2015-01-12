@@ -1,124 +1,142 @@
 <?php
-class OrderAction extends CommonAction{
-	 private  $table_name;
-   	 function __construct(){
-   	 	
-   	 	$this->table_name = "Order";
-   	 	parent::__construct();
-   	 }
-	
 
-  	function  index(){
+class OrderAction extends CommonAction
+{
+    private $table_name;
 
-					import('ORG.Util.Page');
+    function __construct()
+    {
 
-					 $count=M($this->table_name)->count();// 查询总数据记录
+        $this->table_name = "Order";
+        parent::__construct();
+    }
 
-					 $Page = new Page($count,C('PAGESIZE'));
 
-					 $show= $Page->show();
+    function  index()
+    {
 
-	                    $list = M($this->table_name)->order("createtime DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+        import('ORG.Util.Page');
 
-	                   
-	                      $this->assign("list",$list);
+        $count = M($this->table_name)->count();// 查询总数据记录
 
-						  $this->assign("page",$show);
+        $Page = new Page($count, C('PAGESIZE'));
 
-                          $this->display();
+        if(isset($_REQUEST['type'])&&$_REQUEST['type']!=''){
+            $type = $_REQUEST['type'];
+            //1：医生，2：医院 3：客栈
+            if($type=='doctor'){
+                $condition['type'] = 1;
+            }
+            if($type=='hospital'){
+                $condition['type'] = 2;
+            }
+            if($type=='home'){
+                $condition['type'] = 3;
+            }
+        }
 
-       }
+        $show = $Page->show();
 
-       function add(){
-  	  	
-   	  	if(isset($_POST['submit'])){
-   	  	     $data = $_POST;
-           $data['createtime']=mktime();
-           $data['status']= 1 ;
-           $data['photo']=trim($_POST['photo'],'|');
-   	  	    if(M($this->table_name)->add($data)){
-   	  	    	$this->success("操作成功！",U('index'));
-   	  	    }else{
-   	  	    	
-   	  	    	$this->error("操作失败");
-   	  	    }
-   	  	}else{
-   	  		
-   	  		$this->display();
-   	  	}
-       	
-       }
+        $list = M($this->table_name)->order("createtime DESC")->where($condition)->limit($Page->firstRow . ',' . $Page->listRows)->select();
 
-  	   /**
 
-  	    * 
+        $this->assign("list", $list);
 
-  	    * 编辑文章
+        $this->assign("page", $show);
 
-  	    */
+        $this->display();
 
-    	function  edit(){
-	              $id= htmlspecialchars($_GET['id']);
-	              if(is_numeric($id)){
-	              	  if(isset($_POST['submit'])){
-	              	  	  $data = $_POST;
-						  $data['expection'] = strtotime($_POST['expection']);
-						  $data['flydate'] = strtotime($_POST['flydate']);
+    }
+
+    function add()
+    {
+
+        if (isset($_POST['submit'])) {
+            $data = $_POST;
+            $data['createtime'] = mktime();
+            $data['status'] = 1;
+            $data['photo'] = trim($_POST['photo'], '|');
+            if (M($this->table_name)->add($data)) {
+                $this->success("操作成功！", U('index'));
+            } else {
+
+                $this->error("操作失败");
+            }
+        } else {
+
+            $this->display();
+        }
+
+    }
+
+    /**
+     *
+     * 编辑文章
+
+     */
+
+    function  edit()
+    {
+        $id = htmlspecialchars($_GET['id']);
+        if (is_numeric($id)) {
+            if (isset($_POST['submit'])) {
+                $data = $_POST;
+                $data['expection'] = strtotime($_POST['expection']);
+                $data['flydate'] = strtotime($_POST['flydate']);
 //	              	  	  $data['createtime']=mktime();
-	              	  	  M($this->table_name)->where("id=".$id)->save($data);
-	              	  	  $this->success("更新成功！",U('index'));
-	              	  }else{
-	              	  	
-	              	  	$this->li =M($this->table_name)->where("id=".$id)->find();
-	              	  	$this->photo = explode('|', $this->li['photo']);
-	              	  	$this->display();
-	              	  }
-	              	
-	              }
-  	 }
+                M($this->table_name)->where("id=" . $id)->save($data);
+                $this->success("更新成功！", U('index'));
+            } else {
+
+                $this->li = M($this->table_name)->where("id=" . $id)->find();
+                $this->photo = explode('|', $this->li['photo']);
+                $this->display();
+            }
+
+        }
+    }
 
 
-  	 /**
+    /**
+     * 删除
+     *
 
-  	  * 删除
+     */
 
-  	  * 
+    function del()
+    {
 
-  	  */
+        $qstr = $_GET['qstr'];
+        $data = M($this->table_name);
+        if (isset($qstr) && $_GET['qstr'] != "") {
+            $arr = explode(",", $qstr);
 
-  	 function del(){
+            foreach ($arr as $val) {
 
-	        $qstr = $_GET['qstr'];
-  		  	$data=M($this->table_name);  		  
-			if(isset($qstr)&&$_GET['qstr']!=""){
-			   $arr=explode(",",$qstr);
+                $data->where("id=$val")->delete();
 
-			   foreach($arr as $val){
+            }
+            $this->success("删除成功！", U('index'));
 
-			     $data->where("id=$val")->delete();
-			       
-			   }
-			   $this->success("删除成功！",U('index'));			
+        } else {
 
-			}else{
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
 
-			  if(isset($_GET['id'])&&($_GET['id']!="")){
+                $data->where("id=" . $_GET['id'])->delete();
 
-			  $data->where("id=".$_GET['id'])->delete();
+                $this->success("删除成功！", U('index'));
 
-			   $this->success("删除成功！",U('index'));
+            } else {
 
-			  }else{
 
-			  
+                $this->error("请选择要删除的ID");
 
-			   $this->error("请选择要删除的ID");
+            }
 
-			  }
+        }
 
-			}
-
-  	 }
+    }
 
 }
+
 ?>
