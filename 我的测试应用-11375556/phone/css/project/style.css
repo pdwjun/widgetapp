@@ -201,6 +201,7 @@
 .msg_group_reply img{
     margin-left: 2em;
     margin-right: 0.5em;
+	height: 1.5em;
 }
 .msg_group img{
     -webkit-border-radius: 8px;
@@ -225,7 +226,8 @@
 .reply_con{
     width: 100%;
     height: 7em;
-    -webkit-border-radius: 0.5em;
+	font-size: 1em;
+    -webkit-border-radius: 0.2em;
 }
 .reply_btn{
     width: 100%;

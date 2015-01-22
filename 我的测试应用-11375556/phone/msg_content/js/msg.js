@@ -1,6 +1,7 @@
 function loads(id){
 	
 	var url =hostURL+"&a=getmsg&id="+id;
+	//checkFunction(hostURL+"&a=getmsg.*")
 	  $.getJSON(url,callback,'json',getJSONError,'GET','',true);
     loadCom(1,id);
 }
@@ -10,9 +11,18 @@ function loadCom(page,id){
 }
 
 function zanback(data){
-	 if(data!=0){
+	var zid = getLocVal('zid');
+	 if(data==1){
 	 		$toast("点赞成功",2000);
-			$$("zan_"+data).innerHTML = parseInt($$("zan_"+data).innerHTML)+1;
+			$$("zan_"+zid).innerHTML = parseInt($$("zan_"+zid).innerHTML)+1;
+	 }
+	else if(data == 2){
+		 $toast("取消点赞",2000);
+		 $$("zan_"+zid).innerHTML = parseInt($$("zan_"+zid).innerHTML)-1;
+	 }
+	else{
+		 $toast("点赞失败",2000);
+
 	 }
 }
 	

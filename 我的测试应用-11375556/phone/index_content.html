@@ -43,7 +43,7 @@
     }
     function msg_cate_Back(data){
 //        $$("banner").backgroundImage = 'url('+data.img+')';
-        $$("banner").innerHTML = '<div class="ub-f1 header quan_img" style="background-image:url('+data.img+');"></div>';
+        $$("banner").innerHTML = '<div class="ub-f1 header qua n_img" style="background-image:url('+data.img+');"></div>';
     }
 
 zy_init();
@@ -54,36 +54,19 @@ window.uexOnload=function(type)
 //    getLocVal('rid')
 	if(!type){
 		setPageBounce(dorpDownUpdate,pullUpUpdate);
-           remind();
 	}
-    var uid =getLocVal('uid');//用户ID
-    var rid =getLocVal('rid');//圈子ID
-    var rid =4;
-			     getList(1);
-    getUserInfo(uid);
-    getMsgCateInfo(rid);
+	//检查网络
+	checkFunction(hostURL+"&a=.*")
+	checkFunction("http.*")
 
-		//检查网络		 
-		uexDevice.getInfo(13);	
- 	
-		uexDevice.cbGetInfo = function(opCode, dataType, data){
+	var uid =getLocVal('uid');//用户ID
+	var rid =getLocVal('rid');//圈子ID
+	var rid =4;
+	getList(1);
+	getUserInfo(uid);
+	getMsgCateInfo(rid);
 
-				var device = eval('('+data+')');
-				var network = device.connectStatus;
-			
-				if(network == -1){
-					uexWindow.closeToast();
-					$$("msg").innerHTML="网络异常，请检查是否连接网络";
-					
-				}else{
 
-				   // remind();
-					readInfo(uid);
-				}
-			
-			} 
-
-		
 }
 ///提醒
 function remind(){
@@ -146,10 +129,14 @@ function callback(data){
     else
 	    $$('comment').appendChild(d);
     setLocVal('refresh', 0);
+	var page = getLocVal('page')
+	var url = hostURL+"&a=getmsglist&page="+page;
+	setLocVal(url,data);
 	$closeToast();
 }
 
 function zan(mid){
+	setLocVal('zid',mid);
     var uid = getLocVal('uid');
     dozan(uid,mid);
 
