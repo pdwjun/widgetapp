@@ -210,18 +210,23 @@ header('Access-Control-Allow-Origin: *');
          $msg = $model->find($mid);
          $arr = array();
          $data['id'] = $mid;
+         $zan = 1;
          if($msg){
              $arr = explode('|',$msg['zan_uid']);
              $data['zan_uid'] = $msg['zan_uid'];
          }
-         if(!in_array($uid,$arr)){
+         if(!in_array($uid,$arr)){  //已经赞过，就取消赞 即-1，返回状态为2
              if($arr[0]=="")
                  $data['zan_uid'] = $uid;
              else
                  $data['zan_uid'] .= '|'.$uid;
+         }else{
+             $zan = 2;  //
+             unset($arr[array_search($uid , $arr)]);
+             $data['zan_uid'] = implode('|',$arr);
          }
          if($model->save($data)){
-             echo $mid;
+             echo $zan;
          }
          else
              echo 0;
@@ -255,7 +260,7 @@ header('Access-Control-Allow-Origin: *');
          if(I('title',0)&&I('content')){
              $data=array();
              $data['title']=I('title');
-             $data['content']=I('content');
+             $data['content']=htmlspecialchars(I('content'));
              $data['cid']=I('cid');
              $data['photo'] = I('photo');
 
@@ -344,13 +349,14 @@ header('Access-Control-Allow-Origin: *');
      }
 
      /*
-      * save_comment
+      * save_comment    //发布回复内容
       * var url =hostURL+"&a=save_comment&id="+id+"&content="+content+"&photo="+photo+"&uid="+uid;
       *
       */
      public function save_comment($uid,$mid,$cid,$content){
          $model = M('Comment');
          $_REQUEST['createtime'] = time();
+         $_REQUEST['content'] = htmlspecialchars($_REQUEST['content']);
          if($uid==""||$content=""||$mid=="")
              echo "false";
          elseif($model->add($_REQUEST))
