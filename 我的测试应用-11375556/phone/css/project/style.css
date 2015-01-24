@@ -6,6 +6,7 @@
 }
 .c-my{
 	 background-color:#FF568D;
+	height: 2.6em;
 }
 .c-btn{
 	   background-color:#51D1EE;
@@ -134,6 +135,17 @@
 .ulev-app2{
 	font-size:0.9375em;
 }
+
+.banner {
+	background-image:url('images/banner.jpg');
+	height: 10em;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.testss{
+	height: 26em;
+}
 /*底部信息数*/
 .c-org-pS1{
 	background-color:#ef6413;
@@ -241,4 +253,70 @@
 	width:	5em;
 	height: 3em;
 	background-color: red;
+}
+.board1{
+	background-color: #03a343;
+}
+.board2{
+	background-color: #0066ae;
+}
+.board3{
+	background-color: #ff6600;
+}
+.board4{
+	background-color: #00cd9a;
+}
+.board5{
+	background-color: #00b4ff;
+}
+.board6{
+	background-color: #00ae42;
+}
+.line{
+	height: 6em;
+	width: 100%;
+	display: -webkit-box !important;
+	margin: 0.5em 0;
+}
+.line-w2{
+	width: 61.25%;
+}
+.line-w1{
+	width: 29%;
+}
+.line > div{
+	height: 100%;
+}
+.line > div > img{
+	margin-top: 1.5em;
+}
+.home {
+	color: white;
+	text-align: center;
+}
+.home-h1{
+	text-align: left;
+	margin: 0.2em;
+}
+.home-content{
+	text-align: left;
+	margin: 0.2em;
+}
+.white-line{
+	width: 3.25%;
+}
+.h-house{
+	background-image: url('images/house.jpg');
+	background-size: cover;
+
+}
+.home-page{
+	margin-top: 1em;
+}
+.home-footer{
+	height: 2.7em;
+}
+.footer-label{
+	height: 1em;
+	line-height: 0;
 }

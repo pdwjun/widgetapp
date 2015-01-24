@@ -47,7 +47,7 @@
         <div class="ulev-app1 umw4">孕期选择</div>
         <div class="ub-f1 uinn">
             <div class="uinput uinn4">
-                <input placeholder="请选择" id="yunqi" type="text" class="" style="display:inherit;"  onclick=" uexControl.openDatePicker('2014','10','10');">
+                <input placeholder="请选择" id="yunqi" type="text" class="" style="display:inherit;"  onclick=" uexControl.openDatePicker('2015','10','10');">
             </div> 
         </div>
     </div>
@@ -85,8 +85,7 @@ window.uexOnload=function(type)
     function reg(){
 	uexWindow.toast(1,5,"正在加载...",0);
     var b64 = new Base64();
-    //var username =encodeURIComponent(b64.encode($$("username").value));
-    var username =$$("username").value;
+    var username =encodeURIComponent($$("username").value);
 	var password=$$("password").value;
 	var repass = $$("repass").value;
 	var yunqi=$$("yunqi").value;  
