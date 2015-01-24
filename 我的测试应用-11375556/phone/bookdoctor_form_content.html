@@ -47,7 +47,7 @@
             </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/phone.png"/></div>
-                <input placeholder="手机" type="number" id="phone" name="phone" class="ub-f1">
+                <input placeholder="手机" type="text" id="phone" name="phone" class="ub-f1">
             </div>
             <!--<div class="ubaa-2">-->
                 <!--<div class="sc-bg-active uinput ub ub-f1  bc-border ubaa verify">-->
@@ -102,7 +102,7 @@
 //	var content= encodeURIComponent(b64.encode($$("content").value));
 //	var photo = encodeURIComponent(b64.encode($$("photo").value));
         var email = $$("email").value;
-        var name = $$("name").value;
+        var name = encodeURIComponent($$("name").value);
         var phone = $$("phone").value;
         var expection = $$("expection").value;
         var flydate = $$("flydate").value;

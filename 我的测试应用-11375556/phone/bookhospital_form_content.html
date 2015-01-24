@@ -102,7 +102,7 @@
 //	var content= encodeURIComponent(b64.encode($$("content").value));
 //	var photo = encodeURIComponent(b64.encode($$("photo").value));
         var email = $$("email").value;
-        var name = $$("name").value;
+        var name = encodeURIComponent($$("name").value);
         var phone = $$("phone").value;
         var expection = $$("expection").value;
         var flydate = $$("flydate").value;

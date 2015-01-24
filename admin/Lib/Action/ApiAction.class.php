@@ -260,7 +260,7 @@ header('Access-Control-Allow-Origin: *');
          if(I('title',0)&&I('content')){
              $data=array();
              $data['title']=I('title');
-             $data['content']=htmlspecialchars(I('content'));
+             $data['content']=I('content');
              $data['cid']=I('cid');
              $data['photo'] = I('photo');
 
@@ -341,6 +341,7 @@ header('Access-Control-Allow-Origin: *');
          $user_tab = M('User')->getTableName();
          $list = $model->join($user_tab.' on '. $user_tab.'.uid = '. $model->getTableName().'.uid')
              ->page($nowPage.','.$Page->listRows)
+             ->order('createtime asc')
              ->where('mid='.$mid)->select();
          if(!empty($list))
              echo json_encode($list);

@@ -113,7 +113,7 @@
         if($$('grade')!='')
             keyword = $$('grade').value;
         if($$('key').value!='')
-            keyword += ' '+$$('key').value;
+            keyword += ' '+encodeURIComponent($$('key').value);
         if($$('city').value!='')
             keyword += ' '+$$('city').value;
         loadhospital(keyword);

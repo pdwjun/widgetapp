@@ -26,32 +26,6 @@
 
 </head>
 <body class="um-vp c-wh2" ontouchstart>
-<div class="uinn2 ub-pj ub filter">
-    <div class="keyword">
-        <input type="text" name="key" id="key" placeholder="搜索"/>
-    </div>
-    <div class="keyword city">
-        <input type="text" name="city" id="city" placeholder="城市"/>
-    </div>
-    <div class="ub t-bla grade">
-        <div class="ub-f1 ub uba c-wh b-gra  sel">
-            <div class="ub-f1 ut-s uinn ulev-1 tx-l t-gra ulh-sel">评分</div>
-            <div class="ub-img umw1 umh1 list"></div>
-
-            <select name="grade" selectedindex="0" id="grade" onchange="zy_selectmenu(this.id)">
-                <option value="0">星级</option>
-                <option value="1">1星</option>
-                <option value="2">2星</option>
-                <option value="3">3星</option>
-                <option value="4">4星</option>
-                <option value="5">5星</option>
-            </select>
-        </div>
-    </div>
-    <div class="filter_btn" onclick="search()">
-        筛选
-    </div>
-</div>
 <div class="lists" id="list">
 
 </div>
@@ -136,7 +110,7 @@
         if($$('grade')!='')
             keyword = $$('grade').value;
         if($$('key').value!='')
-            keyword += ' '+$$('key').value;
+            keyword += ' '+encodeURIComponent($$('key').value);
         if($$('city').value!='')
             keyword += ' '+$$('city').value;
         loadhospital(keyword);

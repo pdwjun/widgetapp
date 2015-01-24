@@ -4,6 +4,10 @@ var hostURL = "http://meibao.local/index.php?m=Api";
 var hostWebURL = "http://meibao.local";
 //var hostURL = "http://test.pdwjun.com/index.php?m=Api";
 //var hostWebURL = "http://test.pdwjun.com";
+//	clearLocValReg(reg)
+
+
+//checkFunction(hostWebURL+".index.php.m=Api&a=.*") //正则匹配 清除缓存
 /**
  *
  * @param String inWndName 新窗口名称

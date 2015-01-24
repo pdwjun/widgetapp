@@ -36,10 +36,15 @@
     </div>
 	<div class="ub ub-ver comment_group" id="comment">
 	</div>
+<div class="test"  onclick="test()" >test</div>
 </body>
 <script>
 //打开图片浏览器
 var file_c = 0;
+function test(){
+    dorpDownUpdate()
+
+}
 function openImageGallery(){
     var array = new Array();
     for (var i = 0; i < file_c; i++) {
@@ -75,7 +80,10 @@ zy_init();
 window.uexOnload=function(type)
 {
     if(!type){
-//    $$("slider").slide=new zySlide("slider","H",function(){},false,function(e){});
+		uexWindow.setBounce("1");
+        setPageBounce(dorpDownUpdate,pullUpUpdate);
+//		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+//        uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
     }
     //选择图片的回调函数
     uexImageBrowser.cbPick = function(opCode, dataType, data){
@@ -94,12 +102,6 @@ window.uexOnload=function(type)
     uexWidgetOne.onError = function(opCode, errorCode, errorDesc){
         alert(errorCode + ":" + errorDesc);
     }
-	if(!type){
-		uexWindow.setBounce("1");
-        setPageBounce(dorpDownUpdate,pullUpUpdate);
-		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
-        uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
-	}
 	var mid = getLocVal('mid');
     setLocVal('floor',1);
 	 loads(mid);
@@ -208,7 +210,7 @@ function zan(mid){
 
 }
     function reply(cid){
-        var content = $$("content_"+cid).value;
+        var content = encodeURIComponent($$("content_"+cid).value);//转码，中文或html都OK
         if(appcan.trim(content)=="")
         {
             $toast('请输入内容',2000);

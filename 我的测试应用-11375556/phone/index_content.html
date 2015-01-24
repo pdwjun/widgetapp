@@ -30,12 +30,15 @@
 		  </div>
 		
 	</div>
-    <div class="info msg"  id="msg" onclick="" ><strong>距下次排孕日还有12天</strong></div>
+    <div class="info msg"  id="msg" onclick="test()" ><strong>距下次排孕日还有12天</strong></div>
 	<div class="ub ub-ver content" id="comment">
 
 	</div>
 </body>
 <script>
+	function test(){
+		dorpDownUpdate()
+	}
     function userBack(data){
         $$("username").innerHTML ='<div class="username" >'+data.username + '</div><div class="info msg_type" id="msg_type" >怀孕期</div>';
         // $$("avatar").style.backgroundImage=data.avatar;
@@ -43,7 +46,7 @@
     }
     function msg_cate_Back(data){
 //        $$("banner").backgroundImage = 'url('+data.img+')';
-        $$("banner").innerHTML = '<div class="ub-f1 header qua n_img" style="background-image:url('+data.img+');"></div>';
+        $$("banner").innerHTML = '<div class="ub-f1 header quan_img" style="background-image:url('+data.img+');"></div>';
     }
 
 zy_init();
@@ -55,10 +58,7 @@ window.uexOnload=function(type)
 	if(!type){
 		setPageBounce(dorpDownUpdate,pullUpUpdate);
 	}
-	//检查网络
-	checkFunction(hostURL+"&a=.*")
-	checkFunction("http.*")
-
+//	checkFunction("http.*")
 	var uid =getLocVal('uid');//用户ID
 	var rid =getLocVal('rid');//圈子ID
 	var rid =4;
@@ -84,8 +84,9 @@ function remind(){
 //下拉更新
 function dorpDownUpdate(){
 
+	checkFunction(hostWebURL+".index.php.m=Api&a=.*")
+	setLocVal('refresh', 1)
     getList(1);
-    setLocVal('refresh', 1)
     uexWindow.resetBounceView('0');
 
 }
@@ -129,14 +130,13 @@ function callback(data){
     else
 	    $$('comment').appendChild(d);
     setLocVal('refresh', 0);
-	var page = getLocVal('page')
-	var url = hostURL+"&a=getmsglist&page="+page;
-	setLocVal(url,data);
+//	var page = getLocVal('page')
+//	var url = hostURL+"&a=getmsglist&page="+page;
+//	setLocVal(url,data);
 	$closeToast();
 }
 
 function zan(mid){
-	setLocVal('zid',mid);
     var uid = getLocVal('uid');
     dozan(uid,mid);
 

@@ -1,12 +1,14 @@
 function loads(id){
 	
 	var url =hostURL+"&a=getmsg&id="+id;
-	//checkFunction(hostURL+"&a=getmsg.*")
+	checkFunction(hostWebURL+".index.php.m=Api&a=getmsg.*")
+	//clearLocValReg(hostWebURL+".index.php.m=Api&a=getmsg.*")
 	  $.getJSON(url,callback,'json',getJSONError,'GET','',true);
     loadCom(1,id);
 }
 function loadCom(page,id){
     url = hostURL+'&a=getcomment&mid='+id+'&page='+page;
+	checkFunction(hostWebURL+".index.php.m=Api&a=getcomment.*")
     $.getJSON(url,commentback,'json',getJSONError,'GET','',true);
 }
 
@@ -27,6 +29,7 @@ function zanback(data){
 }
 	
 function dozan(uid,mid){
+	setLocVal('zid',mid)
 	var url =hostURL +"&a=zan&uid="+uid+"&mid="+mid;
 	$.getJSON(url,zanback,'json',getJSONError,'GET','');
 }
