@@ -3,216 +3,248 @@
 <head>
     <title></title>
     <meta charset="utf-8">
-    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="css/ui-box.css">
-	<link rel="stylesheet" href="css/ui-base.css">
-	<link rel="stylesheet" href="css/project/ui-list.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/project/ui-list.css">
     <link rel="stylesheet" href="css/project/style.css">
-	<link rel="stylesheet" href="user_content/css/main.css">
-	<script src="js/zy_control.js"></script>
+    <link rel="stylesheet" href="user_content/css/main.css">
+    <script src="js/zy_control.js"></script>
     <script src="js/zy_click.js"></script>
-	    <script src="js/main.js"></script>
-		<script src="js/base64.js"></script>
-	 <script src="js/zy_json.js"></script>
-	 <script src="user_content/js/user.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/zy_json.js"></script>
+    <script src="user_content/js/user.js"></script>
 </head>
 <body class="um-vp c-gra1" ontouchstart>
 <div class="ub ub-ver">
 
-	<!--列表-->
-   <div class="ub ub-ver uinn-a1 ub-f1">
-       <div class="uba b-gra2 c-wh">
-       	      <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9" ontouchstart="zy_touch('btn-act')"  onclick="setavatar();">
-               <li class="ub-f1 ut-s ulev-app1">头像</li>
-			   <li class="tx-r ulev-app1"><img src="" width="100" height="100" id="avatars"></li>
-           <li class="lis-sw ub-img arrow"></li>
-           </ul>
-           <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s ulev-app1">用户名</li>
-			   <li class="tx-r ulev-app1 t-gra-FS1" id="username">用户名</li>
-            
-           </ul>
-           <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s  ulev-app1">密码</li>
-			   <li class="tx-r ulev-app1"><input placeholder="留空不修改密码" type="password" id="password" style="border:none;" class="uinn tx-r ulev-app1"></li>
-             
-           </ul>
-		   <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s  ulev-app1">真实姓名</li>
-			   <li class="tx-r ulev-app1"><input type="text" id="name" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"></li>
-               
-           </ul>
-           <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s  ulev-app1">手机号码</li>
-			   <li class="tx-r ulev-app1"><input type="number" id="phone"  style="border:none;" class="uinn tx-r ulev-app1"></li>
-           </ul>
-		   <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s ulev-app1">所在身份</li>
-			   <li class="tx-r ulev-app1"><input type="text" id="sheng" placeholder="填写所在身份" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"></li>
-           </ul>
-           <ul ontouchstart="zy_touch('btn-act')" class=" ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s  ulev-app1">所在城市</li>
-			   <li class="tx-r ulev-app1"><input type="text" id="shi" placeholder="填写所在城市" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"  value=""></li>
-           </ul>
-		   		 <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s ulev-app1">预产期</li>
-			   <li class="tx-r ulev-app1"><input type="text" id="yunqi" style="border:none;" class="uinn tx-r ulev-app1" onclick=" selectDate();">
-			     <input type="number" value="" name="nian" class="uhide" id="nian">
-				 <input type="number" value="" name="yue" class="uhide" id="yue">
-				 <input type="number" value="" name="ri"  class="uhide" id="ri">
-   			   </li>
-           </ul>
-           <ul ontouchstart="zy_touch('btn-act')" class=" ub t-bla ub-ac uinn-a9">
-               <li class="ub-f1 ut-s  ulev-app1">个性签名</li>
-			   <li class="tx-r ulev-app1"><input type="text" id="remark"  placeholder="填写个性签名" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"></li>
-           </ul>
-       </div>
-	   
-	   	<div class="ub ub-ver">
-		<div class="ub ub-pe uinn-a6 ulev-4">
-	
-		</div>
-        <div class="uinn-at1">
-            <div ontouchstart="zy_touch('btn-act')" onclick="save()" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">保存</div>
+    <!--列表-->
+    <div class="ub ub-ver uinn-a1 ub-f1">
+        <div class="uba b-gra2 c-wh">
+            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9"
+                ontouchstart="zy_touch('btn-act')" onclick="upPhoto();">
+                <li class="ub-f1 ut-s ulev-app1">头像</li>
+                <li class="tx-r ulev-app1"><img src="" width="100" height="100" id="img"></li>
+                <li class="lis-sw ub-img arrow"></li>
+            </ul>
+            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
+                <li class="ub-f1 ut-s ulev-app1">用户名</li>
+                <li class="tx-r ulev-app1 t-gra-FS1" id="username">用户名</li>
+
+            </ul>
+            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
+                <li class="ub-f1 ut-s  ulev-app1">密码</li>
+                <li class="tx-r ulev-app1"><input placeholder="留空不修改密码" type="password" id="password"
+                                                  style="border:none;" class="uinn tx-r ulev-app1"></li>
+
+            </ul>
+            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
+                <li class="ub-f1 ut-s  ulev-app1">真实姓名</li>
+                <li class="tx-r ulev-app1"><input type="text" id="name" style="border:none;"
+                                                  class="uinn tx-r ulev-app1 t-gra-FS1"></li>
+
+            </ul>
+            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
+                <li class="ub-f1 ut-s  ulev-app1">手机号码</li>
+                <li class="tx-r ulev-app1"><input type="number" id="phone" style="border:none;"
+                                                  class="uinn tx-r ulev-app1"></li>
+            </ul>
+            <!--<ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">-->
+            <!--<li class="ub-f1 ut-s ulev-app1">所在身份</li>-->
+            <!--<li class="tx-r ulev-app1"><input type="text" id="sheng" placeholder="填写所在身份" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"></li>-->
+            <!--</ul>-->
+            <!--<ul ontouchstart="zy_touch('btn-act')" class=" ubb ub b-gra2 t-bla ub-ac uinn-a9">-->
+            <!--<li class="ub-f1 ut-s  ulev-app1">所在城市</li>-->
+            <!--<li class="tx-r ulev-app1"><input type="text" id="shi" placeholder="填写所在城市" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"  value=""></li>-->
+            <!--</ul>-->
+            <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
+                <li class="ub-f1 ut-s ulev-app1">预产期</li>
+                <li class="tx-r ulev-app1"><input type="text" id="yunqi" style="border:none;"
+                                                  class="uinn tx-r ulev-app1" onclick=" selectDate();">
+                    <input type="number" value="" name="nian" class="uhide" id="nian">
+                    <input type="number" value="" name="yue" class="uhide" id="yue">
+                    <input type="number" value="" name="ri" class="uhide" id="ri">
+                </li>
+            </ul>
+            <!--<ul ontouchstart="zy_touch('btn-act')" class=" ub t-bla ub-ac uinn-a9">-->
+            <!--<li class="ub-f1 ut-s  ulev-app1">个性签名</li>-->
+            <!--<li class="tx-r ulev-app1"><input type="text" id="remark"  placeholder="填写个性签名" style="border:none;" class="uinn tx-r ulev-app1 t-gra-FS1"></li>-->
+            <!--</ul>-->
         </div>
-        <div class="uinn-at1">
-            <div ontouchstart="zy_touch('btn-act')" onclick="logout()" class="uinn-a2 btn_hei1 c-my uc-a1 t-wh tx-c">退出</div>
+
+        <div class="ub ub-ver">
+            <div class="ub ub-pe uinn-a6 ulev-4">
+
+            </div>
+            <div class="uinn-at1">
+                <div ontouchstart="zy_touch('btn-act')" onclick="save()" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">
+                    保存
+                </div>
+            </div>
+            <div class="uinn-at1">
+                <div ontouchstart="zy_touch('btn-act')" onclick="logout()" style="height: inherit;"
+                     class="uinn-a2 btn_hei1 c-my uc-a1 t-wh tx-c">退出
+                </div>
+            </div>
         </div>
     </div>
-   </div>
 </div>
 </body>
 <script>
 
-    function logout(){
-        setLocVal('uid',"");
+    function logout() {
+        setLocVal('uid', "");
         clearLocVal();
-        openNewWin('login','login.html');
+        openNewWin('login', 'login.html');
     }
-	function selectDate(){
-		var nian =$$("nian").value ;
-		var yue=$$("yue").value;
-		var ri =$$("ri").value;
-		uexControl.openDatePicker(nian,yue,ri);
-	}
-	function getUserHand(data){
-		    $$("username").innerHTML = data.username;
-		    $$("avatars").src=data.img;
-			$$("sheng").value = data.sheng;
-			$$("shi").value= data.shi;
-			$$("name").value= data.name;
-			$$("phone").value=data.phone;
-			$$("remark").value= data.remark;
-			$$("yunqi").value = data.yunqi;
-			var dArr = data.yunqi.split('-');
-			$$("nian").value=dArr[0];
-			$$("yue").value=dArr[1]; 
-			$$("ri").value= dArr[2];
-			
-			
-	}
-	
+    function selectDate() {
+        var nian = $$("nian").value;
+        var yue = $$("yue").value;
+        var ri = $$("ri").value;
+        uexControl.openDatePicker(nian, yue, ri);
+    }
+    function getUserHand(data) {
+        $$("username").innerHTML = data.username;
+        $$("img").src = hostWebURL + data.img;
+//			$$("sheng").value = data.sheng;
+//			$$("shi").value= data.shi;
+        $$("name").value = data.nickname;
+        $$("phone").value = data.phone;
+//			$$("remark").value= data.remark;
+        $$("yunqi").value = data.yunqi;
+        var dArr = data.yunqi.split('-');
+        $$("nian").value = dArr[0];
+        $$("yue").value = dArr[1];
+        $$("ri").value = dArr[2];
 
-zy_init();
-window.uexOnload=function(type)
-{
 
-    var plat = uexWidgetOne.getPlatform();
-    if(plat) {
-        uexWindow.onKeyPressed = function(keyCode) {
-            if (keyCode == 0) {
+    }
+
+
+    zy_init();
+    window.uexOnload = function (type) {
+
+        var plat = uexWidgetOne.getPlatform();
+        if (plat) {
+            uexWindow.onKeyPressed = function (keyCode) {
+                if (keyCode == 0) {
+
+                }
+                //要执行的代码
+            }
+
+            uexWindow.setReportKey(0, 1);
+        }
+        if (!type) {
+            uexWindow.setBounce("0");
+            uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+            uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
+        }
+        //日期选择
+
+        //拍照回调
+        uexCamera.cbOpen = function (opCode, dataType, data) {
+
+            upload(data);
+        }
+        //相册回调
+        uexImageBrowser.cbPick = function (opCode, dataType, data) {
+            upload(data);
+        }
+        uexUploaderMgr.onStatus = function (opCode, fileSize, percent, serverPath, status) {
+            switch (status) {
+                case 0:
+                    $toast("上传进度：" + percent + "%");
+
+                    break;
+                case 1:
+                    $closeToast();
+
+                    $toast("上传成功", 2000);
+//                    oImg.setAttribute('src', serverPath);
+                    $$('img').src = hostWebURL + serverPath;
+                    uexUploaderMgr.closeUploader(1);
+                    break;
+                case 2:
+                    $closeToast();
+                    $toast("上传失败", 1000);
+                    uexUploaderMgr.closeUploader(1);
+                    break;
+            }
+        }
+        uexWindow.cbActionSheet = function (opId, dataType, data) {
+            //console.log("选择的按钮在数组中的下标为："+data);
+            var i = parseInt(data);
+            switch (i) {
+                case  0:
+                    //拍照
+                    uexCamera.open();
+                    break;
+                case 1:
+                    //相册
+                    uexImageBrowser.pick();
+                    break;
+
 
             }
-            //要执行的代码
+        }
+        uexControl.cbOpenDatePicker = function (opCode, dataType, data) {
+            if (dataType == 1) {
+                var obj = eval('(' + data + ')');
+                $$("yunqi").value = obj.year + '-' + obj.month + '-' + obj.day;
+                //  console.log('日期选择器返回的日期：'+obj.year+'年' +obj.month+'月'+obj.day+'日');
+            }
         }
 
-        uexWindow.setReportKey(0,1);
+
+        var uid = getLocVal('uid');
+        if (uid) {
+            getUserInfo(uid);
+
+        } else {
+            $toast("您还没有登陆", 2000);
+            openNewWin('login', 'login.html');
+        }
     }
-	if(!type){
-		uexWindow.setBounce("0");
-		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
-        uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
-	}
-	//日期选择
-	
-   uexControl.cbOpenDatePicker=function(opCode,dataType,data){
-                if(dataType==1){
-                    var obj = eval('('+data+')');
-                  $$("yunqi").value=obj.year+'-' +obj.month+'-'+obj.day;
-                  //  console.log('日期选择器返回的日期：'+obj.year+'年' +obj.month+'月'+obj.day+'日');
-                }
-            }
-	 //打开摄像头
-	 uexCamera.cbOpen = function(opId, dataType, data){
-	 	// $$("avatars").src=data;
-		upload(data);
 
-	 }
-	 uexUploaderMgr.cbCreateUploader = function(opCode, dataType, data){
-                    if (data == 0) {
-                      //  alert("创建成功");
-                    }
-                    else {
-                       // alert("创建失败");
-                    }
-                }
-	                 //上传的状态
-       uexUploaderMgr.onStatus = function(opCode, fileSize, percent, serverPath, status){
-                    switch (status) {
-                        case 0:
-						   $toast( "文件大小：" + fileSize + "字节<br>上传进度：" + percent + "%");
-                        
-                            break;
-                        case 1:
-						 $closeToast();
-						 $$("avatars").src = serverPath;
-						$toast("上传成功",2000);
-                            uexUploaderMgr.closeUploader(1);
-                            break;
-                        case 2:
-						 $closeToast();
-                            $toast("上传失败",1000);
-                            uexUploaderMgr.closeUploader(1);
-                            break;
-                    }
-                }	
-	 
-	  var avatar=$$('avatars').src; //头像
+    function onClickItem(dateType) {
+        /*dateType 数据类型是string，如效果图，拍照是0，从相册选择是1，依次叠加，如果是取消按钮, 返回-1*/
+        alert("itemIndex:" + dateType);
+    }
+    function upPhoto() {
+        uexWindow.actionSheet("上传图片", "取消", ["手机拍照", "相册上传"]);
 
-	var uid  = getLocVal('uid');
-	  if(uid){
-	  	   getUserInfo(uid);
-		   
-	  }else{
-	  	$toast("您还没有登陆",2000);
-		openNewWin('login','login.html');
-	  }
-}
+    }
+    function callback(data) {
+        if (data == 1) {
+            $closeToast();
+            $toast("保存信息成功", 2000);
 
-function callback(data){
-	 if(data==1){
-	 		$closeToast();
-	 	$toast("保存信息成功",2000);
-	 
-	 }else{
-	 	$toast("保存信息失败",2000);
-	 }
-}
-function save(){
-		 var b64 = new Base64();
-		 var avatar=$$('avatars').src; //头像
-	
-	     //var username =encodeURIComponent(b64.encode($$("username").value));
-	     var password=$$("password").value;
-		 var name =encodeURIComponent(b64.encode($$("name").value));//真实姓名
-		 var phone = $$("phone").value; //手机号码
-		 var sheng =encodeURIComponent(b64.encode($$("sheng").value)); //省
-		 var shi= encodeURIComponent(b64.encode($$("shi").value));;	//市 
-		 var yunqi =$$("yunqi").value; //孕期
-		 var remark = encodeURIComponent(b64.encode($$("remark").value));//个性签名
-		 var uid = getLocVal('uid');
-	    savedo(uid,password,avatar,name,phone,sheng,shi,yunqi,remark);
-}
+        } else {
+            $toast("保存信息失败", 2000);
+        }
+    }
+    function save() {
+        var b64 = new Base64();
+        var avatar = $$('img').src; //头像
+
+        //var username =encodeURIComponent(b64.encode($$("username").value));
+        var password = $$("password").value;
+        var name = encodeURIComponent($$("name").value);//真实姓名
+        var phone = $$("phone").value; //手机号码
+//		 var sheng =encodeURIComponent(b64.encode($$("sheng").value)); //省
+//		 var shi= encodeURIComponent(b64.encode($$("shi").value));;	//市
+        var yunqi = $$("yunqi").value; //孕期
+//		 var remark = encodeURIComponent(b64.encode($$("remark").value));//个性签名
+        var sheng = "";
+        var shi = "";
+        var remark = "";
+
+        var uid = getLocVal('uid');
+        savedo(uid, password, avatar, name, phone, sheng, shi, yunqi, remark);
+    }
 
 </script>
 </html>

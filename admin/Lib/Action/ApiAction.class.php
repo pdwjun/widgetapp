@@ -662,5 +662,30 @@ header('Access-Control-Allow-Origin: *');
 
          }
      }
+
+     /*
+      * usersave    //保存用户信息
+      * savedo(uid,password,avatar,name,phone,sheng,shi,yunqi,remark);
+      */
+     public function usersave(){
+         if(I('uid',0)){
+             $data=array();
+             $data['uid'] = I('uid');
+             if(I('password')!="")
+                $data['password']=md5(I('password'));
+             $data['nickname']=I('name');
+             $data['sheng']=I('sheng');
+             $data['phone']=I('phone');
+             $data['yunqi'] = I('yunqi');
+
+             $id = M('User')->save($data);
+             if($id)
+                 echo 1;
+             else
+                 echo 0;
+
+         }
+
+     }
  }
 ?>

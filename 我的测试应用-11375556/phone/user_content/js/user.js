@@ -1,5 +1,5 @@
 function savedo(uid,password,avatar,name,phone,sheng,shi,yunqi,remark){
-	var url = hostURL+"&a=save&uid="+uid+"&name="+name+"&password="+password+"&avatar="+avatar+"&phone="+phone+"&sheng="+sheng+"&remark="+remark+"&shi="+shi+"&yunqi="+yunqi;
+	var url = hostURL+"&a=usersave&uid="+uid+"&name="+name+"&password="+password+"&avatar="+avatar+"&phone="+phone+"&sheng="+sheng+"&remark="+remark+"&shi="+shi+"&yunqi="+yunqi;
 
 	$.getJSON(url,callback,'text',getJSONError,'GET','');
 }
@@ -16,9 +16,8 @@ function setavatar(){
 function upload(data){
 
 
-	var uploadHttp = hostURL +"&a=upavatar";
-	//alert(uploadHttp+"图片地址："+data);
-	 uexUploaderMgr.createUploader(1, uploadHttp);
-	 uexUploaderMgr.uploadFile(1, data, "photo", '3'); 
+	var uploadHttp = hostURL +"&a=upload";
+	uexUploaderMgr.createUploader(1, uploadHttp);
+	uexUploaderMgr.uploadFile(1, data, "fileToUpload", '1');
 }
 
