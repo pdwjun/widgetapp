@@ -320,3 +320,18 @@
 	height: 1em;
 	line-height: 0;
 }
+.tip_suc{
+	color: #909090;
+	text-align: center;
+}
+.tip_h1{
+	font-size: 2em;
+	margin-top: 3em;
+	margin-bottom: 1em;
+}
+.tip_btn{
+	margin: 4em;
+	padding: 1em;
+	background-color: #00af42;
+	-webkit-border-radius: 0.2em;
+}
