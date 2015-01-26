@@ -1,5 +1,5 @@
-function savedo(uid,password,avatar,name,phone,sheng,shi,yunqi,remark){
-	var url = hostURL+"&a=usersave&uid="+uid+"&name="+name+"&password="+password+"&avatar="+avatar+"&phone="+phone+"&sheng="+sheng+"&remark="+remark+"&shi="+shi+"&yunqi="+yunqi;
+function savedo(uid,password,avatar,name,img,phone,sheng,shi,yunqi,remark){
+	var url = hostURL+"&a=userinfosave&uid="+uid+"&name="+name+"&img="+img+"&password="+password+"&avatar="+avatar+"&phone="+phone+"&sheng="+sheng+"&remark="+remark+"&shi="+shi+"&yunqi="+yunqi;
 
 	$.getJSON(url,callback,'text',getJSONError,'GET','');
 }

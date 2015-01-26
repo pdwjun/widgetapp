@@ -25,7 +25,7 @@
     <!--header开始-->
     <div id="header" class="uh t-wh ub c-blu">
         <!-- 关注圈-->
-        <div class="uhide">
+        <div class="uh t-wh ub c-my ">
             <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
                 <div class="t-btn-ds1 ub-img uwh-tBtn">
                 </div>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <!-- 预约-->
-        <div class="uh t-wh ub c-my banner">
+        <div class="uhide">
             <div class="banner">
                 <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
 
@@ -105,7 +105,7 @@
         <!--导航条开始-->
         <div class="uf t-bla ub tab t-wh ubt b-gra2">
             <div class="pos_re ub ub-f1">
-                <input class="uhide" type="radio" name="tabSwitch">
+                <input class="uhide" type="radio" name="tabSwitch" checked="true">
 
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)"
                      class="ub-f1 ub ub-ver tab-act" onclick="openCon(0);">
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="pos_re ub ub-f1">
-                <input class="uhide" type="radio" name="tabSwitch" checked="true">
+                <input class="uhide" type="radio" name="tabSwitch">
 
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)"
                      class="ub-f1 ub ub-ver tab-act" onclick="openCon(2);">
@@ -192,7 +192,7 @@
         if (!type) {
             var uid = getLocVal('uid');
             if (uid) {
-                zy_con("content", "home.html", 0, $$("header").offsetHeight);
+                zy_con("content", "index_content.html", 0, $$("header").offsetHeight);
             } else {
                 openNewWin('login', 'login.html');
             }
@@ -221,9 +221,9 @@
 
                         if (uid) {
                             //iframe的高度不好设置，所以换一种不太合适的做法
-//                            zy_con("content", "index_content.html", 0, $$("footer").offsetHeight);
+                            zy_con("content", "index_content.html", 0, $$("footer").offsetHeight);
 
-                            openNewWin('home', 'home-index.html');
+//                            openNewWin('content', 'home-index.html');
 //                            window.onorientationchange=window.onresize=function(){
 //                                zy_resize("content",0,0);
 //                            }
@@ -239,7 +239,7 @@
 
                     case 2:
                         $$("header").children[i].className = "uh t-wh ub c-my banner";
-                        zy_con("home", "home.html", 0, $$("footer").offsetHeight);
+                        zy_con("content", "home.html", 0, $$("footer").offsetHeight);
 
                         break;
                     case 3:

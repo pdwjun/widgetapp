@@ -42,7 +42,10 @@
     function userBack(data){
         $$("username").innerHTML ='<div class="username" >'+data.username + '</div><div class="info msg_type" id="msg_type" >怀孕期</div>';
         // $$("avatar").style.backgroundImage=data.avatar;
-        $$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+hostWebURL+data.img+');"></div>';
+		var imgurl = "image/headphoto.jpg"
+		if(data.img!="")
+			imgurl = hostWebURL+data.img
+        $$("avatar").innerHTML ='<div class="avatar" style="background-image:url('+imgurl+');"></div>';
     }
     function msg_cate_Back(data){
 //        $$("banner").backgroundImage = 'url('+data.img+')';
@@ -106,9 +109,13 @@ function callback(data){
     var tmpl= '';
     if(data!="")
         data.forEach(function(e) {
+
+			var imgurl = "image/headphoto.jpg"
+			if(e.img!="")
+				imgurl = hostWebURL+e.img
              tmpl += '<div class="msg_group" >' +
                 '<ul ontouchstart="zy_touch(\'btn-act\')" onclick="showmsg('+ e.id +')" class="ubb ub b-gra4 lis">'
-                + '<li><img class="msg_group_author" src="'+ hostWebURL+ e.img +'" /><div class="author_name">'+ e.username +'</div></li>'
+                + '<li><img class="msg_group_author" src="'+ imgurl +'" /><div class="author_name">'+ e.username +'</div></li>'
                 + '<li ><strong class="msg_group_title">'+ e.title +'</strong></li>'
                 + '<li class="msg_group_content" >'+ e.content +'</li><li><div class="msg_group_content_image">';
                 var photoarr = e.photo.split('|');

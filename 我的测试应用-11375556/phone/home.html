@@ -34,12 +34,12 @@
     <div class="home" id="board">
         <div class="line">
             <div class="white-line">&nbsp;</div>
-            <div class="board1 line-w2">
+            <div onclick="action(1)" class="board1 line-w2">
                 <h2 class="home-h1">文章标题</h2>
                 <h3 class="home-content">帖子内容，帖子内容</h3>
             </div>
             <div class="white-line">&nbsp;</div>
-            <div class="board2 line-w1">
+            <div onclick="action(2)" class="board2 line-w1">
                 <img src="css/project/images/group.png"/><br >
                 交流圈
             </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="line">
             <div class="white-line">&nbsp;</div>
-            <div class="board3 line-w1">
+            <div onclick="action(3)" class="board3 line-w1">
                 <img src="css/project/images/home.png"/><br >
                 暖客栈
             </div>
@@ -62,19 +62,19 @@
         </div>
         <div class="line">
             <div class="white-line">&nbsp;</div>
-            <div class="board4 line-w1">
+            <div onclick="action(4)" class="board4 line-w1">
                 <img src="css/project/images/support.png"/><br >
                 预约医生
 
             </div>
             <div class="white-line">&nbsp;</div>
-            <div class="board5 line-w1">
+            <div onclick="action(5)" class="board5 line-w1">
                 <img src="css/project/images/hos.png"/><br >
                 预约医院
 
             </div>
             <div class="white-line">&nbsp;</div>
-            <div class="board6 line-w1">
+            <div onclick="action(6)" class="board6 line-w1">
                 <img src="css/project/images/chat.png"/><br >
                 在线咨询
 
@@ -251,6 +251,44 @@
         openNewWin('shwoinfo', 'shwoinfo.html');
     }
 
+    /*
+    点击方框跳转到对应页面
+     */
+    function action(idx){
+        switch (idx) {
+
+//            case 0: openNewWin('book','myorder.html');break;
+//            case 1: openNewWin('book','bookdoctor.html');break;
+//            case 2: openNewWin('book','bookhospital.html');break;
+
+
+            case 1: //帖子
+                setLocVal('mid',mid);
+                openNewWin('msg','msg.html');
+                break;
+
+//            case 2:
+//                $$("header").children[i].className = "uh t-wh ub c-my banner";
+//                zy_con("content", "home.html", 0, $$("header").offsetHeight);
+//
+//                break;
+            case 3: //暖客栈
+                openNewWin("book", "house.html");
+                break;
+
+            case 4: //预约医生
+                openNewWin("book", "bookdoctor.html");
+                break;
+
+            case 5: //预约医院
+                openNewWin("book", "bookhospital.html");
+                break;
+
+//            case 6: //在线咨询
+//                zy_con("content", "house_content.html", 0, 0);
+//                break;
+        }
+    }
 </script>
 
 </html>

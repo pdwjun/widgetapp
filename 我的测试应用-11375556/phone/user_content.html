@@ -26,7 +26,7 @@
             <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9"
                 ontouchstart="zy_touch('btn-act')" onclick="upPhoto();">
                 <li class="ub-f1 ut-s ulev-app1">头像</li>
-                <li class="tx-r ulev-app1"><img src="" width="100" height="100" id="img"></li>
+                <li class="tx-r ulev-app1"><img src="" width="100" height="100" id="img"><input type="hidden" name="img_url" id="img_url" ></li>
                 <li class="lis-sw ub-img arrow"></li>
             </ul>
             <ul ontouchstart="zy_touch('btn-act')" class="ubb ub b-gra2 t-bla ub-ac uinn-a9">
@@ -108,6 +108,7 @@
     function getUserHand(data) {
         $$("username").innerHTML = data.username;
         $$("img").src = hostWebURL + data.img;
+        $$("img_url").value = data.img;
 //			$$("sheng").value = data.sheng;
 //			$$("shi").value= data.shi;
         $$("name").value = data.nickname;
@@ -165,6 +166,7 @@
                     $toast("上传成功", 2000);
 //                    oImg.setAttribute('src', serverPath);
                     $$('img').src = hostWebURL + serverPath;
+                    $$('img_url').value = serverPath;
                     uexUploaderMgr.closeUploader(1);
                     break;
                 case 2:
@@ -228,22 +230,25 @@
     }
     function save() {
         var b64 = new Base64();
-        var avatar = $$('img').src; //头像
+//        var avatar = $$('img').src; //头像
 
         //var username =encodeURIComponent(b64.encode($$("username").value));
         var password = $$("password").value;
         var name = encodeURIComponent($$("name").value);//真实姓名
+        var img = $$("img_url").value; //手机号码
         var phone = $$("phone").value; //手机号码
 //		 var sheng =encodeURIComponent(b64.encode($$("sheng").value)); //省
 //		 var shi= encodeURIComponent(b64.encode($$("shi").value));;	//市
         var yunqi = $$("yunqi").value; //孕期
 //		 var remark = encodeURIComponent(b64.encode($$("remark").value));//个性签名
+        var avatar = "";
         var sheng = "";
         var shi = "";
         var remark = "";
 
+
         var uid = getLocVal('uid');
-        savedo(uid, password, avatar, name, phone, sheng, shi, yunqi, remark);
+        savedo(uid, password, avatar, name,img, phone, sheng, shi, yunqi, remark);
     }
 
 </script>

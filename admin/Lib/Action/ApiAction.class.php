@@ -262,7 +262,8 @@ header('Access-Control-Allow-Origin: *');
              $data['title']=I('title');
              $data['content']=I('content');
              $data['cid']=I('cid');
-             $data['photo'] = I('photo');
+             if(I('img')!="")
+                 $data['img'] = I('img');
 
              $data['uid']=I('uid');
              $data['createtime']=time();
@@ -281,16 +282,26 @@ header('Access-Control-Allow-Origin: *');
       * 10  3:              getmsg&id="+id;
       *
       */
+     /**
+      *
+      */
      public function getmsg(){
          $model = M('Msg');
          $user_tab = M('User')->getTableName();
          $comment_tab = M('Comment')->getTableName();
          $msg_tab = M('Msg')->getTableName();
+         $where = "1=1";
+         $order = "createtime";
+         if(isset($_REQUEST['id'])&&$_REQUEST['id']!="")
+             $where = $msg_tab. '.id='. I('id');
+         else
+             $where =
          $list = $model->Distinct(1)
              ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')
              ->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )
              ->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )
-             ->where($msg_tab.'.id='.I('id'))
+             ->where($where)
+             ->order('createtime desc')
              ->find();
          if($list){
              $arr = explode('|', $list['zan_uid']);
@@ -667,12 +678,14 @@ header('Access-Control-Allow-Origin: *');
       * usersave    //保存用户信息
       * savedo(uid,password,avatar,name,phone,sheng,shi,yunqi,remark);
       */
-     public function usersave(){
+     public function userinfosave(){
          if(I('uid',0)){
              $data=array();
              $data['uid'] = I('uid');
              if(I('password')!="")
                 $data['password']=md5(I('password'));
+             if(I('img')!="")
+                 $data['img']=I('img');
              $data['nickname']=I('name');
              $data['sheng']=I('sheng');
              $data['phone']=I('phone');
