@@ -451,3 +451,13 @@ function checkFunction(reg){
 
 	}
 }
+/*
+默认图片
+ */
+function initImgURL(img){
+	if(img=="")
+		img = 'image/headphoto.jpg';
+	else
+		img = hostWebURL + img;
+	return img;
+}

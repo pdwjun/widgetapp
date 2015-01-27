@@ -110,9 +110,7 @@ function callback(data){
     if(data!="")
         data.forEach(function(e) {
 
-			var imgurl = "image/headphoto.jpg"
-			if(e.img!="")
-				imgurl = hostWebURL+e.img
+			imgurl = initImgURL(e.img);
              tmpl += '<div class="msg_group" >' +
                 '<ul ontouchstart="zy_touch(\'btn-act\')" onclick="showmsg('+ e.id +')" class="ubb ub b-gra4 lis">'
                 + '<li><img class="msg_group_author" src="'+ imgurl +'" /><div class="author_name">'+ e.username +'</div></li>'
@@ -120,8 +118,8 @@ function callback(data){
                 + '<li class="msg_group_content" >'+ e.content +'</li><li><div class="msg_group_content_image">';
                 var photoarr = e.photo.split('|');
                 photoarr.forEach(function(e){
-                    if(e!="")
-						tmpl += '<img class="msg_group_content_photo" src="'+ e+ '">';
+                    e = initImgURL(e);
+					tmpl += '<img class="msg_group_content_photo" src="'+ e+ '">';
 					//tmpl += '<img class="msg_group_content_photo" src="'+ hostWebURL+ e+ '">';
                 })
                 tmpl += '</div></li></ul><div class="msg_group_reply"><img class="msg_like" onclick="zan('+ e.id +')" src="css/icons/icon-like.png" /><span id="zan_'+ e.id +'" >'+ e.zan +'</span>' +

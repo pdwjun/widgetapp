@@ -45,16 +45,6 @@
         </div>
         <!-- 预约-->
         <div class="uhide">
-            <div class="banner">
-                <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
-
-                </div>
-                <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0"></h1>
-                <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
-                    <div class="t-btn-ds1 ub-img uwh-tBtn">
-                    </div>
-                </div>
-            </div>
         </div>
         <!--月子中心 -->
         <div class="uhide">
@@ -87,8 +77,8 @@
     <!--footer开始-->
     <div id="footer" class="home-footer" style=" background-color:#FF5991;">
         <!--导航条开始-->
-        <div class="uf t-bla ub tab t-wh ubt b-gra2">
-            <div class="pos_re ub ub-f1">
+        <div class="uf t-bla ub  c-my t-wh ubt b-gra2">
+            <div class="pos_re ub ub-f1 c-my">
                 <input class="uhide" type="radio" name="tabSwitch">
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)" class="ub-f1 ub ub-ver tab-act" onclick="openCon(0);">
                     <div class="ub-f1 ub-img5 tp-quan">
@@ -98,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos_re ub ub-f1">
+            <div class="pos_re ub ub-f1 c-my">
                 <input class="uhide" type="radio" name="tabSwitch"  checked="true">
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)" class="ub-f1 ub ub-ver tab-act" onclick="openCon(1);">
                     <div class="ub-f1 ub-img5 tp-tixing">
@@ -108,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos_re ub ub-f1">
+            <div class="pos_re ub ub-f1 c-my">
                 <input class="uhide" type="radio" name="tabSwitch">
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)" class="ub-f1 ub ub-ver tab-act" onclick="openCon(2);">
                     <div class="ub-f1 ub-img5 tp-xincheng">
@@ -118,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos_re ub ub-f1">
+            <div class="pos_re ub ub-f1 c-my">
                 <input class="uhide" type="radio" name="tabSwitch">
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)" class="ub-f1 ub ub-ver tab-act" onclick="openCon(3);">
                     <div class="ub-f1 ub-img5 tp-yuezi">
@@ -128,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos_re ub ub-f1">
+            <div class="pos_re ub ub-f1 c-my">
                 <input class="uhide" type="radio" name="tabSwitch">
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)" class="ub-f1 ub ub-ver tab-act" onclick="openCon(4);">
                     <div class="ub-f1 ub-img5 tp-user">
@@ -187,38 +177,51 @@
 
     function openCon(idx){
         var uid = getLocVal('uid');
+        $$("header").className = "uh t-wh ub c-blu";
         for (var i = 0; i < $$("header").children.length; i++) {
             if (idx == i) {
-                $$("header").children[i].className = "uh t-wh ub c-my";
-                switch(idx){
+                if(idx==2)
+                    $$("header").children[i].className = "uhide";
+                else
+                    $$("header").children[i].className = "uh t-wh ub c-my";
+                switch (idx) {
                     case 0:
 
                         if (uid) {
-                            zy_con("content", "index_content.html", 0, $$("footer").offsetHeight);
-                        }else{
-                            openNewWin('login','login.html');
+                            //iframe的高度不好设置，所以换一种不太合适的做法
+                            zy_con("content", "index_content.html", 0, $$("header").offsetHeight);
+
+//                            openNewWin('home', 'home-index.html');
+//                            window.onorientationchange=window.onresize=function(){
+//                                zy_resize("content",0,0);
+//                            }
+                        } else {
+                            openNewWin('login', 'login.html');
                         }
 
                         break;
                     case 1:
-                        zy_con("content", "book_content.html", 0, $$("footer").offsetHeight);
-
+                        zy_con("content", "book_content.html", 0, $$("header").offsetHeight);
                         break;
 
                     case 2:
-                        $$("header").children[i].className = "uh t-wh ub c-my banner";
-                        zy_con("content","home.html",0,$$("header").offsetHeight);
+                        var s = window.getComputedStyle($$("content"), null);
+//                        var p = window.getComputedStyle($$("page_0"), null);
+                        var p = window.getComputedStyle($$("footer"), null);
 
+//                        zy_con("content", "home.html", 0, $$("header").offsetHeight);
+                        uexWindow.openPopover("content",0, "home.html","",0,0,int(s.width),"",'',0,int(p.height));
                         break;
+
                     case 3:
-                        zy_con("content", "house_content.html", 0, $$("footer").offsetHeight);
+                        zy_con("content", "house_content.html", 0, $$("header").offsetHeight);
                         break;
 
                     case 4:
-                        if(uid){
-                            zy_con("content", "user_content.html", 0,$$("footer").offsetHeight);
-                        }else{
-                            openNewWin('login','login.html');
+                        if (uid) {
+                            zy_con("content", "user_content.html", 0, $$("header").offsetHeight);
+                        } else {
+                            openNewWin('login', 'login.html');
                         }
 
                         break;

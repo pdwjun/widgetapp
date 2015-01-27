@@ -29,7 +29,10 @@
 </head>
 
 <body class="um-vp c-wh" ontouchstart>
-<div id="page_0" class="up ub ub-ver home-page" tabindex="0">
+<div class="uh t-wh ub c-my banner">
+
+</div>
+<div id="page_0" class=" ub ub-ver home-page" tabindex="0">
 
     <div class="home" id="board">
         <div class="line">
@@ -101,47 +104,47 @@
 
     }
     function callback(data) {
-
-        uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
-        uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "DELETE FROM category");
-        uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
-        for (var i = 0; i < data.length; i++) {
-            uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
-
-            uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['id'] + "','" + data[i]['name'] + "','" + data[i]['cid'] + "','" + data[i]['tixing'] + "','0')");
-            uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
-            if (data[i]['list'] == null) {
-            }
-            else {
-                for (var z = 0; z < data[i]['list'].length; z++) {
-
-                    uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
-                    uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['list'][z]['id'] + "','" + data[i]['list'][z]['name'] + "','" + data[i]['list'][z]['cid'] + "','" + data[i]['list'][z]['tixing'] + "','0')");
-                    uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
-
-                }
-            }
-
-
-        }
-
-
-        var tmpl = '<div class="ubb b-gra">'
-                + ' <input type="checkbox" class="uhide">'
-                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
-                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
-                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
-                + '     </div>'
-                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
-                + '	${cb:followReply}'
-                + '  </div>'
-                + '</div>'
-
-        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
-        var d = document.createElement('DIV');
-        d.innerHTML = s;
-
-        $$('infoList').appendChild(d);
+//
+//        uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
+//        uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "DELETE FROM category");
+//        uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
+//        for (var i = 0; i < data.length; i++) {
+//            uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
+//
+//            uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['id'] + "','" + data[i]['name'] + "','" + data[i]['cid'] + "','" + data[i]['tixing'] + "','0')");
+//            uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
+//            if (data[i]['list'] == null) {
+//            }
+//            else {
+//                for (var z = 0; z < data[i]['list'].length; z++) {
+//
+//                    uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
+//                    uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['list'][z]['id'] + "','" + data[i]['list'][z]['name'] + "','" + data[i]['list'][z]['cid'] + "','" + data[i]['list'][z]['tixing'] + "','0')");
+//                    uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
+//
+//                }
+//            }
+//
+//
+//        }
+//
+//
+//        var tmpl = '<div class="ubb b-gra">'
+//                + ' <input type="checkbox" class="uhide">'
+//                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
+//                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
+//                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
+//                + '     </div>'
+//                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
+//                + '	${cb:followReply}'
+//                + '  </div>'
+//                + '</div>'
+//
+//        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
+//        var d = document.createElement('DIV');
+//        d.innerHTML = s;
+//
+//        $$('infoList').appendChild(d);
         // $closeToast();
     }
 
@@ -184,22 +187,22 @@
     function loadLoction(data) {
 
 
-        var tmpl = '<div class="ubb b-gra">'
-                + ' <input type="checkbox" class="uhide">'
-                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
-                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
-                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
-                + '     </div>'
-                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
-                + '	${cb:followReply}'
-                + '  </div>'
-                + '</div>'
-
-        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb1);
-        var d = document.createElement('DIV');
-        d.innerHTML = s;
-
-        $$('infoList').appendChild(d);
+//        var tmpl = '<div class="ubb b-gra">'
+//                + ' <input type="checkbox" class="uhide">'
+//                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
+//                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
+//                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
+//                + '     </div>'
+//                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
+//                + '	${cb:followReply}'
+//                + '  </div>'
+//                + '</div>'
+//
+//        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb1);
+//        var d = document.createElement('DIV');
+//        d.innerHTML = s;
+//
+//        $$('infoList').appendChild(d);
         // $closeToast();
     }
 

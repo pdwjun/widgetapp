@@ -291,17 +291,14 @@ header('Access-Control-Allow-Origin: *');
          $comment_tab = M('Comment')->getTableName();
          $msg_tab = M('Msg')->getTableName();
          $where = "1=1";
-         $order = "createtime";
          if(isset($_REQUEST['id'])&&$_REQUEST['id']!="")
-             $where = $msg_tab. '.id='. I('id');
-         else
-             $where =
+             $where .= ' and '. $msg_tab. '.id='. I('id');
          $list = $model->Distinct(1)
              ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')
              ->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )
              ->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )
              ->where($where)
-             ->order('createtime desc')
+             ->order($msg_tab. '.createtime desc')
              ->find();
          if($list){
              $arr = explode('|', $list['zan_uid']);
