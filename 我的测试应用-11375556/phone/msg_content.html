@@ -111,7 +111,7 @@ window.uexOnload=function(type)
 
 	function callback(data){
         var img_url = initImgURL(data.img)
-        var author = '<img class="msg_group_author" src="'+ img_url+'"><div class="author_name" id="username">'+data.username+'</div>';
+        var author = '<div class="headphoto"><img class="msg_group_author" src="'+ img_url+'"></div><div class="author_name" id="username">'+data.username+'</div>';
 		$$("author").innerHTML=author;
 		$$("title").innerHTML =data.title;
 		$$("content").innerHTML =data.content;

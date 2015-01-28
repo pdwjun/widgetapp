@@ -173,9 +173,8 @@
     padding: 10px;
 }
 .msg_group_author{
-    height: 3em;
     width: 3em;
-    -webkit-border-radius: 8px;
+
 }
 .author_name{
     display: inline-block;
@@ -335,4 +334,10 @@
 	background-color: #00af42;
 	-webkit-border-radius: 0.2em;
 	color: white;
+}
+.headphoto{
+	overflow: hidden;
+	height: 3em;
+	width: 3em;
+	-webkit-border-radius: 8px;
 }
