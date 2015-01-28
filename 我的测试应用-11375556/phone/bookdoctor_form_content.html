@@ -84,14 +84,16 @@
     }
     function goMyOrder(data) {
 //        document.location.href = 'success.html';
-        uexWindow.open("",0,"success.html",'1','','',4)
+        uexWindow.openPopover("content",0, "index.html","",0,0,'',"",'',0);
+//        uexWindow.open("",0,"success.html",'1','','',4)
     }
     function saveBack(data) {
         if (data == 0) {
             $toast("预约失败", 1000);
         } else {
             $toast("预约成功", 1000);
-            window.setTimeout(goMyOrder(data), 3000);
+            setLocVal('homepage', 'success_content.html')
+            window.setTimeout(uexWindow.open("",0,"index.html",'1','','',4), 3000);
         }
     }
 

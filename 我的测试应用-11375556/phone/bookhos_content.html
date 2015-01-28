@@ -52,12 +52,6 @@
         var page = getLocVal('page');
         var newpage = parseInt(page) +parseInt(1);
         keyword = '0';
-        if($$('grade')!='')
-            keyword = $$('grade').value;
-        if($$('key').value!='')
-            keyword += ' '+$$('key').value;
-        if($$('city').value!='')
-            keyword += ' '+$$('city').value;
         if(!page)
             page=1
         loadhospital(keyword,newpage);
@@ -107,13 +101,7 @@
     function search(){
         setLocVal('refresh', 1)
         keyword = '0';
-        if($$('grade')!='')
-            keyword = $$('grade').value;
-        if($$('key').value!='')
-            keyword += ' '+encodeURIComponent($$('key').value);
-        if($$('city').value!='')
-            keyword += ' '+$$('city').value;
-        loadhospital(keyword);
+        loadhospital(keyword,1);
 
     }
 </script>

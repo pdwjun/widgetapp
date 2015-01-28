@@ -44,7 +44,7 @@
             </div>
         </div>
         <!-- 预约安排-->
-        <div class="uhide">
+        <div class="uhide" id="order">
             <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
                 <div class=" ub-img uwh-tBtn">
                 </div>
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="pos_re ub ub-f1 c-my">
-                <input class="uhide" type="radio" name="tabSwitch">
+                <input class="uhide" type="radio" name="tabSwitch" id="order_menu">
 
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)"
                      class="ub-f1 ub ub-ver tab-act" onclick="openCon(1);">
@@ -180,11 +180,22 @@
 
         if (!type) {
             var uid = getLocVal('uid');
+
+            var homepage = getLocVal('homepage');
+            if(!homepage)
+            {
+                homepage = 'home.html';
+            }else{
+                $$("order").className = "uh t-wh ub c-my";
+                $$("order_menu").checked=true;
+            }
             if (uid) {
-                zy_con("content", "home.html", 0, $$("header").offsetHeight);
+                goURL(homepage);
+//                zy_con("content", homepage, 0, $$("header").offsetHeight);
             } else {
                 openNewWin('login', 'login.html');
             }
+            clearLocVal('homepage');
 
 
         }
@@ -204,6 +215,9 @@
         $$("header").className = "uh t-wh ub c-blu";
         for (var i = 0; i < $$("header").children.length; i++) {
             if (idx == i) {
+                var p = window.getComputedStyle($$("footer"), null);
+                var h = window.getComputedStyle($$("header"), null);
+
                 if(idx==2)
                     $$("header").children[i].className = "uhide";
                 else
@@ -213,7 +227,8 @@
 
                         if (uid) {
                             //iframe的高度不好设置，所以换一种不太合适的做法
-                            zy_con("content", "index_content.html", 0, $$("header").offsetHeight);
+//                            zy_con("content", "index_content.html", 0, $$("header").offsetHeight);
+                            uexWindow.openPopover("content",0, "index_content.html","",0,int(h.height),'',"",'',0,int(p.height));
 
 //                            openNewWin('home', 'home-index.html');
 //                            window.onorientationchange=window.onresize=function(){
@@ -225,25 +240,23 @@
 
                         break;
                     case 1:
-                        zy_con("content", "book_content.html", 0, $$("header").offsetHeight);
+//                        zy_con("content", "book_content.html", 0, $$("header").offsetHeight);
+                        uexWindow.openPopover("content",0, "book_content.html","",0,int(h.height),'',"",'',0,int(p.height));
                         break;
 
                     case 2:
-                        var s = window.getComputedStyle($$("content"), null);
-//                        var p = window.getComputedStyle($$("page_0"), null);
-                        var p = window.getComputedStyle($$("footer"), null);
-
-//                        zy_con("content", "home.html", 0, $$("header").offsetHeight);
-                        uexWindow.openPopover("content",0, "home.html","",0,0,int(s.width),"",'',0,int(p.height));
+                        uexWindow.openPopover("content",0, "home.html","",0,0,'',"",'',0,int(p.height));
                         break;
 
                     case 3:
-                        zy_con("content", "house_content.html", 0, $$("header").offsetHeight);
+                        uexWindow.openPopover("content",0, "house_content.html","",0,int(h.height),'',"",'',0,int(p.height));
+//                        zy_con("content", "house_content.html", 0, $$("header").offsetHeight);
                         break;
 
                     case 4:
                         if (uid) {
-                            zy_con("content", "user_content.html", 0, $$("header").offsetHeight);
+                            uexWindow.openPopover("content",0, "user_content.html","",0,int(h.height),'',"",'',0,int(p.height));
+//                            zy_con("content", "user_content.html", 0, $$("header").offsetHeight);
                         } else {
                             openNewWin('login', 'login.html');
                         }
