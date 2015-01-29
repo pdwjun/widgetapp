@@ -79,6 +79,11 @@
 
             </div>
             <div class="uinn-at1">
+                <div ontouchstart="zy_touch('btn-act')" onclick="mymsg()" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">
+                    我的发贴
+                </div>
+            </div>
+            <div class="uinn-at1">
                 <div ontouchstart="zy_touch('btn-act')" onclick="save()" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">
                     保存
                 </div>
@@ -122,7 +127,9 @@
 
 
     }
-
+    function mymsg(){
+        document.location.href = "mymsg_content.html"
+    }
 
     zy_init();
     window.uexOnload = function (type) {

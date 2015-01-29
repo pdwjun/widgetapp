@@ -459,10 +459,19 @@ function initImgURL(img){
 		img = 'image/headphoto.jpg';
 	else
 		img = hostWebURL + img;
+	//setLocVal(img,img);
 	return img;
 }
 function goURL(url) {
 	var p = window.getComputedStyle($$("footer"), null);
 	var h = window.getComputedStyle($$("header"), null);
 	uexWindow.openPopover("content",0, url,"",0,int(h.height),'',"",'',0,int(p.height));
+}
+/*
+返回城市列表
+var type 1 2 月子中心所在城市 医生所在城市
+ */
+function getCityList(type){
+	var url = hostURL+"&a=get_city_list&type="+type;
+	$.getJSON(url,citylistcallback,'json',getJSONError,'GET','');
 }

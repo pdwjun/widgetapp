@@ -9,6 +9,10 @@ function getUserInfo(uid){
 	$.getJSON(url,getUserHand,'json',getJSONError,'GET','');
 }
 
+function mymsg(){
+	var url = hostURL+"&a=myMsg&uid=" + getLocVal('uid');
+	$.getJSON(url,mymsgcallback,'json',getJSONError,'GET','');
+}
 function setavatar(){
 	
 	 uexCamera.open();

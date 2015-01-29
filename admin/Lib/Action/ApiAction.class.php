@@ -484,6 +484,20 @@ header('Access-Control-Allow-Origin: *');
              echo 0;
      }
      /*
+      * 我的发贴
+      */
+     public function myMsg(){
+         $model = M('Msg');
+         $where['uid'] = I('uid');
+         $list = $model->where($where)->order('createtime desc')->select();
+
+         if($list){
+             echo json_encode($list);
+         }
+         else
+             echo 0;
+     }
+     /*
       * 预约信息
       */
      public function orderDetail(){
@@ -696,6 +710,19 @@ header('Access-Control-Allow-Origin: *');
 
          }
 
+     }
+
+     /*
+      * 返回城市列表
+      * @type string 类型 1：月子中心所在城市 2：医生所在城市
+      */
+     public function get_city_list($type){
+         $model = $type=="1"?M('House'):M('Doctor');
+         $list = $model->Distinct(true)->field('city')->select();
+         if(!empty($list))
+             echo json_encode($list);
+         else
+             echo "";
      }
  }
 ?>
