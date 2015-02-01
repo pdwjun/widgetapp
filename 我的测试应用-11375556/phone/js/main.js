@@ -475,3 +475,66 @@ function getCityList(type){
 	var url = hostURL+"&a=get_city_list&type="+type;
 	$.getJSON(url,citylistcallback,'json',getJSONError,'GET','');
 }
+
+String.prototype.Trim = function() {
+
+	var m = this.match(/^\s*(\S+(\s+\S+)*)\s*$/);
+
+	return (m == null) ? "" : m[1];
+
+}
+
+String.prototype.isMobile = function() {
+
+	return (/^(?:13\d|15[89])-?\d{5}(\d{3}|\*{3})$/.test(this.Trim()));
+
+}
+
+String.prototype.isTel = function()
+
+{
+
+	//"兼容格式: 国家代码(2到3位)-区号(2到3位)-电话号码(7到8位)-分机号(3位)"
+
+	//return (/^(([0\+]\d{2,3}-)?(0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/.test(this.Trim()));
+
+	return (/^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/.test(this.Trim()));
+
+}
+
+function chkphone() {
+
+	with(document.form){
+
+		if (phone.value.isMobile()||phone.value.isTel())  {
+
+			phone.value = phone.value.Trim();
+
+			//alert("您的电话/手机号码是:" + phone.value);
+
+			return true;
+
+		}
+
+		else {
+
+			//alert("请输入正确的手机号码或电话号码\n\n例如:13916752109或0712-3614072");
+
+			phone.focus();
+
+			return false;
+
+		}
+	}
+}
+function chkemail(strEmail) {
+	var re_email = new RegExp("^([a-zA-Z0-9]+[_|\_|.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|.]?)*[a-zA-Z0-9]+.[a-zA-Z]{2,3}$");
+	if(re_email.test(strEmail)) {
+		//alert("请输入正确的邮箱！");
+		return true;
+	}
+	else{
+		return false;
+
+	}
+}

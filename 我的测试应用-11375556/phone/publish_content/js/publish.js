@@ -10,8 +10,6 @@ function savedo(cid,title,content,photo,uid){
 }
 
 function upload(data){
-
-
 	var uploadHttp = hostURL +"&a=upload";
 	 uexUploaderMgr.createUploader(1, uploadHttp);
 	 uexUploaderMgr.uploadFile(1, data, "fileToUpload", '1');

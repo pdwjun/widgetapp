@@ -27,7 +27,7 @@
     <div class="doctor-info" >
         <!--医生介绍，content-->
     </div>
-    <form>
+    <form name="form">
         <div class="form">
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/name.png"/></div>
@@ -35,7 +35,7 @@
             </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/email.png"/></div>
-                <input placeholder="邮箱" type="text" class="ub-f1" id="email" name="email">
+                <input placeholder="邮箱" type="email" class="ub-f1" id="email" name="email">
             </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/calculator.png"/></div>
@@ -98,6 +98,17 @@
     }
 
     function book() {
+        if(!chkemail($$('email').value))
+        {
+            alert("请输入正确的邮箱");
+            return false;
+        }
+        if(!chkphone())
+        {
+            alert("请输入正确的手机号码或电话号码");
+            return false;
+        }
+
 //	 var b64 = new Base64();
 //	var cid= $$("cate").value;
 //	var title=encodeURIComponent(b64.encode($$("title").value));

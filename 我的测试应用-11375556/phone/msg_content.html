@@ -34,6 +34,7 @@
         <div id="msg_group_reply" class="msg_group_reply">
         </div>
     </div>
+    <input type="hidden" id="img_url" name="img_url" />
 	<div class="ub ub-ver comment_group" id="comment">
 	</div>
 <!--<div class="test"  onclick="test()" >test</div>-->
@@ -85,22 +86,62 @@ window.uexOnload=function(type)
 //		uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
 //        uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
     }
-    //选择图片的回调函数
-    uexImageBrowser.cbPick = function(opCode, dataType, data){
-        document.getElementById('pickImage').innerHTML = data;
-        document.getElementById('picc').src = data;
+    //拍照回调
+    uexCamera.cbOpen = function (opCode, dataType, data) {
+
+        upload(data);
     }
-    uexImageBrowser.cbSave = function(opCode, dataType, data){
-        if (data == 0) {
-            alert("保存成功!");
-        }
-        else
-        if (data == 1) {
-            alert("保存失败!");
+    //相册回调
+    uexImageBrowser.cbPick = function (opCode, dataType, data) {
+        upload(data);
+    }
+    uexUploaderMgr.onStatus = function (opCode, fileSize, percent, serverPath, status) {
+        switch (status) {
+            case 0:
+                $toast("上传进度：" + percent + "%");
+
+                break;
+            case 1:
+                $closeToast();
+
+                $toast("上传成功", 2000);
+//                var oImg = document.createElement('img');
+//                    oImg.setAttribute('src', serverPath);
+//                oImg.setAttribute('src', hostWebURL+serverPath);
+//                oImg.setAttribute('alt', 'na');
+//                oImg.style.width = '3.75em';
+//                oImg.style.margin = '0.5em';
+//                oImg.style.height = '3.75em';
+//                $$("uploadimage").appendChild(oImg);
+                $$("upphoto").style.backgroundImage = "url('"+serverPath+"')";
+                $$("img_url").value = serverPath;
+
+                uexUploaderMgr.closeUploader(1);
+
+                break;
+            case 2:
+                $closeToast();
+                $toast("上传失败", 1000);
+                uexUploaderMgr.closeUploader(1);
+                break;
         }
     }
-    uexWidgetOne.onError = function(opCode, errorCode, errorDesc){
-        alert(errorCode + ":" + errorDesc);
+
+    uexWindow.cbActionSheet = function (opId, dataType, data) {
+        //console.log("选择的按钮在数组中的下标为："+data);
+        var i = parseInt(data);
+        switch (i) {
+            case  0:
+                //拍照
+                uexCamera.open();
+                break;
+            case 1:
+                //相册
+                uexImageBrowser.pick();
+                break;
+
+
+        }
     }
 	var mid = getLocVal('mid');
     setLocVal('floor',1);
@@ -133,9 +174,9 @@ window.uexOnload=function(type)
 
         s = '<img class="msg_like" onclick="zan('+data.id+')" src="css/icons/icon-like.png">' +
         '<span id="zan_'+data.id+'" >'+data.zan+'</span>' +
-        '<img  class="msg_message_number" onclick="addReply(0)"  src="css/icons/icon-message.png">'+data.comment_count+'<div id="comment_0" class="reply"></div>';
+        '<img  class="msg_message_number" onclick="addReply(0)"  src="css/icons/icon-message.png">'+data.comment_count+'<div id="comment_0" class="msg_reply"></div>';
         $$('msg_group_reply').innerHTML = s;
-	$closeToast();
+	    $closeToast();
 	}
 
     //加载回复列表
@@ -162,14 +203,18 @@ window.uexOnload=function(type)
                         tmpl += '板凳';
                     else
                         tmpl += floor+'楼';
-                    tmpl +=  '</div><span id="time_'+ e.id +'" class="reply_time floor">'+ repliedTime(e.createtime) +'</span><div class="msg_group_content" id="con_'+ e.id +'" >'+ e.content+'</div>';
+                    if(e.image!=""&& e.image!=null)
+                        var image_url = '<img class="comment_image" src="'+ hostWebURL+ e.image +'" /><br />';
+                    else
+                        var image_url = "";
+                    tmpl +=  '</div><span id="time_'+ e.id +'" class="reply_time floor">'+ repliedTime(e.createtime) +'</span><div class="msg_group_content" id="con_'+ e.id +'" >'+ image_url + e.content+'</div>';
 
                     if(e.cid!=0) {
                         tmpl += '<div class="msg_group_content" ><div class="replied" ><div class="replied_title" >' +
                         '<div class="left">' + $$('name_' + e.cid).innerHTML + '</div>' +
                         '<div class="right"><span class="reply_time" >'+ $$('time_'+ e.cid).innerHTML +'</span>&nbsp;&nbsp;' + $$('flo_' + e.cid).innerHTML + '</div></div><div class="replied_content">' + $$('con_' + e.cid).innerHTML + '</div></div></div>'
                     }
-                    tmpl +='</div><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="reply"></div></div></div>'
+                    tmpl +='</div><div class="msg_group_reply"><img onclick="addReply('+ e.id +')" class="msg_message_number" src="css/icons/icon-message.png"  /><div id="comment_'+ e.id +'" class="msg_reply"></div></div></div>'
                     s = tmpl;
                     floor = parseInt(floor) +parseInt(1);
                     var d = document.createElement('DIV');
@@ -203,7 +248,10 @@ window.uexOnload=function(type)
 function addReply(cid){
     var tmpl = '';
     if($$("comment_"+cid).innerHTML=="")
-        tmpl = '<textarea class="reply_con" name="content" id="content_'+cid+'"  ></textarea></ br><button class="reply_btn" onclick="reply('+cid+')" >发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;送</button>'
+        tmpl = '<textarea class="reply_con" name="content" id="content_'+cid+'"  ></textarea></ br>' +
+        '<button class="reply_btn" onclick="reply('+cid+')" >发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;送</button>' +
+        '<div id="uploadimage" style="display: inline"><div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto" onclick="upPhoto();"></div></div>'
+//    '<button class="reply_btn" onclick="upPhoto()" >&nbsp;&nbsp;添&nbsp;&nbsp;加&nbsp;&nbsp;图&nbsp;&nbsp;片&nbsp;&nbsp;</button>'
     $$("comment_"+cid).innerHTML = tmpl;
 }
 
@@ -226,8 +274,9 @@ function zan(mid){
         }
         var uid = getLocVal('uid');
         var mid = getLocVal('mid');
+        var image = $$('img_url').value;
         //$uid,$mid,$cid,$content
-        dopublish(uid,mid,cid,content);
+        dopublish(uid,mid,cid,content,image);
 
     }
     function replyback(data){
@@ -260,6 +309,10 @@ function pullUpUpdate(){
     loadCom(newpage,getLocVal('mid'));
     setLocVal('com_p',newpage);
     uexWindow.resetBounceView('1');
+}
+function upPhoto() {
+    uexWindow.actionSheet("上传图片", "取消", ["手机拍照", "相册上传"]);
+
 }
 </script>
 <!--<button onclick="pullUpUpdate()" >ab</button>-->

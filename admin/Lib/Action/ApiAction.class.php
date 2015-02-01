@@ -365,6 +365,7 @@ header('Access-Control-Allow-Origin: *');
      public function save_comment($uid,$mid,$cid,$content){
          $model = M('Comment');
          $_REQUEST['createtime'] = time();
+         $_REQUEST['image'] = $_REQUEST['img'];
          $_REQUEST['content'] = htmlspecialchars($_REQUEST['content']);
          if($uid==""||$content=""||$mid=="")
              echo "false";

@@ -93,6 +93,17 @@
     }
 
     function book() {
+        if(!chkemail($$('email').value))
+        {
+            alert("请输入正确的邮箱");
+            return false;
+        }
+        if(!chkphone())
+        {
+            alert("请输入正确的手机号码或电话号码");
+            return false;
+        }
+
 //	 var b64 = new Base64();
 //	var cid= $$("cate").value;
 //	var title=encodeURIComponent(b64.encode($$("title").value));

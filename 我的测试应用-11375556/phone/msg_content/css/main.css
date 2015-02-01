@@ -108,3 +108,14 @@
     right: 0;
     font-size: 0.8em;
 }
+.msg_reply{
+	text-align: left;
+}
+.photo{
+	background-image:url('myImg/photo.png') !important;
+	padding: 1.5em;
+	display: inline;
+}
+.comment_image{
+	width:	100%;
+}
