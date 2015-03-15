@@ -88,7 +88,7 @@ header('Access-Control-Allow-Origin: *');
 
       */
      public function reg(){
-         if(I('username',0)&&I('password')&&I('yunqi')){
+         if(I('username',0)&&I('password')){
             //生成认证条件
              $data=array();
              $data['username']=I('username');
@@ -175,9 +175,10 @@ header('Access-Control-Allow-Origin: *');
          $nowPage = isset($_REQUEST['page'])?$_REQUEST['page']:1;
          //SELECT distinct hh85_msg.*,(select count(*) from hh85_comment where hh85_msg.id = hh85_comment.mid) as count FROM `hh85_msg` left join hh85_comment on  hh85_msg.id = hh85_comment.mid
          $list = M('Msg')->Distinct(1)
-             ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')
+             ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id and status=1) as comment_count')
              ->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )
              ->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )
+             ->where($msg_tab.'.status=1')
              ->page($nowPage.','.$Page->listRows)
              ->order("createtime DESC")
              ->select();
@@ -290,11 +291,11 @@ header('Access-Control-Allow-Origin: *');
          $user_tab = M('User')->getTableName();
          $comment_tab = M('Comment')->getTableName();
          $msg_tab = M('Msg')->getTableName();
-         $where = "1=1";
+         $where = $msg_tab.".status=1";
          if(isset($_REQUEST['id'])&&$_REQUEST['id']!="")
              $where .= ' and '. $msg_tab. '.id='. I('id');
          $list = $model->Distinct(1)
-             ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id) as comment_count')
+             ->field($msg_tab.'.*,'.$user_tab.'.*, (select count(*) from '.$comment_tab.' where '.$comment_tab.'.mid = '.$msg_tab.'.id and status=1) as comment_count')
              ->join('left join '.$comment_tab.' ON '.$msg_tab.'.id = '.$comment_tab.'.mid' )
              ->join('left join '.$user_tab.' ON '.$user_tab.'.uid = '.$msg_tab.'.uid' )
              ->where($where)
@@ -350,7 +351,7 @@ header('Access-Control-Allow-Origin: *');
          $list = $model->join($user_tab.' on '. $user_tab.'.uid = '. $model->getTableName().'.uid')
              ->page($nowPage.','.$Page->listRows)
              ->order('createtime asc')
-             ->where('mid='.$mid)->select();
+             ->where('mid='.$mid.' and '. $model->getTableName().'.status=1')->select();
          if(!empty($list))
              echo json_encode($list);
          else
@@ -366,6 +367,7 @@ header('Access-Control-Allow-Origin: *');
          $model = M('Comment');
          $_REQUEST['createtime'] = time();
          $_REQUEST['image'] = $_REQUEST['img'];
+         $_REQUEST['touid'] = $this->get_to_id($cid);
          $_REQUEST['content'] = htmlspecialchars($_REQUEST['content']);
          if($uid==""||$content=""||$mid=="")
              echo "false";
@@ -725,6 +727,14 @@ header('Access-Control-Allow-Origin: *');
              echo json_encode($list);
          else
              echo "";
+     }
+     /*
+      * 根据被回复的comment的cid，得到comment用户的id
+      */
+     public function get_to_id($cid){
+         $model = M('Comment');
+         $comment = $model->find($cid);
+         return $comment->uid;
      }
  }
 ?>

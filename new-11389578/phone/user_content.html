@@ -112,7 +112,10 @@
     }
     function getUserHand(data) {
         $$("username").innerHTML = data.username;
-        $$("img").src = hostWebURL + data.img;
+        if(data.img=="")
+            $$("img").src = 'image/headphoto.jpg';
+        else
+            $$("img").src = hostWebURL + data.img;
         $$("img_url").value = data.img;
 //			$$("sheng").value = data.sheng;
 //			$$("shi").value= data.shi;

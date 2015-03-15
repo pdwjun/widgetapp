@@ -32,21 +32,21 @@
 	{
 		if(!type)
 			setPageBounce(dorpDownUpdate,pullUpUpdate);
-		uexWindow.toast(1,5,"姝ｅ湪鍔犺浇...",0);
+		uexWindow.toast(1,5,"正在加载...",0);
 		mymsg();
 		uexWindow.closeToast();
 
 	}
 
-	//涓嬫媺鏇存柊
+	//下拉更新
 	function dorpDownUpdate(){
-		uexWindow.toast(1,5,"姝ｅ湪鍔犺浇...",0);
+		uexWindow.toast(1,5,"正在加载...",0);
 		mymsg();
 		uexWindow.closeToast();
 		uexWindow.resetBounceView('0');
 
 	}
-	//涓婃媺鏇存柊
+	//上拉更新
 	function pullUpUpdate(){
 		uexWindow.resetBounceView('1');
 	}
@@ -60,7 +60,7 @@
 
 			})
 		if(data==0)
-			tmpl = '<div class="empty" >娌℃湁瑕佹煡璇㈢殑鍐呭</div>';
+			tmpl = '<div class="empty" >没有要查询的内容</div>';
 		var d = document.createElement('DIV');
 		d.innerHTML=tmpl;
 		$$('list').innerHTML = d.innerHTML;

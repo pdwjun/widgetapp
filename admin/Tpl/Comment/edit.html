@@ -89,6 +89,23 @@
           <td bgcolor="#FFFFFF"><textarea name="content" id="content" style="height:200px; width:400px;">{$li['content']}</textarea></td>
 
       </tr>
+      <tr>
+
+          <td height="28" bgcolor="#FFFFFF">&nbsp;回复图片：</td>
+
+          <td bgcolor="#FFFFFF"><neq name="li.image" value=""> <img id="img_view" name="img_view" src="{$li['image']}"/></neq></td>
+
+      </tr>
+      <tr>
+          <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;状态：</td>
+          <td bgcolor="#FFFFFF">
+              <select name="status" id="status" >
+                  <option value="0" <eq name="li.status" value="0"> selected</eq> >待审核</option>
+                  <option value="1" <eq name="li.status" value="1"> selected</eq> >已审核</option>
+                  <option value="2" <eq name="li.status" value="2"> selected</eq> >禁止发布</option>
+              </select>
+          </td>
+      </tr>
 
 
 

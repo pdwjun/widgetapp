@@ -26,8 +26,11 @@
     <div id="header" class="uh t-wh ub c-blu">
         <!-- 关注圈-->
         <div class="uhide">
-            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
+            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="goHome();">
                 <div class="t-btn-ds1 ub-img uwh-tBtn">
+                    <div class="ub btn">
+                        <div class="button_new ub ub-ac ulim t-wh ">&nbsp;&nbsp;首页&nbsp;&nbsp;</div>
+                    </div>
                 </div>
             </div>
             <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">关注圈</h1>
@@ -45,8 +48,11 @@
         </div>
         <!-- 预约安排-->
         <div class="uhide" id="order">
-            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
+            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="goHome();">
                 <div class=" ub-img uwh-tBtn">
+                    <div class="ub btn">
+                        <div class="button_new ub ub-ac ulim t-wh ">&nbsp;&nbsp;首页&nbsp;&nbsp;</div>
+                    </div>
                 </div>
             </div>
             <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">预约安排</h1>
@@ -61,7 +67,12 @@
         </div>
         <!--月子中心 -->
         <div class="uhide">
-            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
+            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="goHome()">
+                <div class=" ub-img uwh-tBtn">
+                    <div class="ub btn">
+                        <div class="button_new ub ub-ac ulim t-wh ">&nbsp;&nbsp;首页&nbsp;&nbsp;</div>
+                    </div>
+                </div>
 
             </div>
             <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">月子中心</h1>
@@ -73,7 +84,12 @@
         </div>
         <!-- 我的信息-->
         <div class="uhide">
-            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="">
+            <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="goHome();">
+                <div class=" ub-img uwh-tBtn">
+                    <div class="ub btn">
+                        <div class="button_new ub ub-ac ulim t-wh ">&nbsp;&nbsp;首页&nbsp;&nbsp;</div>
+                    </div>
+                </div>
             </div>
             <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">我的信息</h1>
 
@@ -118,7 +134,7 @@
                 </div>
             </div>
             <div class="pos_re ub ub-f1 c-my">
-                <input class="uhide" type="radio" name="tabSwitch" checked="true">
+                <input class="uhide" type="radio" name="tabSwitch" id="home" checked="true">
 
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)"
                      class="ub-f1 ub ub-ver tab-act" onclick="openCon(2);">
@@ -160,6 +176,11 @@
 </div>
 </body>
 <script>
+    function goHome(){
+        $$("home").checked=true;
+        openCon(2);
+
+    }
 
     function loadDb() {
         createDB()

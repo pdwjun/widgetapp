@@ -28,6 +28,14 @@
         </div>
     </div>
 	<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+		<div class="ulev-app1 umw4">手机号码</div>
+		<div class="ub-f1 uinn">
+			<div class="uinput uinn4">
+				<input placeholder="手机号码" id="phone" type="text" class="">
+			</div>
+		</div>
+	</div>
+	<div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
         <div class="ulev-app1 umw4">密码</div>
         <div class="ub-f1 uinn">
             <div class="uinput uinn4">
@@ -88,6 +96,7 @@ window.uexOnload=function(type)
     var username =encodeURIComponent($$("username").value);
 	var password=$$("password").value;
 	var repass = $$("repass").value;
+	var phone = $$("phone").value;
 	var yunqi=$$("yunqi").value;  
 		setLocVal('yuchan',yunqi);
 		if (username == "") {
@@ -100,7 +109,7 @@ window.uexOnload=function(type)
 				return;
 			}
 			else if(password==repass) {
-				regdo(username, password, yunqi);
+				regdo(username, password, yunqi, phone);
 			}else{
 				$toast('两次输入密码不同', '2000');
 			}

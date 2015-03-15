@@ -126,6 +126,17 @@ function callSubMethod(){
     <td height="28" bgcolor="#FFFFFF">&nbsp;内容：</td>
     <td bgcolor="#FFFFFF"><textarea name="content" id="content" style="width:100%;height:400px;visibility:hidden;"></textarea></td>
     </tr>
+
+      <tr>
+          <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;状态：</td>
+          <td bgcolor="#FFFFFF">
+              <select name="status" id="status" >
+                  <option value="0" >待审核</option>
+                  <option value="1" selected>已审核</option>
+                  <option value="2" >禁止发布</option>
+              </select>
+          </td>
+      </tr>
 	  <tr>
     <td height="28" bgcolor="#FFFFFF">&nbsp;</td>
     <td bgcolor="#FFFFFF"><input name="submit" type="submit" id="submit" value="发布"></td>

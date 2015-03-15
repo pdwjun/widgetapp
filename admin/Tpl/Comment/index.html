@@ -245,7 +245,7 @@ function noSelAll()
 	<td width="20%" bgcolor="#FAFAF1">所属帖子</td>
      <td width="12%" bgcolor="#FAFAF1">圈子</td>
     <td width="8%" align="center">用户</td>
-    <td width="8%" align="center">回复给</td>
+    <!--<td width="8%" align="center">回复给</td>-->
 
 
         <td>操作</td>
@@ -267,7 +267,7 @@ function noSelAll()
     <td align="left">{$vo['mid']|getMsgTitle}</td>
     <td align="left">{$vo['mid']|getMsgCate}</td>
     <td align="left">{$vo['uid']|getUname}</td>
-    <td align="left">{$vo['touid']|getUname}</td>
+    <!--<td align="left">{$vo['touid']|getUname}</td>-->
 	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑</a> | <eq name="vo['status']" value="1">已审核<else/><a href="{:U('shenhe',array('id'=>$vo['id']))}">未审核</a></eq>
 
  |</td>
