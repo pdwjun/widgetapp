@@ -280,8 +280,8 @@ function zan(mid){
 
     }
     function replyback(data){
-        if(data==false){
-            $toast('回复失败，此贴已删除',4000);
+        if(data=="fail"){
+            $toast('回复失败，必须填写内容，或者此贴已删除',4000);
         }else{
 
             setLocVal('floor',1);

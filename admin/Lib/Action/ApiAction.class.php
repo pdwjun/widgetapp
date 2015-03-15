@@ -370,11 +370,11 @@ header('Access-Control-Allow-Origin: *');
          $_REQUEST['touid'] = $this->get_to_id($cid);
          $_REQUEST['content'] = htmlspecialchars($_REQUEST['content']);
          if($uid==""||$content=""||$mid=="")
-             echo "false";
+             echo "fail";
          elseif($model->add($_REQUEST))
             echo $cid;
          else
-             echo "false";
+             echo "fail";
 
      }
      public function upload(){
