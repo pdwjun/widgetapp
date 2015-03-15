@@ -1,0 +1,9 @@
+.t-btn-infor{
+	background-image:url('myImg/t-btn-Infor.png');
+}
+
+.button_new{
+    background-color:  rgb(226, 99, 99);
+    -webkit-border-radius: 0.5em;
+    padding: 14px 18px
+}

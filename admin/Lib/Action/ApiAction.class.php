@@ -462,6 +462,7 @@ header('Access-Control-Allow-Origin: *');
              ->where($where)
 //             ->order("createtime DESC")
              ->select();
+//         $list[] = M('Doctor')->getLastSql();
          if($list){
              echo json_encode($list);
          }

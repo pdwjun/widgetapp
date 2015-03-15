@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-input.css">
+	<link rel="stylesheet" href="css/project/style.css">
+	<link rel="stylesheet" href="login_content/css/main.css">
+    <script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+    <script src="js/main.js"></script>
+		<script src="js/base64.js"></script>
+	 <script src="js/zy_json.js"></script>
+	 <script src="login_content/js/login.js"></script>
+</head>
+<body class="um-vp c-wh" ontouchstart>
+    <div id="page_0" class="up ub ub-ver" tabindex="0">
+    <div id="content" class="ub-f1 tx-l ub ub-ver c-wh1">
+        <div class="uinn ub ub-ac ub-pc">
+        
+        </div>
+
+        <div class="ub ub-ver ub-f1">
+            <div class="uba b-gra umar-a uc-a1 c-wh">
+                <div class="ub ub-ac">
+                	<div class="umhw resuser ub-img umar-l"></div>
+                    <div class="ub-f1 uinput uinn">
+                        <input placeholder="用户名" id="username"  value="" type="text" class="uc-a1">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra umar-a uc-a1 c-wh">
+                <div class="ub ub-ac">
+                	<div class="umhw respwd ub-img umar-l"></div>
+                    <div class="ub-f1 uinput uinn">
+                        <input placeholder="密码" id="password"  value="" type="password" class="uc-a1">
+                    </div>
+                </div>
+            </div>
+			<div class="ub umar-a ub-ac">
+			
+
+
+			</div>
+            <div class="ub ub-ac ub-pc umar-a c-btn uc-a1" ontouchstart="zy_touch('btn-act1')" onclick="login();">
+                <div class=" ub ub-ac ub-pc t-wh uinnh5">登　录</div>
+			</div>
+             	<div class="uinn ub ub-ac ub-pc ub-ver" style="height:100px;">
+        
+                  </div>
+				  	<div class="uinn ub ub-ac ub-pc ub-ver" style="color:#666; font-size:1em;">
+                               <span onclick="openNewWin('reg','reg.html')">新人注册</span> | 忘记密码
+                     </div>
+        </div>
+	</div>
+    <div id="footer" class="">
+    </div>
+</div>
+</body>
+<script>
+
+    zy_init();
+    window.uexOnload=function(type) {
+        var plat = uexWidgetOne.getPlatform();
+        if (plat) {
+            uexWindow.onKeyPressed = function (keyCode) {
+                if (keyCode == 0) {
+
+                }
+                //要执行的代码
+            }
+
+            uexWindow.setReportKey(0, 1);
+        }
+    }
+	function callback(data){
+	    if(data==0){
+			$toast("登陆失败！",1000);
+		}else{
+			setLocVal('uid',data.uid); 
+			setLocVal('yunqi',data.yunqi);
+			setLocVal('yuchan',data.yuchan);
+			uexWindow.evaluateScript("index",'0', "openCon(4)");
+			uexWindow.open("index",0,"index.html",'1','','',4)
+            $closeToast()
+		}
+	 
+}
+zy_init();
+function login(){
+	var name = $$("username").value;
+	var pwd = $$("password").value;
+	if(name == ""){
+		$toast('账号不能为空','2000');
+		return;
+	}else if(pwd == ""){
+		$toast('密码不能为空','2000');
+		return;
+	}else{
+		 $toast('登录中');
+		 //    var b64 = new Base64();
+	      //var username =encodeURIComponent(b64.encode($$("username").value));
+         var username=$$("username").value;
+         var password=$$("password").value;
+	     logindo(username,password);
+        //uescript('login','closeLogin()');
+	}
+	
+}
+
+function getLocalTime(nS) {     
+   return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");      
+}   
+
+</script>
+</html>

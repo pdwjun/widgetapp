@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/project/ui-list.css">
+	<link rel="stylesheet" href="css/project/style.css">
+	<script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/zy_json.js"></script>
+    <script src="js/scroll.js" ></script>
+</head>
+<body class="um-vp c-wh2 tip_suc" ontouchstart>
+	<div class="info tip_h1" >您的预约已提交</div>
+
+    <div class="info msg"  id="msg" ><strong>稍后通过审核后工作人员会联系您</strong></div>
+	<div class="ub ub-ac ub-pc umar-a tip_btn uc-a1" onclick="myorder()">
+		返回
+	</div>
+</body>
+<script>
+	function myorder(){
+//		openNewWin('','index.html');
+//		uexWindow.open("",0,"index.html",'1','','',4)
+		document.location.href = 'book_content.html'
+	}
+	zy_init();
+	window.uexOnload = function (type) {
+
+//		setLocVal('homepage', 'book_content.html')
+	}
+</script>
+</html>

@@ -1,0 +1,80 @@
+.reader-back{
+	background-image:url('myImg/back.png');
+}
+.reader-fenxiang{
+	background-image:url('myImg/fenxiang.png');
+}
+.reader-fenxiangY{
+	background-image:url('myImg/fenxiangY.png');
+}
+.reader-jinduY{
+	background-image:url('myImg/jinduY.png');
+}
+.reader-jindu{
+	background-image:url('myImg/jindu.png');
+}
+.reader-kongjian{
+	background-image:url('myImg/kongjian.png');
+}
+.reader-liangdu{
+	background-image:url('myImg/liangdu.png');
+}
+.reader-liangduh{
+	background-image:url('myImg/liangduh.png');
+}
+.reader-liangdul{
+	background-image:url('myImg/liangdul.png');
+}
+.reader-liangduY{
+	background-image:url('myImg/liangduY.png');
+}
+.reader-point{
+	background-image:url('myImg/point.png');
+}
+.reader-shejiao{
+	background-image:url('myImg/shejiao.png');
+}
+.reader-weixin{
+	background-image:url('myImg/weixin.png');
+}
+.reader-xinlang{
+	background-image:url('myImg/xinlang.png');
+}
+.reader-youjian{
+	background-image:url('myImg/youjian.png');
+}
+.reader-ziti{
+	background-image:url('myImg/ziti.png');
+}
+.reader-zitih{
+	background-image:url('myImg/zitih.png');
+}
+.reader-zitil{
+	background-image:url('myImg/zitil.png');
+}
+.reader-zitiY{
+	background-image:url('myImg/zitiY.png');
+}
+.reader-c-bla{
+	background-color:#000000;
+}
+.reader-jindutiao{
+	background-image:url('myImg/jindutiao.png');
+}
+.reader-base{
+	min-height: 1em; 
+	min-width: 1.2em;
+	margin:0.5em 0 0.5em 0;
+}
+.reader-c-gra{
+	background-color:#d4d1ca;
+}
+.reader-t-color{
+	color:#26221f;
+}
+.reader-umw15{
+	min-width:14em;
+}
+.reader-border1{
+	border-top:1px solid rgba(245,245,245,0.3);border-bottom:1px solid rgba(1,1,1,1);
+}

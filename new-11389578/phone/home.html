@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/project/ui-input-v3.css">
+    <link rel="stylesheet" href="css/project/ui-list-v3.css">
+    <link rel="stylesheet" href="css/project/ui-fold-v3.css">
+
+    <link rel="stylesheet" href="css/project/ui-res-v3.css">
+    <link rel="stylesheet" href="css/project/ui-color-v3.css">
+    <link rel="stylesheet" href="css/project/ui-btn-v3.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/project/ui-tab.css">
+    <link rel="stylesheet" href="css/project/style.css">
+    <script src="js/zy_control.js">
+    </script>
+    <script src="js/zy_click.js">
+    </script>
+    <script src="js/zy_tmpl.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/zy_json.js"></script>
+    <script src="js/db.js"></script>
+    <script src="home/js/main.js"></script>
+
+</head>
+
+<body class="um-vp c-wh" ontouchstart>
+<div class="uh t-wh ub c-my banner">
+
+</div>
+<div id="page_0" class=" ub ub-ver home-page" tabindex="0">
+
+    <div class="home" id="board">
+        <div class="line">
+            <div class="white-line">&nbsp;</div>
+            <div onclick="action(1)" class="board1 line-w2">
+                <h2 class="home-h1">文章标题</h2>
+                <h3 class="home-content">帖子内容，帖子内容</h3>
+            </div>
+            <div class="white-line">&nbsp;</div>
+            <div onclick="action(2)" class="board2 line-w1">
+                <img src="css/project/images/group.png"/><br >
+                交流圈
+            </div>
+            <div class="white-line">&nbsp;</div>
+
+        </div>
+        <div class="line">
+            <div class="white-line">&nbsp;</div>
+            <div onclick="action(3)" class="board3 line-w1">
+                <img src="css/project/images/home.png"/><br >
+                暖客栈
+            </div>
+
+            <div class="white-line">&nbsp;</div>
+            <div class="board3 line-w2 h-house">
+
+
+            </div>
+            <div class="white-line">&nbsp;</div>
+        </div>
+        <div class="line">
+            <div class="white-line">&nbsp;</div>
+            <div onclick="action(4)" class="board4 line-w1">
+                <img src="css/project/images/support.png"/><br >
+                预约医生
+
+            </div>
+            <div class="white-line">&nbsp;</div>
+            <div onclick="action(5)" class="board5 line-w1">
+                <img src="css/project/images/hos.png"/><br >
+                预约医院
+
+            </div>
+            <div class="white-line">&nbsp;</div>
+            <div onclick="action(6)" class="board6 line-w1">
+                <img src="css/project/images/chat.png"/><br >
+                在线咨询
+
+            </div>
+            <div class="white-line">&nbsp;</div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+<script>
+    zy_init();
+    window.uexOnload = function (type) {
+        if (!type) {
+            uexWindow.setBounce("0");
+            uexWindow.showBounceView("0", "rgba(255,255,255,0)", "0");
+            uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
+        }
+        loads();
+
+    }
+    function callback(data) {
+//
+//        uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
+//        uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "DELETE FROM category");
+//        uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
+//        for (var i = 0; i < data.length; i++) {
+//            uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
+//
+//            uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['id'] + "','" + data[i]['name'] + "','" + data[i]['cid'] + "','" + data[i]['tixing'] + "','0')");
+//            uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
+//            if (data[i]['list'] == null) {
+//            }
+//            else {
+//                for (var z = 0; z < data[i]['list'].length; z++) {
+//
+//                    uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
+//                    uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['list'][z]['id'] + "','" + data[i]['list'][z]['name'] + "','" + data[i]['list'][z]['cid'] + "','" + data[i]['list'][z]['tixing'] + "','0')");
+//                    uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
+//
+//                }
+//            }
+//
+//
+//        }
+//
+//
+//        var tmpl = '<div class="ubb b-gra">'
+//                + ' <input type="checkbox" class="uhide">'
+//                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
+//                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
+//                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
+//                + '     </div>'
+//                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
+//                + '	${cb:followReply}'
+//                + '  </div>'
+//                + '</div>'
+//
+//        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
+//        var d = document.createElement('DIV');
+//        d.innerHTML = s;
+//
+//        $$('infoList').appendChild(d);
+        // $closeToast();
+    }
+
+    function tmpleCb(a, b) {
+        var str = '';
+
+
+        switch (b[1]) {
+            case "followReply":
+
+
+                var arr1 = a['list'];
+                if (isDefine(arr1) == false) {
+
+                    return str;
+                } else {
+
+                    for (var i = 0; i < arr1.length; i++) {
+
+                        str += '<ul ontouchstart="zy_touch(\'btn-act\')" class="uc-t ubb ub b-gra t-bla ub-ac umh4 lis">' +
+                        ' <li class="ub ub-f1 ut-s"><div class="uinn"> <input type="checkbox" name="che1"   value="" onclick="doH(' + arr1[i].id + ');"></div> <div class="ub-f1 uinn ulev-1" id="H' + arr1[i].id + '">' +
+                        arr1[i].name +
+                        '</div></li>' +
+                        '<li class="tx-r t-dgra ulev-1" onclick="showinfo(' + arr1[i].id + ');">查看详细</li>' +
+                        ' <li class="listIcon lis-sw ub-img"></li>' +
+                        '</ul>'
+
+                    }
+                    return str;
+                }
+
+
+        }
+
+
+    }
+
+
+    //从本地加载//
+    function loadLoction(data) {
+
+
+//        var tmpl = '<div class="ubb b-gra">'
+//                + ' <input type="checkbox" class="uhide">'
+//                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
+//                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
+//                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
+//                + '     </div>'
+//                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
+//                + '	${cb:followReply}'
+//                + '  </div>'
+//                + '</div>'
+//
+//        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb1);
+//        var d = document.createElement('DIV');
+//        d.innerHTML = s;
+//
+//        $$('infoList').appendChild(d);
+        // $closeToast();
+    }
+
+    function tmpleCb1(a, b) {
+        var str = '';
+
+
+        switch (b[1]) {
+            case "followReply":
+
+
+                var arr1 = a['list'];
+                if (isDefine(arr1) == false) {
+
+                    return str;
+                } else {
+
+                    for (var i = 0; i < arr1.length; i++) {
+
+                        str += '<ul ontouchstart="zy_touch(\'btn-act\')" class="uc-t ubb ub b-gra t-bla ub-ac umh4 lis">' +
+                        ' <li class="ub ub-f1 ut-s"><div class="uinn"> <input type="checkbox" name="che1"   value="" onclick="doH(' + arr1[i]._id + ');"></div> <div class="ub-f1 uinn ulev-1" id="H' + arr1[i]._id + '">' +
+                        arr1[i].name +
+                        '</div></li>' +
+                        '<li class="tx-r t-dgra ulev-1" onclick="showinfo(' + arr1[i]._id + ')">查看详细</li>' +
+                        ' <li class="listIcon lis-sw ub-img"></li>' +
+                        '</ul>'
+
+                    }
+                    return str;
+                }
+
+
+        }
+
+
+    }
+
+    //本地加载结束
+
+    function doH(id) {
+
+        $$("H" + id).style.color = "#ccc";
+    }
+
+    function showinfo(rid) {
+
+        setLocVal('rid', rid);
+
+        openNewWin('shwoinfo', 'shwoinfo.html');
+    }
+
+    /*
+    点击方框跳转到对应页面
+     */
+    function action(idx){
+        switch (idx) {
+
+//            case 0: openNewWin('book','myorder.html');break;
+//            case 1: openNewWin('book','bookdoctor.html');break;
+//            case 2: openNewWin('book','bookhospital.html');break;
+
+
+            case 1: //帖子
+                setLocVal('mid',mid);
+                openNewWin('msg','msg.html');
+                break;
+
+//            case 2:
+//                $$("header").children[i].className = "uh t-wh ub c-my banner";
+//                zy_con("content", "home.html", 0, $$("header").offsetHeight);
+//
+//                break;
+            case 3: //暖客栈
+                openNewWin("book", "house.html");
+                break;
+
+            case 4: //预约医生
+                openNewWin("book", "bookdoctor.html");
+                break;
+
+            case 5: //预约医院
+                openNewWin("book", "bookhospital.html");
+                break;
+
+//            case 6: //在线咨询
+//                zy_con("content", "house_content.html", 0, 0);
+//                break;
+        }
+    }
+</script>
+
+</html>

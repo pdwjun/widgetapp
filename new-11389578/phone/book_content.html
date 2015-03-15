@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/project/ui-list.css">
+    <link rel="stylesheet" href="css/project/style.css">
+    <link rel="stylesheet" href="book/css/main.css">
+    <script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/zy_json.js"></script>
+    <script src="book/js/user.js"></script>
+</head>
+<body class="um-vp c-gra1" ontouchstart>
+<div class="ub ub-ver">
+
+    <!--列表-->
+    <div class='uinn2 c-gra ub-pj ub b-bla t-btn-group'>
+        <div class='t-btn umh5 umw3 t-btn-my' onclick="book(0)" >我的预约</div>
+        <div class='t-btn umh5 umw3 t-btn-doctor' onclick="book(1)">预约医生</div>
+        <div class='t-btn umh5 umw3 t-btn-hospital' onclick="book(2)">预约医院</div>
+    </div>
+</div>
+</body>
+<script>
+
+    function book(a){
+
+//        setLocVal('mid',mid);
+//        openNewWin('msg','msg.html');
+        switch (a){
+//            case 0: document.location.href = 'myorder_content.html';break;
+
+            case 0: openNewWin('book','myorder.html');break;
+            case 1: openNewWin('book','bookdoctor.html');break;
+            case 2: openNewWin('book','bookhospital.html');break;
+        }
+
+    }
+</script>
+</html>

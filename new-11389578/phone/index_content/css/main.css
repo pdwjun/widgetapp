@@ -1,0 +1,115 @@
+body{
+    font-family: 幼圆;
+    color: rgb(102, 102, 102);
+    overflow-x: hidden;
+}
+.uw-comm2{
+	width:0.625em;
+}
+.uh-comm2{
+	height:0.625em;
+}
+
+.t-gra-comm{
+	color:#989898;
+}
+.t-gra2-comm{
+	color:#707070;
+}
+.umar-r-comm{
+	margin-right:2em;
+}
+.praise{
+	background-image:url('myImg/zan.png');
+}
+.c-gra-comm{
+	background-color:#ebebeb;
+}
+.uinn-comm{
+	padding:0.42em 0.625em 0.625em 0.625em;
+}
+.line-hei-com{
+	line-height:1.6em;
+}
+.uh-app3{
+	height:2.8125em;
+}
+.uw-app3{
+	width:2.8125em;
+}
+.uc-a-app2{
+	-webkit-border-radius: 2.8125em;
+	border-radius: 2.8125em;
+}
+
+.fullimg{
+	background-size:2.8125em 2.8125em;
+	border:solid 1px #ccc;
+}
+
+.info{
+	 text-align:center;
+	 -webkit-border-radius: 1em 0 0 1em;
+	 background-color:#E7FADA;
+}
+.header{
+    height: 8em;
+}
+.titleinfo{
+    font-size: 3em;
+}
+.userimage{
+    width: 8em;
+}
+.quan_img{
+    background-size: cover;
+}
+.title{
+    color: #fff;
+    font-size: 0.85em;
+    margin-top: 6em;
+}
+.username{
+    right: 2em;
+    font-size: 0.8em;
+}
+.avatar{
+	position:absolute;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    width:7em;
+    height:7em;
+    top:-3em;
+    right:0em;
+    background-color:#ccc;
+    border:solid  8px #FFF;
+    background-size: cover;
+
+}
+.header_msg{
+    position: absolute;
+    right: 0;
+}
+.msg_type{
+    padding: 0.2em 1em;
+    font-size: 0.5em;
+    background-color: #FF4CA4;
+    margin: -1.6em 0 0 2em;
+}
+.menu{ 
+    color:#51D1EE;
+    font-size:0.8em;
+}
+.msg{
+    text-align:center;
+    font-size: 1em;
+    background-color: #ffffff;
+    color: #FF4CA4;
+    position: absolute;
+    padding: 0.4em 0.2em 0.4em 2em;
+    right: 0;
+    margin-top: 0.5em;
+}
+.content{
+    margin-top: 4em;
+}
