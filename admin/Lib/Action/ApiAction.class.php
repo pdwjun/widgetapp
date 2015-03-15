@@ -734,7 +734,7 @@ header('Access-Control-Allow-Origin: *');
      public function get_to_id($cid){
          $model = M('Comment');
          $comment = $model->find($cid);
-         return $comment->uid;
+         return $comment['uid'];
      }
  }
 ?>
