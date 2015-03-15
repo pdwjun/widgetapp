@@ -19,15 +19,18 @@
 	<div class="info tip_h1" >您的预约已提交</div>
 
     <div class="info msg"  id="msg" ><strong>稍后通过审核后工作人员会联系您</strong></div>
-	<div class="ub ub-ac ub-pc umar-a tip_btn uc-a1" onclick="myorder()">
-		返回
+	<div class="ub ub-ac ub-pc umar-a tip_btn uc-a1 a-btn" >
+		<a  href="myorder_content.html"> 返回</a>
 	</div>
 </body>
 <script>
 	function myorder(){
 //		openNewWin('','index.html');
 //		uexWindow.open("",0,"index.html",'1','','',4)
-		document.location.href = 'book_content.html'
+//		document.location.href = 'book_content.html'
+//		uexWindow.open("",0,"index.html",'1','','',4)
+		setLocVal('homepage', 'home.html');
+		uexWindow.open("",0,"index.html",'1','','',4)
 	}
 	zy_init();
 	window.uexOnload = function (type) {
