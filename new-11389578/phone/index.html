@@ -25,7 +25,7 @@
     <!--header开始-->
     <div id="header" class="uh t-wh ub c-blu">
         <!-- 关注圈-->
-        <div class="uhide">
+        <div class="uhide" id="circle">
             <div class="umw4 ub ub-ac ub-pc" ontouchstart="zy_touch()" onclick="goHome();">
                 <div class="t-btn-ds1 ub-img uwh-tBtn">
                     <div class="ub btn">
@@ -110,7 +110,7 @@
         <!--导航条开始-->
         <div class="uf t-bla ub c-my t-wh ubt b-gra2">
             <div class="pos_re ub ub-f1 c-my">
-                <input class="uhide" type="radio" name="tabSwitch">
+                <input class="uhide" type="radio" name="tabSwitch" id="circle_menu">
 
                 <div onmousedown="zy_touch('',zy_for)" ontouchstart="zy_touch('',zy_for)"
                      class="ub-f1 ub ub-ver tab-act" onclick="openCon(0);">
@@ -199,16 +199,20 @@
         }
 
 
-        if (!type) {
             var uid = getLocVal('uid');
 
             var homepage = getLocVal('homepage');
             if(!homepage)
             {
                 homepage = 'home.html';
+            }else if(homepage=='index_content.html')
+            {
+                $$("circle").className = "uh t-wh ub c-my";
+                $$("circle_menu").checked=true;
             }else{
                 $$("order").className = "uh t-wh ub c-my";
                 $$("order_menu").checked=true;
+
             }
             if (uid) {
                 goURL(homepage);
@@ -219,7 +223,7 @@
             clearLocVal('homepage');
 
 
-        }
+
 
 
         window.onorientationchange = window.onresize = function () {

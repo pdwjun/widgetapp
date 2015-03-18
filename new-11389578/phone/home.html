@@ -37,9 +37,10 @@
     <div class="home" id="board">
         <div class="line">
             <div class="white-line">&nbsp;</div>
-            <div onclick="action(1)" class="board1 line-w2">
-                <h2 class="home-h1">文章标题</h2>
-                <h3 class="home-content">帖子内容，帖子内容</h3>
+            <div onclick="showmsg(1)" class="board1 line-w2">
+                <input type="hidden" id="msg-id" value="" >
+                <h2 class="home-h1" id="msg-title">文章标题</h2>
+                <h3 class="home-content" id="msg-content">帖子内容，帖子内容</h3>
             </div>
             <div class="white-line">&nbsp;</div>
             <div onclick="action(2)" class="board2 line-w1">
@@ -77,9 +78,9 @@
 
             </div>
             <div class="white-line">&nbsp;</div>
-            <div onclick="action(6)" class="board6 line-w1 a-btn">
+            <div onclick="uexCall.call(10086)" class="board6 line-w1 a-btn">
                 <img src="css/project/images/chat.png"/><br >
-                <a href="" onclick="uexCall.call(10086)" style="text-decoration:none">在线咨询</a>
+                在线咨询
 
             </div>
             <div class="white-line">&nbsp;</div>
@@ -101,53 +102,24 @@
             uexWindow.showBounceView("1", "rgba(255,255,255,0)", "0");
         }
         loads();
+        firstMsg();
+
+    }
+    function msgCallback(data){
+        if(data!=''){
+            $$("msg-id").value = data.id;
+            $$("msg-title").innerHTML = data.title.substr(0,6);
+            $$("msg-content").innerHTML = data.content.substr(0,15);
+        }
 
     }
     function callback(data) {
-//
-//        uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
-//        uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "DELETE FROM category");
-//        uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
-//        for (var i = 0; i < data.length; i++) {
-//            uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
-//
-//            uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['id'] + "','" + data[i]['name'] + "','" + data[i]['cid'] + "','" + data[i]['tixing'] + "','0')");
-//            uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
-//            if (data[i]['list'] == null) {
-//            }
-//            else {
-//                for (var z = 0; z < data[i]['list'].length; z++) {
-//
-//                    uexDataBaseMgr.openDataBase('fumeishengzi.db', 1);
-//                    uexDataBaseMgr.executeSql('fumeishengzi.db', 1, "INSERT INTO category(_id,name,cid,tixing,status) VALUES ('" + data[i]['list'][z]['id'] + "','" + data[i]['list'][z]['name'] + "','" + data[i]['list'][z]['cid'] + "','" + data[i]['list'][z]['tixing'] + "','0')");
-//                    uexDataBaseMgr.closeDataBase('fumeishengzi.db', 1);
-//
-//                }
-//            }
-//
-//
-//        }
-//
-//
-//        var tmpl = '<div class="ubb b-gra">'
-//                + ' <input type="checkbox" class="uhide">'
-//                + '    <div ontouchstart="zy_touch(\'btn-act\')" onclick="zy_for(event,zy_fold);" class="col ubb b-gra t-wh ub uinn ub-ac c-wh ulev1 umh4">'
-//                + '          <div class="ub-f1 ut-s t-bla">${name}</div>'
-//                + '          <div class="umh2 umw2 ub-img list-icon"></div> '
-//                + '     </div>'
-//                + '  <div class="uinn umh6 t-bla ubt b-gra c-wh col-c">'
-//                + '	${cb:followReply}'
-//                + '  </div>'
-//                + '</div>'
-//
-//        var s = zy_tmpl(tmpl, data, zy_tmpl_count(data), tmpleCb);
-//        var d = document.createElement('DIV');
-//        d.innerHTML = s;
-//
-//        $$('infoList').appendChild(d);
-        // $closeToast();
     }
 
+    function showmsg(){
+        setLocVal('mid',$$("msg-id").val());
+        openNewWin('msg','msg.html');
+    }
     function tmpleCb(a, b) {
         var str = '';
 
@@ -270,11 +242,12 @@
                 openNewWin('msg','msg.html');
                 break;
 
-//            case 2:
-//                $$("header").children[i].className = "uh t-wh ub c-my banner";
-//                zy_con("content", "home.html", 0, $$("header").offsetHeight);
-//
-//                break;
+            case 2:
+                setLocVal('homepage', 'index_content.html');
+                uexWindow.open("",0,"index.html",'1','','',4)
+//                uexWindow.openPopover('root',0, "index.html","",0,0,'',"",'',0);
+
+                break;
             case 3: //暖客栈
                 openNewWin("book", "house.html");
                 break;

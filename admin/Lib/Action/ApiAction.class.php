@@ -94,6 +94,7 @@ header('Access-Control-Allow-Origin: *');
              $data['username']=I('username');
              $data['password']=md5(I('password'));
              $data['yunqi']=I('yunqi');
+             $data['phone']=I('phone');
 
              $data['status']= 1 ;
 
@@ -738,6 +739,14 @@ header('Access-Control-Allow-Origin: *');
             return $comment['uid'];
          else
              return 0;
+     }
+     /*
+      * 首页圈子标题和内容，只有一条
+      */
+     public function firstMsg(){
+         $model = M('Msg');
+         $msg = $model->order("createtime desc")->limit(1)->find();
+         echo json_encode($msg);
      }
  }
 ?>

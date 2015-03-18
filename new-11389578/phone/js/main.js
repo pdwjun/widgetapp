@@ -1,9 +1,9 @@
 var isPhone = (window.navigator.platform != "Win32");
 var isAndroid = (window.navigator.userAgent.indexOf('Android')>=0)?true : false;
-//var hostURL = "http://meibao.local/index.php?m=Api";
-//var hostWebURL = "http://meibao.local";
-var hostURL = "http://test.pdwjun.com/index.php?m=Api";
-var hostWebURL = "http://test.pdwjun.com";
+var hostURL = "http://meibao.local/index.php?m=Api";
+var hostWebURL = "http://meibao.local";
+//var hostURL = "http://test.pdwjun.com/index.php?m=Api";
+//var hostWebURL = "http://test.pdwjun.com";
 //	clearLocValReg(reg)
 
 
@@ -486,7 +486,7 @@ String.prototype.Trim = function() {
 
 String.prototype.isMobile = function() {
 
-	return (/^(?:13\d|15[89])-?\d{5}(\d{3}|\*{3})$/.test(this.Trim()));
+	return (/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/.test(this.Trim()));
 
 }
 

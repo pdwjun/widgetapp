@@ -1,3 +1,8 @@
+function firstMsg(){
+    var url =hostURL+"&a=firstMsg";
+    $.getJSON(url,msgCallback,'json',getJSONError,'GET','',true);
+}
+
 function loads() {
     var checkUp = getLocVal('checkUp');
 
