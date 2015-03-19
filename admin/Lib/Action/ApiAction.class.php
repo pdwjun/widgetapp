@@ -79,6 +79,16 @@ header('Access-Control-Allow-Origin: *');
 	 }
 
      /*
+      * 设置登陆时间
+      */
+     public function logintime(){
+         $model = M('User');
+         $user = $model->find(I('uid'));
+         $user['logintime'] = time();
+         $user->save();
+     }
+
+     /*
       * 注册
       * reg&username="+username+"&password="+password+"&yunqi="+yunqi;
       * setLocVal('uid',data.uid);
