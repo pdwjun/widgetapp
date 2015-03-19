@@ -28,7 +28,7 @@
                 <div class="ub-f1 titleinfo" id="username">&nbsp;</div>
               </div>
 		  </div>
-		
+
 	</div>
     <div class="info msg"  id="msg" onclick="test()" ><strong>距下次排孕日还有12天</strong></div>
 	<div class="ub ub-ver content" id="comment">
@@ -77,13 +77,8 @@ function remind(){
 			var yuchan = getLocVal('yuchan'); //预产期
               var huaiyun= cc(yuchan,280);  //怀孕日子
 
-	
+
 }
-
-    function refresh(){
-
-
-    }
 //下拉更新
 function dorpDownUpdate(){
 
@@ -152,20 +147,20 @@ function zan(mid){
 
 
 function tmpleCb(a, b){
-	
+
 	var str = '';
     if(a.rs==1){
 	switch (b[1]) {
-	
+
 		case "followReply":
-		
+
 		var s="";
 
 		var arr1 = a['followReply'];
 		for(var i = 0; i < arr1[0]['photo'].length; i++){
                s += '<div class="uh-app3 uw-app3  ub-img mar-ar1 fullimg" style="background-image:url('+ arr1[0]['photo'][i]+'); float:left"></div>';
 		   }
-		
+
 				str += '	<div class="ub uinn c-gra-comm uc-a1 umar-at1"><div class="fullimg  uh-app3 uw-app3  ub-img mar-ar1"  style="background-image:url('+arr1[0]['avatar']+');"></div>' +
 				'		<div class="uinn-comm ulev-4 ub-f1">' +
 				'			<div class="t-gra2-comm line-hei-com">' +
@@ -179,8 +174,8 @@ function tmpleCb(a, b){
 				'</div>'
 
 	}
-		
-	}	
+
+	}
 	return str;
 }
 

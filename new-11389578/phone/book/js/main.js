@@ -7,8 +7,8 @@ function loads(keyword,page){
         url += "&page="+page;
    $.getJSON(url,callback,'json',getJSONError,'GET','', true);
 }
-function bookDoctor(id,uid,did,name, email, phone, expection, flydate){
-    var url = hostURL+"&a=bookDoctor&id=" + id+"&uid="  + uid+"&did=" + did+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
+function bookDoctor(id,type,uid,fid,name, email, phone, expection, flydate){
+    var url = hostURL+"&a=book&id=" + id+"&type="  + type+"&uid="  + uid+"&fid=" + fid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
     $.getJSON(url,saveBack,'json',getJSONError,'GET','');
 
 }
@@ -38,11 +38,11 @@ function loadhouse(keyword,page){
         url += "&page="+page;
     $.getJSON(url,callback,'json',getJSONError,'GET','', true);
 }
-function bookHospital(id,uid,hid,name, email, phone, expection, flydate){
-    var url = hostURL+"&a=bookHospital&id=" + id+"&uid="  + uid+"&hid=" + hid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
+function bookHospital(id,type,uid,fid,name, email, phone, expection, flydate){
+    var url = hostURL+"&a=book&id=" + id+"&type="  +type +"&uid="  + uid+"&fid=" + fid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
     $.getJSON(url,saveBack,'json',getJSONError,'GET','');
 }
-function bookHouse(id,uid,hid,name, email, phone, expection, flydate){
-    var url = hostURL+"&a=bookHouse&id=" + id+"&uid="  + uid+"&hid=" + hid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
+function bookHouse(id,type,uid,fid,name, email, phone, expection, flydate){
+    var url = hostURL+"&a=book&id=" + id+"&type="  + type+"&uid="  + uid+"&fid=" + fid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
     $.getJSON(url,saveBack,'json',getJSONError,'GET','');
 }

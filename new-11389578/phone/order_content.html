@@ -29,7 +29,7 @@
         <!--医生介绍，content-->
     </div>
     <form>
-        <input type="hidden" name="did" id="did" />
+        <input type="hidden" name="fid" id="fid" />
         <div class="form">
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/name.png"/></div>
@@ -59,13 +59,14 @@
                 <!--<div class="ub ub-ac ub-pc umar-a uc-a1 send">发送</div>-->
 
             <!--</div>-->
+            <input type="hidden" name="type" id="type" >
         </div>
     </form>
 </div>
 
 
 <div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="book();">
-    <div class=" ub ub-ac ub-pc t-wh uinnh5 ">修改预约</div>
+    <div class=" ub ub-ac ub-pc t-wh uinnh5 " id="submit-btn">修改预约</div>
 </div>
 </body>
 <script>
@@ -85,8 +86,8 @@
 
     }
     function goMyOrder() {
-        document.location.href = 'myorder_content.html';
-//        openNewWin('myorder', 'myorder.html');
+//        document.location.href = 'myorder_content.html';
+        openNewWin('', 'myorder.html');
     }
     function saveBack(data) {
         if (data == 0) {
@@ -98,11 +99,14 @@
     }
     function callback(data){
         $$('name').value = data.name;
-        $$('did').value = data.fid;
+        $$('fid').value = data.fid;
         $$('email').value = data.email;
         $$('phone').value = data.phone;
         $$('expection').value = date('Y-m-d',data.expection);
         $$('flydate').value = date('Y-m-d',data.flydate);
+        $$('type').value = data.type;
+        if(data.status == 1)
+        $$('submit-btn').remove()
     }
     function book() {
 //	 var b64 = new Base64();
@@ -114,13 +118,14 @@
         var phone = $$("phone").value;
         var expection = $$("expection").value;
         var flydate = $$("flydate").value;
-        var did = $$("did").value;
+        var fid = $$("fid").value;
         var name = encodeURIComponent($$("name").value);
+        var type = $$("type").value;
 
         var uid = getLocVal('uid');
 //        alert(photo);
         id = getLocVal('oid');
-        bookDoctor(id,uid,did,name, email, phone, expection, flydate);
+        bookDoctor(id,type,uid,fid,name, email, phone, expection, flydate);
 
     }
     function expectionDate() {

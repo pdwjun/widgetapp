@@ -113,9 +113,10 @@ window.uexOnload=function(type)
 //                oImg.style.margin = '0.5em';
 //                oImg.style.height = '3.75em';
 //                $$("uploadimage").appendChild(oImg);
-                $$("upphoto").style.backgroundImage = "url('"+serverPath+"')";
+                $$("uploadimage").style.backgroundImage = "url('"+serverPath+"')";
                 $$("img_url").value = serverPath;
 
+                    alert($$("img_url").value)
                 uexUploaderMgr.closeUploader(1);
 
                 break;
@@ -250,7 +251,7 @@ function addReply(cid){
     if($$("comment_"+cid).innerHTML=="")
         tmpl = '<textarea class="reply_con" name="content" id="content_'+cid+'"  ></textarea></ br>' +
         '<button class="reply_btn" onclick="reply('+cid+')" >发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;送</button>' +
-        '<div id="uploadimage" style="display: inline"><div class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto" onclick="upPhoto();"></div></div>'
+        '<div id="uploadimage" style="display: inline" class="btn uc-a photo umh1-7 umw1-7 ub-img4 uwh-tBtn" id="upphoto" onclick="upPhoto();"></div>'
 //    '<button class="reply_btn" onclick="upPhoto()" >&nbsp;&nbsp;添&nbsp;&nbsp;加&nbsp;&nbsp;图&nbsp;&nbsp;片&nbsp;&nbsp;</button>'
     $$("comment_"+cid).innerHTML = tmpl;
 }

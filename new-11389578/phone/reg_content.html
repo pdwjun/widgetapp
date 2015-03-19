@@ -39,7 +39,7 @@
         <div class="ulev-app1 umw4">密码</div>
         <div class="ub-f1 uinn">
             <div class="uinput uinn4">
-                <input placeholder="请输入密码" id="password" type="password" class="">
+                <input placeholder="请输入密码" id="password" type="password"  class="">
             </div> 
         </div>
     </div>
@@ -97,13 +97,21 @@ window.uexOnload=function(type)
 	var password=$$("password").value;
 	var repass = $$("repass").value;
 	var phone = $$("phone").value;
-	var yunqi=$$("yunqi").value;  
+	var yunqi=$$("yunqi").value;
+        if(password.length <6){
+            alert('密码最少为6位');
+            return false;
+        }
+        if(!chkphone(phone)){
+            alert('请输入正常的手机');
+            return false;
+        }
 		setLocVal('yuchan',yunqi);
 		if (username == "") {
 			$toast('账号不能为空', '2000');
 			return;
 		}
-		else 
+		else
 			if (password == "") {
 				$toast('密码不能为空', '2000');
 				return;

@@ -85,7 +85,7 @@ header('Access-Control-Allow-Origin: *');
          $model = M('User');
          $user = $model->find(I('uid'));
          $user['logintime'] = time();
-         $user->save();
+         $model->save($user);
      }
 
      /*
@@ -274,6 +274,7 @@ header('Access-Control-Allow-Origin: *');
              $data['title']=I('title');
              $data['content']=I('content');
              $data['cid']=I('cid');
+             $data['photo'] = I('photo');
              if(I('img')!="")
                  $data['img'] = I('img');
 
@@ -377,7 +378,6 @@ header('Access-Control-Allow-Origin: *');
      public function save_comment($uid,$mid,$cid,$content){
          $model = M('Comment');
          $_REQUEST['createtime'] = time();
-         $_REQUEST['image'] = $_REQUEST['img'];
          $_REQUEST['touid'] = $this->get_to_id($cid);
          $_REQUEST['content'] = htmlspecialchars($_REQUEST['content']);
          if($uid==""||$content=""||$mid=="")

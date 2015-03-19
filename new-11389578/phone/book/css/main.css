@@ -18,9 +18,38 @@ font-family: 幼圆;
     border: none;
 
 }
-.t-btn-group div{
-    width: inherit;
+.t-btn-group > .t-btn{
+    width: 95%;
+    display: inline-table;
+    -webkit-border-radius: 0.6em;
+    margin: 0.5em 0;
 }
+.t-btn-group > .t-btn > div{
+    display: inline-block;
+    text-align: left;
+    line-height: 2em;
+    float: left;
+}
+.order-cn {
+    font-size: 1.8em;
+    text-align: left;
+}
+.order-en {
+    font-size: 1.1em;
+    text-align: left;
+    color: rgba(100%,100%,100%, 0.5);
+    font-family: sans-serif;
+}
+.order-image{
+    margin: 0.1em 7%;
+}
+.order-image > img{
+    width: 4em;
+}
+.order-title{
+    margin-top: 0.2em;
+}
+
 .t-btn-group a{
     text-decoration: none;
 }

@@ -81,7 +81,7 @@
 
 <div class="ub ub-ac ub-pc umar-a c-btn uc-a1" ontouchstart="zy_touch('btn-act1')" onclick="save();">
     <input type="hidden" id="photo" value="" name="photo">
-
+    <input type="hidden" id="file_c" value="0" >
     <div class=" ub ub-ac ub-pc t-wh uinnh5">保存</div>
 </div>
 </body>
@@ -100,7 +100,6 @@
 
     }
 
-    var file_c = 0;
     zy_init();
     window.uexOnload = function (type) {
         if (!type) {
@@ -136,10 +135,12 @@
                     oImg.style.height = '3.75em';
                     var uploaded = document.createElement('input');
                     uploaded.type = 'hidden';
+                    var file_c = $$('file_c').value;
                     uploaded.id = 'name_'+file_c;
                     uploaded.value = serverPath;
 
-                    file_c += 1;
+                    $$('file_c').value = int(file_c) + 1;
+//                        alert($$('file_c').value)
                     $$("uploadimage").appendChild(oImg);
                     $$("uploadimage").appendChild(uploaded);
                     uexUploaderMgr.closeUploader(1);
@@ -201,7 +202,7 @@
         var content = encodeURIComponent($$("content").value);
 //        var photo = encodeURIComponent($$("photo").value);
         var photo = '';
-
+        var file_c = $$('file_c').value;
         for(i=0;i<file_c;i++){
             if(i==0)
                 photo = '|'+$$("name_"+i).value;

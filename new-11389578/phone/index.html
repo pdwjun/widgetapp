@@ -18,6 +18,7 @@
     <script src="js/zy_click.js">
     </script>
     <script src="js/main.js"></script>
+    <script src="js/zy_json.js"></script>
     <script src="js/db.js"></script>
 </head>
 <body class="um-vp c-wh" ontouchstart>
@@ -212,9 +213,9 @@
             }else{
                 $$("order").className = "uh t-wh ub c-my";
                 $$("order_menu").checked=true;
-
             }
             if (uid) {
+                logintime(getLocVal('uid'));
                 goURL(homepage);
 //                zy_con("content", homepage, 0, $$("header").offsetHeight);
             } else {
@@ -225,15 +226,12 @@
 
 
 
-
-        window.onorientationchange = window.onresize = function () {
-            zy_resize("content", 0, $$("header").offsetHeight);
-        }
-        uexWindow.setReportKey("0", "1");
-        uexWindow.onKeyPressed = function (keyCode) {
-            uexWidgetOne.exit();
-        }
     }
+    function logintime(uid){
+        var url= hostURL+"&a=logintime&uid="+uid;
+        $.getJSON(url,timecallback,'json',getJSONError,'GET','','');
+    }
+    function timecallback(){}
 
     function openCon(idx) {
         var uid = getLocVal('uid');
