@@ -1,9 +1,9 @@
 var isPhone = (window.navigator.platform != "Win32");
 var isAndroid = (window.navigator.userAgent.indexOf('Android')>=0)?true : false;
-var hostURL = "http://meibao.local/index.php?m=Api";
-var hostWebURL = "http://meibao.local";
-//var hostURL = "http://test.pdwjun.com/index.php?m=Api";
-//var hostWebURL = "http://test.pdwjun.com";
+//var hostURL = "http://meibao.local/index.php?m=Api";
+//var hostWebURL = "http://meibao.local";
+var hostURL = "http://test.pdwjun.com/index.php?m=Api";
+var hostWebURL = "http://test.pdwjun.com";
 //	clearLocValReg(reg)
 
 
