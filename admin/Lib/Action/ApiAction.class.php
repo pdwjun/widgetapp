@@ -99,6 +99,11 @@ header('Access-Control-Allow-Origin: *');
       */
      public function reg(){
          if(I('username',0)&&I('password')){
+             if($this->checkUser(I('username'))){
+                 $arr['error'] = '用户名已经存在';
+                 echo json_encode($arr);
+                 return;
+             }
             //生成认证条件
              $data=array();
              $data['username']=I('username');
@@ -109,15 +114,59 @@ header('Access-Control-Allow-Origin: *');
              $data['status']= 1 ;
 
              if(!D('User')->create($data)){
-                 echo 0;
+                 $arr['error'] = '注册失败';
                  //echo D('User')->getError();
              }else{
                  $uid = M('User')->add($data);
 
-                 $arr = array('uid'=>$uid,'yunqi'=>$data['yunqi']);
-                 echo json_encode($arr);
+                 $arr['success'] = array('uid'=>$uid,'yunqi'=>$data['yunqi']);
              }
+             echo json_encode($arr);
          }
+     }
+     public function recover(){
+        if(I('username',0)&&I('password')) {
+            if (!$this->checkUser(I('username'))) {
+                $arr['error'] = '用户名不存在';
+                echo json_encode($arr);
+                return;
+            }
+            if (!$this->checkPhone(I('username'), I('phone'))){
+                $arr['error'] = '所填手机与当前账号不同';
+                echo json_encode($arr);
+                return;
+            }
+            $data['password']=md5(I('password'));
+            $model = M('User');
+            $user = $model->where(['username'=>I('username')])->save($data);
+            if($user){
+                $user = $model->where(['username'=>I('username')])->find();
+                $arr['success'] = $user;
+            }else{
+                $arr['error'] = '修改失败，请联系工作人员';
+            }
+            echo json_encode($arr);
+        }
+     }
+     /*
+      * 检查用户名是否存在
+      */
+     public function checkUser($username){
+         $model = M('User');
+         $user = $model->where(['username'=>$username])->find();
+         if($user)
+             return true;
+         else
+             return false;
+     }
+
+     public function checkPhone($username, $phone){
+         $model = M('User');
+         $user = $model->where(['username'=>$username])->find();
+         if($user['phone']==$phone)
+             return true;
+         else
+             return false;
      }
 
      /*
@@ -519,8 +568,16 @@ header('Access-Control-Allow-Origin: *');
          $model = M('Order');
          $where['id'] = I('id');
          $list = $model->where($where)->find();
-
          if($list){
+             if($list['type']==1){  //医生
+                 $model = M('Doctor');
+             }elseif($list['type']==2){ //医院
+                 $model = M('Hospital');
+             }elseif($list['type']==3){ //客栈
+                 $model = M('House');
+             }
+             $doc = $model->where(['id'=>$list['fid']])->find();
+             $list['fname'] = $doc['name'];
              echo json_encode($list);
          }
          else
@@ -758,5 +815,17 @@ header('Access-Control-Allow-Origin: *');
          $msg = $model->order("createtime desc")->limit(1)->find();
          echo json_encode($msg);
      }
+    /*
+     * 检查手机号码是否已经预约过医生医院客栈
+     */
+    public function checkphoneorder(){
+        $model = M('Order');
+        $order = $model->where(['type'=>I('type'),'phone'=>trim(I('phone'))])->find();
+        if($order){
+            echo true;
+        }
+        else
+            echo 0;
+    }
  }
 ?>

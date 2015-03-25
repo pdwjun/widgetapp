@@ -112,9 +112,10 @@
 	text-align: left;
 }
 .photo{
-	background-image:url('myImg/photo.png') !important;
+	background-image:url('myImg/photo.png');
 	padding: 1.5em;
 	display: inline;
+    margin-left: 0.5em;
 }
 .comment_image{
 	width:	100%;

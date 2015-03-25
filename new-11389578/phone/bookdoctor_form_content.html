@@ -62,7 +62,7 @@
 </div>
 
 
-<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="book();">
+<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="checkall();">
     <div class=" ub ub-ac ub-pc t-wh uinnh5 ">立刻预约</div>
 </div>
 </body>
@@ -96,19 +96,22 @@
             window.setTimeout(uexWindow.open("",0,"index.html",'1','','',4), 3000);
         }
     }
-
-    function book() {
+    function checkall(){
         if(!chkemail($$('email').value))
         {
             alert("请输入正确的邮箱");
             return false;
         }
-        if(!chkphone())
+        if(!chkphone($$('phone').value))
         {
+            //查看手机号码是否已经预约过医生
             alert("请输入正确的手机号码或电话号码");
             return false;
         }
+        checkphoneorder(1,$$('phone').value);
 
+    }
+    function book() {
 //	 var b64 = new Base64();
 //	var cid= $$("cate").value;
 //	var title=encodeURIComponent(b64.encode($$("title").value));
@@ -125,7 +128,7 @@
         var uid = getLocVal('uid');
 //        alert(photo);
         var id = '';
-        bookDoctor(id,uid,did, name,email, phone, expection, flydate);
+        bookDoctor(id,1,uid,did, name,email, phone, expection, flydate);
 
     }
     function expectionDate() {
@@ -136,6 +139,12 @@
     function flyDate(){
         opendate('flydate');
         uexControl.openDatePicker();
+    }
+    function phoneorderBack(data){
+        if(data==0){    //没有找到，可以预约
+            book();
+        }else
+            alert('手机号已经预约过医生，无法多次预约')
     }
 
 

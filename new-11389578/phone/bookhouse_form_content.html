@@ -26,7 +26,7 @@
 <div class="ub ub-ver">
     <div class="doctor-info" >
     </div>
-    <form>
+    <form name="form">
         <div class="form">
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/name.png"/></div>
@@ -61,7 +61,7 @@
 </div>
 
 
-<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="book();">
+<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="checkall();">
     <div class=" ub ub-ac ub-pc t-wh uinnh5 ">立刻预约</div>
 </div>
 </body>
@@ -91,18 +91,22 @@
         }
     }
 
-    function book() {
+    function checkall(){
         if(!chkemail($$('email').value))
         {
             alert("请输入正确的邮箱");
             return false;
         }
-        if(!chkphone())
+        if(!chkphone($$('phone').value))
         {
+            //查看手机号码是否已经预约过医生
             alert("请输入正确的手机号码或电话号码");
             return false;
         }
+        checkphoneorder(3,$$('phone').value);
 
+    }
+    function book() {
 //	 var b64 = new Base64();
 //	var cid= $$("cate").value;
 //	var title=encodeURIComponent(b64.encode($$("title").value));
@@ -132,6 +136,12 @@
     function flyDate(){
         opendate('flydate');
         uexControl.openDatePicker();
+    }
+    function phoneorderBack(data){
+        if(data==0){    //没有找到，可以预约
+            book();
+        }else
+            alert('手机号已经预约过暖客栈，无法多次预约')
     }
 
 

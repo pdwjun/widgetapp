@@ -27,10 +27,15 @@
 <div class="ub ub-ver">
     <div class="doctor-info" >
         <!--医生介绍，content-->
+
     </div>
     <form>
         <input type="hidden" name="fid" id="fid" />
         <div class="form">
+            <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
+                <div class="uinn fa fa-search sc-text"><img src="css/project/images/name.png"/></div>
+                <input type="text" class="ub-f1" disabled id="fname" >
+            </div>
             <div class="sc-bg-active uinput ub ub-f1  bc-border ubaa">
                 <div class="uinn fa fa-search sc-text"><img src="css/project/images/name.png"/></div>
                 <input placeholder="姓名" type="text" class="ub-f1" id="name" name="name">
@@ -105,6 +110,7 @@
         $$('expection').value = date('Y-m-d',data.expection);
         $$('flydate').value = date('Y-m-d',data.flydate);
         $$('type').value = data.type;
+        $$('fname').value = data.fname;
         if(data.status == 1)
         $$('submit-btn').remove()
     }

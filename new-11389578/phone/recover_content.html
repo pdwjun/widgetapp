@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-input.css">
+    <link rel="stylesheet" href="css/project/style.css">
+    <link rel="stylesheet" href="reg_content/css/main.css">
+    <script src="js/zy_control.js"></script>
+    <script src="js/zy_click.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/zy_json.js"></script>
+    <script src="reg_content/js/reg.js"></script>
+
+</head>
+<body class="um-vp c-wh2" ontouchstart>
+<div class="ub ub-ver uinn-a1">
+    <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">用户名</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="输入用户名" id="username" type="text" class="">
+            </div>
+        </div>
+    </div>
+    <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">手机号码</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="账号当前手机号码" id="phone" type="text" class="">
+            </div>
+        </div>
+    </div>
+    <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">新密码</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="请输入密码" id="password" type="password" class="">
+            </div>
+        </div>
+    </div>
+    <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+        <div class="ulev-app1 umw4">确认密码</div>
+        <div class="ub-f1 uinn">
+            <div class="uinput uinn4">
+                <input placeholder="请重复输入密码" id="repass" type="password" class="">
+            </div>
+        </div>
+    </div>
+    <div class="ub ub-ver">
+        <div class="ub ub-pe uinn-a6 ulev-4">
+
+        </div>
+        <div class="uinn-at1">
+            <div ontouchstart="zy_touch('btn-act')" onclick="recover();uexWindow.closeToast();"
+                 class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">重置密码
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    zy_init();
+    window.uexOnload = function (type) {
+    }
+
+    function recover() {
+        uexWindow.toast(1, 5, "正在加载...", 0);
+        var b64 = new Base64();
+        var username = encodeURIComponent($$("username").value);
+        var password = $$("password").value;
+        var repass = $$("repass").value;
+        var phone = $$("phone").value;
+        if (!chkphone(phone)) {
+            alert('请输入正确的手机');
+            return false;
+        }
+        if (password.length < 6) {
+            alert('密码最少为6位');
+            return false;
+        }
+        if (username == "") {
+            $toast('账号不能为空', '2000');
+            return;
+        }
+        else if (password == "") {
+            $toast('密码不能为空', '2000');
+            return;
+        }
+        else if (password == repass) {
+            recoverdo(username, password, phone);
+        } else {
+            $toast('两次输入密码不同', '2000');
+        }
+
+    }
+    function recoverback(data) {
+//    data = JSON.parse(data);
+        if (data.error != null) {
+            $closeToast();
+            alert(data.error)
+            $toast(data.error, 2000);
+        } else {
+            $closeToast();
+            alert('密码重置成功');
+            setLocVal('uid', data.success.uid);
+            uexWindow.evaluateScript("index", '0', "openCon(4)");
+            uexWindow.open("index", 0, "index.html", '1', '', '', 4)
+        }
+
+    }
+
+</script>
+</html>

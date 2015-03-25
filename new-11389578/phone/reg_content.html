@@ -65,7 +65,7 @@
 	
 		</div>
         <div class="uinn-at1">
-			<div ontouchstart="zy_touch('btn-act')" onclick="reg()" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">注 册</div>
+			<div ontouchstart="zy_touch('btn-act')" onclick="reg();uexWindow.closeToast();" class="uinn-a2 btn_hei1 c-btn uc-a1 t-wh tx-c">注 册</div>
         </div>
     </div>
 </div>	
@@ -98,12 +98,12 @@ window.uexOnload=function(type)
 	var repass = $$("repass").value;
 	var phone = $$("phone").value;
 	var yunqi=$$("yunqi").value;
-        if(password.length <6){
-            alert('密码最少为6位');
+        if(!chkphone(phone)){
+            alert('请输入正确的手机');
             return false;
         }
-        if(!chkphone(phone)){
-            alert('请输入正常的手机');
+        if(password.length <6){
+            alert('密码最少为6位');
             return false;
         }
 		setLocVal('yuchan',yunqi);
@@ -124,15 +124,16 @@ window.uexOnload=function(type)
 	
 }
 function callback(data){
-	      if(data==0){
-		  	
+//    data = JSON.parse(data);
+	      if(data.error!=null){
 		  	$closeToast();
-			 $toast("注册失败",2000);
+              alert(data.error)
+			 $toast(data.error,2000);
 		  }else{
 		  	$closeToast();
 
-			setLocVal('uid',data.uid);
-			setLocVal('yunqi',data.yunqi);
+			setLocVal('uid',data.success.uid);
+			setLocVal('yunqi',data.success.yunqi);
 			uexWindow.evaluateScript("index",'0', "openCon(4)");
 			uexWindow.open("index",0,"index.html",'1','','',4)
 		  }

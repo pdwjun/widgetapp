@@ -89,11 +89,6 @@ function callSubMethod(){
         <input name="good" type="radio" value="0" <if condition="$li['good'] eq 0 ">checked </if> >
         否</td>
     </tr>
-    
-    	  <tr>
-    <td width="100" height="28" bgcolor="#FFFFFF">用户ID：</td>
-    <td bgcolor="#FFFFFF"><input name="uid" type="text" id="uid" style="height:22px; width:50px;" value="{$li['uid']}"></td>
-    </tr>
   <tr>
     <tr>
     <td width="100" height="28" bgcolor="#FFFFFF">分类：</td>
@@ -124,6 +119,7 @@ function callSubMethod(){
               <option value="1" <eq name="li.status" value="1"> selected</eq> >已审核</option>
               <option value="2" <eq name="li.status" value="2"> selected</eq> >禁止发布</option>
           </select>
+          <input name="uid" type="text" id="uid" style="height:22px; width:50px;" value="{$li['uid']}">
       </td>
   </tr>
 </table>

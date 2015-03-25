@@ -46,3 +46,8 @@ function bookHouse(id,type,uid,fid,name, email, phone, expection, flydate){
     var url = hostURL+"&a=book&id=" + id+"&type="  + type+"&uid="  + uid+"&fid=" + fid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
     $.getJSON(url,saveBack,'json',getJSONError,'GET','');
 }
+function checkphoneorder(type,phone){
+    var url = hostURL+"&a=checkphoneorder&type="  +type +"&phone=" + phone;
+    $.getJSON(url,phoneorderBack,'json',getJSONError,'GET','');
+
+}
