@@ -1,9 +1,9 @@
 var isPhone = (window.navigator.platform != "Win32");
 var isAndroid = (window.navigator.userAgent.indexOf('Android') >= 0) ? true : false;
-var hostURL = "http://meibao.local/index.php?m=Api";
-var hostWebURL = "http://meibao.local";
-//var hostURL = "http://test.pdwjun.com/index.php?m=Api";
-//var hostWebURL = "http://test.pdwjun.com";
+//var hostURL = "http://meibao.local/index.php?m=Api";
+//var hostWebURL = "http://meibao.local";
+var hostURL = "http://test.pdwjun.com/index.php?m=Api";
+var hostWebURL = "http://test.pdwjun.com";
 //	clearLocValReg(reg)
 
 
@@ -435,7 +435,7 @@ function checkFunction(reg) {
 
         if (network == -1) {
             uexWindow.closeToast();
-            $$("msg").innerHTML = "网络异常，请检查是否连接网络";
+            //$$("msg").innerHTML = "网络异常，请检查是否连接网络";
 
         } else {
             clearLocValReg(reg)

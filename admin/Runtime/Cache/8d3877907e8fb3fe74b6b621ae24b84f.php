@@ -141,11 +141,11 @@
 
 
 
-            <li><a href='http://www.hh85.com' target='_blank'>官方网站</a></li>
+            <li><a href='http://www.pdwjun.com' target='_blank'>官方网站</a></li>
 
 
 
-            <li><a href='http://www.hh85.com' target='_blank'>官方论坛</a></li>
+            <li><a href='http://www.pdwjun.com' target='_blank'>官方论坛</a></li>
 
           </ul>
 

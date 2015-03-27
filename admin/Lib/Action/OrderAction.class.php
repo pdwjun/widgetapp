@@ -17,7 +17,8 @@ class OrderAction extends CommonAction
 
         import('ORG.Util.Page');
 
-        $count = M($this->table_name)->count();// 查询总数据记录
+        $condition['type'] = $_REQUEST['type'];
+        $count = M($this->table_name)->where($condition)->count();// 查询总数据记录
 
         $Page = new Page($count, C('PAGESIZE'));
 

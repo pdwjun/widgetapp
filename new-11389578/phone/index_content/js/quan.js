@@ -9,7 +9,7 @@ function getList(page){
 function getUserInfo(uid){
     var url =hostURL+"&a=get_user_info&uid="+uid;
 	checkFunction(hostWebURL+".index.php.m=Api&a=get_user_info.*")
-    $.getJSON(url,userBack,'json',getJSONError,'GET','',true);
+    $.getJSON(url,userBack,'json',getJSONError,'GET','');
 }
 function getMsgCateInfo(rid){
     var url = hostURL+"&a=get_cate_info&rid="+rid;
