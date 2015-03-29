@@ -258,7 +258,7 @@ function noSelAll()
 
 	<td>{$vo.logintime|date="Y-m-d",###}</td>
 
-	<td><a href="{:U('edit',array('uid'=>$vo['uid']))}">编辑</a></td>
+	<td><a href="{:U('edit',array('uid'=>$vo['uid']))}">编辑</a> <a href="{:U('del',array('uid'=>$vo['uid']))}">删除</a></td>
 
 	</tr></foreach>
 

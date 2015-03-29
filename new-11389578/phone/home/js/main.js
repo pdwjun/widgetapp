@@ -1,6 +1,6 @@
 function firstMsg(){
     var url =hostURL+"&a=firstMsg";
-    $.getJSON(url,msgCallback,'json',getJSONError,'GET','',true);
+    $.getJSON(url,msgCallback,'json',getJSONError,'GET','');
 }
 
 function loads() {

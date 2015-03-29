@@ -70,6 +70,7 @@
 	              	  	
 	              	  	$this->li =M($this->table_name)->where("id=".$id)->find();
 	              	  	$this->list =M($this->table_name.'Cate')->select();
+                        $this->uid =M('User')->select();
 	              	  	if($this->li['photo']==''){
 	              	  			$this->photo = '';
 	              	  	}else{
