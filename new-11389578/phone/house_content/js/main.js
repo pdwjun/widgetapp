@@ -6,5 +6,14 @@ function getHouseList(page){
 }
 function houseinfo(){
 	var url =hostURL+"&a=get_house_info&id="+getLocVal('hid');
-	$.getJSON(url,callback,'json',getJSONError,'GET','',true);
+	$.getJSON(url,callback,'json',getJSONError,'GET','');
+}
+function hospitalinfo(){
+    var url =hostURL+"&a=get_hospital_info&id="+getLocVal('hid');
+    $.getJSON(url,callback,'json',getJSONError,'GET','');
+}
+
+function doctorinfo(){
+    var url =hostURL+"&a=get_doctor_info&id="+getLocVal('did');
+    $.getJSON(url,callback,'json',getJSONError,'GET','');
 }

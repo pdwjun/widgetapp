@@ -151,9 +151,11 @@
         $closeToast();
     }
     function book(id){
-            setLocVal('did',id);
-//        openNewWin('doctor','doctor.html');
-        openNewWin('bookdoctor_form','bookdoctor_form.html');
+//            setLocVal('did',id);
+////        openNewWin('doctor','doctor.html');
+//        openNewWin('bookdoctor_form','bookdoctor_form.html');
+        setLocVal('did',id);
+        openNewWin('book_detail','doctordetail.html');
         }
     function search(){
         setLocVal('refresh', 1)

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/project/ui-list.css">
     <link rel="stylesheet" href="css/project/style.css">
     <link rel="stylesheet" href="book/css/main.css">
+    <script src="js/appcan.js"></script>
     <script src="js/zy_control.js"></script>
     <script src="js/zy_click.js"></script>
     <script src="js/zy_tmpl.js"></script>
@@ -70,8 +71,8 @@
 </div>
 
 
-<div class="ub ub-ac ub-pc umar-a c-btn uc-a1 " ontouchstart="zy_touch('btn-act1')" onclick="checkall();">
-    <div class=" ub ub-ac ub-pc t-wh uinnh5 " id="submit-btn">修改预约</div>
+<div class="ub-ac ub-pc umar-a c-btn uc-a1 " id="submit-btn" style="display: none;" ontouchstart="zy_touch('btn-act1')" onclick="checkall();">
+    <div class=" ub ub-ac ub-pc t-wh uinnh5 " >修改预约</div>
 </div>
 </body>
 <script>
@@ -111,8 +112,8 @@
         $$('flydate').value = date('Y-m-d',data.flydate);
         $$('type').value = data.type;
         $$('fname').value = data.fname;
-        if(data.status == 1)
-        $$('submit-btn').remove()
+        if(data.status != 1)
+            $$('submit-btn').style.display = '';
     }
     function checkall(){
         if(!chkemail($$('email').value))

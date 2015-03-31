@@ -1,5 +1,5 @@
 body{
-	background-color: white;
+    background-color: #FFFFFF !important;
 }
 .b-gra{
 	border-color:#d6d6d6;
@@ -48,12 +48,21 @@ body{
 }
 
 .header{
-	background-size: cover;
-	height: 8em;
-	text-align: center;
-	font-weight: 800;
-	font-size: 1.1em;
-	padding: 1em;
+    background-size: cover;
+    height: 8em;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1em;
+    padding: 1em;
+    color: #F4F4F4;
+}
+.header-doc{
+    background-size: cover;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1em;
+    padding: 1em;
+    color: rgb(45, 45, 45);
 }
 
 .uinnh5
@@ -62,9 +71,20 @@ body{
 	margin:0;
 }
 .grade_group{
-	padding: 1em;
-	text-align: center;
+    padding: 1em;
+    text-align: center;
+}
+.detail_group{
+    padding: 1em;
+    text-align: center;
+}
+.detail_item{
+    display: table-cell;
+}
+.detail_image{
+    width: 8em;
 }
 .info{
 	padding: 1em;
+    background-color: #FFFFFF !important;
 }

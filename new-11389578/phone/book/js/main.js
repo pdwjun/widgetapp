@@ -5,7 +5,7 @@ function loads(keyword,page){
         var url = hostURL+"&a=getdoclist";
     if(page)
         url += "&page="+page;
-   $.getJSON(url,callback,'json',getJSONError,'GET','', true);
+   $.getJSON(url,callback,'json',getJSONError,'GET','');
 }
 function bookDoctor(id,type,uid,fid,name, email, phone, expection, flydate){
     var url = hostURL+"&a=book&id=" + id+"&type="  + type+"&uid="  + uid+"&fid=" + fid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;
@@ -27,7 +27,7 @@ function loadhospital(keyword,page){
         var url = hostURL+"&a=gethoslist";
     if(page)
         url += "&page="+page;
-    $.getJSON(url,callback,'json',getJSONError,'GET','', true);
+    $.getJSON(url,callback,'json',getJSONError,'GET','');
 }
 function loadhouse(keyword,page){
     if(keyword)
@@ -36,7 +36,7 @@ function loadhouse(keyword,page){
         var url = hostURL+"&a=gethouselist";
     if(page)
         url += "&page="+page;
-    $.getJSON(url,callback,'json',getJSONError,'GET','', true);
+    $.getJSON(url,callback,'json',getJSONError,'GET','');
 }
 function bookHospital(id,type,uid,fid,name, email, phone, expection, flydate){
     var url = hostURL+"&a=book&id=" + id+"&type="  +type +"&uid="  + uid+"&fid=" + fid+"&email=" + email+"&name=" + name+"&phone=" + phone+"&expection=" + expection+"&flydate=" + flydate;

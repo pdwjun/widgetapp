@@ -38,24 +38,25 @@
     var file_c = 0;
     zy_init();
     window.uexOnload = function (type) {
-        houseinfo();
+        doctorinfo();
     }
     function callback(e){
         var img = e.img!=""?hostWebURL+ e.img:"image/home.jpg"
-        s = '<div class="ub-f1 header" style="background-image:url('+img+');">'+ e.name +'</div>'
-
-            + '<div class="grade_group">评分：';
+        s = '<div class="ub-f1 header-doc">'+ e.name +'<br ><img class="detail_image" src="'+img+'"></div>'+
+            '<div class="detail_group"><table><tr><td><span class="detail_item" >城市：</span></td><td><span class="detail_item" >' + e.city + '</span></td></tr>' +
+        '<tr><td><span class="detail_item" >医院：</span></td><td><span class="detail_item" >' + e.hospital + '</span></td></tr>'
+            + '<tr><td><span class="detail_item" >评分：</span></td><td><span class="detail_item" >';
         while(e.grade>0)
         {
             s += '<img src="css/project/images/five-star.png"  />';
             e.grade --;
         }
-        s += '</div><hr><div class="info">'+e.content+'</div>';
+        s += '</span></td></tr></table></div> <hr><div class="info">'+e.content+'</div>';
         $$('content').innerHTML = s;
         $closeToast();
     }
     function book(){
-        openNewWin('book_form','bookhouse_form.html');
+        openNewWin('book_form','bookdoctor_form.html');
     }
 </script>
 </html>

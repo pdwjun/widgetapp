@@ -199,6 +199,26 @@ header('Access-Control-Allow-Origin: *');
              echo 0;
 
      }
+
+     public function get_hospital_info($id){
+         $user = M('Hospital');
+         $data = $user->find($id);
+         if($data){
+             echo json_encode($data);
+         }
+         else
+             echo 0;
+
+     }
+     public function get_doctor_info($id){
+         $user = M('Doctor');
+         $data = $user->find($id);
+         if($data){
+             echo json_encode($data);
+         }
+         else
+             echo 0;
+     }
      /*
       * get_cate_info
       *  4  3:              get_cate_info&id="+id;
