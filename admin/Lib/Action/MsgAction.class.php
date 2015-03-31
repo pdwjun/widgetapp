@@ -35,7 +35,6 @@
    	  	if(isset($_POST['submit'])){
    	  	     $data = $_POST;
            $data['createtime']=mktime();
-            $data['uid'] = $_SESSION['uid'];
            $data['status']= 1 ;
    	  	    if(M($this->table_name)->add($data)){
    	  	    	$this->success("操作成功！",U('index'));
