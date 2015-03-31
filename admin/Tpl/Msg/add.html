@@ -132,6 +132,16 @@ function callSubMethod(){
               </select>
           </td>
       </tr>
+      <tr>
+          <td width="100" height="28" bgcolor="#FFFFFF">用户ID：</td>
+          <td bgcolor="#FFFFFF">
+              <select name="uid" id="uid">
+                  <volist name="uid" id="user">
+                          <option value="{$user['uid']}">{$user['uid']|getUname}</option>
+                  </volist>
+              </select>
+          </td>
+      </tr>
 	  <tr>
     <td height="28" bgcolor="#FFFFFF">&nbsp;</td>
     <td bgcolor="#FFFFFF"><input name="submit" type="submit" id="submit" value="发布"></td>

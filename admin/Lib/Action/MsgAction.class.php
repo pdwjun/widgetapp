@@ -45,6 +45,7 @@
    	  	    }
    	  	}else{
    	  		$this->list =M($this->table_name.'Cate')->select();
+            $this->uid =M('User')->select();
    	  		$this->display();
    	  	}
        	
