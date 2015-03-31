@@ -7,10 +7,38 @@
 <title>编辑友情链接</title>
 
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+    <link rel="stylesheet" href="__ROOT__/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="__ROOT__/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__ROOT__/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="__ROOT__/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="__ROOT__/kindeditor/plugins/code/prettify.js"></script>
 
 
 </head>
 
+<script language="JavaScript">
+
+    KindEditor.ready(function(K) {
+
+        var editor = K.editor({
+            allowFileManager : true
+        });
+        K('#image').click(function() {
+            editor.loadPlugin('image', function() {
+                editor.plugin.imageDialog({
+                    imageUrl : K('#img').val(),
+                    clickFn : function(url, title, width, height, border, align) {
+                        K('#img').val(url);
+                        K("#img_view").attr("src", url);
+                        editor.hideDialog();
+                    }
+                });
+            });
+        });
+
+
+    });
+</script>
 <body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
 
 
@@ -50,15 +78,22 @@
 
 
 
-  <tr>
+      <tr>
+          <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;用户ID：</td>
+          <td bgcolor="#FFFFFF">
+              <select name="uid" id="uid">
+                  <volist name="uid" id="user">
+                      <if condition="$user['uid'] eq $li['uid']">
+                          <option value="{$user['uid']}" selected>{$user['uid']|getUname}</option>
+                          <else/>
+                          <option value="{$user['uid']}">{$user['uid']|getUname}</option>
+                      </if>
 
-    <td height="28" bgcolor="#FFFFFF">&nbsp;回复人：</td>
-
-    <td bgcolor="#FFFFFF">
-      <label name="company_id" type="text" id="company_id" style="height:22px; width:200px;" >{$li['uid']|getUname}</label>
-    </td>
-
-  </tr>
+                  </volist>
+              </select>
+              当前ID：{$li['uid']|getUname}
+          </td>
+      </tr>
 
     <tr>
 
@@ -76,11 +111,19 @@
       </tr>
 
       <tr>
+          <td width="100" height="28" bgcolor="#FFFFFF">&nbsp;回复帖子：</td>
+          <td bgcolor="#FFFFFF">
+              <select name="mid" id="mid">
+                  <volist name="mid" id="msg">
+                      <if condition="$msg['id'] eq $li['mid']">
+                          <option value="{$msg['id']}" selected>{$msg['title']}</option>
+                          <else/>
+                          <option value="{$msg['id']}">{$msg['title']}</option>
+                      </if>
 
-          <td height="28" bgcolor="#FFFFFF">&nbsp;回复贴子：</td>
-
-          <td bgcolor="#FFFFFF"><label name="content" style="height:200px; width:400px;">{$li['mid']|getMsgTitle}</label></td>
-
+                  </volist>
+              </select>
+          </td>
       </tr>
       <tr>
 
@@ -93,7 +136,11 @@
 
           <td height="28" bgcolor="#FFFFFF">&nbsp;回复图片：</td>
 
-          <td bgcolor="#FFFFFF"><neq name="li.image" value=""> <img id="img_view" name="img_view" src="{$li['image']}"/></neq></td>
+          <td bgcolor="#FFFFFF">
+              <p><input type="button" id="image" value="选择图片" />（本地上传）</p>
+              <input type="hidden" id="img" name="image" value="<neq name="li.image" value="">{$li['image']}</neq>" >
+              <img id="img_view" src="<neq name="li.image" value="">{$li['image']}</neq>"/>
+          </td>
 
       </tr>
       <tr>

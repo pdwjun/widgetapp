@@ -270,7 +270,7 @@ function noSelAll()
     <!--<td align="left">{$vo['touid']|getUname}</td>-->
 	<td><a href="{:U('edit',array('id'=>$vo['id']))}">编辑</a> | <eq name="vo['status']" value="1">已审核<else/><a href="{:U('shenhe',array('id'=>$vo['id']))}">未审核</a></eq>
 
- |</td>
+ |<a href="{:U('del',array('id'=>$vo['id']))}">删除</a> </td>
 
 </tr></volist>
 
@@ -298,7 +298,7 @@ function noSelAll()
 
 <tr align="right" bgcolor="#EEF4EA">
 
-	<td height="36" colspan="19" align="center"><!--翻页代码 --></td>
+	<td height="36" colspan="19" align="center"><!--翻页代码 -->{$page}</td>
 
 </tr>
 
