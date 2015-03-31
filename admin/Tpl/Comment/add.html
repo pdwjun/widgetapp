@@ -2,192 +2,42 @@
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>编辑友情链接</title>
+	<title>编辑友情链接</title>
 
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/skin/admin/css/base.css">
+	<link rel="stylesheet" href="__ROOT__/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="__ROOT__/kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__ROOT__/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="__ROOT__/kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__ROOT__/kindeditor/plugins/code/prettify.js"></script>
 
-<script language="javascript">
-
-function viewArc(aid){
-
-	if(aid==0) aid = getOneItem();
-
-	window.open("archives.asp?aid="+aid+"&action=viewArchives");
-
-}
-
-function editArc(aid){
-
-	if(aid==0) aid = getOneItem();
-
-	location="archives.asp?aid="+aid+"&action=editArchives";
-
-}
-
-function updateArc(aid){
-
-	var qstr=getCheckboxItem();
-
-	if(aid==0) aid = getOneItem();
-
-	location="archives.asp?aid="+aid+"&action=makeArchives&qstr="+qstr+"";
-
-}
-
-function checkArc(aid){
-
-	var qstr=getCheckboxItem();
-
-	if(aid==0) aid = getOneItem();
-
-	location="archives.asp?aid="+aid+"&action=checkArchives&qstr="+qstr+"";
-
-}
-
-function moveArc(aid){
-
-	var qstr=getCheckboxItem();
-
-	if(aid==0) aid = getOneItem();
-
-	location="archives.asp?aid="+aid+"&action=moveArchives&qstr="+qstr+"";
-
-}
-
-function adArc(aid){
-
-	var qstr=getCheckboxItem();
-
-	if(aid==0) aid = getOneItem();
-
-	location="archives.asp?aid="+aid+"&action=commendArchives&qstr="+qstr+"";
-
-}
-
-function delArc(aid){
-
-	var qstr=getCheckboxItem();
-
-	if(aid==0) aid = getOneItem();
-
-	location="archives.asp?aid="+aid+"&action=delArchives&qstr="+qstr+"";
-
-}
-
-
-
-//获得选中文件的文件名
-
-function getCheckboxItem()
-
-{
-
-	var allSel="";
-
-	if(document.form2.id.value) return document.form2.id.value;
-
-	for(i=0;i<document.form2.id.length;i++)
-
-	{
-
-		if(document.form2.id[i].checked)
-
-		{
-
-			if(allSel=="")
-
-				allSel=document.form2.id[i].value;
-
-			else
-
-				allSel=allSel+"`"+document.form2.id[i].value;
-
-		}
-
-	}
-
-	return allSel;
-
-}
-
-
-
-//获得选中其中一个的id
-
-function getOneItem()
-
-{
-
-	var allSel="";
-
-	if(document.form2.id.value) return document.form2.id.value;
-
-	for(i=0;i<document.form2.id.length;i++)
-
-	{
-
-		if(document.form2.id[i].checked)
-
-		{
-
-				allSel = document.form2.id[i].value;
-
-				break;
-
-		}
-
-	}
-
-	return allSel;
-
-}
-
-function selAll()
-
-{
-
-	for(i=0;i<document.form2.id.length;i++)
-
-	{
-
-		if(!document.form2.id[i].checked)
-
-		{
-
-			document.form2.id[i].checked=true;
-
-		}
-
-	}
-
-}
-
-function noSelAll()
-
-{
-
-	for(i=0;i<document.form2.id.length;i++)
-
-	{
-
-		if(document.form2.id[i].checked)
-
-		{
-
-			document.form2.id[i].checked=false;
-
-		}
-
-	}
-
-}
-
-</script>
 
 </head>
+<script language="JavaScript">
 
+	KindEditor.ready(function(K) {
+
+		var editor = K.editor({
+			allowFileManager : true
+		});
+		K('#image').click(function() {
+			editor.loadPlugin('image', function() {
+				editor.plugin.imageDialog({
+					imageUrl : K('#img').val(),
+					clickFn : function(url, title, width, height, border, align) {
+						K('#img').val(url);
+						K("#img_view").attr("src", url);
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+
+
+	});
+</script>
 <body leftmargin="8" topmargin="8" background='__PUBLIC__/skin/images/allbg.gif'>
 
 
@@ -196,110 +46,102 @@ function noSelAll()
 
 <table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
 
-<tr>
+	<tr>
 
- <td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
+		<td height="26" background="__PUBLIC__/skin/images/newlinebg3.gif">
 
-  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+			<table width="98%" border="0" cellspacing="0" cellpadding="0">
 
-  <tr>
+				<tr>
 
-  <td align="center"><strong>添加评论内容</strong></td>
+					<td align="center"><strong>编辑评论内容</strong></td>
 
- </tr>
+				</tr>
+
+			</table>
+
+		</td>
+
+	</tr>
 
 </table>
 
-</td>
 
-</tr>
-
-</table>
-
-  
 
 <!--  内容列表   -->
 
 <form name="form2" action="" method="post">
 
-  <table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
+	<table width="98%" border="0" align="center" cellspacing="1" bgcolor="#D1DDAA">
+
+		<tr>
+			<td width="100" height="28" bgcolor="#FFFFFF">用户ID：</td>
+			<td bgcolor="#FFFFFF">
+				<select name="uid" id="uid">
+					<volist name="uid" id="user">
+						<option value="{$user['uid']}">{$user['uid']|getUname}</option>
+					</volist>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td width="100" height="28" bgcolor="#FFFFFF">回复帖子：</td>
+			<td bgcolor="#FFFFFF">
+				<select name="mid" id="mid">
+					<volist name="mid" id="msg">
+						<if condition="$msg['id'] eq $li['mid']">
+							<option value="{$msg['id']}" selected>{$msg['title']}</option>
+							<else/>
+							<option value="{$msg['id']}">{$msg['title']}</option>
+						</if>
+
+					</volist>
+				</select>
+			</td>
+		</tr>
+		<tr>
+
+			<td height="28" bgcolor="#FFFFFF">&nbsp;回复内容：</td>
+
+			<td bgcolor="#FFFFFF"><textarea name="content" id="content" style="height:200px; width:400px;"></textarea></td>
+
+		</tr>
+		<tr>
+
+			<td height="28" bgcolor="#FFFFFF">&nbsp;回复图片：</td>
+
+			<td bgcolor="#FFFFFF">
+				<p><input type="text" value="" />
+					<input type="button" id="image" value="选择图片" />（本地上传）</p>
+				<input type="hidden" id="img" name="image" >
+				<img id="img_view" name="image" src=""/>
+			</td>
+
+		</tr>
+		<tr>
+			<td width="100" height="28" bgcolor="#FFFFFF">&nbsp;状态：</td>
+			<td bgcolor="#FFFFFF">
+				<select name="status" id="status" >
+					<option value="0" value="0">待审核</option>
+					<option value="1" value="1" selected >已审核</option>
+					<option value="2"  value="2">禁止发布</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+
+			<td height="25" bgcolor="#FFFFFF">&nbsp;</td>
+
+			<td bgcolor="#FFFFFF"><input type="submit" name="submit" value="提交" id="submit"></td>
+
+		</tr>
 
 
 
-
-  <tr>
-
-    <td height="28" bgcolor="#FFFFFF">&nbsp;评论店铺ID：</td>
-
-    <td bgcolor="#FFFFFF">
-      <input name="company_id" type="text" id="company_id" style="height:22px; width:200px;">
-    </td>
-
-  </tr>
-
-    <tr>
-
-    <td height="25" bgcolor="#FFFFFF">&nbsp;评论人ID：</td>
-
-    <td bgcolor="#FFFFFF"><input name="uid" type="text" id="uid" style="height:22px; width:200px;"></td>
-
-  </tr>
-
-  <tr>
-
-    <td height="28" bgcolor="#FFFFFF">&nbsp;评论介绍：</td>
-
-    <td bgcolor="#FFFFFF"><textarea name="content" id="content" style="height:200px; width:400px;">{$content}</textarea></td>
-
-  </tr>
-
-
-
-  <tr>
-
-    <td height="25" bgcolor="#FFFFFF">&nbsp;评价：</td>
-
-    <td bgcolor="#FFFFFF">
-        <input name="evaluate" type="radio" value="1" checked >
-         好评
-        <input type="radio" name="evaluate" value="0" >
-        中评
-        <input type="radio" name="evaluate" value="-1">
-        差评
-      </td>
-
-  </tr>
-
-  <tr>
-
-    <td height="25" bgcolor="#FFFFFF">&nbsp;</td>
-
-    <td bgcolor="#FFFFFF"><input type="submit" name="submit" value="提交" id="submit"></td>
-
-  </tr>
-
-
-
-</table>
+	</table>
 
 </form>
-
-
-
-
-
-<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
-
-  <tr bgcolor='#EEF4EA'>
-
-    <td background='skin/images/wbg.gif' align='center'>&nbsp;</td>
-
-  </tr>
-
-</table>
-
-
-
 </body>
 
 </html>
