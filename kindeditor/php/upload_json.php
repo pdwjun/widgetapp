@@ -123,25 +123,23 @@ if (empty($_FILES) === false) {
     $new_file_name = date("YmdHis") . '_' . rand(10000, 99999) . '.' . $file_ext;
 //移动文件
     $file_path = $save_path . $new_file_name;
-//    $file_path_s = $save_path.'s1_'.$new_file_name;
-//    $file_path_200 = $save_path.'s_200x200_'.$new_file_name;
+    $file_path_s = $save_path.'s1_'.$new_file_name;
+    $file_path_200 = $save_path.'s_200x200_'.$new_file_name;
 
     if (move_uploaded_file($tmp_name, $file_path) === false) {
         alert("上传文件失败。");
     }else{
 //等比例生成缩略图
-//        move_uploaded_file(img2thumb($file_path,$file_path_s,'','',1,1), $file_path);
+        move_uploaded_file(img2thumb($file_path,$file_path_s,'','',1,0.4), $file_path);
 //生成200x200缩略图
-//        move_uploaded_file(img2thumb($file_path,$file_path_200,'200','200',1,0), $file_path);
+        move_uploaded_file(img2thumb($file_path,$file_path_200,'200','200',1,0), $file_path);
     }
     @chmod($file_path, 0644);
-//    $file_url = $save_url . $new_file_name;
-    $file_url = $save_url . $file_path;
+    $file_url = $save_url . $new_file_name;
 
     header('Content-type: text/html; charset=UTF-8');
     $json = new Services_JSON();
-    echo $json->encode(array('error' => 0, 'url' => $save_url .$file_path));
-//    echo $json->encode(array('error' => 0, 'url' => $save_url .'s1_'.$new_file_name));
+    echo $json->encode(array('error' => 0, 'url' => $save_url .$new_file_name));
     exit;
 }
 /**
