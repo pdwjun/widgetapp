@@ -193,11 +193,6 @@
     zy_init();
     window.uexOnload = function (type) {
         //初始化数据库
-        var createDB = getLocVal('createDB');
-        if (!createDB) {
-
-            loadDb();
-        }
 
 
             var uid = getLocVal('uid');
@@ -221,10 +216,6 @@
             } else {
                 openNewWin('login', 'login.html');
             }
-            clearLocVal('homepage');
-
-
-
 
     }
     function logintime(uid){

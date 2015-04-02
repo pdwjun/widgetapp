@@ -263,6 +263,8 @@ header('Access-Control-Allow-Origin: *');
              ->order("createtime DESC")
              ->select();
          foreach($list as $key => $item){
+             //字符串截取，首页不用显示全
+             $list[$key]['content'] = mb_substr($item['content'],0,130, 'UTF-8');
              $arr = explode('|', $item['zan_uid']);
              if($arr[0]!="")
                 $list[$key]['zan'] = count($arr);

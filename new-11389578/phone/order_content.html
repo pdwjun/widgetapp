@@ -127,15 +127,23 @@
             alert("请输入正确的手机号码或电话号码");
             return false;
         }
-        book();
-//        checkphoneorder(3,$$('phone').value);
+        checkphoneorder($$('type').value,$$('phone').value);
 
     }
     function phoneorderBack(data){
         if(data==0){    //没有找到，可以预约
             book();
-        }else
-            alert('手机号已经预约过暖客栈，无法多次预约')
+        }else{
+            var name = '';
+            if($$('type').value==1)
+                name = '医生'
+            else if($$('type').value==2)
+                name = '医院'
+            else if($$('type').value==3)
+                name = '暖客栈'
+            alert('手机号已经预约过'+ name +'，无法多次预约')
+
+        }
     }
     function book() {
 //	 var b64 = new Base64();

@@ -86,12 +86,10 @@ class OrderAction extends CommonAction
                 $data['flydate'] = strtotime($_POST['flydate']);
 //	              	  	  $data['createtime']=mktime();
                 M($this->table_name)->where("id=" . $id)->save($data);
-                if($_POST['type']==1)
-                    $param = array('type'=>'doctor');
-                if($_POST['type']==2)
-                    $param = array('type'=>'hospital');
-                if($_POST['type']==3)
-                    $param = array('type'=>'home');
+
+
+                $param = array('type'=>$_REQUEST['type']);
+
                 $this->success("更新成功！", U('index',$param));
 
             } else {
@@ -124,7 +122,8 @@ class OrderAction extends CommonAction
                 $data->where("id=$val")->delete();
 
             }
-            $this->success("删除成功！", U('index'));
+            $param = array('type'=>$_REQUEST['type']);
+            $this->success("删除成功！", U('index', $param));
 
         } else {
 
@@ -132,7 +131,8 @@ class OrderAction extends CommonAction
 
                 $data->where("id=" . $_GET['id'])->delete();
 
-                $this->success("删除成功！", U('index'));
+                $param = array('type'=>$_REQUEST['type']);
+                $this->success("删除成功！", U('index', $param));
 
             } else {
 

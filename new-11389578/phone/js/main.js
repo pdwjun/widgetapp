@@ -297,11 +297,11 @@ function getJSONError(err) {
         //  alert('json解析失败');
         //$toast('json解析失败',1000);
     } else if (err.message == 'file does not exist!') {
-        $toast('文件不存在', 1000);
+        //$toast('文件不存在', 1000);
     } else if (err.message == 'read file failed!') {
-        $toast('文件读取错误', 1000);
+        //$toast('文件读取错误', 1000);
     } else {
-        $toast('发现未知错误', 1000);
+        //$toast('发现未知错误', 1000);
     }
 }
 
@@ -457,7 +457,8 @@ function initImgURL(img) {
 function goURL(url) {
     var p = window.getComputedStyle($$("footer"), null);
     var h = window.getComputedStyle($$("header"), null);
-    uexWindow.openPopover("content", 0, url, "", 0, int(h.height), '', "", '', 0, int(p.height));
+    //uexWindow.openPopover("content", 0, url, "", 0, int(h.height), '', "", '', 0, int(p.height));
+    zy_con("content", url, 0, int(h.height));
 }
 /*
  返回城市列表

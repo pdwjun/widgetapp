@@ -8,7 +8,7 @@ function loads() {
 
     if (!checkUp) {
         //没有更新到本地
-        $toast('从远程获取数据', 1000);
+        //$toast('从远程获取数据', 1000);
         var url = hostURL + "&a=get_date";
         $.getJSON(url, callback, 'json', getJSONError, 'GET', '');
         setLocVal('checkUp', 'ok');

@@ -238,14 +238,30 @@
             $toast("保存信息失败", 2000);
         }
     }
+    function checkall(){
+        var password=$$("password").value;
+        if(password.length <6 && password.length >0){
+            alert('密码最少为6位');
+            return false;
+        }
+        if(!chkphone($$('phone').value))
+        {
+            alert("请输入正确的手机号码或电话号码");
+            return false;
+        }
+        return true;
+
+    }
     function save() {
+        if(!checkall())
+            return false;
         var b64 = new Base64();
 //        var avatar = $$('img').src; //头像
 
         //var username =encodeURIComponent(b64.encode($$("username").value));
         var password = $$("password").value;
         var name = encodeURIComponent($$("name").value);//真实姓名
-        var img = $$("img_url").value; //手机号码
+        var img = $$("img_url").value;
         var phone = $$("phone").value; //手机号码
 //		 var sheng =encodeURIComponent(b64.encode($$("sheng").value)); //省
 //		 var shi= encodeURIComponent(b64.encode($$("shi").value));;	//市
