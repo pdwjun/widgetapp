@@ -457,8 +457,8 @@ function initImgURL(img) {
 function goURL(url) {
     var p = window.getComputedStyle($$("footer"), null);
     var h = window.getComputedStyle($$("header"), null);
-    //uexWindow.openPopover("content", 0, url, "", 0, int(h.height), '', "", '', 0, int(p.height));
-    zy_con("content", url, 0, int(h.height));
+    uexWindow.openPopover("content", 0, url, "", 0, int(h.height), '', "", '', 0, int(p.height));
+    //zy_con("content", url, 0, int(h.height));
 }
 /*
  返回城市列表
@@ -521,4 +521,37 @@ function chkemail(strEmail) {
         return false;
 
     }
+}
+function substr(str, len)
+{
+    if(!str || !len) { return ''; }
+
+    //预期计数：中文2字节，英文1字节
+    var a = 0;
+
+    //循环计数
+    var i = 0;
+
+    //临时字串
+    var temp = '';
+
+    for (i=0;i<str.length;i++)
+    {
+        if (str.charCodeAt(i)>255)
+        {
+            //按照预期计数增加2
+            a+=2;
+        }
+        else
+        {
+            a++;
+        }
+        //如果增加计数后长度大于限定长度，就直接返回临时字符串
+        if(a > len) { return temp; }
+
+        //将当前内容加到临时字符串
+        temp += str.charAt(i);
+    }
+    //如果全部是单字节字符，就直接返回源字符串
+    return str;
 }

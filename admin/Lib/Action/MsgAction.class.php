@@ -64,6 +64,8 @@
 	              	  if(isset($_POST['submit'])){
 	              	  	  $data = $_POST;
 	              	  	  $data['createtime']=mktime();
+                          //保存photo图片
+                          $data['photo'] = implode($_POST['photo'], '|');
 	              	  	  M($this->table_name)->where("id=".$id)->save($data);
 	              	  	  $this->success("更新成功！",U('index'));
 	              	  }else{

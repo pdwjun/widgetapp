@@ -78,6 +78,11 @@ body{
     padding: 1em;
     text-align: center;
 }
+.detail_group td {
+    vertical-align: top;
+    min-width: 4em;
+    text-align: left;
+}
 .detail_item{
     display: table-cell;
 }

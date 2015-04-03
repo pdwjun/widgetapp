@@ -66,12 +66,12 @@ function adArc(aid){
 
 }
 
-function delArc(aid){
+function delArc(aid,type){
 
 	var qstr=getCheckboxItem();
 
 	if(aid==0) aid = getOneItem();
-	location="{:U('Doctor/del')}"+"&id="+aid+"&qstr="+qstr+"";
+	location="{:U('Order/del')}"+"&id="+aid+"&qstr="+qstr+"&type="+type;
 
 //	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
 
@@ -300,7 +300,7 @@ function noSelAll()
 
 	<a href="javascript:noSelAll()" class="coolbg">取消</a>
 
-	<a href="javascript:delArc(0)" class="coolbg">&nbsp;删除&nbsp;</a>
+	<a href="javascript:delArc(0,{$vo['type']})" class="coolbg">&nbsp;删除&nbsp;</a>
 
 </td>
 

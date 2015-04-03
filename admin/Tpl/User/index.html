@@ -72,7 +72,8 @@ function delArc(aid){
 
 	if(aid==0) aid = getOneItem();
 
-	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
+    location="{:U('User/del')}"+"&id="+aid+"&qstr="+qstr;
+//	location="__URL__/del/id/"+aid+"/qstr/"+qstr+"";
 
 }
 
@@ -228,12 +229,13 @@ function noSelAll()
 
 <tr bgcolor="#E7E7E7">
 
-	<td height="24" colspan="5" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;</td>
+	<td height="24" colspan="6" background="__PUBLIC__/skin/images/tbg.gif">&nbsp;</td>
 
 </tr>
 
 <tr align="center" bgcolor="#FAFAF1" height="22">
 
+    <td width="3%">选择</td>
 	<td width="6%">用户ID</td>
 
 	<td width="10%">用户名</td>
@@ -250,6 +252,7 @@ function noSelAll()
 
 <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
 
+    <td><input name="id" type="checkbox" id="id"  value="{$vo['uid']}" class="np"></td>
 	<td>{$vo['uid']}</td>
 
 	<td align="center">{$vo['username']}</td>
@@ -268,7 +271,7 @@ function noSelAll()
 
 <tr bgcolor="#FAFAF1">
 
-<td height="28" colspan="5">
+<td height="28" colspan="6">
 
 	&nbsp;
 
@@ -288,7 +291,7 @@ function noSelAll()
 
 <tr align="right" bgcolor="#EEF4EA">
 
-	<td height="36" colspan="5" align="center"><!--翻页代码 -->{$page}</td>
+	<td height="36" colspan="6" align="center"><!--翻页代码 -->{$page}</td>
 
 </tr>
 
