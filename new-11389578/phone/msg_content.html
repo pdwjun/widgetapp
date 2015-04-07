@@ -155,7 +155,7 @@ window.uexOnload=function(type)
         var author = '<div class="headphoto"><img class="msg_group_author" src="'+ img_url+'"></div><div class="author_name" id="username">'+data.username+'</div>';
 		$$("author").innerHTML=author;
 		$$("title").innerHTML =data.title;
-		$$("content").innerHTML =data.content;
+		$$("content").innerHTML =data.content.replace(/\"\/kindeditor/g, '"' + hostWebURL+'/kindeditor');
 //		$$("time").innerHTML =data.time
 //		$$("pl").innerHTML =data.pl;
         var photoarr = data.photo.split('|');
