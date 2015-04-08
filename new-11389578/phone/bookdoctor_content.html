@@ -66,6 +66,7 @@
 </div>
 </body>
 <script>
+    setLocVal('page',1);
     zy_init();
     window.uexOnload = function (type) {
         if(!type){
@@ -122,15 +123,20 @@
                 '<div class="list-image"><img src="' + e.img +'"/></div>'
                 + '<div class="list-info">'
                 + '<div class="list-name">'+ e.name+'</div>'
-                + '<div class="list-hospital">'+ e.hospital+'</div>'
-                + '<div class="list-grade">评分：<span>';
+                + '<div class="list-hospital">'+ substr(e.hospital,20);
+                if(e.hospital.length>10)
+                    tmpl += '...';
+                tmpl += '</div><div class="list-grade">评分：<span>';
                 while(e.grade>0)
                 {
                     tmpl += '<img src="css/project/images/five-star.png"  />';
                     e.grade --;
                 }
                 tmpl += '</span></div>'
-                + '<div class="list-city">城市：'+ substr(e.city,18)+'</div></div></div>';
+                + '<div class="list-city">城市：'+ substr(e.city,18);
+                if(e.city.length>9)
+                    tmpl += '...';
+                tmpl += '</div></div></div>';
 
             })
             //加载有医生的城市选择框
