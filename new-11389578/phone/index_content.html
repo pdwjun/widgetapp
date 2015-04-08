@@ -108,7 +108,7 @@ function callback(data){
 			imgurl = initImgURL(e.img);
              tmpl += '<div class="msg_group" >' +
                 '<ul ontouchstart="zy_touch(\'btn-act\')" onclick="showmsg('+ e.id +')" class="ubb ub b-gra4 lis">'
-                + '<li><div class="headphoto"><img class="msg_group_author" src="'+ imgurl +'" /></div><div class="author_name">'+ e.username +'</div></li>'
+                + '<li><div class="headphoto"><img class="msg_group_author" src="'+ imgurl +'" /><span class="more">查看详情</span></div><div class="author_name">'+ e.username +'</div></li>'
                 + '<li ><strong class="msg_group_title">'+ e.title +'</strong></li>'
                 + '<li class="msg_group_content" >'+ e.content +'</li><li><div class="msg_group_content_image">';
                 var photoarr = e.photo.split('|');
