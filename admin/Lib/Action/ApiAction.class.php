@@ -446,17 +446,19 @@ header('Access-Control-Allow-Origin: *');
       * var url =hostURL+"&a=save_comment&id="+id+"&content="+content+"&photo="+photo+"&uid="+uid;
       *
       */
-     public function save_comment($uid,$mid,$cid,$content){
+     public function save_comment($uid,$mid,$cid,$content,$code){
          $model = M('Comment');
          $_REQUEST['createtime'] = time();
          $_REQUEST['touid'] = $this->get_to_id($cid);
          $_REQUEST['content'] = htmlspecialchars($_REQUEST['content']);
-         if($uid==""||$content=""||$mid=="")
-             echo "fail";
-         elseif($model->add($_REQUEST))
-            echo $cid;
-         else
-             echo "fail";
+         if($code == 'pdwjun'){
+             if($uid==""||$content==""||$mid=="")
+                 echo "fail";
+             elseif($model->add($_REQUEST))
+                 echo $cid;
+             else
+                 echo "fail";
+         }
 
      }
      public function upload(){
