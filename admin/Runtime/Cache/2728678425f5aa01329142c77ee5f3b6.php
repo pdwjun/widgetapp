@@ -20,7 +20,7 @@
 
   <tr>
 
-    <td><div style='float:left'> <img height="14" src="__PUBLIC__/skin/admin/images/frame/book1.gif" width="20" />&nbsp;欢迎使用蜂鸟企业容管理系统，企业建站的首选工具。 </div>
+    <td><div style='float:left'> <img height="14" src="__PUBLIC__/skin/admin/images/frame/book1.gif" width="20" />&nbsp;欢迎使用企业内容后台管理系统，企业建站的首选工具。 </div>
 
       <div style='float:right;padding-right:8px;'>
 
@@ -76,7 +76,7 @@
 
     <td height="32">官方交流网站：</td>
 
-    <td><a href="http://www.hh85.com" target="_blank"><u>http://www.hh85.com</u></a></td>
+    <td><a href="http://www.pdwjun.com" target="_blank"><u>http://www.pdwjun.com</u></a></td>
 
   </tr>
 
@@ -84,7 +84,7 @@
 
     <td width="25%" height="32">更多后台模板：</td>
 
-    <td width="75%"><a href="http://bbs.hh85.com/" target="_blank"><u>http://bbs.hh85.com</u></a></td>
+    <td width="75%"><a href="http://bbs.pdwjun.com/" target="_blank"><u>http://bbs.pdwjun.com</u></a></td>
 
   </tr>
 
